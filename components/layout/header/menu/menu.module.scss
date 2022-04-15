@@ -3,8 +3,10 @@ $x-offset:28px;
 $y-offset:20px;
 $animation-duration:0.4s;
 
+
+
 @mixin positionAndZ {
-    display: flex;
+    display: block;
     width: $menu-size;
     height: $menu-size;
     justify-content: center;
