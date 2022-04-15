@@ -3,11 +3,15 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: 1rem 10%;
+    // padding: 1rem 10%;
     height: 5rem;
-    background-color: #202020;
+    background-color: #218cd405;
   }
-  
+  .ham{
+    &__wrapper{
+       display: none;
+    }
+  }
   .logo {
     font-size: 1.5rem;
     color: white;
@@ -24,10 +28,15 @@
     color: #94fdfd;
   }
   
-  .navigation a {
+  .navigation  {
+    width: 100%;
+    display: flex;
+    direction: row;
+    justify-content: space-evenly;
     text-decoration: none;
     color: #74dacc;
     font-size: 1rem;
+    
   }
   
   @media (min-width: 768px) {
@@ -39,3 +48,14 @@
       font-size: 1.5rem;
     }
   }
+  
+  @media only screen and (max-width: 600px) {
+  .ham{
+    &__wrapper{
+          display:block ;
+    }
+  }
+  .navigation{
+    display: none;
+  }
+}
