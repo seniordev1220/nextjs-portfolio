@@ -4,9 +4,9 @@ function UserDetails(props:any){
 }
 //we can't use getStaticProps with getServerSideProps and we don't need getStaticPaths
 export async function getServerSideProps(context:any){
-    console.log("reg....") 
+    
     const {params}=context;
-    console.log( params)
+   
 
     const userId=params.uid;
     return {
