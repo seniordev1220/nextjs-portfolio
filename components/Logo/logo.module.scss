@@ -1,0 +1,23 @@
+.circle {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 600;
+    animation: drawCircle 1s infinite ease;
+}
+
+@keyframes drawCircle {
+    from {
+        stroke-dashoffset: 600;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+.svg{
+    width:4rem;
+}
+@media only screen and (max-width: 600px) {
+    .svg{
+        width:3rem;
+    }
+}

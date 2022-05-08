@@ -1,0 +1,27 @@
+@mixin area {
+    height: 100vh;
+}
+
+.theme {
+    &--light {
+        color: #2f2f2f;
+        @include area;
+    }
+
+    &--dark {
+        color: rgb(239, 249, 255);
+        @include area;
+    }
+}
+
+.navTheme {
+    &--light {
+        background-image: linear-gradient(rgba(205, 236, 255), rgba(231, 246, 255, 0.973));
+        // transition: all 0.1s ease;
+    }
+
+    &--dark {
+        background-image: linear-gradient(#2f2f2f, #272727f6);
+        // transition: all 0.1s ease;
+    }
+}

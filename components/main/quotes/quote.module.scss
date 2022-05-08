@@ -1,0 +1,43 @@
+.quote {
+    &__container{
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        align-items:flex-start;
+    }
+    &__content {
+        max-width: 90%;
+        width:768px;
+        font-family: "Montserrat Medium";
+        max-width: 40ch;
+        font-size: 4rem;
+        text-align: center;
+        transform: scale(1);
+        animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+    }
+}
+
+@keyframes scale {
+    100% {
+        transform: scale(1);
+    }
+}
+
+.quote__each {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(4px);
+}
+@for $i from 1 through 16{
+    .quote__each:nth-child(#{$i}) {
+        animation: fade-in 0.8s $i*0.04s forwards cubic-bezier(0.11, 0, 0.5, 0);
+        margin-right: 0.5rem;
+    }
+}
+
+@keyframes fade-in {
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}

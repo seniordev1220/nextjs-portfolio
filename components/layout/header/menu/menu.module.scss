@@ -1,0 +1,125 @@
+$menu-size:162px;
+$x-offset:28px;
+$y-offset:20px;
+$animation-duration:0.4s;
+
+@mixin positionAndZ {
+    display: flex;
+    width: $menu-size;
+    height: $menu-size;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.mainContainer {
+    &--open {
+        bottom: 10%;
+        transition: all $animation-duration ease;
+    }
+
+    &--close {
+        bottom: -5%;
+        transition: all $animation-duration ease;
+    }
+}
+
+.rotaryMenu {
+    &__container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__icons__wrapper {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: $menu-size;
+        width: $menu-size;
+        animation: rotorIconOpen $animation-duration forwards ease;
+    }
+
+    &__icons {
+        animation: fadeInFromNone $animation-duration forwards ease;
+    }
+
+    &--open {
+        @include positionAndZ;
+
+        animation: open 0.1s forwards ease;
+    }
+
+    &--close {
+        @include positionAndZ;
+
+    }
+}
+
+.menuIcon {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    width: max-content;
+}
+
+@keyframes open {
+    100% {
+        width: $menu-size;
+        height: $menu-size;
+    }
+}
+
+@keyframes rotorIconOpen {
+    0% {
+        transform: rotate(135deg)
+    }
+
+    100% {
+        transform: rotate(180deg)
+    }
+
+}
+
+@keyframes fadeInFromNone {
+    0% {
+        display: block;
+        opacity: 0;
+        left: 51px
+    }
+
+    20% {
+        display: block;
+        opacity: 0;
+        left: 51px
+    }
+
+    40% {
+        display: block;
+        opacity: 0.2;
+    }
+
+    50% {
+        display: block;
+        opacity: 0.3;
+    }
+
+    60% {
+        display: block;
+        opacity: 0.4;
+    }
+
+    80% {
+        display: block;
+        opacity: 0.5;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
