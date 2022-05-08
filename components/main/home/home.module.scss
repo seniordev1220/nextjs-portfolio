@@ -1,0 +1,77 @@
+@mixin animateText {
+    animation: fadeInRight 0.8s ease;
+}
+
+@mixin fadeInSeperation {
+    animation: fadeInSeperation 4s ease;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInSeperation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.intro {
+    &__container {
+        max-width: 1024px;
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 5px;
+        padding: 1rem;
+        height: 100vh;
+    }
+
+    &__self {
+        font-size: clamp(40px, 8vw, 80px);
+        font-weight: 600;
+        font-family: 'Parisienne', cursive;
+        @include animateText;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+
+    &__profession {
+        font-size: xx-large;
+        @include animateText;
+    }
+
+    &__horizontalSeparation {
+        border-left: solid 2px rgb(80, 77, 77);
+        height: 100%;
+        @include fadeInSeperation;
+    }
+
+    &__description {
+        line-height: 1.5;
+        @include animateText;
+    }
+}
+
+@media only screen and (max-width:912px) {
+    .intro__horizontalSeparation {
+        display: none;
+    }
+}

@@ -1,13 +1,25 @@
-import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
-import path from 'path'
-import styles from '../styles/Home.module.css'
-import Image from 'next/image'
+import React from 'react'
+import { Home } from '../components/main/home'
+import { Projects } from '../components/main/projects'
+import { Quotes } from '../components/main/quotes'
 
-const Home = () => {
-  return <>
-  <p>hi</p>
+const Main = () => {
+  return (<>
+    <section>
+      <Home />
+    </section>
+    <section>
+      <Quotes />
+    </section>
+    <section>
+      <Projects />
+    </section>
+    
   </>
+  )
 }
 
-export default Home
+export default Main
+
+
+// https://codepen.io/codingtuting/pen/XWrBgQz

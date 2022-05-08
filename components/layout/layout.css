@@ -1,0 +1,9 @@
+body {
+    background-color: rgb(231, 246, 255);
+    color: #272727;
+}
+
+body.dark-mode {
+    background-color: #272727;
+    color: rgb(231, 246, 255);
+}
