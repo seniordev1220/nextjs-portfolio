@@ -11,11 +11,11 @@ export const Logo = () => {
         >
             <defs>
                 <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color={LightModeColors.oceanBlue} />
-                    <stop offset="25%" stop-color={LightModeColors.paleGreen} />
-                    <stop offset="50%" stop-color={LightModeColors.sorbusRed} />
-                    <stop offset="75%" stop-color={LightModeColors.orange} />
-                    <stop offset="100%" stop-color={LightModeColors.oceanBlue} />
+                    <stop offset="0%" stopColor={LightModeColors.oceanBlue} />
+                    <stop offset="25%" stopColor={LightModeColors.paleGreen} />
+                    <stop offset="50%" stopColor={LightModeColors.sorbusRed} />
+                    <stop offset="75%" stopColor={LightModeColors.orange} />
+                    <stop offset="100%" stopColor={LightModeColors.oceanBlue} />
                     <animateTransform attributeName="gradientTransform"
                         type="translate"
                         from="-1 0"

@@ -1,7 +1,7 @@
 import classes from "./icon.module.scss"
 export const Education = ({ height = "56px" }) => (
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" className={classes.shadow}
-     x="0px" y="0px" width="250px" height={height} viewBox="0 0 250 250" enable-background="new 0 0 250 250" >  <image id="image0" width="250" height="250" x="0" y="0"
+     x="0px" y="0px" width="250px" height={height} viewBox="0 0 250 250" enableBackground="new 0 0 250 250" >  <image id="image0" width="250" height="250" x="0" y="0"
     href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAMAAAC/MqoPAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
 AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAC/VBMVEVHcEwAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAABAQEAAAAAAABqamqgoKC7u7vPz8/b29vi4uLn5+fu7u7y8vL19fX2

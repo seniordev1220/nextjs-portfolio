@@ -75,7 +75,7 @@ export const RotaryMenu = () => {
                     {isComponentVisible && <div className={classes['rotaryMenu__icons__wrapper']}>
                         {newI.map(item =>
                             <div
-
+                               key={item.icon}
                                 className={classes['rotaryMenu__icons']}
                                 style={{
                                     position: "absolute",

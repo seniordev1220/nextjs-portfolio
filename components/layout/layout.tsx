@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Background } from '../background';
 import Header from './header/header'
 import classes from "./layout.module.scss"
 
@@ -9,7 +8,7 @@ function Layout({ children }: LayoutPropType) {
     useEffect(() => {
         const isDark: string = window?.sessionStorage?.getItem("isDarkMode") as any;
         setIsDarkMode(isDark);
-        document.body.classList.add(isDark === "true" && "dark-mode");
+        isDark === "true" && document.body.classList.add("dark-mode");
     }, [])
 
     const onButtonToggle = () => {
@@ -17,7 +16,7 @@ function Layout({ children }: LayoutPropType) {
         setIsDarkMode(isDarkMode => isDarkMode === "true" ? "false" : "true");
         document.body.classList.toggle("dark-mode")
     }
-console.log("isdar",isDarkMode)
+    console.log("isdar", isDarkMode)
     return (
         <div>
             <Header className={

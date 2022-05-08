@@ -1,9 +1,10 @@
+import Image from 'next/image'
 import React from 'react'
 import classes from'./index.module.css'
 
 function Images({src}:{src:string}) {
   return (
-    <img className={classes.image} src={src}/>
+    <Image className={classes.image} src={src} alt={"Loading..."}/>
   )
 }
 

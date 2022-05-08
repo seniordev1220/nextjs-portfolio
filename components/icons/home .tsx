@@ -3,7 +3,7 @@ export const Home = ({ height = "56px" }) => {
     return (
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
             className={classes.shadow}
-            x="0px" y="0px" width="800px" height={height} viewBox="0 0 800 800" enable-background="new 0 0 800 800" >
+            x="0px" y="0px" width="800px" height={height} viewBox="0 0 800 800" enableBackground="new 0 0 800 800" >
             <image id="image0" width="800" height="800" x="0" y="0"
                 href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAMgCAYAAADbcAZoAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
                 AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAACA
