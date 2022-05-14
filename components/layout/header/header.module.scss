@@ -123,7 +123,7 @@ $nav-items: "home" 5,
 
   &__active__item {
     @mixin backgroundEffect {
-      box-shadow: 0 0 1rem rgba(139, 139, 139, 0.678);
+      box-shadow: 0 0 1rem#2753d7;
       // background-color: #74dacc;
       border-radius: 1rem;
       position: absolute;
@@ -183,10 +183,12 @@ $nav-items: "home" 5,
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 480px) {
   .ham {
     &__wrapper {
       display: block;
+      position: relative;
+      z-index: 500;
     }
   }
 

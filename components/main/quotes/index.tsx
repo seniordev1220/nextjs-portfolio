@@ -4,7 +4,7 @@ import classes from "./quote.module.scss"
 const quote = "There are no limits to what you can do or heal, as long as you believe."
 
 export const Quotes = () => {
-    const showQuote = useScrollFetcher(100);
+    const showQuote = useScrollFetcher(350);
     return (<>
         <div className={classes.quote__container}>
             {showQuote && <h3 className={classes.quote__content}>

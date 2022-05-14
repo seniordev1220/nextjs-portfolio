@@ -2,7 +2,7 @@
     height: 100vh;
 }
 
-.theme {
+.theme { 
     &--light {
         color: #2f2f2f;
         @include area;
@@ -16,12 +16,12 @@
 
 .navTheme {
     &--light {
-        background-image: linear-gradient(rgba(205, 236, 255), rgba(231, 246, 255, 0.973));
+        background-image: linear-gradient(to right, #cdecff00,#cdecff15,#e7f6ff,#e7f6ff ,#e7f6ff );
         // transition: all 0.1s ease;
     }
 
     &--dark {
-        background-image: linear-gradient(#2f2f2f, #272727f6);
+        background-image: linear-gradient(to right,#2f2f2f00,#2f2f2f00,#111,#111, #111);
         // transition: all 0.1s ease;
     }
 }

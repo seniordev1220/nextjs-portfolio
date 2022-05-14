@@ -24,7 +24,7 @@ function Layout({ children }: LayoutPropType) {
                     classes['navTheme--dark'] :
                     classes['navTheme--light']}
                 onDarkModeToggle={onButtonToggle} />
-            <main>
+            <main className={classes.main}>
                 {children}
             </main>
             <div style={{
