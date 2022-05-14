@@ -90,9 +90,9 @@ function Header({ onDarkModeToggle, className }: HeaderProps) {
 
     return (<>
         <header >
-            <Grid className={classes.ham__wrapper} container >
+            <div className={classes.ham__wrapper}  >
                 <RotaryMenu />
-            </Grid>
+            </div>
             <Grid container spacing={2}
                 className={joinClass(showNavBar ?
                     classes['commonNavMenuContainer--show'] :

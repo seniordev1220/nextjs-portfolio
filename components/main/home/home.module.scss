@@ -29,33 +29,44 @@
 
 .intro {
     &__container {
-        max-width: 1024px;
+        background-color: #32a7f504;
+        box-shadow: 0 0 0.5rem #00000049;
         width: 90%;
         margin: auto;
         display: flex;
-        justify-content: center;
-        flex-direction: column;
-        border-radius: 5px;
-        padding: 1rem;
-        height: 100vh;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: row;
+        border-radius: 0.5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    &__image__container {
+        width: 500px;
     }
 
     &__self {
-        font-size: clamp(40px, 8vw, 80px);
-        font-weight: 600;
-        font-family: 'Parisienne', cursive;
+        font-size: 4rem;
         @include animateText;
+        margin: 0;
+
     }
 
     &__content {
+        max-width: 780px;
+        width: 90%;
         display: flex;
-        justify-content: space-around;
-        flex-direction: row;
+        flex-direction: column;
     }
 
     &__profession {
-        font-size: xx-large;
+        text-transform: uppercase;
+        margin: 1rem;
+        color: #2753d7;
+        font-size: 3.5rem;
         @include animateText;
+        
     }
 
     &__horizontalSeparation {
@@ -65,13 +76,38 @@
     }
 
     &__description {
-        line-height: 1.5;
+        max-width: 480px;
+        width: 90%;
+        line-height: 2;
+        margin: 1rem;
         @include animateText;
     }
 }
 
-@media only screen and (max-width:912px) {
-    .intro__horizontalSeparation {
-        display: none;
+@media only screen and (max-width:768px) {
+    .intro {
+        &__container {
+            flex-direction: column;
+        }
+
+        &__self {
+            font-size: 2rem;
+        }
+
+        &__profession {
+            font-size: 2rem;
+        }
+        &__image__container{
+            width: 70%;
+        }
     }
+
+    .intro__container {
+        background-color: #00000000;
+        box-shadow: none;
+        width: 100%;
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+
 }
