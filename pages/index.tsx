@@ -18,6 +18,9 @@ const Main = () => {
       <Projects />
     </section>
     <section className={classes['section--footer']}>
+      <span>
+        {" "}
+      </span>
     </section>
 
   </>
