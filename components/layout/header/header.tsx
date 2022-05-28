@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useRouter } from 'next/router';
 import { Box, Grid } from '@mui/material'
 import Link from 'next/link'
@@ -7,6 +7,7 @@ import { Logo } from '../../Logo'
 import { RotaryMenu } from './menu';
 import { HeaderProps } from './headerPropsType'
 import classes from './header.module.scss'
+import { DarKModeContext } from '../layout';
 
 const routes = [
     {
@@ -41,6 +42,7 @@ const routes = [
     }
 ]
 function Header({ onDarkModeToggle, className }: HeaderProps) {
+    const {isDarkMode}= useContext(DarKModeContext)
     const router = useRouter();
     const threshold = 10;
 
@@ -119,7 +121,7 @@ function Header({ onDarkModeToggle, className }: HeaderProps) {
                 </Grid>
                 <Grid className={classes['nightMode__container']} item xs={1}>
                     <Box display="flex" justifyContent="flex-end">
-                        <input className={classes.toggle} type="checkbox" onChange={onDarkModeToggle} />
+                        <input checked={isDarkMode} className={classes.toggle} type="checkbox" onChange={onDarkModeToggle} />
                     </Box>
                 </Grid>
             </Grid>

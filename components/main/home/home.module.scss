@@ -1,15 +1,53 @@
-@mixin animateText {
-    animation: fadeInRight 0.8s ease;
+$darkBg: rgba(21, 21, 21);
+$lightBg:#fff;
+$caret-color-dark: rgb(255, 255, 255);
+$caret-color-light: rgb(0, 0, 0);
+$text-length: 23;
+$animation-time: 2s;
+@mixin animateDescription {
+    animation: zoom 1s ease forwards;
+    animation-delay: 2s;
+}
+@mixin animateProfession {
+    animation: fadeInProfession 1s ease forwards;
+    animation-delay: 1.5s;
+}
+
+@mixin animateImage {
+    animation: fadeInRightImage 1s ease;
 }
 
 @mixin fadeInSeperation {
     animation: fadeInSeperation 4s ease;
 }
 
-@keyframes fadeInRight {
+@keyframes zoom {
     from {
         opacity: 0;
-        transform: translateX(-50px);
+       
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRightImage {
+    from {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeInProfession {
+    from {
+        opacity: 0;
+        transform: translateX(-10rem);
     }
 
     to {
@@ -27,9 +65,27 @@
     }
 }
 
+@mixin commonSelf {
+    font-size: xxx-large;
+    margin: 0;
+    width: max-content;
+    position: relative;
+
+    &::after {
+        content: "|";
+        position: absolute;
+        right: 0;
+        width: 100%;
+        color: $caret-color-dark;
+        background: $darkBg;
+        animation: typing $animation-time steps($text-length) forwards,
+            caret 1s infinite;
+    }
+}
+
 .intro {
     &__container {
-        background-color: #32a7f504;
+        background-color: #ffffff04;
         box-shadow: 0 0 0.5rem #00000049;
         width: 90%;
         margin: auto;
@@ -44,13 +100,34 @@
 
     &__image__container {
         width: 500px;
+        @include animateImage;
     }
 
     &__self {
-        font-size: 4rem;
-        @include animateText;
-        margin: 0;
+        &--dark {
+            @include commonSelf();
+        }
+        &--light{
+            @include commonSelf();
+            &::after{
+                background: $lightBg;
+                color: $caret-color-light;
+            }
+        }
 
+    }
+
+    // Animation
+    @keyframes typing {
+        to {
+            width: 0
+        }
+    }
+
+    @keyframes caret {
+        50% {
+            color: transparent
+        }
     }
 
     &__content {
@@ -65,8 +142,7 @@
         margin: 1rem;
         color: #2753d7;
         font-size: 3.5rem;
-        @include animateText;
-        
+        @include animateProfession;
     }
 
     &__horizontalSeparation {
@@ -78,10 +154,12 @@
     &__description {
         max-width: 480px;
         width: 90%;
-        line-height: 2;
+        line-height: 1.6;
         margin: 1rem;
-        @include animateText;
+        transform: scale(0);
+        @include animateDescription;
     }
+
 }
 
 @media only screen and (max-width:768px) {
@@ -97,7 +175,8 @@
         &__profession {
             font-size: 2rem;
         }
-        &__image__container{
+
+        &__image__container {
             width: 70%;
         }
     }
@@ -108,6 +187,102 @@
         width: 100%;
         padding-left: 0rem;
         padding-right: 0rem;
+    }
+
+}
+
+
+
+.slider__wrapper {
+    font-size: 40px;
+    color: #2753d7;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 0;
+    @include animateProfession;
+}
+
+.slider {
+    margin-top: 1rem;
+    margin-bottom:1rem;
+    height: 40px;
+    overflow: hidden;
+}
+
+.slider div {
+    color: #fff;
+    margin-bottom: 40px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.slider__text1 {
+    font-size: 40px;
+    animation: slide 10s linear infinite;
+    animation-delay: 1.5s;
+}
+
+.slider__text2 {
+    font-size: 40px;
+
+}
+
+.slider__text3 {
+    font-size: 40px;
+
+}
+
+@keyframes slide {
+    0% {
+        margin-top: 0px;
+    }
+
+    5% {
+        margin-top: 0px;
+    }
+
+    16% {
+        margin-top: 0px;
+    }
+
+    21% {
+        margin-top: -80px;
+    }
+
+    33% {
+        margin-top: -80px;
+    }
+
+    38% {
+        margin-top: -80px;
+    }
+
+    49% {
+        margin-top: -160px;
+    }
+
+    54% {
+        margin-top: -160px;
+    }
+
+    66% {
+        margin-top: -160px;
+    }
+
+    71% {
+        margin-top: -80px;
+    }
+
+    82% {
+        margin-top: -80px;
+    }
+
+    87% {
+        margin-top: -80px;
+    }
+
+    100% {
+        margin-top: 0px;
     }
 
 }
