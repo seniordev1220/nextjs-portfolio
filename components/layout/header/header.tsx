@@ -116,7 +116,7 @@ function Header({ onDarkModeToggle }: HeaderProps) {
                                 value={value}
                                 onChange={handleChange}>
                                 {routes.map((route) => (
-                                    <Tab sx={{ minWidth: "1rem" }} label={route.IconComponent} />
+                                    <Tab key={`tab-${route.name}`} sx={{ minWidth: "1rem" }} label={route.IconComponent} />
                                 ))}
                             </Tabs>
                         </nav>
