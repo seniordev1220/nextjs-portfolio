@@ -66,7 +66,7 @@ $animation-time: 2s;
 }
 
 @mixin commonSelf {
-    font-size: xxx-large;
+    font-size: 2rem;
     margin: 0;
     width: max-content;
     position: relative;
@@ -194,7 +194,7 @@ $animation-time: 2s;
 
 
 .slider__wrapper {
-    font-size: 40px;
+    font-size: 2.5rem;
     color: #2753d7;
     font-weight: bold;
     text-transform: uppercase;
@@ -205,30 +205,32 @@ $animation-time: 2s;
 .slider {
     margin-top: 1rem;
     margin-bottom:1rem;
-    height: 40px;
+    height: 2.5rem;
     overflow: hidden;
 }
 
 .slider div {
     color: #fff;
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
     text-align: center;
     box-sizing: border-box;
 }
 
 .slider__text1 {
-    font-size: 40px;
+    font-size: inherit;
     animation: slide 10s linear infinite;
     animation-delay: 1.5s;
+    
 }
 
 .slider__text2 {
-    font-size: 40px;
-
+    font-size: inherit;
+    text-size-adjust: auto;;
 }
 
 .slider__text3 {
-    font-size: 40px;
+  font-size: inherit;
+    text-size-adjust: auto;
 
 }
 
@@ -246,43 +248,107 @@ $animation-time: 2s;
     }
 
     21% {
-        margin-top: -80px;
+        margin-top: -5rem;
     }
 
     33% {
-        margin-top: -80px;
+        margin-top: -5rem;
     }
 
     38% {
-        margin-top: -80px;
+        margin-top: -5rem;
     }
 
     49% {
-        margin-top: -160px;
+        margin-top: -10rem;
     }
 
     54% {
-        margin-top: -160px;
+        margin-top: -10rem;
     }
 
     66% {
-        margin-top: -160px;
+        margin-top: -10rem;
     }
 
     71% {
-        margin-top: -80px;
+        margin-top: -5rem;
     }
 
     82% {
-        margin-top: -80px;
+        margin-top: -5rem;
     }
 
     87% {
-        margin-top: -80px;
+        margin-top: -5rem;
     }
 
     100% {
         margin-top: 0px;
     }
 
+}
+@keyframes slideMobile {
+    0% {
+        margin-top: 0px;
+    }
+
+    5% {
+        margin-top: 0px;
+    }
+
+    16% {
+        margin-top: 0px;
+    }
+
+    21% {
+        margin-top: -2.5rem;
+    }
+
+    33% {
+        margin-top: -2.5rem;
+    }
+
+    38% {
+        margin-top: -2.5rem;
+    }
+
+    49% {
+        margin-top: -5rem;
+    }
+
+    54% {
+        margin-top: -5rem;
+    }
+
+    66% {
+        margin-top: -5rem;
+    }
+
+    71% {
+        margin-top: -2.5rem;
+    }
+
+    82% {
+        margin-top: -2.5rem;
+    }
+
+    87% {
+        margin-top: -2.5rem;
+    }
+
+    100% {
+        margin-top: 0px;
+    }
+
+}
+@media screen and (max-width:1024px) {
+    .slider__wrapper {
+        font-size: 1.25rem;
+        display: flex;
+        align-items: center;
+    }
+    .slider__text1 {
+        animation: slideMobile 10s linear infinite;
+    }
 }
