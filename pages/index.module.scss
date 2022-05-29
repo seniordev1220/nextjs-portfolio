@@ -1,10 +1,19 @@
+@mixin sectionCommon {
+    height: 101vh;
+    scroll-snap-align: start;
+}
 .section {
-    &--header {
-        position: relative;
+    &__container{
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
         height: 100vh;
+    }
+    &--header {
+        height: 101vh;
+        position: relative;
         display: flex;
         align-items: center;
-
+        @include sectionCommon();
         &__clippath {
             position: absolute;
             top: 0;
@@ -18,7 +27,7 @@
 
     &--quotes {
         position: relative;
-
+        @include sectionCommon();
         &__clippath {
             position: absolute;
             top: 0;
@@ -32,9 +41,11 @@
     }
     &--projects{
         display: block;
+        @include sectionCommon();
     }
     &--footer{
         padding-bottom: 1rem;
+        @include sectionCommon();
     }
 }
 

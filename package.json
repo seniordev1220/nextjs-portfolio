@@ -24,6 +24,7 @@
     "babel-plugin-inline-react-svg": "^2.0.1",
     "eslint": "8.5.0",
     "eslint-config-next": "12.0.7",
+    "react-intersection-observer": "^9.2.0",
     "sass": "^1.49.9",
     "typescript": "4.5.4"
   }

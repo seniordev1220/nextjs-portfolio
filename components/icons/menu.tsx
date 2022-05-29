@@ -1,9 +1,9 @@
 import classes from "./icon.module.scss"
-export const Menu = ({height="56px"}) => {
+export const Menu =({ height = "2.5rem", width="2.5rem" }) => {
     return (
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
         className={classes.shadow}
-            x="0px" y="0px" width="56px" height={height} viewBox="0 0 275 275" enableBackground="new 0 0 275 275"
+            x="0px" y="0px" width={width} height={height} viewBox="0 0 275 275" enableBackground="new 0 0 275 275"
         > 
 
          <image id="image0" width="275" height="275" x="0" y="0"

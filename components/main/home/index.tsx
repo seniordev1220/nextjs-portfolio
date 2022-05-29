@@ -2,8 +2,9 @@ import React, { useContext } from 'react'
 import Image from "next/image"
 import { homeMessages } from "../../../messages/home"
 import image from "../../../assets/images/4.png"
-import classes from './home.module.scss'
 import { DarKModeContext } from '../../layout/layout'
+import { useInView } from 'react-intersection-observer'
+import classes from './home.module.scss'
 
 export const Home = () => {
   const {isDarkMode} = useContext(DarKModeContext)

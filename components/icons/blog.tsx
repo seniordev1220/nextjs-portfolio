@@ -1,8 +1,8 @@
 import classes from "./icon.module.scss"
-export const Blog = ({height="56px"}) => (
+export const Blog = ({ height = "2.5rem", width="2.5rem" }) => (
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" 
 className={classes.shadow}
-x="0px" y="0px" width="512px" height={height} viewBox="0 0 512 512" 
+x="0px" y="0px" width={width} height={height} viewBox="0 0 512 512" 
 enableBackground="new 0 0 512 512" >  <image id="image0" width="512" height="512" x="0" y="0"
     href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAMAAADDpiTIAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
 AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAC/VBMVEVHcEwfJRM3PyFKWC1Z

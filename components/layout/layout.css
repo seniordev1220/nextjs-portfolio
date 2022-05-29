@@ -1,9 +1,22 @@
 body {
     background-color: #111;
     color: rgb(231, 246, 255);
+
+}::-webkit-scrollbar {
+    display: none;
+}
+
+body{
+    
+}::-webkit-scrollbar-thumb {
+    display: none;
 }
 
 body.light-mode {
     background-color: rgb(249, 253, 255);
     color: #111;
+}
+
+html {
+    scroll-behavior: smooth;
 }
