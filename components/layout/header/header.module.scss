@@ -50,6 +50,16 @@ $nav-items: "home" 5,
 }
 
 .toggle {
+  &__desktop {
+    position: fixed;
+    top: 0.5rem;
+    right: 0.5rem;
+
+    @media screen and (min-width:"767px") {
+      display: none;
+    }
+  }
+
   --size: 2rem;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -65,7 +75,7 @@ $nav-items: "home" 5,
   height: var(--size);
   box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
   border-radius: 999px;
-  color: hsl(240, 88%, 90%);
+  color: hsl(246, 100%, 78%);
 
   transition: all 500ms;
 
@@ -90,100 +100,13 @@ $nav-items: "home" 5,
   }
 }
 
-.navMenu--desktop {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  animation: 1s fadeInRight ease;
-  position: relative;
-
-  &__items {
-    width: $nav-item-width;
-    background-color: #94fdfd00;
-    border: solid 1px rgba(139, 139, 139, 0.158);
-    box-shadow: 0 0 1rem rgba(141, 141, 141, 0.096);
-    border-radius: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 1.5rem;
-    margin-right: 1rem;
-    cursor: pointer;
-
-    a {
-      width: 100%;
-      text-align: center;
-    }
-
-    p {
-      width: 100%;
-      text-align: center;
-    }
-  }
-
-  &__active__item {
-    @mixin backgroundEffect {
-      box-shadow: 0 0 1rem#2753d7;
-      // background-color: #74dacc;
-      border-radius: 1rem;
-      position: absolute;
-      width: 6rem;
-      height: 1.5rem;
-      z-index: 10;
-      transition: all 0.5s ease;
-    }
-
-    @each $name,
-    $right-offset in $nav-items {
-      &--#{$name} {
-        @include backgroundEffect;
-        right: $right-offset*7+1rem;
-      }
-    }
-
-
-  }
-
-  &__container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-}
-
-.nightMode__container {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-right: 1rem;
-}
 
 .logo__container {
   padding: 0.5rem;
 }
 
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
 
-  to {
-    opacity: 1;
-  }
-}
-
-@media (min-width: 768px) {
-  .logo {
-    font-size: 2.5rem;
-  }
-
-  .navigation a {
-    font-size: 1.5rem;
-  }
-}
-
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 767px) {
   .ham {
     &__wrapper {
       display: block;
@@ -199,25 +122,15 @@ $nav-items: "home" 5,
   .navigation {
     display: none;
   }
-}
 
-.commonNavMenuContainer {
-  &--hide {
-    position: fixed;
-    top: 0;
-    transform: translateY(-100px);
-    transition-duration: 0.5s;
-    transition-timing-function: ease;
-    opacity: 0;
-  }
-
-  &--show {
-    top: 0;
-    position: fixed;
-    z-index: 15;
-    transform: translateY(0px);
-    transition-duration: 0.5s;
-    transition-timing-function: ease;
-    opacity: 1;
+  .desktop__menu {
+    display: none !important;
   }
 }
+@media (min-width: 768px) {
+  .logo {
+    font-size: 2.5rem;
+  }
+
+}
+

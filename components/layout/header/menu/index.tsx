@@ -1,40 +1,86 @@
 import { useState, useEffect } from "react";
 import useComponentVisible from "../../../../hooks/useComponentVisible";
-import { Award } from "../../../icons/award";
-import { Email } from "../../../icons/email";
-import { Home } from "../../../icons/home ";
-import { Menu } from "../../../icons/menu";
-import { Phone } from "../../../icons/phone";
-import { Blog } from "../../../icons/blog";
-import { Education } from "../../../icons/education";
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
+import HomeIcon from '@mui/icons-material/Home';
+import RssFeedIcon from '@mui/icons-material/RssFeed';
+import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
+import PersonIcon from '@mui/icons-material/Person';
+import PsychologyIcon from '@mui/icons-material/Psychology';
+import MenuIcon from '@mui/icons-material/Menu';
 import classes from "./menu.module.scss";
+import { useDarkMode } from "../../../../hooks/useDarkMode";
 
 const rotorSize = 81;
 const xOffset = 28;
 const yOffset = 20;
 const rotateOffset = 180;
-const iconHeight = "16rem"
-const icons = [
-    { icon: "award", IconComponent: <Award height={iconHeight} /> },
-    { icon: "email", IconComponent: <Email height={iconHeight} /> },
-    { icon: "home", IconComponent: <Home height={iconHeight} /> },
-    { icon: "phone", IconComponent: <Phone height={iconHeight} /> },
-    { icon: "education", IconComponent: <Education height={iconHeight} /> },
-    { icon: "blog", IconComponent: <Blog height={iconHeight} /> },
-]
-const newI = icons.map((item, index) => {
-    const angle = index * (360 / icons.length)
-    const radianVal = angle * Math.PI / 180
-    return {
-        icon: item.icon,
-        IconComponent: item.IconComponent,
-        xCordinate: rotorSize + rotorSize * Math.cos(radianVal),
-        yCordinate: rotorSize + rotorSize * Math.sin(radianVal),
-
-    }
-})
 
 export const RotaryMenu = () => {
+    const {isDarkMode}= useDarkMode()
+    const iconStyle = {
+        color: "#2753d7",
+        fontSize: "3rem",
+        backgroundColor:isDarkMode?"#fff":"rgba(8, 8, 8, 1)",
+        padding:"0.5rem",
+        borderRadius:"50%",
+        boxShadow:isDarkMode?"0 0 0.3rem rgba(8, 8, 8, 1)":"0 0 0.3rem #fff"
+    }
+   
+    const icons = [
+        {
+            name: "Home",
+            href: "/",
+            IconComponent: <HomeIcon sx={iconStyle} />
+    
+        },
+        {
+            name: "Portfolio",
+            href: "/projects",
+            IconComponent: <BusinessCenterIcon sx={iconStyle} />
+    
+        },
+        {
+            name: "Skills",
+            href: "/skills",
+            IconComponent: <PsychologyIcon sx={iconStyle} />
+    
+        },
+        {
+            name: "My Blogs",
+            href: "/blogs",
+            IconComponent: <RssFeedIcon sx={iconStyle} />
+    
+        },
+        {
+            name: "About",
+            href: "/about",
+            IconComponent: <PersonIcon sx={iconStyle} />
+    
+    
+        },
+        {
+            name: "Contact",
+            href: "/contact",
+            IconComponent: <ContactPhoneIcon sx={iconStyle} />
+    
+        }
+    ]
+    const newI = icons.map((item, index) => {
+        const angle = index * (360 / icons.length)
+        const radianVal = angle * Math.PI / 180
+        return {
+            icon: item.IconComponent,
+            IconComponent: item.IconComponent,
+            xCordinate: rotorSize + rotorSize * Math.cos(radianVal),
+            yCordinate: rotorSize + rotorSize * Math.sin(radianVal),
+    
+        }
+    })
+    
+
+
+
+
     const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible(false);
     const [rotatebyAngle, setRotateByAngle] = useState(0);
 
@@ -70,12 +116,12 @@ export const RotaryMenu = () => {
                         setRotateByAngle(rotatebyAngle + rotateOffset);
 
                     }} >
-                        <Menu height="2.5rem" />
+                        <MenuIcon sx={iconStyle} />
                     </div>
                     {isComponentVisible && <div className={classes['rotaryMenu__icons__wrapper']}>
                         {newI.map(item =>
                             <div
-                               key={item.icon}
+                                key={`rotaryIcon-${item.xCordinate}`}
                                 className={classes['rotaryMenu__icons']}
                                 style={{
                                     position: "absolute",

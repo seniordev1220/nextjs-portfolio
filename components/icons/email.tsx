@@ -1,8 +1,8 @@
 import classes from "./icon.module.scss"
-export const Email = ({height="56px"}) => {
+export const Email = ({ height = "2.5rem", width="2.5rem" }) => {
     return (<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
     className={classes.shadow}
-        x="0px" y="0px" width="673px" height={height} viewBox="0 0 673 672" enableBackground="new 0 0 673 672"
+        x="0px" y="0px" width={width} height={height} viewBox="0 0 673 672" enableBackground="new 0 0 673 672"
     >  <image id="image0" width="673" height="672" x="0" y="0"
     
     href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAqEAAAKgCAMAAACcIFTJAAAABGdBTUEAALGPC/xhBQAAACBjSFJN

@@ -5,16 +5,20 @@
         justify-content: flex-start;
         align-items: center;
     }
+
     &__content {
         margin-left: 2rem;
         max-width: 90%;
         width: 1024px;
         font-family: "Montserrat Medium";
+        font-style: italic;
+        font-weight: 900;
         max-width: 40ch;
-        font-size: 5rem;
+        font-size: 3rem;
         text-align: center;
         transform: scale(1);
-        animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+        animation: scale forwards cubic-bezier(0.5, 1, 0.89, 1);
+        animation-delay: 0.5s;
     }
 }
 
@@ -29,10 +33,11 @@
     opacity: 0;
     filter: blur(4px);
 }
-@for $i from 1 through 16 {
+
+@for $i from 1 through 20 {
     .quote__each:nth-child(#{$i}) {
-        animation: fade-in 1s $i*0.04s forwards cubic-bezier(0.11, 0, 0.5, 0);
-        margin-right: 0.5rem;
+        animation: fade-in 1s $i*0.07s forwards cubic-bezier(0.11, 0, 0.5, 0);
+        margin-right: 0.7rem;
     }
 }
 
@@ -43,8 +48,16 @@
     }
 }
 
+@media screen and (max-width:1024px) {
+    .quote__content {
+        font-size: 2rem;
+    }
+}
+
 @media only screen and (max-width:480px) {
     .quote__content {
         margin-top: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 }
