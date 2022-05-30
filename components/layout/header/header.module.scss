@@ -50,6 +50,16 @@ $nav-items: "home" 5,
 }
 
 .toggle {
+  &__desktop {
+    position: fixed;
+    top: 0.5rem;
+    right: 0.5rem;
+
+    @media screen and (min-width:"767px") {
+      display: none;
+    }
+  }
+
   --size: 2rem;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -65,7 +75,7 @@ $nav-items: "home" 5,
   height: var(--size);
   box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
   border-radius: 999px;
-  color: hsl(240, 88%, 90%);
+  color: hsl(246, 100%, 78%);
 
   transition: all 500ms;
 
@@ -120,8 +130,8 @@ $nav-items: "home" 5,
   .navigation {
     display: none;
   }
-  .desktop__menu{
+
+  .desktop__menu {
     display: none;
   }
 }
-

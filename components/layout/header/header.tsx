@@ -1,69 +1,94 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect, useContext, useCallback, useMemo } from 'react'
 import { useRouter } from 'next/router';
-import { Box, Grid, Tab, Tabs } from '@mui/material'
-import Link from 'next/link'
-import { joinClass } from '../../../helpers/utils';
+import { Box, Tab, Tabs, Tooltip as MuiToolTip, TooltipProps, tooltipClasses, Zoom } from '@mui/material'
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
+import HomeIcon from '@mui/icons-material/Home';
+import RssFeedIcon from '@mui/icons-material/RssFeed';
+import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
+import PersonIcon from '@mui/icons-material/Person';
+import PsychologyIcon from '@mui/icons-material/Psychology';
+import { styled } from '@mui/material/styles';
 import { Logo } from '../../Logo'
 import { RotaryMenu } from './menu';
 import { HeaderProps } from './headerPropsType'
-import classes from './header.module.scss'
 import { DarKModeContext } from '../layout';
+import classes from './header.module.scss'
+import { joinClass } from '../../../helpers/utils';
 
-
-
-import { Award } from "../../icons/award";
-import { Email } from "../../icons/email";
-import { Home } from "../../icons/home ";
-import { Menu } from "../../icons/menu";
-import { Phone } from "../../icons/phone";
-import { Blog } from "../../icons/blog";
-import { Education } from "../../icons/education";
-
-const iconSize = "2rem"
-
-const routes = [
-    {
-        name: "Home",
-        href: "/",
-        IconComponent: <Home height={iconSize} width={iconSize} />
-
-    },
-    {
-        name: "Projects",
-        href: "/projects",
-        IconComponent: <Award height={iconSize} width={iconSize} />
-
-    },
-    {
-        name: "Skills",
-        href: "/skills",
-        IconComponent: <Education height={iconSize} width={iconSize} />
-
-    },
-    {
-        name: "My Blogs",
-        href: "/blogs",
-        IconComponent: <Blog height={iconSize} width={iconSize} />
-
-    },
-    {
-        name: "About",
-        href: "/about",
-        IconComponent: <Education height={iconSize} width={iconSize} />
-
-    },
-    {
-        name: "Contact",
-        href: "/contact",
-        IconComponent: <Phone height={iconSize} width={iconSize} />
-
-    }
-]
+const iconColor = "#2753d7"
 function Header({ onDarkModeToggle }: HeaderProps) {
     const { isDarkMode } = useContext(DarKModeContext)
+
+    const routes = useMemo(() => {
+        const iconStyle = { color: iconColor, fontSize: "2rem", stroke: isDarkMode ? "rgba(0, 0, 0, 1)" : "rgba(255, 255, 255, 1)" }
+        return ([
+            {
+                name: "Home",
+                href: "/",
+                IconComponent: <HomeIcon sx={iconStyle} />
+
+            },
+            {
+                name: "Portfolio",
+                href: "/projects",
+                IconComponent: <BusinessCenterIcon sx={iconStyle} />
+
+            },
+            {
+                name: "Skills",
+                href: "/skills",
+                IconComponent: <PsychologyIcon sx={iconStyle} />
+
+            },
+            {
+                name: "My Blogs",
+                href: "/blogs",
+                IconComponent: <RssFeedIcon sx={iconStyle} />
+
+            },
+            {
+                name: "About",
+                href: "/about",
+                IconComponent: <PersonIcon sx={iconStyle} />
+
+
+            },
+            {
+                name: "Contact",
+                href: "/contact",
+                IconComponent: <ContactPhoneIcon sx={iconStyle} />
+
+            }
+        ])
+    }
+        , [isDarkMode])
+
+
+
     const router = useRouter();
     const [currentRoute, setCurrentRoute] = useState("home");
+    const Tooltip = styled(({ className, ...props }: TooltipProps) => (
+        <MuiToolTip {...props} classes={{ popper: className }} />
+    ))(({ theme }) => ({
+        [`& .${tooltipClasses.tooltip}`]: {
+            backgroundColor: "#2753d7af",
+            color: 'white',
+            boxShadow: "0rem 0 1rem #00000049",
+            width: "6rem",
+            height: "2.2rem",
+            borderTopLeftRadius: "1.5rem",
+            borderBottomLeftRadius: "1.5rem",
+            fontWeight: "800",
+            fontSize: "0.8rem",
+            display: "flex",
+            alignItems: "center",
+            paddingLeft: "1rem",
+            marginRight: "-3rem",
+            position: "relative",
+            right: "-1rem"
 
+        },
+    }));
 
     useEffect(() => {
         if (router.pathname === "/") {
@@ -75,12 +100,18 @@ function Header({ onDarkModeToggle }: HeaderProps) {
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-      setValue(newValue);
+        setValue(newValue);
     };
     return (<>
         <header >
-            <Box sx={{ position: "fixed", top: 0, left: 0, }}>
+            <Box sx={{ position: "fixed", top: "0.5rem", left: "0.5rem", }}>
                 <Logo />
+            </Box>
+            <Box className={classes.toggle__desktop}>
+                <input checked={isDarkMode} 
+                className={classes.toggle} 
+                type="checkbox" 
+                onChange={onDarkModeToggle} />
             </Box>
             <div className={classes.ham__wrapper}  >
                 <RotaryMenu />
@@ -93,7 +124,7 @@ function Header({ onDarkModeToggle }: HeaderProps) {
                 alignItems: "center",
                 justifyContent: "center",
                 height: "100vh"
-            }}  className={classes.desktop__menu}>
+            }} className={classes.desktop__menu}>
                 <Box sx={{
                     display: "flex",
                     flexDirection: "column",
@@ -116,7 +147,9 @@ function Header({ onDarkModeToggle }: HeaderProps) {
                                 value={value}
                                 onChange={handleChange}>
                                 {routes.map((route) => (
-                                    <Tab key={`tab-${route.name}`} sx={{ minWidth: "1rem" }} label={route.IconComponent} />
+                                    <Tooltip key={`tab-${route.name}`}  title={route.name} placement="left" TransitionComponent={Zoom}>
+                                        <Tab sx={{ minWidth: "1rem" }} label={route.IconComponent} />
+                                    </Tooltip>
                                 ))}
                             </Tabs>
                         </nav>

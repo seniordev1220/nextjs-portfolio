@@ -25,9 +25,6 @@ export const Home = () => {
           </div>
         </div> 
 
-
-
-
         <div className={classes.intro__horizontalSeparation} />
         <p className={classes.intro__description}>{
           `I specialize on building complex web applications that runs across platforms & devices.
