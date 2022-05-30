@@ -20,10 +20,10 @@ export const RotaryMenu = () => {
     const iconStyle = {
         color: "#2753d7",
         fontSize: "3rem",
-        backgroundColor:isDarkMode?"#fff":"rgba(8, 8, 8, 1)",
+        backgroundColor:isDarkMode?"rgba(8, 8, 8, 1)":"#fff",
         padding:"0.5rem",
         borderRadius:"50%",
-        boxShadow:isDarkMode?"0 0 0.3rem rgba(8, 8, 8, 1)":"0 0 0.3rem #fff"
+        boxShadow:isDarkMode?"0 0 0.3rem #fff":"0 0 0.3rem rgba(8, 8, 8, 1)"
     }
    
     const icons = [
