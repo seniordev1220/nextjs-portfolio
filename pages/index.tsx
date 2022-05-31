@@ -23,6 +23,7 @@ const Main = () => {
           </section>
           <section className={classes['section--projects']}>
             <Projects />
+            <div className={classes['section--projects__clippath']} />
           </section>
           <section className={classes['section--footer']}>
             <span>

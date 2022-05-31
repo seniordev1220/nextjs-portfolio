@@ -40,8 +40,21 @@
         }
     }
     &--projects{
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
         @include sectionCommon();
+        &__clippath {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 480px;
+            height: 100vh;
+            background-color: #2753d7;
+            clip-path: polygon(0 0, 0 100%, 100% 0);
+        }
     }
     &--footer{
         padding-bottom: 1rem;
@@ -55,6 +68,9 @@
     }
 
     .section--quotes__clippath {
+        display: none;
+    }
+    .section--projects__clippath {
         display: none;
     }
     .section--footer{

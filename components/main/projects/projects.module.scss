@@ -2,14 +2,26 @@
     &__container {
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: 85%;
+        height: 90vh;
+        background-color: #ffffff04;
+        box-shadow: 0 0 0.5rem #00000049;
+        @media screen and (max-width:"767px") {
+            background-color: #ffffff00;
+            box-shadow: none;
+            height: 80vh;
+        }
+        overflow: scroll;
     }
 
     &__header {
-        font-size: 6rem;
+        font-size: 4rem;
+        @media screen and (max-width:"767px") {
+            font-size: 2.5rem;
+        }
         opacity: 0.8;
         text-align: Left;
-        margin-left: 2rem;
+        margin: 1rem;
     }
 
     &__content__wrapper {
@@ -18,39 +30,32 @@
         width: 100%;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
     }
-    &__button__container{
-        width:100%;
+
+    &__button__container {
+        width: 100%;
         display: flex;
         justify-content: center;
     }
 }
 
-@media screen and (max-width:"1024px") {
-    .projects__header {
-        font-size: 3.5rem;
-    }
-
-    .projects__content__wrapper {
-        margin-top: 5rem;
-    }
-}
 
 .projects__header {
-    color: #fff;
+    color: #2753d7;
     font-weight: 900;
     position: absolute;
     text-shadow: 0 0 0.2rem #2753d7;
-    opacity: 0.4;
+    opacity: 0.6;
 }
 
 .projects__header:nth-child(1) {
     color: transparent;
-    -webkit-text-stroke: 4px #1139b1;
+    -webkit-text-stroke: 4px #2753d7;
 }
 
 .projects__header:nth-child(2) {
-    color: #08779c;
+    color: #2753d7;
     animation: animateText 3s ease-in-out infinite;
 }
 
@@ -91,28 +96,56 @@
 .project {
     @for $i from 1 through 9 {
         &--show:nth-child(#{$i}) {
-            animation: moveContent ease $i*0.9s;
+            opacity: 0;
+            animation: moveContent ease $i*0.4s forwards;
+            animation-delay: 0.2s;
         }
 
-        &--hide {
-            opacity: 0;
+        &--hide:nth-child(#{$i}) {
+            opacity: 1;
+            animation: fadeOut ease $i*0.1s forwards;
+            animation-delay: 0.2s;
         }
+    }
+}
+.button{
+    &--show{
+        opacity: 0;
+        
+        animation: moveButtonUp ease 1s forwards;
+    }
+    &--hide{
+        opacity: 1;
+        transform:translateY(300px);
+        animation: moveButtonDown ease 1s forwards;
     }
 }
 
 .header {
     &--show {
-        animation: moveHeader ease 1.5s;
+        animation: moveHeader ease 0.4s forwards;
     }
 
     &--hide {
-        opacity: 0;
+        // opacity: 0;
+        animation: fadeOutText ease 1s forwards;
     }
 }
+@keyframes moveButtonUp {
+    from {
+        transform: translateY(300px);
+        opacity: 0.5;
+    }
 
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    
+}
 @keyframes moveHeader {
     from {
-        transform: translateX(-300px);
+        transform: translateY(-300px);
         opacity: 0.5;
     }
 
@@ -121,29 +154,37 @@
     }
 
 }
+@keyframes fadeOut {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
 
+    to {
+        opacity: 0;
+        transform: scale(0)  translateX(400px);
+    }
+}
+@keyframes fadeOutText {
+    from {
+        transform:  translateY(0);
+        // opacity: 1;
+    }
+
+    to {
+        // opacity: 0;
+        transform:  translateY(-200px);
+    }
+}
 @keyframes moveContent {
     from {
-        transform: translateX(-400px);
+        transform: scale(0) translateX(400px);
         opacity: 0;
     }
 
     to {
         opacity: 1;
+        transform: scale(1);
     }
 
-}
-
-@media screen and (max-width:768px) {
-    .project {
-        @for $i from 1 through 9 {
-            &--show:nth-child(#{$i}) {
-                animation: none;
-            }
-
-            &--hide {
-                opacity: 0;
-            }
-        }
-    }
 }
