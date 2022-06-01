@@ -4,17 +4,17 @@ import React from 'react'
 import { useInView } from 'react-intersection-observer';
 import { joinClass } from '../../../helpers/utils';
 import { useDarkMode } from '../../../hooks/useDarkMode';
-import { projects } from '../../../mock/projects';
-import { Project } from './projectItem';
-import classes from "./projects.module.scss"
+import { blogs } from '../../../mock/blogs';
+import { Blog } from './blogItem';
+import classes from "./blogs.module.scss"
 
-export const Projects = () => {
+export const Blogs = () => {
     const { ref, inView } = useInView({
         threshold: 1
     });
     const { isDarkMode } = useDarkMode()
     return (
-        <div ref={ref} className={joinClass(classes.projects__container)}>
+        <div ref={ref} className={joinClass(classes.blogs__container)}>
             <Box className={joinClass(classes.shortDescription, inView ? classes['header--show'] : classes['header--hide'])} sx={{
                 display: "flex",
                 justifyContent: "center",
@@ -23,7 +23,7 @@ export const Projects = () => {
                 fontWeight: "800"
 
             }}>
-                <p>Showcasing Some Of My Best Work</p>
+                <p>Check Out My Latest Blog Posts</p>
             </Box>
             <Box sx={{ display: "flex", width: "100%", flexDirection: "column", justiftContent: "center" }}>
                 <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }} className={joinClass(classes['HeadingText'],
@@ -31,21 +31,22 @@ export const Projects = () => {
                 )
                 }
                 >
-                    <p className={classes.projects__header}>My Portfolio</p>
-                    <p className={classes.projects__header}>My Portfolio</p>
+                    <p className={classes.blogs__header}>My Blogs</p>
+                    <p className={classes.blogs__header}>My Blogs</p>
                 </Box>
 
             </Box>
-            <Box className={classes.projects__content__wrapper}>
-                {projects.map((project) => (
-                    <Box key={`title:${project.title}`} className={inView ?
-                        classes['project--show'] : classes['project--hide']}
+            <Box className={classes.blogs__content__wrapper}>
+                {blogs.map((blog) => (
+                    <Box key={`title:${blog.title}`} className={inView ?
+                        classes['blog--show'] : classes['blog--hide']}
                     >
                         <Box sx={{ display: 'flex', justifyContent: 'center', width: "100%" }}>
-                            <Project
-                                {...project}
+                            <Blog
+                                {...blog}
                             />
                         </Box>
+
                     </Box>
                 ))
                 }
@@ -66,6 +67,7 @@ export const Projects = () => {
                     </Button>
                 </Box>
             </Box>
+
         </div>
     )
 }
