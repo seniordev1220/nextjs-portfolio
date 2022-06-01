@@ -6,6 +6,7 @@ import { Projects } from '../components/main/projects'
 import { Quotes } from '../components/main/quotes'
 import { useInView } from "react-intersection-observer";
 import classes from "./index.module.scss"
+import { Blogs } from '../components/main/blogs'
 
 const Main = () => {
 
@@ -24,6 +25,10 @@ const Main = () => {
           <section className={classes['section--projects']}>
             <Projects />
             <div className={classes['section--projects__clippath']} />
+          </section>
+          <section className={classes['section--projects']}>
+            <Blogs />
+            <div className={classes['section--quotes__clippath']} />
           </section>
           <section className={classes['section--footer']}>
             <span>

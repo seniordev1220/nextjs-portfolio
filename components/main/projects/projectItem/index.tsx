@@ -2,6 +2,7 @@ import classes from "./projectItem.module.scss"
 import { ProjectItemProps } from "./projectItem.type"
 
 export const Project = ({ image, title, description }: ProjectItemProps) => {
+   
     return (
         <div className={classes.card}>
             <img className={classes.cardImage} src={image} />

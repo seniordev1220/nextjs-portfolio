@@ -1,4 +1,4 @@
-.projects {
+.blogs {
     &__container {
         display: flex;
         flex-direction: column;
@@ -6,15 +6,14 @@
         height: 90vh;
         background-color: #ffffff04;
         box-shadow: 0 0 0.5rem #00000049;
-
+        padding-bottom: 3rem;
         @media screen and (max-width:"767px") {
             background-color: #ffffff00;
             box-shadow: none;
             height: 80vh;
         }
-
+        overflow-x:"hidden";
         overflow-y: scroll;
-        padding-bottom: 3rem;
 
         &::-webkit-scrollbar-track {
             display: block;
@@ -57,15 +56,9 @@
         justify-content: flex-start;
         flex-wrap: wrap;
     }
-
-    &__button__container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
 }
 
-.projects__header {
+.blogs__header {
     color: #2753d7;
     font-weight: 900;
     position: absolute;
@@ -73,12 +66,12 @@
     opacity: 0.6;
 }
 
-.projects__header:nth-child(1) {
+.blogs__header:nth-child(1) {
     color: transparent;
-    -webkit-text-stroke: 3px #ffffff;
+    -webkit-text-stroke: 2px #ffffff;
 }
 
-.projects__header:nth-child(2) {
+.blogs__header:nth-child(2) {
     color: #2753d7;
     animation: animateText 3s ease-in-out infinite;
 }
@@ -117,7 +110,7 @@
     min-height: 8rem;
 }
 
-.project {
+.blog {
     @for $i from 1 through 9 {
         &--show:nth-child(#{$i}) {
             opacity: 0;
@@ -142,7 +135,7 @@
 
     &--hide {
         opacity: 1;
-        transform: translateY(300px);
+        transform: translateY(500px);
         animation: moveButtonDown ease 1s forwards;
     }
 }

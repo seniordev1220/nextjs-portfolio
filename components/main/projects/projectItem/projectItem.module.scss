@@ -1,9 +1,8 @@
 
 .card {
-  
     width: 330px;
     margin:1rem;
-    max-width: 300px;
+    max-width: 280px;
     aspect-ratio: 9/12;
     display: flex;
     flex-direction: column;
@@ -11,7 +10,6 @@
     box-shadow: rgba(50, 50, 80, 0.5) 0px 4vw 8vw -2vw, rgba(0, 0, 0, 0.8) 0px 4vw 5vw -3vw;
     border-radius: 7px;
     overflow: hidden;
-    
   }
   
   .card > * {
@@ -46,6 +44,9 @@
     inset: 20px;
     top: auto;
     overflow: hidden;
+    transform: translateX(100px) scale(0.8);
+    color:rgba(0, 0, 0, 0);
+    
   }
   
   .card__heading {
@@ -87,14 +88,24 @@
   .card:hover::after {
     transform: scaleX(1);
   }
-  
+  .card:hover{
+    transform: scale(1.05);
+    transition:  0.5s ease;
+  }
   .card:hover .card__heading .char,
   .card:hover .card__description .word {
-    transform: translateY(0);
+    .text{
+      color:black;
+    }
+    transform: translateX(0);
     opacity: 1;
     color: rgba(255,255,255,0.9);
   }
-  
+  .card:hover .text{
+    transform: translate(0px) scale(1);
+    transition-duration: 0.5s;;
+    color:white;
+  }
   .card:hover .card__heading .char {
     transition-delay: calc(0.1s + var(--char-index) * 0.04s);
   }
