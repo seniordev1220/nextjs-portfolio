@@ -32,7 +32,9 @@ export const Logo = () => {
                 id="layer1"
                 transform="translate(-56.178715,-103.55999)">
                 <ellipse
-                    style={{ fill: '#00000000' , filter: 'drop-shadow(0px 0px 2px rgb(0 0 0 / 1))'}}
+                    style={{
+                         fill: '#00000000' 
+                         , filter: 'drop-shadow(0px 0px 2px rgb(0 0 0 / 1))'}}
                     id="path215"
                     cx="108.68319"
                     cy="155.30173"
@@ -40,7 +42,7 @@ export const Logo = () => {
                     ry="51.741734" />
                 <g
                     transform="matrix(0.03527778,0,0,-0.03527778,38.806957,193.1374)"
-                    fill="#000000"
+                    // fill="#000000"
                     stroke="none"
                     id="g179">
                     <path
@@ -55,7 +57,7 @@ export const Logo = () => {
                     <path style={{
                         stroke: '#C0C0C0',
                         strokeWidth: "70",
-                        fill: '#fff',
+                        fill: 'url(#linear)',
                         filter: 'drop-shadow(0px 0px 2px rgb(0 0 0 / 1))'
                     }}
                         d="m 1860,1526 v -293 l 155,-317 c 86,-174 158,-316 160,-316 3,0 5,275 5,610 v 610 h -160 -160 z"
@@ -63,7 +65,7 @@ export const Logo = () => {
                     <path style={{
                         stroke: '#C0C0C0',
                         strokeWidth: "70",
-                        fill: '#fff',
+                        fill: 'url(#linear)',
                         filter: 'drop-shadow(0px 0px 2px rgb(0 0 0 / 1))'
                     }}
                         d="m 2577,1763 c 62,-61 126,-170 138,-235 4,-21 10,-38 13,-38 3,0 63,55 132,123 69,68 148,142 175,165 l 50,42 h -284 -283 z"
@@ -79,7 +81,7 @@ export const Logo = () => {
                     <path style={{
                         stroke: '#C0C0C0',
                         strokeWidth: "70",
-                        fill: '#fff',
+                        fill: 'url(#linear)',
                         filter: 'drop-shadow(0px 0px 2px rgb(0 0 0 / 1))'
                     }}
                         d="M 910,697 C 874,642 812,562 771,519 l -73,-79 298,1 c 280,0 297,1 274,16 -51,34 -178,171 -230,248 -29,44 -55,83 -59,86 -3,3 -35,-39 -71,-94 z"
