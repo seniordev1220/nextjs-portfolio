@@ -88,8 +88,7 @@ export const Contact = () => {
                                 alignItems: "center",
 
                             }}
-                                className={
-                                    inView ? classes['button--show'] : classes['button--hide']}>
+                            >
                                 <Button sx={{ width: "200px", backgroundColor: "#2753d7" }} variant='contained'>
                                     Send message
                                 </Button>
