@@ -15,7 +15,7 @@ body{
 
 body.light-mode {
     background-color: rgb(245, 245, 245);
-    background-image: linear-gradient(to right, #cdecff00,#cdecff15,#e7f6ff,#e7f6ff ,#a1cdff );
+    background-image: linear-gradient(to right, #e7f6ff,#c3dfff,#b6d8ff,#a1cdff ,#a1cdff );
     color: #111;
 }
 
