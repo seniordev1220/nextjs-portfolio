@@ -12,15 +12,15 @@ import { Logo } from '../../Logo'
 import { RotaryMenu } from './menu';
 import { HeaderProps } from './headerPropsType'
 import { DarKModeContext } from '../layout';
+import { TabContext } from '../../../pages';
 import classes from './header.module.scss'
-import { joinClass } from '../../../helpers/utils';
 
 const iconColor = "#2753d7"
 function Header({ onDarkModeToggle }: HeaderProps) {
     const { isDarkMode } = useContext(DarKModeContext)
-
+    const { tabValue, handleTabChange } = useContext(TabContext)
     const routes = useMemo(() => {
-        const iconStyle = { color: iconColor, fontSize: "2rem", stroke: isDarkMode ? "rgba(0, 0, 0, 1)" : "rgba(255, 255, 255, 1)" }
+        const iconStyle = { color: iconColor, fontSize: "2rem", stroke: isDarkMode ? "rgba(0, 0, 0, 1)" : "rgba(255, 255, 255, 1)", }
         return ([
             {
                 name: "Home",
@@ -35,15 +35,15 @@ function Header({ onDarkModeToggle }: HeaderProps) {
 
             },
             {
-                name: "Skills",
-                href: "/skills",
-                IconComponent: <PsychologyIcon sx={iconStyle} />
-
-            },
-            {
                 name: "My Blogs",
                 href: "/blogs",
                 IconComponent: <RssFeedIcon sx={iconStyle} />
+
+            },
+            {
+                name: "Skills",
+                href: "/skills",
+                IconComponent: <PsychologyIcon sx={iconStyle} />
 
             },
             {
@@ -60,13 +60,10 @@ function Header({ onDarkModeToggle }: HeaderProps) {
 
             }
         ])
-    }
-        , [isDarkMode])
-
-
+    }, [isDarkMode])
 
     const router = useRouter();
-    const [currentRoute, setCurrentRoute] = useState("home");
+
     const Tooltip = styled(({ className, ...props }: TooltipProps) => (
         <MuiToolTip {...props} classes={{ popper: className }} />
     ))(({ theme }) => ({
@@ -90,28 +87,17 @@ function Header({ onDarkModeToggle }: HeaderProps) {
         },
     }));
 
-    useEffect(() => {
-        if (router.pathname === "/") {
-            setCurrentRoute("home")
-        } else {
-            setCurrentRoute(router.pathname.split('/')[1])
-        }
-    }, [router.pathname])
-    const [value, setValue] = React.useState(0);
 
-    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-        setValue(newValue);
-    };
     return (<>
         <header >
             <Box sx={{ position: "fixed", top: "0.5rem", left: "0.5rem", }}>
                 <Logo />
             </Box>
             <Box className={classes.toggle__desktop}>
-                <input checked={isDarkMode} 
-                className={classes.toggle} 
-                type="checkbox" 
-                onChange={onDarkModeToggle} />
+                <input checked={isDarkMode}
+                    className={classes.toggle}
+                    type="checkbox"
+                    onChange={onDarkModeToggle} />
             </Box>
             <div className={classes.ham__wrapper}  >
                 <RotaryMenu />
@@ -144,11 +130,15 @@ function Header({ onDarkModeToggle }: HeaderProps) {
                     <Box>
                         <nav>
                             <Tabs orientation='vertical'
-                                value={value}
-                                onChange={handleChange}>
+                                value={tabValue}
+                                onChange={handleTabChange}
+                                TabIndicatorProps={{ style: { border: `solid 0.1px ${isDarkMode ? "black" : "white"}`, width: "4px" } }}
+                            >
                                 {routes.map((route) => (
-                                    <Tooltip key={`tab-${route.name}`}  title={route.name} placement="left" TransitionComponent={Zoom}>
-                                        <Tab sx={{ minWidth: "1rem" }} label={route.IconComponent} />
+                                    <Tooltip
+                                        key={`tab-${route.name}`} title={route.name} placement="left" TransitionComponent={Zoom}>
+                                        <Tab
+                                            sx={{ minWidth: "1rem" }} label={route.IconComponent} />
                                     </Tooltip>
                                 ))}
                             </Tabs>

@@ -2,18 +2,21 @@
     height: 101vh;
     scroll-snap-align: start;
 }
+
 .section {
-    &__container{
+    &__container {
         scroll-snap-type: y mandatory;
         overflow-y: scroll;
         height: 100vh;
     }
+
     &--header {
-        height: 101vh;
         position: relative;
         display: flex;
         align-items: center;
-        @include sectionCommon();
+        height: 100vh;
+        scroll-snap-align: start;
+
         &__clippath {
             position: absolute;
             top: 0;
@@ -28,6 +31,7 @@
     &--quotes {
         position: relative;
         @include sectionCommon();
+
         &__clippath {
             position: absolute;
             top: 0;
@@ -39,12 +43,14 @@
             clip-path: polygon(100% 0, 100% 100%, 0 250%);
         }
     }
-    &--projects{
+
+    &--projects {
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
         @include sectionCommon();
+
         &__clippath {
             position: absolute;
             top: 0;
@@ -56,9 +62,10 @@
             clip-path: polygon(0 0, 0 100%, 100% 0);
         }
     }
-    &--footer{
+
+    &--footer {
         padding-bottom: 3rem;
-        
+
     }
 }
 
@@ -70,10 +77,12 @@
     .section--quotes__clippath {
         display: none;
     }
+
     .section--projects__clippath {
         display: none;
     }
-    .section--footer{
+
+    .section--footer {
         padding-bottom: 3rem;
     }
 }

@@ -1,17 +1,16 @@
+import React from 'react'
 import { Box, Button } from '@mui/material';
 import Link from 'next/link';
-import React from 'react'
-import { useInView } from 'react-intersection-observer';
 import { joinClass } from '../../../helpers/utils';
 import { useDarkMode } from '../../../hooks/useDarkMode';
 import { blogs } from '../../../mock/blogs';
 import { Blog } from './blogItem';
+import { sectionMapping } from '../sectionMapping';
+import { useSetTab } from '../../../hooks/useSetTab';
 import classes from "./blogs.module.scss"
 
 export const Blogs = () => {
-    const { ref, inView } = useInView({
-        threshold: 1
-    });
+    const { ref, inView } = useSetTab(sectionMapping.blogs);
     const { isDarkMode } = useDarkMode()
     return (
         <div ref={ref} className={joinClass(classes.blogs__container)}>
