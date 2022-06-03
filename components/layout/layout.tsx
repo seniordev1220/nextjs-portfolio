@@ -4,7 +4,7 @@ import Header from './header/header'
 import classes from "./layout.module.scss"
 
 export const DarKModeContext = React.createContext({ isDarkMode: false });
-function Layout({ children }: LayoutPropType) {
+function Layout({ children}: LayoutPropType) {
 
     const [isDarkMode, setIsDarkMode] = useState("true");
     useEffect(() => {
@@ -22,20 +22,21 @@ function Layout({ children }: LayoutPropType) {
         document.body.classList.toggle("light-mode")
     }
 
+
     return (
         <DarKModeContext.Provider value={{ isDarkMode: isDarkMode === "true" ? true : false }} >
             <div>
                 <main className={classes.main}>
                     {children}
                 </main>
-                <Header onDarkModeToggle={onButtonToggle} />
+                <Header onDarkModeToggle={onButtonToggle}/>
             </div>
         </DarKModeContext.Provider>
     )
 }
 
 interface LayoutPropType {
-    children: JSX.Element
+    children: JSX.Element;
 }
 
 export default Layout;

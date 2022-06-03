@@ -1,18 +1,18 @@
 import { Box, Button } from '@mui/material';
 import Link from 'next/link';
 import React from 'react'
-import { useInView } from 'react-intersection-observer';
 import { joinClass } from '../../../helpers/utils';
 import { useDarkMode } from '../../../hooks/useDarkMode';
+import { useSetTab } from '../../../hooks/useSetTab';
 import { projects } from '../../../mock/projects';
+import { sectionMapping } from '../sectionMapping';
 import { Project } from './projectItem';
 import classes from "./projects.module.scss"
 
-export const Projects = () => {
-    const { ref, inView } = useInView({
-        threshold: 1
-    });
-    const { isDarkMode } = useDarkMode()
+export const Portfolio = () => {
+    const { ref, inView } = useSetTab(sectionMapping.portfolio);
+    const { isDarkMode } = useDarkMode();
+
     return (
         <div ref={ref} className={joinClass(classes.projects__container)}>
             <Box className={joinClass(classes.shortDescription, inView ? classes['header--show'] : classes['header--hide'])} sx={{

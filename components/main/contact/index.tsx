@@ -1,20 +1,18 @@
 import React from 'react'
 import { Box, Button, Grid, TextField, Typography } from '@mui/material';
 import Link from 'next/link';
-import { useInView } from 'react-intersection-observer';
 import { joinClass } from '../../../helpers/utils';
 import { useDarkMode } from '../../../hooks/useDarkMode';
 import PersonIcon from '@mui/icons-material/Person';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
+import { sectionMapping } from '../sectionMapping';
+import { useSetTab } from '../../../hooks/useSetTab';
 import classes from "./contact.module.scss"
 
-
 export const Contact = () => {
-    const { ref, inView } = useInView({
-        threshold: 1
-    });
+    const { ref, inView } = useSetTab(sectionMapping.contact);
     const { isDarkMode } = useDarkMode();
     const textFieldStyle = {
         backgroundColor: isDarkMode ? "#rgb(54 54 54 / 87%)" : "#ffffff00",
