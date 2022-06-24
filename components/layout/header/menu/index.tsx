@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import useComponentVisible from "../../../../hooks/useComponentVisible";
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import HomeIcon from '@mui/icons-material/Home';
@@ -9,6 +9,7 @@ import PsychologyIcon from '@mui/icons-material/Psychology';
 import MenuIcon from '@mui/icons-material/Menu';
 import classes from "./menu.module.scss";
 import { useDarkMode } from "../../../../hooks/useDarkMode";
+import { TabContext } from "../../../../pages";
 
 const rotorSize = 81;
 const xOffset = 28;
@@ -16,6 +17,7 @@ const yOffset = 20;
 const rotateOffset = 180;
 
 export const RotaryMenu = () => {
+    const { tabValue, handleTabChange } = useContext(TabContext)
     const {isDarkMode}= useDarkMode()
     const iconStyle = {
         color: "#2753d7",
@@ -29,38 +31,38 @@ export const RotaryMenu = () => {
     const icons = [
         {
             name: "Home",
-            href: "/",
+            tabNumber:0,
             IconComponent: <HomeIcon sx={iconStyle} />
     
         },
         {
             name: "Portfolio",
-            href: "/projects",
+            tabNumber:1,
             IconComponent: <BusinessCenterIcon sx={iconStyle} />
     
         },
         {
-            name: "Skills",
-            href: "/skills",
-            IconComponent: <PsychologyIcon sx={iconStyle} />
-    
-        },
-        {
             name: "My Blogs",
-            href: "/blogs",
+            tabNumber:2,
             IconComponent: <RssFeedIcon sx={iconStyle} />
     
         },
         {
+            name: "Skills",
+            tabNumber:3,
+            IconComponent: <PsychologyIcon sx={iconStyle} />
+    
+        },
+        {
             name: "About",
-            href: "/about",
+            tabNumber:4,
             IconComponent: <PersonIcon sx={iconStyle} />
     
     
         },
         {
             name: "Contact",
-            href: "/contact",
+            tabNumber:5,
             IconComponent: <ContactPhoneIcon sx={iconStyle} />
     
         }

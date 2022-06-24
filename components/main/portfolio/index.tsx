@@ -43,8 +43,7 @@ export const Portfolio = () => {
                     >
                         <Box sx={{ display: 'flex', justifyContent: 'center', width: "100%" }}>
                             <Project
-                                {...project}
-                            />
+                            href={''} {...project}                            />
                         </Box>
                     </Box>
                 ))
