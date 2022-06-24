@@ -37,8 +37,10 @@
 @for $i from 1 through 20 {
     .quote__each:nth-child(#{$i}) {
         animation: fade-in 1s $i*0.07s forwards cubic-bezier(0.11, 0, 0.5, 0);
-        @media screen and (min-width:"767px") {
+        @media screen and (max-width:"767px") {
             animation: none;
+            opacity: 1;
+            filter: blur(0);
         }
         margin-right: 0.7rem;
     }

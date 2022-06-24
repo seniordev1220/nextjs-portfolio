@@ -1,5 +1,6 @@
 import { Box } from '@mui/material';
 import React, { useState, useEffect } from 'react'
+import { ScrollDown } from '../scrolldown';
 import Header from './header/header'
 import classes from "./layout.module.scss"
 
@@ -22,7 +23,6 @@ function Layout({ children}: LayoutPropType) {
         document.body.classList.toggle("light-mode")
     }
 
-
     return (
         <DarKModeContext.Provider value={{ isDarkMode: isDarkMode === "true" ? true : false }} >
             <div>
@@ -30,6 +30,7 @@ function Layout({ children}: LayoutPropType) {
                     {children}
                 </main>
                 <Header onDarkModeToggle={onButtonToggle}/>
+                <ScrollDown/>
             </div>
         </DarKModeContext.Provider>
     )
