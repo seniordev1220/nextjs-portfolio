@@ -1,19 +1,29 @@
-.contact {
+.about {
+    &--show {
+        opacity: 0;
+        animation: moveContent ease 1s forwards;
+        animation-delay: 0.2s;
+    }
+
+    &--hide{
+        opacity: 1;
+        animation: fadeOut ease 1s forwards;
+        animation-delay: 0.2s;
+    }
     &__container {
+        overflow: hidden;
         display: flex;
         flex-direction: column;
         width: 85%;
         height: 90vh;
-        
+        background-color: #ffffff04;
         box-shadow: 0 0 0.5rem #00000049;
         padding-bottom: 3rem;
-
         @media screen and (max-width:"767px") {
             background-color: #ffffff00;
             box-shadow: none;
             height: 80vh;
         }
-
         overflow-x:"hidden";
         overflow-y: scroll;
 
@@ -36,16 +46,15 @@
             -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
             background-color: #5a5a5aa8;
         }
-
         @media screen and (max-width:"767px") {
             &::-webkit-scrollbar-track {
                 display: none;
             }
-
+    
             &::-webkit-scrollbar {
-                display: none;
+                display:none;
             }
-
+    
             &::-webkit-scrollbar-thumb {
                 display: none;
             }
@@ -70,17 +79,14 @@
         width: 100%;
         display: flex;
         justify-content: flex-start;
-
         @media screen and (max-width:"767px") {
             justify-content: center;
         }
-
         flex-wrap: wrap;
     }
-    
 }
 
-.contact__header {
+.about__header {
     color: #2753d7;
     font-weight: 900;
     position: absolute;
@@ -88,12 +94,12 @@
     opacity: 0.6;
 }
 
-.contact__header:nth-child(1) {
+.about__header:nth-child(1) {
     color: transparent;
     -webkit-text-stroke: 2px #ffffff;
 }
 
-.contact__header:nth-child(2) {
+.about__header:nth-child(2) {
     color: #2753d7;
     animation: animateText 3s ease-in-out infinite;
 }
@@ -132,34 +138,6 @@
     min-height: 8rem;
 }
 
-.contact {
-    
-        &--show {
-            opacity: 0;
-            animation: moveContent ease 1s forwards;
-            animation-delay: 0.2s;
-        }
-
-        &--hide{
-            opacity: 1;
-            animation: fadeOut ease 1s forwards;
-            animation-delay: 0.2s;
-        }
-    
-}
-.button {
-    &--show {
-        opacity: 0;
-        animation: moveButtonUp ease 1.5s forwards;
-        animation-delay: 1s;
-    }
-
-    &--hide {
-        opacity: 1;
-        transform: translateY(500px);
-        animation: moveButtonDown ease 1s forwards;
-    }
-}
 
 .header {
     &--show {
@@ -172,18 +150,6 @@
     }
 }
 
-@keyframes moveButtonUp {
-    from {
-        transform: translateY(300px);
-        opacity: 0.5;
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-
-}
 
 @keyframes moveHeader {
     from {
@@ -197,17 +163,7 @@
 
 }
 
-@keyframes fadeOut {
-    from {
-        transform: scale(1);
-        opacity: 1;
-    }
 
-    to {
-        opacity: 0;
-        transform: scale(0) translateX(400px);
-    }
-}
 
 @keyframes fadeOutText {
     from {
@@ -221,15 +177,52 @@
     }
 }
 
+
+@keyframes fadeOut {
+    from {
+        // transform: scale(1);
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform:translateX(-400px);
+    }
+}
+
+
+
 @keyframes moveContent {
     from {
-        transform: scale(0) translate(400px);
+        transform: translate(-400px);
         opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.button {
+    &--show {
+        opacity: 0;
+        animation: moveButtonUp ease 1.5s forwards;
+        animation-delay: 0.5s;
+    }
+
+    &--hide {
+        opacity: 1;
+        transform: scale(1) translateY(500px);
+    }
+}
+@keyframes moveButtonUp {
+    from {
+        transform: translateY(300px);
+        opacity: 0.5;
     }
 
     to {
         opacity: 1;
-        transform: scale(1);
+        transform: translateY(0px);
     }
 
 }

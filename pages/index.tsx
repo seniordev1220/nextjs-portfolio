@@ -6,7 +6,7 @@ import { Quotes } from '../components/main/quotes'
 import { Blogs } from '../components/main/blogs'
 import { Contact } from '../components/main/contact'
 import classes from "./index.module.scss"
-
+import { About } from '../components/main/about'
 export const TabContext = React.createContext({ tabValue: 0, handleTabChange: (event: React.SyntheticEvent, newValue: number) => { } });
 
 const Main = () => {
@@ -16,14 +16,16 @@ const Main = () => {
   const portfolioRef = useRef(null);
   const blogRef = useRef(null);
   const contactRef = useRef(null);
-  const refMap:any = {
+  const aboutRef = useRef(null);
+  const refMap: any = {
     0: homeRef,
     1: portfolioRef,
     2: blogRef,
+    4: aboutRef,
     5: contactRef,
   }
   const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
-    
+
     settabValue(newValue);
     refMap[newValue]?.current?.scrollIntoView();
   };
@@ -50,14 +52,13 @@ const Main = () => {
               <Blogs />
               <div className={classes['section--quotes__clippath']} />
             </section>
+            <section ref={aboutRef} className={classes['section--about']}>
+              <About />
+              <div className={classes['section--about__clippath']} />
+            </section>
             <section ref={contactRef} className={classes['section--projects']}>
               <Contact />
               <div className={classes['section--projects__clippath']} />
-            </section>
-            <section className={classes['section--footer']}>
-              <span>
-                {" "}
-              </span>
             </section>
           </>
         </Layout>
