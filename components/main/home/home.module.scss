@@ -14,7 +14,7 @@ $animation-time: 2s;
 }
 
 @mixin animateImage {
-    animation: fadeInRightImage 1s ease;
+    animation: fadeInRightImage 1s ease forwards;
 }
 
 @mixin fadeInSeperation {
@@ -36,11 +36,12 @@ $animation-time: 2s;
 
 @keyframes fadeInRightImage {
     from {
+        transform: scale(0);
         opacity: 0;
-        transform: translateX(-10rem);
     }
 
     to {
+        transform: scale(1);
         opacity: 1;
     }
 }

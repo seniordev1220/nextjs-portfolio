@@ -131,12 +131,9 @@ export const Contact = () => {
                                 </Box>
                             </Box>
                         </Box>
-
                     </Grid>
                 </Grid>
-
             </Box>
-
         </Box>
     )
 }
