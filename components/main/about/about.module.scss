@@ -259,13 +259,13 @@
 }
 .experience{
     &--mobile{
-        display: none;
+        display: none !important;
     }
 }
 @media screen and (max-width:667px) {
     .experience {
         &--desktop {
-            display: none;
+            display: none !important;
         }
         &--mobile{
             display: block;
