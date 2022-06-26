@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Box, Button, Grid, Link, List, ListItemIcon, ListItemText, Tab, Tabs, Typography } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -175,8 +175,9 @@ export const About = () => {
                                     borderLeft: `solid 1px ${isDarkMode ? "#696969" : "#353839aa"}`
                                 }}
                             >
-                                {experience.map((item) => (
+                                {experience.map((item, index) => (
                                     <Tab
+                                        key={`expTab-${index}`}
                                         sx={{ minWidth: "1rem", width: "8rem", textTransform: "none", fontWeight: "600", color: isDarkMode ? "#696969" : "#353839aa" }}
                                         label={item.institute} />
                                 ))}
@@ -184,8 +185,8 @@ export const About = () => {
                             {
                                 <Box sx={{ width: "800px", maxWidth: "70%" }}>
                                     <List sx={{ display: "flex", flexDirection: "column" }}>
-                                        {experience[experienceTabValue].worksDone.map(item => (
-                                            <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+                                        {experience[experienceTabValue].worksDone.map((item, index) => (
+                                            <Box key={`expListTab-${index}`} sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
                                                 <ListItemIcon>
                                                     <CircleIcon sx={{ color: isDarkMode ? "#696969" : "#353839aa" }} fontSize="small" />
                                                 </ListItemIcon>
@@ -197,14 +198,14 @@ export const About = () => {
                             }
                         </Box>
                         <Box className={classes['experience--mobile']}>
-                            {experience.map((item) => (
-                                <Box>
+                            {experience.map((item, index) => (
+                                <Box  key={`expMobTab-${index}`}>
                                     <Typography sx={{ margin: "1rem", marginLeft: "2rem" }}>
                                         {item.institute}
                                     </Typography>
                                     <List sx={{ display: "flex", flexDirection: "column", margin: "1rem", marginLeft: "2rem" }}>
-                                        {item.worksDone.map(item => (
-                                            <Box sx={{ display: "flex", flexDirection: "row" }}>
+                                        {item.worksDone.map((item , index)=> (
+                                            <Box  key={`expMobListTab-${index}`} sx={{ display: "flex", flexDirection: "row" }}>
                                                 <ListItemIcon>
                                                     <CircleIcon sx={{ color: isDarkMode ? "#696969" : "#353839aa", marginTop: "0.5rem" }} fontSize="small" />
                                                 </ListItemIcon>
@@ -236,8 +237,9 @@ export const About = () => {
                                     borderLeft: `solid 1px ${isDarkMode ? "#696969" : "#353839aa"}`
                                 }}
                             >
-                                {education.map((item) => (
+                                {education.map((item, index) => (
                                     <Tab
+                                        key={`eduTabDesk-${index}`}
                                         sx={{
                                             minWidth: "1rem", width: "8rem",
                                             textTransform: "none", fontWeight: "600",
@@ -249,8 +251,8 @@ export const About = () => {
                             {
                                 <Box sx={{ width: "800px", maxWidth: "70%" }}>
                                     <List sx={{ display: "flex", flexDirection: "column" }}>
-                                        {education[educationTabValue].worksDone.map(item => (
-                                            <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+                                        {education[educationTabValue].worksDone.map((item, index) => (
+                                            <Box  key={`eduListDeskTab-${index}`} sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
                                                 <ListItemIcon>
                                                     <CircleIcon sx={{ color: isDarkMode ? "#696969" : "#353839aa" }} fontSize="small" />
                                                 </ListItemIcon>
@@ -263,14 +265,14 @@ export const About = () => {
                         </Box>
                     </Box>
                     <Box className={classes['experience--mobile']}>
-                        {education.map((item) => (
-                            <Box>
+                        {education.map((item,index) => (
+                            <Box  key={`eduMobTab-${index}`}>
                                 <Typography sx={{ margin: "1rem", marginLeft: "2rem" }}>
                                     {item.institute}
                                 </Typography>
                                 <List sx={{ display: "flex", flexDirection: "column", margin: "1rem", marginLeft: "2rem" }}>
-                                    {item.worksDone.map(item => (
-                                        <Box sx={{ display: "flex", flexDirection: "row" }}>
+                                    {item.worksDone.map((item, index )=> (
+                                        <Box  key={`eduMobList-${index}`} sx={{ display: "flex", flexDirection: "row" }}>
                                             <ListItemIcon>
                                                 <CircleIcon sx={{ color: isDarkMode ? "#696969" : "#353839aa", marginTop: "0.5rem" }} fontSize="small" />
                                             </ListItemIcon>
