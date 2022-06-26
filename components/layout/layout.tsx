@@ -1,4 +1,3 @@
-import { Box } from '@mui/material';
 import React, { useState, useEffect } from 'react'
 import { ScrollDown } from '../scrolldown';
 import Header from './header/header'

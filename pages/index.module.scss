@@ -72,12 +72,12 @@
         &__clippath {
             position: absolute;
             top: 0;
-            left: 0;
+            right: 0;
             z-index: -1;
-            width: 480px;
+            width: 100vw;
             height: 100vh;
             background-color: #2753d7;
-            clip-path: polygon(0 0, 0 100%, 100% 0);
+            clip-path: polygon(100% 0, 100% 100%, 0 250%);
         }
     }
     &--footer {
@@ -90,15 +90,15 @@
     .section--header__clippath {
         display: none;
     }
-
     .section--quotes__clippath {
         display: none;
     }
-
     .section--projects__clippath {
         display: none;
     }
-
+    .section--about__clippath {
+        display: none;
+    }
     .section--footer {
         padding-bottom: 3rem;
     }

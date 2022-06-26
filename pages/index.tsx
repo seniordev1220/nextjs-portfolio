@@ -5,8 +5,9 @@ import { Portfolio } from '../components/main/portfolio'
 import { Quotes } from '../components/main/quotes'
 import { Blogs } from '../components/main/blogs'
 import { Contact } from '../components/main/contact'
-import classes from "./index.module.scss"
 import { About } from '../components/main/about'
+import classes from "./index.module.scss"
+
 export const TabContext = React.createContext({ tabValue: 0, handleTabChange: (event: React.SyntheticEvent, newValue: number) => { } });
 
 const Main = () => {
@@ -68,6 +69,3 @@ const Main = () => {
 }
 
 export default Main
-
-
-// https://codepen.io/codingtuting/pen/XWrBgQz
