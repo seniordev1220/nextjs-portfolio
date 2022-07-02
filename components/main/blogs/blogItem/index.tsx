@@ -27,7 +27,7 @@ export const Blog = ({ title, date, description, image, slug }: BlogItemProps) =
                 boxShadow: "0 0 6px rgb(46 43 43 / 85%)"
             }}>
             <Box className={classes.blog__container} sx={{ marginBottom: "1rem", overflow: "hidden" }}>
-                <Image className={classes.blog__image} layout="responsive" src={blog} alt={title} />
+                <img className={classes.blog__image}  src={image} alt={title} />
             </Box>
             <Typography sx={{ color: "#2753d7", fontWeight: "600" }}>{date}</Typography>
             <Typography component="h2" sx={{ fontWeight: "600", fontSize: "large" }}>{title}</Typography>

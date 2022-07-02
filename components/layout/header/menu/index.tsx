@@ -71,6 +71,7 @@ export const RotaryMenu = () => {
         const angle = index * (360 / icons.length)
         const radianVal = angle * Math.PI / 180
         return {
+            tabNumber:item.tabNumber,
             icon: item.IconComponent,
             IconComponent: item.IconComponent,
             xCordinate: rotorSize + rotorSize * Math.cos(radianVal),
@@ -122,7 +123,8 @@ export const RotaryMenu = () => {
                     </div>
                     {isComponentVisible && <div className={classes['rotaryMenu__icons__wrapper']}>
                         {newI.map(item =>
-                            <div
+                            <div 
+                                onClick={()=>{handleTabChange(null as any,item.tabNumber)}}
                                 key={`rotaryIcon-${item.xCordinate}`}
                                 className={classes['rotaryMenu__icons']}
                                 style={{

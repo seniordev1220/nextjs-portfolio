@@ -19,6 +19,7 @@ const experience = [
         institute: "QBurst",
         startDate: "Sep 2020",
         endDate: "Present",
+        designation: "Engineer @ QBurst",
         worksDone: [
             "Write highly efficient and scalable code for a wide range of clients and internal projects.",
             "Work with a variety of different languages, platforms, frameworks, and content management systems such as JavaScript, TypeScript, React, NextJS, NodeJS, Webpack, and SASS"
@@ -28,6 +29,7 @@ const experience = [
         institute: "IIT-BHU",
         startDate: "June 2019",
         endDate: "Aug 2019",
+        designation: "Intern @ Indian Institute of Technology, BHU, Varanai",
         worksDone: [
             "Work on designing and testing of Meta-Surface based Antennas for radio frequency wireless communication.",
             "Works were later published in the '7th international conference on Computer and devices for Communication (CODEC)' held on December, 2019 and '2020 URSI Regional Conference on Radio Science (URSI-RCRS)'."
@@ -37,12 +39,17 @@ const experience = [
 ]
 const education = [
     {
-        institute: "Government Engineering College, Trivandrum",
+        institute: "Graduation",
         startDate: "2016",
         endDate: "2020",
-        worksDone: [
-            "Bachelor of Technology in Electronics and Communication."
-        ]
+        designation: "Engineering in EC @ Government Engineering College, Bartonhill, Trivandrum",
+
+    },
+    {
+        institute: "Higher Secondary",
+        startDate: "2013",
+        endDate: "2015",
+        designation: "Computer Science @ Central Board of Secondary Education",
     }
 ]
 
@@ -185,6 +192,9 @@ export const About = () => {
                             {
                                 <Box sx={{ width: "800px", maxWidth: "70%" }}>
                                     <List sx={{ display: "flex", flexDirection: "column" }}>
+                                        <Typography component="h2" fontWeight="600" fontSize="1.5rem">{experience[experienceTabValue].designation}</Typography>
+                                        <Typography sx={{ marginTop: "0.2rem", marginBottom: "1rem" }}>{`${experience[experienceTabValue].startDate} - ${experience[experienceTabValue].endDate}`}</Typography>
+
                                         {experience[experienceTabValue].worksDone.map((item, index) => (
                                             <Box key={`expListTab-${index}`} sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
                                                 <ListItemIcon>
@@ -199,13 +209,13 @@ export const About = () => {
                         </Box>
                         <Box className={classes['experience--mobile']}>
                             {experience.map((item, index) => (
-                                <Box  key={`expMobTab-${index}`}>
+                                <Box key={`expMobTab-${index}`}>
                                     <Typography sx={{ margin: "1rem", marginLeft: "2rem" }}>
                                         {item.institute}
                                     </Typography>
                                     <List sx={{ display: "flex", flexDirection: "column", margin: "1rem", marginLeft: "2rem" }}>
-                                        {item.worksDone.map((item , index)=> (
-                                            <Box  key={`expMobListTab-${index}`} sx={{ display: "flex", flexDirection: "row" }}>
+                                        {item.worksDone.map((item, index) => (
+                                            <Box key={`expMobListTab-${index}`} sx={{ display: "flex", flexDirection: "row" }}>
                                                 <ListItemIcon>
                                                     <CircleIcon sx={{ color: isDarkMode ? "#696969" : "#353839aa", marginTop: "0.5rem" }} fontSize="small" />
                                                 </ListItemIcon>
@@ -250,36 +260,24 @@ export const About = () => {
                             </Tabs>
                             {
                                 <Box sx={{ width: "800px", maxWidth: "70%" }}>
-                                    <List sx={{ display: "flex", flexDirection: "column" }}>
-                                        {education[educationTabValue].worksDone.map((item, index) => (
-                                            <Box  key={`eduListDeskTab-${index}`} sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
-                                                <ListItemIcon>
-                                                    <CircleIcon sx={{ color: isDarkMode ? "#696969" : "#353839aa" }} fontSize="small" />
-                                                </ListItemIcon>
-                                                <ListItemText primary={item} />
-                                            </Box>
-                                        ))}
-                                    </List>
+                                    <Typography component="h2" fontWeight="600" fontSize="1.5rem">{education[educationTabValue].designation}</Typography>
+                                    <Typography sx={{ marginTop: "0.2rem", marginBottom: "1rem" }}>
+                                        {`${education[educationTabValue].startDate} - ${education[educationTabValue].endDate}`}
+                                    </Typography>
                                 </Box>
                             }
                         </Box>
                     </Box>
                     <Box className={classes['experience--mobile']}>
-                        {education.map((item,index) => (
-                            <Box  key={`eduMobTab-${index}`}>
-                                <Typography sx={{ margin: "1rem", marginLeft: "2rem" }}>
+                        {education.map((item, index) => (
+                            <Box key={`eduMobTab-${index}`}>
+                                <Typography sx={{ marginTop:"1rem", marginBottom:"1rem", fontWeight:"600", fontSize:"1.2rem" }}>
                                     {item.institute}
                                 </Typography>
-                                <List sx={{ display: "flex", flexDirection: "column", margin: "1rem", marginLeft: "2rem" }}>
-                                    {item.worksDone.map((item, index )=> (
-                                        <Box  key={`eduMobList-${index}`} sx={{ display: "flex", flexDirection: "row" }}>
-                                            <ListItemIcon>
-                                                <CircleIcon sx={{ color: isDarkMode ? "#696969" : "#353839aa", marginTop: "0.5rem" }} fontSize="small" />
-                                            </ListItemIcon>
-                                            <ListItemText primary={item} />
-                                        </Box>
-                                    ))}
-                                </List>
+                                <Typography>{item.designation}</Typography>
+                                <Typography sx={{ marginTop: "0.2rem", marginBottom: "1rem" }}>
+                                    {`${item.startDate} - ${item.endDate}`}
+                                </Typography>
                             </Box>
                         ))}
                     </Box>

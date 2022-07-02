@@ -1,46 +1,46 @@
 export const blogs = [
     {
         id: 1,
-        title: "How To Work Better Efficiency Tools Every Logo Designer Needs",
+        title: "A journey to master Data Structure and Algorithm",
         date: "10 Dec, 2021",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas. ",
-        image: "https://wallpaperaccess.com/full/773426.jpg",
+        image: "https://w10.naukri.com/mailers/2022/naukri-learning/what-is/What-is-Data-Structures-and-Algorithms.jpg",
         slug: "How_To_Work_Better_Efficiency_Tools_Every_Logo_Designer_Needs",
         content: `<p>Blog content</p>`
     },
     {
         id: 2,
-        title: "How To Work Better Efficiency Tools Every Logo Designer Needs",
+        title: "A journey to master High Level Designing",
         date: "10 Dec, 2021",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas.",
-        image: "https://wallpaperaccess.com/full/773426.jpg",
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas. ",
+        image: "https://www.tibdglobal.com/wp-content/uploads/2021/04/Technopreneurship-New-Breed-of-Entrepreneurship-min.jpg",
         slug: "How_To_Work_Better_Efficiency_Tools_Every_Logo_Designer_Needs",
         content: `<p>Blog content</p>`
     },
     {
         id: 3,
-        title: "How To Work Better Efficiency Tools Every Logo Designer Needs",
+        title: "A journey to master Low Level Designing",
         date: "10 Dec, 2021",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas. ",
-        image: "https://wallpaperaccess.com/full/773426.jpg",
+        image: "https://miro.medium.com/max/786/0*-Fy12ogfPHSMIwtF",
         slug: "How_To_Work_Better_Efficiency_Tools_Every_Logo_Designer_Needs",
         content: `<p>Blog content</p>`
     },
     {
         id: 4,
-        title: "How To Work Better Efficiency Tools Every Logo Designer Needs",
+        title: "A journey to master Machine coding",
         date: "10 Dec, 2021",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas.",
-        image: "https://wallpaperaccess.com/full/773426.jpg",
+        image: "https://images.newscientist.com/wp-content/uploads/2020/03/30125337/gettyimages-692654376_web.jpg?width=300",
         slug: "How_To_Work_Better_Efficiency_Tools_Every_Logo_Designer_Needs",
         content: `<p>Blog content</p>`
     },
     {
         id: 5,
-        title: "How To Work Better Efficiency Tools Every Logo Designer Needs",
+        title: "How to build a portfolio web application with NextJS & ExpressJS",
         date: "10 Dec, 2021",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas. ",
-        image: "https://wallpaperaccess.com/full/773426.jpg",
+        image: "https://www.tibdglobal.com/wp-content/uploads/2021/04/Technopreneurship-New-Breed-of-Entrepreneurship-min.jpg",
         slug: "How_To_Work_Better_Efficiency_Tools_Every_Logo_Designer_Needs",
         content: `<p>Blog content</p>`
     },
