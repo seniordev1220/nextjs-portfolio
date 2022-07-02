@@ -7,6 +7,7 @@ import { Blogs } from '../components/main/blogs'
 import { Contact } from '../components/main/contact'
 import { About } from '../components/main/about'
 import classes from "./index.module.scss"
+import { Skills } from '../components/main/skills'
 
 export const TabContext = React.createContext({ tabValue: 0, handleTabChange: (event: React.SyntheticEvent, newValue: number) => { } });
 
@@ -18,10 +19,12 @@ const Main = () => {
   const blogRef = useRef(null);
   const contactRef = useRef(null);
   const aboutRef = useRef(null);
+  const skillRef = useRef(null);
   const refMap: any = {
     0: homeRef,
     1: portfolioRef,
     2: blogRef,
+    3: skillRef,
     4: aboutRef,
     5: contactRef,
   }
@@ -43,23 +46,27 @@ const Main = () => {
             </section>
             <section className={classes['section--quotes']}>
               <Quotes />
-              <div className={classes['section--quotes__clippath']} />
+              <div className={classes['section--left__clippath']} />
             </section>
             <section ref={portfolioRef} className={classes['section--projects']}>
               <Portfolio />
-              <div className={classes['section--projects__clippath']} />
+              <div className={classes['section--right__clippath']} />
             </section>
             <section ref={blogRef} className={classes['section--projects']}>
               <Blogs />
-              <div className={classes['section--quotes__clippath']} />
+              <div className={classes['section--left__clippath']} />
+            </section>
+            <section ref={skillRef} className={classes['section--projects']}>
+              <Skills />
+              <div className={classes['section--right__clippath']} />
             </section>
             <section ref={aboutRef} className={classes['section--about']}>
               <About />
-              <div className={classes['section--about__clippath']} />
+              <div className={classes['section--left__clippath']} />
             </section>
             <section ref={contactRef} className={classes['section--projects']}>
               <Contact />
-              <div className={classes['section--projects__clippath']} />
+              <div className={classes['section--right__clippath']} />
             </section>
           </>
         </Layout>

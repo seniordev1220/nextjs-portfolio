@@ -18,8 +18,7 @@ export const Contact = () => {
         backgroundColor: isDarkMode ? "#rgb(54 54 54 / 87%)" : "#ffffff00",
         boxShadow: isDarkMode ? "0 0 10px rgb(0 0 0 / 85%)" : "0 0 10px rgb(125 125 125 / 35%)",
         width: "100%",
-        marginTop: "1rem",
-
+        marginTop: "1rem"
     }
     return (
         <Box ref={ref} sx={{
@@ -42,14 +41,10 @@ export const Contact = () => {
             </Box>
             <Box sx={{ display: "flex", width: "100%", flexDirection: "column", justiftContent: "center" }}>
                 <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }} className={joinClass(classes['HeadingText'],
-                    inView ? classes['header--show'] : classes['header--hide']
-                )
-                }
-                >
+                    inView ? classes['header--show'] : classes['header--hide'])} >
                     <p className={classes.contact__header}>My Contact</p>
                     <p className={classes.contact__header}>My Contact</p>
                 </Box>
-
             </Box>
             <Box className={classes.contact__content__wrapper}>
                 <Grid container spacing={2} className={inView ? classes['contact--show'] : classes['contact--hide']}>
@@ -59,22 +54,23 @@ export const Contact = () => {
                             <Grid container spacing={2}>
                                 <Grid item xs={12} md={6}>
                                     <TextField
+                                        label={<Typography fontWeight={600} color="#696969">Name</Typography>}
                                         sx={textFieldStyle}
-                                        label={<Typography fontWeight={600} color="#696969">Name</Typography>} variant="outlined" />
+                                        inputProps={{ style: { color: isDarkMode ? 'white' : 'black' }}}
+                                        color="primary"
+                                        variant="outlined" />
                                 </Grid>
                                 <Grid item xs={12} md={6}>
                                     <TextField
-                                        sx={textFieldStyle}
+                                        sx={textFieldStyle} inputProps={{ style:{ color: isDarkMode ? 'white' : 'black' }}}
                                         label={<Typography fontWeight={600} color="#696969">Email</Typography>} variant="outlined" />
                                 </Grid>
-
                             </Grid>
-
-                            <TextField sx={textFieldStyle}
+                            <TextField sx={textFieldStyle} inputProps={{ style: { color: isDarkMode ? 'white' : 'black' } }}
                                 label={<Typography fontWeight={600} color="#696969">Subject</Typography>}
-                                variant="outlined"
+                                variant="outlined" 
                             />
-                            <TextField multiline minRows={5} maxRows={5} sx={textFieldStyle}
+                            <TextField multiline minRows={5} maxRows={5} sx={textFieldStyle}  inputProps={{ style: { color: isDarkMode ? 'white' : 'black' } }}
                                 label={<Typography fontWeight={600} color="#696969">Message</Typography>}
                                 variant="outlined" />
                             <Box sx={{
@@ -84,15 +80,12 @@ export const Contact = () => {
                                 display: "flex",
                                 justifyContent: "center",
                                 alignItems: "center",
-
-                            }}
-                            >
+                            }}>
                                 <Button sx={{ width: "200px", backgroundColor: "#2753d7" }} variant='contained'>
                                     Send message
                                 </Button>
                             </Box>
                         </Box>
-
 
                     </Grid>
                     <Grid item xs={12} md={5}>

@@ -31,19 +31,27 @@
     &--quotes {
         position: relative;
         @include sectionCommon();
-
-        &__clippath {
-            position: absolute;
-            top: 0;
-            right: 0;
-            z-index: -1;
-            width: 100vw;
-            height: 100vh;
-            background-color: #2753d7;
-            clip-path: polygon(100% 0, 100% 100%, 0 250%);
-        }
     }
-
+    &--left__clippath{
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        width: 100vw;
+        height: 100vh;
+        background-color: #2753d7;
+        clip-path: polygon(100% 0, 100% 100%, 0 250%);
+    }
+    &--right__clippath {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 480px;
+        height: 100vh;
+        background-color: #2753d7;
+        clip-path: polygon(0 0, 0 100%, 100% 0);
+    }
     &--projects {
         display: flex;
         align-items: center;
@@ -51,16 +59,6 @@
         position: relative;
         @include sectionCommon();
 
-        &__clippath {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            width: 480px;
-            height: 100vh;
-            background-color: #2753d7;
-            clip-path: polygon(0 0, 0 100%, 100% 0);
-        }
     }
     &--about {
         display: flex;
@@ -90,10 +88,10 @@
     .section--header__clippath {
         display: none;
     }
-    .section--quotes__clippath {
+    .section--left__clippath {
         display: none;
     }
-    .section--projects__clippath {
+    .section--right__clippath {
         display: none;
     }
     .section--about__clippath {
