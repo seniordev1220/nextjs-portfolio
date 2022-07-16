@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getBlogs } from '../store/blogs/reducer'
 import { Background } from '../components/background'
 import classes from "./index.module.scss"
+import About from '../components/pageSpecific/about'
 
 export const TabContext = React.createContext({ tabValue: 0, handleTabChange: (event: React.SyntheticEvent, newValue: number) => { } });
 
