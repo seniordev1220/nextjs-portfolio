@@ -1,7 +1,6 @@
 body {
     background-color: #111;
-    color: rgb(231, 246, 255);
-
+    color: rgb(194, 194, 194);
 }
 ::-webkit-scrollbar {
     display: none;
@@ -16,7 +15,7 @@ body{
 body.light-mode {
     background-color: rgb(245, 245, 245);
     background-image: linear-gradient(to right, #e7f6ff,#c3dfff,#b6d8ff,#a1cdff ,#a1cdff );
-    color: #111;
+    color: rgb(49, 49, 49);
 }
 
 html {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { Box, Button, Grid, Link, List, ListItemIcon, ListItemText, Tab, Tabs, Typography } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -22,7 +22,7 @@ const experience = [
         designation: "Engineer @ QBurst",
         worksDone: [
             "Write highly efficient and scalable code for a wide range of clients and internal projects.",
-            "Work with a variety of different languages, platforms, frameworks, and content management systems such as JavaScript, TypeScript, React, NextJS, NodeJS, Webpack, and SASS"
+            "Work with a variety of different languages, platforms, frameworks, and content management systems using technolgies such as JavaScript, TypeScript, React, NextJS, NodeJS, Webpack, and SASS"
         ]
     },
     {
@@ -31,8 +31,18 @@ const experience = [
         endDate: "Aug 2019",
         designation: "Intern @ Indian Institute of Technology, BHU, Varanai",
         worksDone: [
-            "Work on designing and testing of Meta-Surface based Antennas for radio frequency wireless communication.",
-            "Works were later published in the '7th international conference on Computer and devices for Communication (CODEC)' held on December, 2019 and '2020 URSI Regional Conference on Radio Science (URSI-RCRS)'."
+            "Worked on designing, simulating and testing of Meta-Surface based Antennas for radio frequency wireless communication.",
+            <span key="pub1" >One of my first works was approved and published in the <a
+                style={{ textDecoration: "underline" }}
+                target="blank"
+                href="https://www.springerprofessional.de/en/dual-band-fss-backed-printed-antenna-with-fractal-geometry-for-w/18830738"
+            > 7th international conference on Computer and devices for Communication (CODEC)</a> held on December, 2019
+            </span>,
+            <span key="pub2">Later on I came with my second prototype and was published in <a
+                style={{ textDecoration: "underline" }}
+                target="blank"
+                href="https://ieeexplore.ieee.org/document/9113517"
+            > 2020 URSI Regional Conference on Radio Science (IEEE)</a>.</span>
         ]
     }
 
@@ -271,7 +281,7 @@ export const About = () => {
                     <Box className={classes['experience--mobile']}>
                         {education.map((item, index) => (
                             <Box key={`eduMobTab-${index}`}>
-                                <Typography sx={{ marginTop:"1rem", marginBottom:"1rem", fontWeight:"600", fontSize:"1.2rem" }}>
+                                <Typography sx={{ marginTop: "1rem", marginBottom: "1rem", fontWeight: "600", fontSize: "1.2rem" }}>
                                     {item.institute}
                                 </Typography>
                                 <Typography>{item.designation}</Typography>

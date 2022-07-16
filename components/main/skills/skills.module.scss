@@ -221,8 +221,7 @@
     }
 
     &--hide {
-        opacity: 1;
-        transform: translateY(500px);
+        opacity: 0;
     }
 }
 @keyframes zoomImage {
