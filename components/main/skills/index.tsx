@@ -14,7 +14,8 @@ const skills = [
     "Next JS", "Sass", "Material-UI",
     "Webpack", "Rollup", "Storybook",
     "Node JS", "Express JS", "Docker",
-    "PostgreSQL", "LocalStack", "Git", "Visual Studio Code"
+    "PostgreSQL", "LocalStack", "Git",
+    "Visual Studio Code"
 ];
 const middleIndex = Math.ceil(skills.length / 2);
 
@@ -27,7 +28,7 @@ export const Skills = () => {
     return (
         <Box sx={{
             borderRadius: "1rem",
-            backgroundColor: isDarkMode ? "#141414" : "white",
+            backgroundColor: isDarkMode ? "#ffffff04" : "white",
             ...!isDarkMode && { backgroundImage: "linear-gradient(to right, #e7f6ff,#c3dfff,#b6d8ff,#a1cdff ,#a1cdff )" }
         }}
             ref={ref}
@@ -52,13 +53,13 @@ export const Skills = () => {
 
             </Box>
             <Box className={classes.skills__content__wrapper}>
-                <Box sx={{margin:"1rem", marginTop:"2rem"}}  className={
-                        inView ? classes['image--show'] : classes['image--hide']}>
+                <Box sx={{ margin: "1rem", marginTop: "2rem", display:"flex", justifyContent:"center" }} className={
+                    inView ? classes['image--show'] : classes['image--hide']}>
                     <Image width={400} height={400} src={idea} alt="Skills" />
                 </Box>
                 <Box
                     sx={{ display: "flex", flexDirection: "row", justifyContent: "space-around", width: "100%" }}>
-                    <Box sx={{margin:"1rem"}} className={inView ? classes['skills--show--left'] : classes['skills--hide']}>
+                    <Box sx={{ margin: "1rem" }} className={inView ? classes['skills--show--left'] : classes['skills--hide']}>
                         {firstHalf.map((item, index) => (
                             <Box key={`expListTab-${index}`} sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
                                 <ListItemIcon>
@@ -68,7 +69,7 @@ export const Skills = () => {
                             </Box>))
                         }
                     </Box >
-                    <Box sx={{margin:"1rem"}}  className={inView ? classes['skills--show--right'] : classes['skills--hide']}>
+                    <Box sx={{ margin: "1rem" }} className={inView ? classes['skills--show--right'] : classes['skills--hide']}>
                         {secondHalf.map((item, index) => (
                             <Box key={`expListTab-${index}`} sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
                                 <ListItemIcon>
@@ -79,8 +80,6 @@ export const Skills = () => {
                     </Box>
                 </Box>
             </Box>
-
-
         </Box>
     )
 }

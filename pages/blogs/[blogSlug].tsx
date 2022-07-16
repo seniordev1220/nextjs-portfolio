@@ -30,28 +30,28 @@ const Blog = ({ title, date, image, content }: BlogDetailsType) => {
 
 export async function getStaticPaths() {
 
-    const ids = blogs.map((item: { id: any; }) => item.id)
-    const pregenpaths = ids.map((item: number) => {
-        return { params: { blog: item.toString() } }
+    const ids = blogs.map((item: { id: number; }) => item.id)
+    const pregeneratedPaths = ids.map((item: number) => {
+        return { params: { blogSlug: item.toString() } }
     })
-    console.log(pregenpaths)
     return {
-        paths: [
-            { params: { blog: '1' } },
-            { params: { blog: '2' } },
-            { params: { blog: '3' } },
-            { params: { blog: '4' } }
-        ],
+        paths: pregeneratedPaths,
         fallback: true
     }
 }
-export async function getStaticProps(context: any) {
-    const { params } = context;
-    console.log(params)
-    //param i s an object withg key pid
-    const blogId = params.blog
-    const blogData = blogs.find((item: any) => item.id === Number(blogId))
-    console.log(blogData, "bb")
+export async function getStaticProps(context: { params: { blogSlug: number } }) {
+console.log(context)
+    const blogSlug = context.params.blogSlug
+    interface blogDataType{
+        id: number;
+        title:string;
+        date: string,
+        description:string,
+        image: string,
+        slug: string,
+        content: string
+    }
+    const blogData = blogs.find((item: blogDataType) => item.id === Number(blogSlug))
     if (!blogData) {
         return {
             notFound: true
@@ -60,10 +60,9 @@ export async function getStaticProps(context: any) {
     return {
         props: {
             ...blogData
-        }
+        },
+        revalidate: 3600
     }
 }
-//For dynamic pages like this pre generate is not the default option
-//so:-
 
 export default Blog

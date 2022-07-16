@@ -1,13 +1,10 @@
 .quote {
     &__container {
-        height: 100vh;
         display: flex;
-        justify-content: flex-start;
-        align-items: center;
     }
 
     &__content {
-        margin-left: 2rem;
+        margin-left: 3rem;
         max-width: 90%;
         width: 1024px;
         font-family: "Montserrat Medium";
@@ -21,7 +18,29 @@
         animation-delay: 0.5s;
     }
 }
+.miniLogoContainer{
+    @media screen and (min-width:767px) {
+        margin-top:8rem;
+        
+    }
+}
 
+
+@keyframes drawCircle {
+    from {
+        stroke-dashoffset: -744;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.animateLogo{
+    stroke-dasharray: 744;
+    stroke-dashoffset: -744;
+    animation: drawCircle 1s infinite ease;
+}
 @keyframes scale {
     100% {
         transform: scale(1);
@@ -37,11 +56,13 @@
 @for $i from 1 through 20 {
     .quote__each:nth-child(#{$i}) {
         animation: fade-in 1s $i*0.07s forwards cubic-bezier(0.11, 0, 0.5, 0);
+
         @media screen and (max-width:"767px") {
             animation: none;
             opacity: 1;
             filter: blur(0);
         }
+
         margin-right: 0.7rem;
     }
 }

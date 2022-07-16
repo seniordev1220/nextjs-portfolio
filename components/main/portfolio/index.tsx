@@ -38,7 +38,7 @@ export const Portfolio = () => {
             </Box>
             <Box className={classes.projects__content__wrapper}>
                 {projects.map((project) => (
-                    <Box key={`title:${project.title}`} className={inView ?
+                    <Box key={`title:${project.id+project.title}`} className={inView ?
                         classes['project--show'] : classes['project--hide']}
                     >
                         <Box sx={{ display: 'flex', justifyContent: 'center', width: "100%" }}>
