@@ -73,7 +73,7 @@ const Main = () => {
               {/* <div className={classes['section--right__clippath']} /> */}
             </section>
             <section ref={aboutRef} className={classes['section--about']}>
-              {/* <About /> */}
+              <About />
               {/* <div className={classes['section--left__clippath']} /> */}
             </section>
             <section ref={contactRef} className={classes['section--projects']}>
