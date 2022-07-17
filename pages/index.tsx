@@ -43,7 +43,6 @@ const Main = () => {
     dispatch(getBlogs(null))
   }, [])
 
-  console.log(state)
   return (
 
     <div className={classes['section__container']}>
