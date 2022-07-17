@@ -1,4 +1,4 @@
-const API_URL = "http://dev-portfolio-api.com:3009";
+const server = process.env.SERVER;
 
 type ReqOptions = {
     endpoint: string;
@@ -30,7 +30,7 @@ export function getUrlWithQueryParams(
 }
 
 export function getReqUrl({ params, endpoint }: ReqOptions): string {
-    const base = API_URL;
+    const base = server;
     const url = `${base}/${endpoint}`;
 
     return params ? getUrlWithQueryParams(url, params) : url;
