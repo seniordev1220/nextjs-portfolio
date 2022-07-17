@@ -15,17 +15,20 @@ export const MiniLogo = () => (
         <defs>
                 <linearGradient id="linear" x1="0%" y1="0%" x2="120%" y2="120%" >
                     <stop offset="0%" stopColor={"#353839"} />
-                    <stop offset="25%" stopColor={"#353839"} />
+                    <stop offset="16.5%" stopColor={"#353839"} />
 
-                    <stop offset="50%" stopColor={"#2753d7"} />
-                    <stop offset="75%" stopColor={"#2753d7"} />
+                    <stop offset="33%" stopColor={"#2753d7"} />
+                    <stop offset="49.5%" stopColor={"#2753d7"} />
+                    <stop offset="66%" stopColor={"#353839"} />
+                    <stop offset="72.5%" stopColor={"#353839"} />
+
                     <animateTransform attributeName="gradientTransform"
                         type="translate"
                         from="-1 0"
-                        to="0 0"
+                        to="1.3 0"
                         begin="0s"
-                        dur="2s"
-                        repeatCount={1}
+                        dur="5s"
+                        repeatCount={"indefinite"}
                     />
                 </linearGradient>
 
