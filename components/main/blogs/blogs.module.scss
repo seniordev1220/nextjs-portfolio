@@ -104,7 +104,7 @@
             flex-wrap: nowrap;
             width: 300px;
             overflow-x: scroll;
-            overscroll-behavior-x: contain;
+            // overscroll-behavior-x: contain;
             scroll-snap-type: x mandatory;
         }
     }
