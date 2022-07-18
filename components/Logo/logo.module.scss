@@ -15,9 +15,11 @@
 }
 .svg{
     width:8rem;
+    margin:-1rem;
+
 }
 @media only screen and (max-width: 600px) {
     .svg{
-        width:4rem;
+        width:6rem;
     }
 }

@@ -1,4 +1,10 @@
 .skills {
+    &__title{
+        background: -webkit-linear-gradient(#353839, #2753d7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;  
+        margin-block-start: 0!important;
+    }
     &--show--left {
         opacity: 0;
         animation: moveContent ease 1s forwards;
@@ -23,7 +29,6 @@
         @media screen and (max-width:"767px") {
             background-color: #ffffff00;
             box-shadow: none;
-            height: 80vh;
         }
 
         overflow-x:"hidden";
@@ -156,6 +161,10 @@
 .header {
     &--show {
         animation: moveHeader ease 0.4s forwards;
+        margin-top: 2.5rem;
+        @media screen and (max-width:767px) {
+            margin-top: 0rem;
+        }
     }
 
     &--hide {

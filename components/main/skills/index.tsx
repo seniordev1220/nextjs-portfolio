@@ -43,17 +43,12 @@ export const Skills = () => {
                 }}>
                 <p>Things that I am good at</p>
             </Box>
-            <Box sx={{ display: "flex", width: "100%", flexDirection: "column", justiftContent: "center" }}>
-                <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }} className={joinClass(classes['HeadingText'],
-                    inView ? classes['header--show'] : classes['header--hide']
-                )}  >
-                    <p className={classes.skills__header}>My Skills</p>
-                    <p className={classes.skills__header}>My Skills</p>
-                </Box>
-
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+                <Typography className={joinClass(classes.skills__title, inView?classes['header--show']:classes['header--hide'])} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
+                    My Skills</Typography>
             </Box>
             <Box className={classes.skills__content__wrapper}>
-                <Box sx={{ margin: "1rem", marginTop: "2rem", display:"flex", justifyContent:"center" }} className={
+                <Box sx={{marginleft:"1rem", marginRight:"1rem", display:"flex", justifyContent:"center" }} className={
                     inView ? classes['image--show'] : classes['image--hide']}>
                     <Image width={400} height={400} src={idea} alt="Skills" />
                 </Box>

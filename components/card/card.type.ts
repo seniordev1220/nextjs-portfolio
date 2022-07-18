@@ -1,4 +1,4 @@
-export interface BlogItemProps {
+export interface CardItemProps {
     title: string;
     date: string;
     description: string;

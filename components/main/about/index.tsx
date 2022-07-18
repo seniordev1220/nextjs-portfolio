@@ -88,15 +88,11 @@ export const About = () => {
                 fontWeight: "800"
 
             }}>
-                <p>My Intro</p>
+                <p>Somethings about me</p>
             </Box>
-            <Box sx={{ display: "flex", width: "100%", flexDirection: "column", justiftContent: "center" }}>
-                <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }} className={joinClass(classes['HeadingText'],
-                    inView ? classes['header--show'] : classes['header--hide']
-                )}>
-                    <p className={classes.about__header}>About Me</p>
-                    <p className={classes.about__header}>About Me</p>
-                </Box>
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+                <Typography className={joinClass(classes.about__title, inView?classes['header--show']:classes['header--hide'])} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
+                    About Me</Typography>
             </Box>
             <Box sx={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
                 <Box className={inView ? classes['about--show'] : classes['about--hide']}>
@@ -163,13 +159,10 @@ export const About = () => {
             }}>
                 <p>Check Out My Resume</p>
             </Box>
-            <Box sx={{ display: "flex", width: "100%", flexDirection: "column", justiftContent: "center" }}>
-                <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }} className={joinClass(classes['HeadingText'],
-                    inView ? classes['career--show'] : classes['career--hide']
-                )}>
-                    <p className={classes.about__header}>My Resume</p>
-                    <p className={classes.about__header}>My Resume</p>
-                </Box>
+
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+                <Typography className={joinClass(classes.about__title, inView ? classes['career--show'] : classes['career--hide'])} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
+                My Resume</Typography>
             </Box>
             <Box className={inView ? classes['career--show'] : classes['career--hide']} >
                 <Box sx={{ display: "flex", justifyContent: "center", minHeight: "300px" }} >
