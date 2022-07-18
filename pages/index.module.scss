@@ -5,6 +5,8 @@
 
 .section {
     &__container {
+        overscroll-behavior-y: contain;
+
         scroll-snap-type: y mandatory;
         overflow-y: scroll;
         height: 100vh;
@@ -32,7 +34,8 @@
         position: relative;
         @include sectionCommon();
     }
-    &--left__clippath{
+
+    &--left__clippath {
         position: absolute;
         top: 0;
         right: 0;
@@ -42,6 +45,7 @@
         background-color: #2753d7;
         clip-path: polygon(100% 0, 100% 100%, 0 250%);
     }
+
     &--right__clippath {
         position: absolute;
         top: 0;
@@ -52,6 +56,7 @@
         background-color: #2753d7;
         clip-path: polygon(0 0, 0 100%, 100% 0);
     }
+
     &--projects {
         display: flex;
         align-items: center;
@@ -59,7 +64,10 @@
         position: relative;
         @include sectionCommon();
 
+        
+
     }
+
     &--about {
         display: flex;
         align-items: center;
@@ -78,6 +86,7 @@
             clip-path: polygon(100% 0, 100% 100%, 0 250%);
         }
     }
+
     &--footer {
         padding-bottom: 3rem;
 
@@ -88,15 +97,19 @@
     .section--header__clippath {
         display: none;
     }
+
     .section--left__clippath {
         display: none;
     }
+
     .section--right__clippath {
         display: none;
     }
+
     .section--about__clippath {
         display: none;
     }
+
     .section--footer {
         padding-bottom: 3rem;
     }

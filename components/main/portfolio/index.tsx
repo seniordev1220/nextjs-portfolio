@@ -1,12 +1,12 @@
-import { Box, Button } from '@mui/material';
+import { Box, Button , Typography} from '@mui/material';
 import Link from 'next/link';
 import React from 'react'
 import { joinClass } from '../../../helpers/utils';
 import { useDarkMode } from '../../../hooks/useDarkMode';
 import { useSetTab } from '../../../hooks/useSetTab';
 import { projects } from '../../../mock/projects';
+import { Card } from '../../card';
 import { sectionMapping } from '../sectionMapping';
-import { Project } from './projectItem';
 import classes from "./projects.module.scss"
 
 export const Portfolio = () => {
@@ -25,16 +25,9 @@ export const Portfolio = () => {
             }}>
                 <p>Showcasing Some Of My Best Work</p>
             </Box>
-            <Box sx={{ display: "flex", width: "100%", flexDirection: "column", justiftContent: "center" }}>
-                <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }} className={joinClass(classes['HeadingText'],
-                    inView ? classes['header--show'] : classes['header--hide']
-                )
-                }
-                >
-                    <p className={classes.projects__header}>My Portfolio</p>
-                    <p className={classes.projects__header}>My Portfolio</p>
-                </Box>
-
+            <Box component="span" sx={{margin:"auto"}}>
+                <Typography className={joinClass(classes.projects__title, inView?classes['header--show']:classes['header--hide'])} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
+                My Portfolio</Typography>
             </Box>
             <Box className={classes.projects__content__wrapper}>
                 {projects.map((project) => (
@@ -42,8 +35,8 @@ export const Portfolio = () => {
                         classes['project--show'] : classes['project--hide']}
                     >
                         <Box sx={{ display: 'flex', justifyContent: 'center', width: "100%" }}>
-                            <Project
-                            href={''} {...project}                            />
+                            <Card
+                            {...project} />
                         </Box>
                     </Box>
                 ))

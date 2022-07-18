@@ -1,4 +1,4 @@
-.blog {
+.card {
     &__image {
         border-radius: 12px;
         width:250px;
@@ -19,11 +19,12 @@
 
   .card-container {
     .card {
-      width: 250px;
+      width: 100vw;
       height: 150px;
       animation: hvr 5s infinite ease-in-out;
       transition: none;
     }
+
   }
 
   @keyframes hvr {

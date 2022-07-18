@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import useSWR from 'swr'
+// import { Editor } from '../../components/Editor'
 
 
 function LastSales(props: any) {
@@ -16,7 +17,7 @@ function LastSales(props: any) {
     }
     return <>
         <p>Loaded</p>
-        {console.log(datas)}
+        {/* <Editor/> */}
     </>
 
 }

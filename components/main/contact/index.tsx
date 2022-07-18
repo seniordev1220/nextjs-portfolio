@@ -39,12 +39,10 @@ export const Contact = () => {
             }}>
                 <p>Feel Free To Contact Me</p>
             </Box>
-            <Box sx={{ display: "flex", width: "100%", flexDirection: "column", justiftContent: "center" }}>
-                <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }} className={joinClass(classes['HeadingText'],
-                    inView ? classes['header--show'] : classes['header--hide'])} >
-                    <p className={classes.contact__header}>My Contact</p>
-                    <p className={classes.contact__header}>My Contact</p>
-                </Box>
+            
+            <Box component="span" sx={{margin:"auto"}}>
+                <Typography className={joinClass(classes.contact__title, inView?classes['header--show'] : classes['header--hide'])} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
+                My Contact</Typography>
             </Box>
             <Box className={classes.contact__content__wrapper}>
                 <Grid container spacing={2} className={inView ? classes['contact--show'] : classes['contact--hide']}>

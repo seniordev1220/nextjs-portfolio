@@ -1,11 +1,9 @@
 import { Box, Typography } from "@mui/material"
-import { useDarkMode } from "../../../../hooks/useDarkMode"
-import { BlogItemProps } from "./blog.type"
-import Image from "next/image"
-import blog from "../../../../assets/images/blog.jpg"
-import classes from "./blogItem.module.scss"
+import { useDarkMode } from "../../hooks/useDarkMode"
+import { CardItemProps } from "./card.type"
+import classes from "./cardItem.module.scss"
 
-export const Blog = ({ title, date, description, image, slug }: BlogItemProps) => {
+export const Card = ({ title, date, description, image, slug }: CardItemProps) => {
     const { isDarkMode } = useDarkMode();
     return (
         // <Box sx={{ position: "relative" }}>
@@ -26,8 +24,8 @@ export const Blog = ({ title, date, description, image, slug }: BlogItemProps) =
                 overflow: "hidden",
                 boxShadow: "0 0 6px rgb(46 43 43 / 85%)"
             }}>
-            <Box className={classes.blog__container} sx={{ marginBottom: "1rem", overflow: "hidden" }}>
-                <img className={classes.blog__image}  src={image} alt={title} />
+            <Box className={classes.card__container} sx={{ marginBottom: "1rem", overflow: "hidden" }}>
+                <img className={classes.card__image}  src={image} alt={title} />
             </Box>
             <Typography sx={{ color: "#2753d7", fontWeight: "600" }}>{date}</Typography>
             <Typography component="h2" sx={{ fontWeight: "600", fontSize: "large" }}>{title}</Typography>
