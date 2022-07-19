@@ -7,14 +7,22 @@
     }
     &--show {
         opacity: 0;
-        animation: moveContent ease 1s forwards;
+        animation: moveContent ease 0.7s forwards;
         animation-delay: 0.2s;
+        @media screen and (max-width:767px) {
+            animation: none;
+            opacity: 1;
+        }
     }
 
     &--hide {
         opacity: 1;
-        animation: fadeOut ease 1s forwards;
+        animation: fadeOut ease 0.7s forwards;
         animation-delay: 0.2s;
+        @media screen and (max-width:767px) {
+            animation: none;
+            opacity: 1;
+        }
     }
 
     &__container {
@@ -97,71 +105,26 @@
     }
 }
 
-.about__header {
-    color: #2753d7;
-    font-weight: 900;
-    position: absolute;
-    text-shadow: 0 0 0.2rem #2753d7;
-    opacity: 0.6;
-}
-
-.about__header:nth-child(1) {
-    color: transparent;
-    -webkit-text-stroke: 2px #ffffff;
-}
-
-.about__header:nth-child(2) {
-    color: #2753d7;
-    animation: animateText 3s ease-in-out infinite;
-}
-
-
-@keyframes animateText {
-
-    0%,
-    100% {
-        clip-path: polygon(0% 30%,
-                16% 44%,
-                33% 50%,
-                54% 60%,
-                70% 61%,
-                84% 59%,
-                100% 52%,
-                100% 100%,
-                0% 100%);
-    }
-
-    50% {
-        clip-path: polygon(0% 60%,
-                15% 65%,
-                34% 66%,
-                51% 62%,
-                67% 50%,
-                84% 45%,
-                100% 46%,
-                100% 100%,
-                0% 100%);
-    }
-}
-
-.HeadingText {
-    position: relative;
-    min-height: 8rem;
-}
-
 
 .header {
     &--show {
-        animation: moveHeader ease 0.4s forwards;
+        animation: moveHeader ease 0.3s forwards;
         margin-top: 2.5rem;
         @media screen and (max-width:767px) {
             margin-top: 0rem;
+            animation: none;
+            opacity: 1;
         }
     }
 
     &--hide {
         // opacity: 0;
-        animation: fadeOutText ease 1s forwards;
+        animation: fadeOutText ease 0.7s forwards;
+        @media screen and (max-width:767px) {
+            
+            animation: none;
+            opacity: 1;
+        }
     }
 }
 
@@ -220,12 +183,22 @@
 
 .button {
     &--show {
-        animation: moveButtonUp ease 1s forwards;
+        animation: moveButtonUp ease 0.7s forwards;
+        @media screen and (max-width:767px) {
+            
+            animation: none;
+            opacity: 1;
+        }
     }
 
     &--hide {
         opacity: 0;
         transform: scale(1) translateY(-500px);
+        @media screen and (max-width:767px) {
+            
+            transform: none;
+            opacity: 1;
+        }
     }
 }
 
@@ -256,14 +229,24 @@
 
 .career {
     &--show {
-        animation: moveCareer ease 1s backwards;
+        animation: moveCareer ease 0.7s backwards;
         animation-delay: 0.5s;
+        @media screen and (max-width:767px) {
+            
+            animation: none;
+            opacity: 1;
+        }
     }
 
     &--hide {
         opacity: 0;
-        animation: fadeOut ease 1s backwards;
+        animation: fadeOut ease 0.7s backwards;
         animation-delay: 0.2s;
+        @media screen and (max-width:767px) {
+            
+            animation: none;
+            opacity: 1;
+        }
     }
 }
 .experience{
