@@ -60,13 +60,13 @@ export const Blogs = () => {
                     ><Link href="/blogs">View More</Link>
                     </Button>
                 </Box>
-                <Box className={classes.blogs__right__arrow}>
+                
+
+            </Box>
+            <Box className={classes.blogs__right__arrow}>
                   {inView&&  <ScrollRight />}
 
                 </Box>
-
-            </Box>
-
         </div>
     )
 }

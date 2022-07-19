@@ -11,8 +11,7 @@
     }
 
     &__right__arrow {
-
-        position: fixed;
+        position: absolute;
         z-index: 10;
         bottom: 50%;
         right: 1rem;
@@ -21,7 +20,6 @@
             display: none;
             visibility: none;
         }
-
     }
 
     &__container {
@@ -32,6 +30,7 @@
         background-color: #ffffff04;
         box-shadow: 0 0 0.5rem #00000049;
         padding-bottom: 3rem;
+        position: relative;
 
         @media screen and (max-width:"767px") {
             background-color: #ffffff00;
@@ -98,7 +97,7 @@
         display: flex;
         justify-content: flex-start;
         flex-wrap: wrap;
-        position: relative;
+
 
         @media screen and (max-width:"767px") {
             // justify-content: center;
@@ -154,6 +153,7 @@
         opacity: 1;
         transform: translateY(500px);
     }
+
     @media screen and (max-width:767px) {
 
         &--show {
@@ -185,6 +185,7 @@
         // opacity: 0;
         animation: fadeOutText ease 1s forwards;
     }
+
     @media screen and (max-width:767px) {
 
         &--show {
