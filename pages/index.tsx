@@ -1,16 +1,19 @@
 import React, { useEffect, useRef } from 'react'
 import Layout from '../components/layout/layout'
 import { Home } from '../components/main/home'
-import { Portfolio } from '../components/main/portfolio'
 import { Quotes } from '../components/main/quotes'
-import { Blogs } from '../components/main/blogs'
+import { CardList } from '../components/main/cardList'
 import { Contact } from '../components/main/contact'
 import { About } from '../components/main/about'
 import { Skills } from '../components/main/skills'
 import { useDispatch, useSelector } from 'react-redux'
 import { getBlogs } from '../store/blogs/reducer'
 import { Background } from '../components/background'
+import { blogs } from '../mock/blogs';
+import { sectionMapping } from "../components/main/sectionMapping";
+
 import classes from "./index.module.scss"
+import { projects } from '../mock/projects'
 
 export const TabContext = React.createContext({ tabValue: 0, handleTabChange: (event: React.SyntheticEvent, newValue: number) => { } });
 
@@ -48,9 +51,10 @@ const Main = () => {
     <div className={classes['section__container']}>
       <TabContext.Provider value={{ tabValue, handleTabChange }}>
 
-        <Background/>
         <Layout>
           <>
+            <Background />
+
             <section ref={homeRef} className={classes['section--header']}>
               <Home />
               {/* <div className={classes['section--header__clippath']} /> */}
@@ -60,11 +64,15 @@ const Main = () => {
               {/* <div className={classes['section--left__clippath']} /> */}
             </section>
             <section ref={portfolioRef} className={classes['section--projects']}>
-              <Portfolio />
+              <CardList description='Showcasing Some Of My Best Work' title="My Portfolio"
+                data={projects} sectionMapping={sectionMapping.portfolio}
+              />
               {/* <div className={classes['section--right__clippath']} /> */}
             </section>
             <section ref={blogRef} className={classes['section--projects']}>
-              <Blogs />
+              <CardList description='Check Out My Latest Blog Posts' title=" My Blogs"
+                data={blogs} sectionMapping={sectionMapping.blogs}
+              />
               {/* <div className={classes['section--left__clippath']} /> */}
             </section>
             <section ref={skillRef} className={classes['section--projects']}>

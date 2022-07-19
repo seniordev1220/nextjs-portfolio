@@ -3,15 +3,28 @@ import { Box, Button, Typography } from '@mui/material';
 import Link from 'next/link';
 import { joinClass } from '../../../helpers/utils';
 import { useDarkMode } from '../../../hooks/useDarkMode';
-import { blogs } from '../../../mock/blogs';
 import { Card } from '../../card';
-import { sectionMapping } from '../sectionMapping';
 import { useSetTab } from '../../../hooks/useSetTab';
 import classes from "./blogs.module.scss"
 import { ScrollRight } from '../../scrollRight';
+const props = ["description", "title", "data", "sectionMapping"]
+interface CardListProps{
+    description:string;
+    title:string;
+    data:{
+        id: number;
+        title: string;
+        date: string;
+        description: string;
+        image: string;
+        slug: string;
+        content: string;
+    }[];
+    sectionMapping:number
+}
 
-export const Blogs = () => {
-    const { ref, inView } = useSetTab(sectionMapping.blogs);
+export const CardList = ({description, title, data, sectionMapping}: CardListProps) => {
+    const { ref, inView } = useSetTab(sectionMapping);
     const { isDarkMode } = useDarkMode()
     return (
         <div ref={ref} className={joinClass(classes.blogs__container)}>
@@ -23,15 +36,15 @@ export const Blogs = () => {
                 fontWeight: "800"
 
             }}>
-                <p>Check Out My Latest Blog Posts</p>
+                <p>{description}</p>
             </Box>
             <Box component="span" sx={{ margin: "auto" }}>
                 <Typography className={joinClass(classes.blogs__title, inView ? classes['header--show'] : classes['header--hide'])} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
-                    My Blogs</Typography>
+                   {title}</Typography>
             </Box>
 
             <Box className={classes.blogs__content__wrapper}>
-                {blogs.map((blog) => (
+                {data.map((blog) => (
                     <Box key={`title:${blog.title}`} className={joinClass(inView ?
                         classes['blog--show'] : classes['blog--hide'], classes.blogs__item)}
                     >
