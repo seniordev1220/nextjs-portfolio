@@ -20,6 +20,12 @@
     &--hide {
         opacity: 1;
         animation: fadeOut ease 1s forwards;
+        @media screen and (max-width:767px) {
+            animation: none;
+            opacity: 1;
+           
+
+        }
     }
 
     &--show--right {
@@ -28,13 +34,13 @@
         @media screen and (max-width:767px) {
             animation: none;
             opacity: 1;
-            transform: translatex(0px);
+           
 
         }
     }
 
     &__container {
-        overflow: hidden;
+       
         display: flex;
         flex-direction: column;
         width: 85%;
@@ -47,7 +53,7 @@
             box-shadow: none;
         }
 
-        overflow-x:"hidden";
+        overflow-x:hidden;
         overflow-y: scroll;
 
         &::-webkit-scrollbar-track {
@@ -70,7 +76,7 @@
             background-color: #5a5a5aa8;
         }
 
-        @media screen and (max-width:"767px") {
+        @media screen and (max-width:767px) {
             &::-webkit-scrollbar-track {
                 display: none;
             }
@@ -88,7 +94,7 @@
     &__header {
         font-size: 3.5rem;
 
-        @media screen and (max-width:"767px") {
+        @media screen and (max-width:767px) {
             font-size: 2.5rem;
         }
 
@@ -215,13 +221,18 @@
 
         @media screen and (max-width:767px) {
             animation: none;
-            transform: scale(1);
+           
             opacity: 1;
         }
     }
 
     &--hide {
         opacity: 0;
+        @media screen and (max-width:767px) {
+            animation: none;
+           
+            opacity: 1;
+        }
     }
 }
 
