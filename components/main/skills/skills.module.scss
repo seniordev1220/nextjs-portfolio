@@ -215,6 +215,9 @@
 }
 
 .image {
+    @media screen and (max-width:767px) {
+        display: none;
+    }
     &--show {
         opacity: 0;
         animation: zoomImage ease 1.5s forwards;
