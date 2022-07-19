@@ -15,9 +15,10 @@
         position: fixed;
         z-index: 10;
         bottom: 50%;
-        right:1rem;
+        right: 1rem;
+
         @media screen and (min-width:767px) {
-            display:none;
+            display: none;
             visibility: none;
         }
 
@@ -124,6 +125,21 @@
             animation: fadeOut ease $i*0.1s forwards;
             animation-delay: 0.2s;
         }
+
+        @media screen and (max-width:767px) {
+
+            &--show:nth-child(#{$i}) {
+                animation: none;
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            &--hide:nth-child(#{$i}) {
+                animation: none;
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
     }
 }
 
@@ -137,6 +153,20 @@
     &--hide {
         opacity: 1;
         transform: translateY(500px);
+    }
+    @media screen and (max-width:767px) {
+
+        &--show {
+            animation: none;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        &--hide {
+            animation: none;
+            opacity: 1;
+            transform: scale(1);
+        }
     }
 }
 
@@ -154,6 +184,20 @@
     &--hide {
         // opacity: 0;
         animation: fadeOutText ease 1s forwards;
+    }
+    @media screen and (max-width:767px) {
+
+        &--show {
+            animation: none;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        &--hide {
+            animation: none;
+            opacity: 1;
+            transform: scale(1);
+        }
     }
 }
 
