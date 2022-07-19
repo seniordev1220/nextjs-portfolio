@@ -1,6 +1,7 @@
 body {
     background-color: #111;
     color: rgb(194, 194, 194);
+    transition-timing-function: ease-in;
 }
 ::-webkit-scrollbar {
     display: none;

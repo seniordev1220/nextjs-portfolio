@@ -86,70 +86,26 @@
     
 }
 
-.contact__header {
-    color: #2753d7;
-    font-weight: 900;
-    position: absolute;
-    text-shadow: 0 0 0.2rem #2753d7;
-    opacity: 0.6;
-}
-
-.contact__header:nth-child(1) {
-    color: transparent;
-    -webkit-text-stroke: 2px #ffffff;
-}
-
-.contact__header:nth-child(2) {
-    color: #2753d7;
-    animation: animateText 3s ease-in-out infinite;
-}
-
-
-@keyframes animateText {
-
-    0%,
-    100% {
-        clip-path: polygon(0% 30%,
-                16% 44%,
-                33% 50%,
-                54% 60%,
-                70% 61%,
-                84% 59%,
-                100% 52%,
-                100% 100%,
-                0% 100%);
-    }
-
-    50% {
-        clip-path: polygon(0% 60%,
-                15% 65%,
-                34% 66%,
-                51% 62%,
-                67% 50%,
-                84% 45%,
-                100% 46%,
-                100% 100%,
-                0% 100%);
-    }
-}
-
-.HeadingText {
-    position: relative;
-    min-height: 8rem;
-}
-
 .contact {
     
         &--show {
             opacity: 0;
             animation: moveContent ease 1s forwards;
             animation-delay: 0.2s;
+            @media screen and (max-width:767px) {
+                animation: none;
+                opacity: 1;
+            }
         }
 
         &--hide{
             opacity: 1;
             animation: fadeOut ease 1s forwards;
             animation-delay: 0.2s;
+            @media screen and (max-width:767px) {
+                animation: none;
+                opacity: 1;
+            }
         }
     
 }
@@ -158,23 +114,39 @@
         opacity: 0;
         animation: moveButtonUp ease 1.5s forwards;
         animation-delay: 1s;
+        @media screen and (max-width:767px) {
+            animation: none;
+            opacity: 1;
+        }
     }
 
     &--hide {
         opacity: 1;
         transform: translateY(500px);
         animation: moveButtonDown ease 1s forwards;
+        @media screen and (max-width:767px) {
+            animation: none;
+            opacity: 1;
+        }
     }
 }
 
 .header {
     &--show {
         animation: moveHeader ease 0.4s forwards;
+        @media screen and (max-width:767px) {
+            animation: none;
+            opacity: 1;
+        }
     }
 
     &--hide {
         // opacity: 0;
         animation: fadeOutText ease 1s forwards;
+        @media screen and (max-width:767px) {
+            animation: none;
+            opacity: 1;
+        }
     }
 }
 
