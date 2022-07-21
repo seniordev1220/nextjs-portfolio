@@ -9,20 +9,14 @@
         opacity: 0;
         animation: moveContent ease 0.7s forwards;
         animation-delay: 0.2s;
-        @media screen and (max-width:767px) {
-            animation: none;
-            opacity: 1;
-        }
+       
     }
 
     &--hide {
         opacity: 1;
         animation: fadeOut ease 0.7s forwards;
         animation-delay: 0.2s;
-        @media screen and (max-width:767px) {
-            animation: none;
-            opacity: 1;
-        }
+        
     }
 
     &__container {
@@ -113,21 +107,13 @@
     &--show {
         animation: moveHeader ease 0.3s forwards;
         margin-top: 2.5rem;
-        @media screen and (max-width:767px) {
-            margin-top: 0rem;
-            animation: none;
-            opacity: 1;
-        }
+        
     }
 
     &--hide {
         // opacity: 0;
         animation: fadeOutText ease 0.7s forwards;
-        @media screen and (max-width:767px) {
-            
-            animation: none;
-            opacity: 1;
-        }
+        
     }
 }
 
@@ -187,21 +173,12 @@
 .button {
     &--show {
         animation: moveButtonUp ease 0.7s forwards;
-        @media screen and (max-width:767px) {
-            
-            animation: none;
-            opacity: 1;
-        }
+        
     }
 
     &--hide {
         opacity: 0;
         transform: scale(1) translateY(-500px);
-        @media screen and (max-width:767px) {
-            
-            transform: none;
-            opacity: 1;
-        }
     }
 }
 
@@ -234,22 +211,12 @@
     &--show {
         animation: moveCareer ease 0.7s backwards;
         animation-delay: 0.5s;
-        @media screen and (max-width:767px) {
-            
-            animation: none;
-            opacity: 1;
-        }
     }
 
     &--hide {
         opacity: 0;
         animation: fadeOut ease 0.7s backwards;
         animation-delay: 0.2s;
-        @media screen and (max-width:767px) {
-            
-            animation: none;
-            opacity: 1;
-        }
     }
 }
 .experience{

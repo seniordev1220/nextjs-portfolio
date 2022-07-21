@@ -9,34 +9,15 @@
     &--show--left {
         opacity: 0;
         animation: moveContent ease 1s forwards;
-
-        @media screen and (max-width:767px) {
-            animation: none;
-            opacity: 1;
-
-        }
     }
 
     &--hide {
         opacity: 1;
         animation: fadeOut ease 1s forwards;
-        @media screen and (max-width:767px) {
-            animation: none;
-            opacity: 1;
-           
-
-        }
     }
 
     &--show--right {
         animation: rightContent ease 1s forwards;
-
-        @media screen and (max-width:767px) {
-            animation: none;
-            opacity: 1;
-           
-
-        }
     }
 
     &__container {
@@ -148,21 +129,13 @@
         animation: moveHeader ease 0.4s forwards;
         margin-top: 2.5rem;
 
-        @media screen and (max-width:767px) {
-            margin-top: 0rem;
-            animation: none;
-            opacity: 1;
-        }
+        
     }
 
     &--hide {
         animation: fadeOutText ease 1s forwards;
 
-        @media screen and (max-width:767px) {
-            margin-top: 0rem;
-            animation: none;
-            opacity: 1;
-        }
+        
     }
 }
 
@@ -226,20 +199,12 @@
         opacity: 0;
         animation: zoomImage ease 1.5s forwards;
 
-        @media screen and (max-width:767px) {
-            animation: none;
-           
-            opacity: 1;
-        }
+        
     }
 
     &--hide {
         opacity: 0;
-        @media screen and (max-width:767px) {
-            animation: none;
-           
-            opacity: 1;
-        }
+        
     }
 }
 
