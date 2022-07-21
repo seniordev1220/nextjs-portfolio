@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Button, Grid, Link, List, ListItemIcon, ListItemText, Tab, Tabs, Typography } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Grid, Link, List, ListItemIcon, ListItemText, Tab, Tabs, Typography } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -10,6 +10,7 @@ import { useDarkMode } from '../../../hooks/useDarkMode';
 import { sectionMapping } from '../sectionMapping';
 import { useSetTab } from '../../../hooks/useSetTab';
 import CircleIcon from '@mui/icons-material/Circle';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import classes from "./about.module.scss"
 
 
@@ -91,7 +92,7 @@ export const About = () => {
                 <p>Somethings about me</p>
             </Box>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
-                <Typography className={joinClass(classes.about__title, inView?classes['header--show']:classes['header--hide'])} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
+                <Typography className={joinClass(classes.about__title, inView ? classes['header--show'] : classes['header--hide'])} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
                     About Me</Typography>
             </Box>
             <Box sx={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
@@ -162,7 +163,7 @@ export const About = () => {
 
             <Box sx={{ display: "flex", justifyContent: "center" }}>
                 <Typography className={joinClass(classes.about__title, inView ? classes['career--show'] : classes['career--hide'])} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
-                My Resume</Typography>
+                    My Resume</Typography>
             </Box>
             <Box className={inView ? classes['career--show'] : classes['career--hide']} >
                 <Box sx={{ display: "flex", justifyContent: "center", minHeight: "300px" }} >
@@ -213,19 +214,33 @@ export const About = () => {
                         <Box className={classes['experience--mobile']}>
                             {experience.map((item, index) => (
                                 <Box key={`expMobTab-${index}`}>
-                                    <Typography sx={{ margin: "1rem", marginLeft: "2rem" }}>
-                                        {item.institute}
-                                    </Typography>
-                                    <List sx={{ display: "flex", flexDirection: "column", margin: "1rem", marginLeft: "2rem" }}>
-                                        {item.worksDone.map((item, index) => (
-                                            <Box key={`expMobListTab-${index}`} sx={{ display: "flex", flexDirection: "row" }}>
-                                                <ListItemIcon>
-                                                    <CircleIcon sx={{ color: isDarkMode ? "#696969" : "#353839aa", marginTop: "0.5rem" }} fontSize="small" />
-                                                </ListItemIcon>
-                                                <ListItemText primary={item} />
-                                            </Box>
-                                        ))}
-                                    </List>
+                                    <Accordion sx={{ backgroundColor: isDarkMode ? "#29292930" : "#c1c1c124" }}>
+                                        <AccordionSummary
+                                            expandIcon={<ExpandMoreIcon sx={{color:isDarkMode ? "#696969" : "#353839aa"}}/>}
+                                            aria-controls="panel1a-content"
+                                            id="panel1a-header"
+                                            sx={{ color: "inherit" }}
+                                        >
+                                            <Typography sx={{
+                                                marginTop: "1rem", marginBottom: "1rem", fontWeight: "600", fontSize: "1.2rem",
+                                                color: isDarkMode ? "#696969" : "#353839aa"
+                                            }}>
+                                                {`${item.designation}`}
+                                            </Typography>
+                                        </AccordionSummary>
+                                        <AccordionDetails>
+                                            <List sx={{ display: "flex", flexDirection: "column", margin: "1rem", marginLeft: "2rem" }}>
+                                                {item.worksDone.map((item, index) => (
+                                                    <Box key={`expMobListTab-${index}`} sx={{ display: "flex", flexDirection: "row" }}>
+                                                        <ListItemIcon>
+                                                            <CircleIcon sx={{ color: isDarkMode ? "#696969" : "#353839aa", marginTop: "0.5rem" }} fontSize="small" />
+                                                        </ListItemIcon>
+                                                        <ListItemText sx={{color: isDarkMode ? "#696969" : "#353839aa"}} primary={item} />
+                                                    </Box>
+                                                ))}
+                                            </List>
+                                        </AccordionDetails>
+                                    </Accordion>
                                 </Box>
                             ))}
                         </Box>
