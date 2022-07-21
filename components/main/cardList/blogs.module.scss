@@ -154,20 +154,7 @@
         transform: translateY(500px);
     }
 
-    @media screen and (max-width:767px) {
-
-        &--show {
-            animation: none;
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        &--hide {
-            animation: none;
-            opacity: 1;
-            transform: scale(1);
-        }
-    }
+   
 }
 
 .header {
@@ -186,20 +173,6 @@
         animation: fadeOutText ease 1s forwards;
     }
 
-    @media screen and (max-width:767px) {
-
-        &--show {
-            animation: none;
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        &--hide {
-            animation: none;
-            opacity: 1;
-            transform: scale(1);
-        }
-    }
 }
 
 @keyframes moveButtonUp {

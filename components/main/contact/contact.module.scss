@@ -92,20 +92,14 @@
             opacity: 0;
             animation: moveContent ease 1s forwards;
             animation-delay: 0.2s;
-            @media screen and (max-width:767px) {
-                animation: none;
-                opacity: 1;
-            }
+            
         }
 
         &--hide{
             opacity: 1;
             animation: fadeOut ease 1s forwards;
             animation-delay: 0.2s;
-            @media screen and (max-width:767px) {
-                animation: none;
-                opacity: 1;
-            }
+            
         }
     
 }
@@ -114,39 +108,27 @@
         opacity: 0;
         animation: moveButtonUp ease 1.5s forwards;
         animation-delay: 1s;
-        @media screen and (max-width:767px) {
-            animation: none;
-            opacity: 1;
-        }
+        
     }
 
     &--hide {
         opacity: 1;
         transform: translateY(500px);
         animation: moveButtonDown ease 1s forwards;
-        @media screen and (max-width:767px) {
-            animation: none;
-            opacity: 1;
-        }
+        
     }
 }
 
 .header {
     &--show {
         animation: moveHeader ease 0.4s forwards;
-        @media screen and (max-width:767px) {
-            animation: none;
-            opacity: 1;
-        }
+        
     }
 
     &--hide {
         // opacity: 0;
         animation: fadeOutText ease 1s forwards;
-        @media screen and (max-width:767px) {
-            animation: none;
-            opacity: 1;
-        }
+        
     }
 }
 
