@@ -14,14 +14,14 @@
         font-size: 3rem;
         text-align: center;
         transform: scale(1);
-        animation: scale forwards cubic-bezier(0.5, 1, 0.89, 1);
-        animation-delay: 0.5s;
+        animation: scale forwards ease;
+        animation-delay: 0.1s;
     }
 }
 .miniLogoContainer{
     @media screen and (min-width:767px) {
         margin-top:8rem;
-        
+
     }
 }
 
@@ -55,7 +55,7 @@
 
 @for $i from 1 through 20 {
     .quote__each:nth-child(#{$i}) {
-        animation: fade-in 1s $i*0.07s forwards cubic-bezier(0.11, 0, 0.5, 0);
+        animation: fade-in 1s $i*0.01s forwards cubic-bezier(0.11, 0, 0.5, 0);
 
         @media screen and (max-width:"767px") {
             animation: none;
