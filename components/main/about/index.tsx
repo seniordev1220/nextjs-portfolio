@@ -214,7 +214,7 @@ export const About = () => {
                         <Box className={classes['experience--mobile']}>
                             {experience.map((item, index) => (
                                 <Box key={`expMobTab-${index}`}>
-                                    <Accordion sx={{ backgroundColor: isDarkMode ? "#29292930" : "#c1c1c124" }}>
+                                    <Accordion sx={{ backgroundColor: isDarkMode ? "#29292930" : "#a1cdff1c" }}>
                                         <AccordionSummary
                                             expandIcon={<ExpandMoreIcon sx={{color:isDarkMode ? "#696969" : "#353839aa"}}/>}
                                             aria-controls="panel1a-content"
