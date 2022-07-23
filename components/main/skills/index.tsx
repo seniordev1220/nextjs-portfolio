@@ -48,7 +48,7 @@ export const Skills = () => {
                     My Skills</Typography>
             </Box>
             <Box className={classes.skills__content__wrapper}>
-                <Box sx={{marginleft:"2rem", marginRight:"2rem", display:"flex", justifyContent:"center" }} className={
+                <Box sx={{ display:"flex", justifyContent:"center" }} className={
                    joinClass( inView ? classes['image--show'] : classes['image--hide'], classes.image)}>
                     <Image width={400} height={400} src={idea} alt="Skills" />
                 </Box>

@@ -31,7 +31,7 @@ export const CardList = ({description, title, data, sectionMapping}: CardListPro
             <Box className={inView ? classes['header--show'] : classes['header--hide']} sx={{
                 display: "flex",
                 justifyContent: "center",
-                // marginTop: "3rem",
+                marginTop: "3rem",
                 color: isDarkMode ? "#696969" : "#353839aa",
                 fontWeight: "800"
 
