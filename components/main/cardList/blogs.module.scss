@@ -35,7 +35,7 @@
         @media screen and (max-width:767px) {
             background-color: #ffffff00;
             box-shadow: none;
-
+            height: 100vh;
             width: 100%;
 
         }
@@ -162,9 +162,7 @@
         animation: moveHeader ease 0.4s forwards;
         margin-top: 2.5rem;
 
-        @media screen and (max-width:767px) {
-            margin-top: 0rem;
-        }
+
 
     }
 

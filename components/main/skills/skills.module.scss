@@ -21,7 +21,7 @@
     }
 
     &__container {
-       
+
         display: flex;
         flex-direction: column;
         width: 85%;
@@ -29,10 +29,12 @@
         box-shadow: 0 0 0.5rem #00000049;
         padding-bottom: 3rem;
 
-        @media screen and (max-width:"767px") {
+        @media screen and (max-width:767px) {
             background-color: #ffffff00;
             box-shadow: none;
             width: 100%;
+            height: 100vh;
+
         }
 
         overflow-x:hidden;
@@ -128,14 +130,13 @@
     &--show {
         animation: moveHeader ease 0.4s forwards;
         margin-top: 2.5rem;
-
-        
+ 
     }
 
     &--hide {
         animation: fadeOutText ease 1s forwards;
+ 
 
-        
     }
 }
 
@@ -191,20 +192,21 @@
 
 .image {
     @media screen and (max-width:767px) {
-        
-        margin-left:5rem;
+
+        margin-left: 5rem;
         margin-right: 5rem;
     }
+
     &--show {
         opacity: 0;
         animation: zoomImage ease 1.5s forwards;
+    
 
-        
     }
 
     &--hide {
         opacity: 0;
-        
+ 
     }
 }
 
