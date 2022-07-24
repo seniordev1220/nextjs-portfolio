@@ -126,7 +126,7 @@ export const RotaryMenu = () => {
                     }} >
                         <MenuIcon sx={iconStyle} />
                     </div>
-                    {console.log(isComponentVisible, "is")}
+                 
                     {is && <div className={classes['rotaryMenu__icons__wrapper']}>
                         {newI.map(item =>
                             <div

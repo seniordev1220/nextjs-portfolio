@@ -78,7 +78,7 @@ function request(
     const url = getReqUrl(reqOptions);
     const options = getReqOptions(method, reqOptions);
     // options.credentials = reqOptions.credentials || "include";
-    console.log(url, options)
+ 
     return fetch(url, options).then(parseJSON);
 }
 

@@ -66,7 +66,7 @@ export async function getStaticPaths() {
     const pregenpaths = ids.map((item: any) => {
         return { params: { pid: item } }
     })
-    console.log(pregenpaths)
+   
     return {
         paths: [
             { params: { pid: '1' } },

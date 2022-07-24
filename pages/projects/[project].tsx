@@ -34,7 +34,7 @@ export async function getStaticPaths() {
     const pregenpaths = ids.map((item: number) => {
         return { params: { project: item.toString() } }
     })
-    console.log(pregenpaths)
+ 
     return {
         paths: [
             { params: { project: '1' } },
@@ -47,11 +47,11 @@ export async function getStaticPaths() {
 }
 export async function getStaticProps(context: any) {
     const { params } = context;
-    console.log(params)
+    
     //param i s an object withg key pid
     const projectId = params.project
     const projectData = projects.find((item: any) => item.id === Number(projectId))
-    console.log(projectData, "bb")
+    
     if (!projectData) {
         return {
             notFound: true

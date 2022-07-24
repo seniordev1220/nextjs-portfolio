@@ -18,7 +18,7 @@ import {
 import { BlogItem } from "../../store/blogs/types";
 
 function* getBlogsSaga(action: { type: string }): any {
-    console.log("sagaaaaaaaaaaaaaaa")
+   
     try {
         const response = yield call(getBlogsApi);
         yield put(getBlogsSuccess(response.data));

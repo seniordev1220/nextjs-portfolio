@@ -40,7 +40,7 @@ export async function getStaticPaths() {
     }
 }
 export async function getStaticProps(context: { params: { blogSlug: number } }) {
-console.log(context)
+
     const blogSlug = context.params.blogSlug
     interface blogDataType{
         id: number;
