@@ -33,7 +33,7 @@ export const blogSlice = createSlice({
             state.blogs = action.payload
         },
         getBlogsFailed: (state, action) => {
-            console.log("action")
+          
             state.isLoading = false;
             state.error = action.payload
         },

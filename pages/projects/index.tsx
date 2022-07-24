@@ -17,7 +17,7 @@ function LastSales(props: any) {
     }
     return <>
         <p>Loaded</p>
-        {console.log(datas)}
+      
     </>
 
 }
