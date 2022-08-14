@@ -36,8 +36,8 @@ export async function getStaticPaths() {
 
     const blogs: any = await getBlogs();
     const slugs = blogs.map((item: { slug: string; }) => item.slug)
-    const pregeneratedPaths = slugs.map((item: number) => {
-        return { params: { blogSlug: item.toString() } }
+    const pregeneratedPaths = slugs.map((item: string) => {
+        return { params: { blogSlug: item } }
     })
     return {
         paths: pregeneratedPaths,
