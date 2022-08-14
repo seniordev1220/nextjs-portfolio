@@ -1,60 +1,47 @@
 import React, { useRef, useEffect } from "react";
 import SunEditorCore from "suneditor/src/lib/core";
 import dynamic from "next/dynamic";
-import 'suneditor/dist/css/suneditor.min.css'; // Import Sun Editor's CSS File
-import axios from "axios";
+import 'suneditor/dist/css/suneditor.min.css';
 
 const SunEditor = dynamic(() => import("suneditor-react"), {
     ssr: false,
 });
 
-export const Editor = (props: any) => {
+export const Editor = ({ value, handleChange }: {
+    value: string,
+    handleChange: (value: string) => void
+}) => {
     const editor = useRef<SunEditorCore>();
-
-    // The sunEditor parameter will be set to the core suneditor instance when this function is called
     const getSunEditorInstance = (sunEditor: SunEditorCore) => {
         editor.current = sunEditor;
     };
 
-    const convertToBase64 = (file: Blob) => {
-        return new Promise(resolve => {
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = () => {
-                resolve(reader.result);
-            }
-        })
-    }
-    const handleImageUploadBefore = async (files: any, info: any, uploadHandler: any) => {
-        console.log(files, info,)
-
-        // const convertedFile = await convertToBase64(files);
-        const formData = new FormData();
-        formData.append('image', files);
-        // const response = await axios.post('/api/v1/image', formData);
-        // return response.data;
-        const s3URL = await axios.post(
-            'http://localhost:3009/images',
-           formData
-        );
-        return s3URL;
-
-    }
     return (
         <div>
-            <p> My Other Contents </p>
-            <SunEditor setOptions={{
+            <SunEditor
+                setContents={value}
 
-                buttonList: [['font', 'align'], ['image']] // Or Array of button list, eg. [['font', 'align'], ['image']]
-                // plugins: [font] set plugins, all plugins are set by default
-                // Other option
-            }}
-
-
-
-
-
-                onImageUploadBefore={handleImageUploadBefore} onInput={(e) => console.log(e)} setAllPlugins={true} getSunEditorInstance={getSunEditorInstance} />
+                setOptions={{
+                    minHeight: "70vh",
+                    maxHeight: "70vh",
+                    buttonList: [
+                        ['undo', 'redo'],
+                        ['font', 'fontSize', 'formatBlock'],
+                        ['paragraphStyle', 'blockquote'],
+                        ['bold', 'underline', 'italic', 'strike', 'subscript', 'superscript'],
+                        ['fontColor', 'hiliteColor', 'textStyle'],
+                        ['removeFormat'],
+                        '/',
+                        ['outdent', 'indent'],
+                        ['align', 'horizontalRule', 'list', 'lineHeight'],
+                        ['table', 'link', 'image', 'audio'], // You must add the 'katex' library at options to use the 'math' plugin.
+                        ['fullScreen', 'showBlocks', 'codeView'],
+                        ['preview', 'print'],
+                    ]
+                }}
+                onChange={handleChange} 
+                setAllPlugins={true} 
+                getSunEditorInstance={getSunEditorInstance} />
         </div>
     );
 };

@@ -7,13 +7,13 @@ import { Contact } from '../components/main/contact'
 import { About } from '../components/main/about'
 import { Skills } from '../components/main/skills'
 import { useDispatch, useSelector } from 'react-redux'
-import { getBlogs } from '../store/blogs/reducer'
+import { blogStateType, getBlogs } from '../store/blogs/reducer'
 import { Background } from '../components/background'
-import { blogs } from '../mock/blogs';
 import { sectionMapping } from "../components/main/sectionMapping";
 
 import classes from "./index.module.scss"
 import { projects } from '../mock/projects'
+import { RootState } from '../store/types'
 
 export const TabContext = React.createContext({ tabValue: 0, handleTabChange: (event: React.SyntheticEvent, newValue: number) => { } });
 
@@ -41,9 +41,10 @@ const Main = () => {
   };
 
   const dispatch = useDispatch();
-  const state = useSelector(state => state);
+  const { blogs } = useSelector<RootState>(state => state.blog) as blogStateType;
+
   useEffect(() => {
-    dispatch(getBlogs(null))
+    dispatch(getBlogs({showHidden:false, limit:5, offset:0}))
   }, [])
 
   return (
@@ -51,7 +52,7 @@ const Main = () => {
     <div className={classes['section__container']}>
       <TabContext.Provider value={{ tabValue, handleTabChange }}>
 
-        <Layout>
+        <Layout variant="main">
           <>
             <Background />
 

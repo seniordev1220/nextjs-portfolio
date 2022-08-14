@@ -1,8 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { BlogItem } from './types';
+export interface blogStateType {
+    blogs: BlogItem[],
+    blogItem: BlogItem,
+    isLoading: boolean,
+    error: any,
+    
+}
 
-
-const intialState: { blogs: BlogItem[], blogItem: BlogItem, isLoading: boolean, error: any } = {
+const intialState: blogStateType = {
     blogs: [],
     blogItem: {
         id: -1,
@@ -11,17 +17,19 @@ const intialState: { blogs: BlogItem[], blogItem: BlogItem, isLoading: boolean, 
         description: "",
         image: "",
         slug: "",
-        content: ""
+        content: "",
+        showinportfolio: true
     },
     isLoading: false,
     error: null
 }
 
-export const blogSlice = createSlice({
+export const blogSlice:any = createSlice({
     name: 'blog',
     initialState: intialState,
     reducers: {
         getBlogs: (state, action) => {
+            
             // Redux Toolkit allows us to write "mutating" logic in reducers. It
             // doesn't actually mutate the state because it uses the Immer library,
             // which detects changes to a "draft state" and produces a brand new
@@ -33,7 +41,7 @@ export const blogSlice = createSlice({
             state.blogs = action.payload
         },
         getBlogsFailed: (state, action) => {
-          
+
             state.isLoading = false;
             state.error = action.payload
         },
@@ -43,7 +51,7 @@ export const blogSlice = createSlice({
         },
         getBlogItemSuccess: (state, action) => {
             state.isLoading = false;
-            state.blogs = action.payload
+            state.blogItem = action.payload
         },
         getBlogItemFailed: (state, action) => {
             state.isLoading = false;
@@ -88,5 +96,5 @@ export const {
     getBlogs, getBlogsSuccess, getBlogsFailed, getBlogItem,
     getBlogItemSuccess, getBlogItemFailed, editBlogItem,
     editBlogItemSuccess, editBlogItemFailed, deleteBlogItem,
-    deleteBlogItemSuccess, deleteBlogItemFailed, addBlog,addBlogFailed,addBlogSuccess
+    deleteBlogItemSuccess, deleteBlogItemFailed, addBlog, addBlogFailed, addBlogSuccess
 } = blogSlice.actions

@@ -17,10 +17,8 @@ export const Quotes = () => {
                 <Grid item xs={12} md={7} >
                     <div ref={ref} className={classes.quote__container}>
                         {inView && <h3 className={classes.quote__content}>
-                            {quote.split(" ").map((word) => (
-                                <>
-                                    <span className={classes.quote__each}>{word}</span>
-                                </>
+                            {quote.split(" ").map((word, index) => (
+                                    <span key={`${word}-${index}`} className={classes.quote__each}>{word}</span>
                             ))
                             }
                         </h3>

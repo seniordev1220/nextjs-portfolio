@@ -17,11 +17,10 @@ import {
 } from "../../store/blogs/reducer";
 import { BlogItem } from "../../store/blogs/types";
 
-function* getBlogsSaga(action: { type: string }): any {
-   
+function* getBlogsSaga(action: { type: string, payload: { showHidden: boolean, limit:number, offset:number } }): any {
     try {
-        const response = yield call(getBlogsApi);
-        yield put(getBlogsSuccess(response.data));
+        const response = yield call(getBlogsApi,  action.payload.showHidden, action.payload.limit, action.payload.offset);
+        yield put(getBlogsSuccess(response.data.blogs));
     } catch (e) {
         yield put(getBlogsFailed(e));
     }
@@ -30,37 +29,41 @@ function* getBlogsSaga(action: { type: string }): any {
 function* getBlogItemSaga(action: { type: string, payload: { id: number } }): any {
     try {
         const response = yield call(getBlogItemApi, action.payload.id);
-        yield put(getBlogItemSuccess(response.data));
+        yield put(getBlogItemSuccess(response.data.blog));
     } catch (e) {
         yield put(getBlogItemFailed(e));
     }
 }
 
-function* addBlogSaga(action: { payload: { data: BlogItem } }) {
+function* addBlogSaga(action: { payload: { data: BlogItem, closeModal: () => void } }) {
     try {
-        const { data } = action.payload;
-        yield call(addBlogApi, data);
+        yield call(addBlogApi, action.payload.data);
         yield put(addBlogSuccess(null));
+        yield put(getBlogs({showHidden:true}))
+        yield call(action.payload.closeModal)
     } catch (e) {
         yield put(addBlogFailed(e));
     }
 }
 
-function* updateBlogSaga(action: { payload: { data: BlogItem; }; }) {
+function* updateBlogSaga(action: { payload: { data: BlogItem, closeModal: () => void } }) {
     try {
-        const { data } = action.payload;
-        yield call(updateBlogApi, data);
+
+        yield call(updateBlogApi, action.payload.data);
         yield put(editBlogItemSuccess(null));
+        yield put(getBlogs({showHidden:true}))
+        yield call(action?.payload?.closeModal)
     } catch (e) {
         yield put(editBlogItemFailed(e));
     }
 }
 
-function* deleteBlogSaga(action: { payload: { data: any; }; }) {
+function* deleteBlogSaga(action: { type: string, payload: number; }) {
+  
     try {
-        const { data } = action.payload;
-        yield call(deleteBlogApi, data);
+        yield call(deleteBlogApi, action.payload);
         yield put(deleteBlogItemSuccess(null));
+        yield put(getBlogs({showHidden:true}))
     } catch (e) {
         yield put(deleteBlogItemFailed(e));
     }

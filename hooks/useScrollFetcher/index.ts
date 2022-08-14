@@ -12,7 +12,6 @@ export const useScrollFetcher = (threshold:number) => {
             else {
                 setShowItem(false)
             }
-            console.log(currentScrollYPosition, "scroll")
         };
         const onScroll = () => window.requestAnimationFrame(updateScrollDirection);
         window.addEventListener("scroll", onScroll);

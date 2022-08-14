@@ -1,0 +1,7 @@
+.blog{
+    &__title{
+        background: -webkit-linear-gradient(#353839, #2753d7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
