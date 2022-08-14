@@ -1,12 +1,13 @@
 import { BlogItem } from "../store/blogs/types";
 import request from "../helpers/utils/request";
 
-export const getBlogsApi = () => {
+export const getBlogsApi = (showHidden:boolean, limit:number, offset:number) => {
     const endpoint = "blogs";
-    return request.GET({ endpoint});
+    return request.GET({ endpoint, params: { showHidden: showHidden, limit, offset } });
 };
 
 export const getBlogItemApi = (id: number) => {
+
     const endpoint = `blogs/${id}`;
     return request.GET({ endpoint });
 };

@@ -1,13 +1,14 @@
 import * as React from "react"
+import { joinClass } from "../../helpers/utils"
 import classes from "./styles.module.scss"
 
-export const MiniLogo = () => (
+export const MiniLogo = ({className}:{className?:string}) => (
     <svg
-        className={classes.svg}
+        className={joinClass( classes.svg, !!className? className:"")}
         viewBox="77.734 155.297 153.826 159.405"
         preserveAspectRatio="none"
         style={{
-            height: "40%",
+            height: "40%"
         }}
 
 

@@ -1,53 +1,34 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import { server } from "../../helpers/utils/request"
 import useSWR from 'swr'
+import { Card } from '../../components/card'
+import Layout from '../../components/layout/layout'
+import { Box, Grid } from '@mui/material'
+import { fetcher } from '../../helpers/utils/fetcher'
 
-
-function LastSales(props: any) {
-    const [data, setData] = useState<any>([])
-    // const [isLoading, setIsLoading]=useState<boolean>()
-
-
+function Blogs(props: any) {
     //alternative for data fetching 
-    //request o url will be sent when this component is loaded
-    const { datas, error }: any = useSWR("https://next-js-project-ed582-default-rtdb.firebaseio.com/sales.json")
-    useEffect(() => {
-        setData(datas)
-    }, [datas])
-    // useEffect(()=>{
-    //     setIsLoading(true)
-    //     fetch("https://next-js-project-ed582-default-rtdb.firebaseio.com/sales.json").
-    //     then(res=>res.json()).then(dat=>{
-    //         setData(dat)
-    //         setIsLoading(false)
-    //     })
-    // },[])
-    //   return (
-    //     <div>
-    //         {isLoading?<p>Loading....</p>:
-    //        <> <p>finished loading</p>
-    //      {
-    //          data.map((item:any)=>{
-    //              console.log(item)
-    //          })
-    //      }
-    //        </>
-    //         }
-
-    //     </div>
-    //   )
-    if (error) {
+    //request of url will be sent when this component is loaded
+    
+    const { data }: any = useSWR(`/blogs`, fetcher)
+    const blogs = data?.data?.blogs;
+    if (!data) {
         return <p>Failed to load</p>
     }
-    if (data) {
+    if (!data) {
         return <p>loading...</p>
     }
     return <>
-        <p>Loaded</p>
-        {console.log(datas)}
+        <Layout variant="sub" title="Blogs">
+            <Grid container spacing={1}>
+                {blogs?.map((data: any) => (
+                    <Grid key={data.title} justifyContent="center" display="flex" xs={12} sm={3}>
+                        <Card {...data} />
+                    </Grid>
+                ))}
+            </Grid>
+        </Layout>
     </>
-
 }
-
-
-export default LastSales
+export default Blogs
 

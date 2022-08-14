@@ -1,18 +1,25 @@
 .card {
-    &__image {
-        border-radius: 12px;
-        width:250px;
-    }
-}
-.card{
-    margin: 1rem;
-    overflow: hidden;
+  &__image {
+    border-radius: 12px;
+    height: 150px;
+    width: 350px;
+    object-fit: cover;
     border-radius: 10px;
-    transition: all 0.5s;
-    &:hover {
-      transform: translate(0px, -20px);
-      cursor: pointer;
-    }
+  }
+}
+
+.card {
+  margin: 1rem;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.5s;
+&__container{
+  border-radius: 10px;
+}
+  &:hover {
+    transform: translate(0px, -20px);
+    cursor: pointer;
+  }
 }
 
 @media only screen and (max-width: 780px) {
@@ -30,17 +37,19 @@
   @keyframes hvr {
     0% {
       box-shadow: -2px 2px 0px 0px #202020,
-                  -10px 10px 40px 0px rgba(0, 0, 0, 0.3);
+        -10px 10px 40px 0px rgba(0, 0, 0, 0.3);
       transform: translate(0px, 0px);
     }
+
     50% {
       transform: translate(0px, -20px);
       box-shadow: -2px 1px 0px 0px #202020,
-                  -40px 40px 40px 0 rgba(0, 0, 0, 0.2);
+        -40px 40px 40px 0 rgba(0, 0, 0, 0.2);
     }
+
     100% {
       box-shadow: -2px 2px 0px 0px #202020,
-                  -10px 10px 40px 0px rgba(0, 0, 0, 0.3);
+        -10px 10px 40px 0px rgba(0, 0, 0, 0.3);
       transform: translate(0px, 0px);
     }
   }

@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { useEffect, useRef } from "react";
-import { blogs } from "../../mock/blogs";
+import { getBlogsApi } from "../../services/blogs";
 interface BlogDetailsType {
     id: string;
     title: string;
@@ -16,7 +16,7 @@ const Blog = ({ title, date, image, content }: BlogDetailsType) => {
         if (descriptionRef.current !== null) {
             descriptionRef.current.innerHTML = content;
         }
-    }, [])
+    }, [content])
     return (
         <Box sx={{ width: "95%", maxWidth: "1024px", margin: "auto", marinTop: "2rem", marginBottom: "2rem" }}>
             <h1>{title}</h1>
@@ -27,11 +27,16 @@ const Blog = ({ title, date, image, content }: BlogDetailsType) => {
         </Box>
     )
 }
+const getBlogs = async () => {
+    const response: any = await getBlogsApi(false, 999, 0)
+    return await response.data.blogs
+}
 
 export async function getStaticPaths() {
 
-    const ids = blogs.map((item: { id: number; }) => item.id)
-    const pregeneratedPaths = ids.map((item: number) => {
+    const blogs: any = await getBlogs();
+    const slugs = blogs.map((item: { slug: string; }) => item.slug)
+    const pregeneratedPaths = slugs.map((item: number) => {
         return { params: { blogSlug: item.toString() } }
     })
     return {
@@ -39,27 +44,29 @@ export async function getStaticPaths() {
         fallback: true
     }
 }
-export async function getStaticProps(context: { params: { blogSlug: number } }) {
+export async function getStaticProps(context: { params: { blogSlug: string } }) {
 
     const blogSlug = context.params.blogSlug
-    interface blogDataType{
+    interface blogDataType {
         id: number;
-        title:string;
+        title: string;
         date: string,
-        description:string,
+        description: string,
         image: string,
         slug: string,
         content: string
     }
-    const blogData = blogs.find((item: blogDataType) => item.id === Number(blogSlug))
-    if (!blogData) {
+    const blogData = await getBlogs();
+    const blog =blogData.find((item: blogDataType) => item.slug === blogSlug);
+    
+    if (!blog) {
         return {
             notFound: true
         }
     }
     return {
         props: {
-            ...blogData
+            ...blog
         },
         revalidate: 3600
     }

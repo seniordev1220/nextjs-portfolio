@@ -128,13 +128,13 @@ export const RotaryMenu = () => {
                     </div>
                  
                     {is && <div className={classes['rotaryMenu__icons__wrapper']}>
-                        {newI.map(item =>
+                        {newI.map((item, index) =>
                             <div
                                 onClick={() => {
                                     handleTabChange(null as any, item.tabNumber)
                                     setIs(false);
                                 }}
-                                key={`rotaryIcon-${item.xCordinate}`}
+                                key={`rotaryIcon-${item.xCordinate}-${index}`}
                                 className={classes['rotaryMenu__icons']}
                                 style={{
                                     position: "absolute",

@@ -45,7 +45,7 @@ export async function getStaticProps(context: any) {
 
 
     const product = data.find((item: any) => item.id === Number(productId))
-    // console.log(product)
+    
     if (!product) {
         return {
             notFound: true

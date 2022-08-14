@@ -8,10 +8,10 @@ import { useSetTab } from '../../../hooks/useSetTab';
 import classes from "./blogs.module.scss"
 import { ScrollRight } from '../../scrollRight';
 const props = ["description", "title", "data", "sectionMapping"]
-interface CardListProps{
-    description:string;
-    title:string;
-    data:{
+interface CardListProps {
+    description: string;
+    title: string;
+    data: {
         id: number;
         title: string;
         date: string;
@@ -20,10 +20,11 @@ interface CardListProps{
         slug: string;
         content: string;
     }[];
-    sectionMapping:number
+    sectionMapping: number
 }
 
-export const CardList = ({description, title, data, sectionMapping}: CardListProps) => {
+export const CardList = ({ description, title, data, sectionMapping }: CardListProps) => {
+
     const { ref, inView } = useSetTab(sectionMapping);
     const { isDarkMode } = useDarkMode()
     return (
@@ -40,12 +41,12 @@ export const CardList = ({description, title, data, sectionMapping}: CardListPro
             </Box>
             <Box component="span" sx={{ margin: "auto" }}>
                 <Typography className={joinClass(classes.blogs__title, inView ? classes['header--show'] : classes['header--hide'])} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
-                   {title}</Typography>
+                    {title}</Typography>
             </Box>
 
             <Box className={classes.blogs__content__wrapper}>
-                {data.map((blog) => (
-                    <Box key={`title:${blog.title}`} className={joinClass(inView ?
+                {data.map((blog, index) => (
+                    <Box key={`title:${blog.title}-${index}`} className={joinClass(inView ?
                         classes['blog--show'] : classes['blog--hide'], classes.blogs__item)}
                     >
                         <Box sx={{ display: 'flex', justifyContent: 'center', width: "100%" }}>
@@ -73,13 +74,12 @@ export const CardList = ({description, title, data, sectionMapping}: CardListPro
                     ><Link href="/blogs">View More</Link>
                     </Button>
                 </Box>
-                
+
 
             </Box>
             <Box className={classes.blogs__right__arrow}>
-                  {inView&&  <ScrollRight />}
-
-                </Box>
+                {inView && <ScrollRight />}
+            </Box>
         </div>
     )
 }
