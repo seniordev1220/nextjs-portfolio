@@ -52,7 +52,7 @@ const Main = () => {
     <div className={classes['section__container']}>
       <TabContext.Provider value={{ tabValue, handleTabChange }}>
 
-        <Layout variant="main">
+        <Layout variant="l1">
           <>
             <Background />
 

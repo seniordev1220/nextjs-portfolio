@@ -19,7 +19,7 @@ function Blogs(props: any) {
         return <p>loading...</p>
     }
     return <>
-        <Layout variant="sub" title="Blogs">
+        <Layout variant="l2" title="Blogs">
             <Grid container spacing={1}>
                 {blogs?.map((data: any) => (
                     <Grid key={data.title} justifyContent="center" display="flex" xs={12} sm={3}>
