@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import { useEffect, useRef } from "react";
+import Layout from "../../components/layout/layout";
 import { getBlogsApi } from "../../services/blogs";
 interface BlogDetailsType {
     id: string;
@@ -18,13 +19,15 @@ const Blog = ({ title, date, image, content }: BlogDetailsType) => {
         }
     }, [content])
     return (
-        <Box sx={{ width: "95%", maxWidth: "1024px", margin: "auto", marinTop: "2rem", marginBottom: "2rem" }}>
-            <h1>{title}</h1>
-            <span>{date}</span>
-            <Box sx={{ marginTop: "3rem" }}>
-                <div ref={descriptionRef}></div>
+        <Layout variant="l3" title="Blogs">
+            <Box sx={{ width: "95%", maxWidth: "1024px", margin: "auto", marinTop: "2rem", marginBottom: "2rem" }}>
+                <h1>{title}</h1>
+                <span>{date}</span>
+                <Box sx={{ marginTop: "3rem" , lineHeight:"1.5"}}>
+                    <div ref={descriptionRef}></div>
+                </Box>
             </Box>
-        </Box>
+        </Layout>
     )
 }
 const getBlogs = async () => {
@@ -57,8 +60,8 @@ export async function getStaticProps(context: { params: { blogSlug: string } }) 
         content: string
     }
     const blogData = await getBlogs();
-    const blog =blogData.find((item: blogDataType) => item.slug === blogSlug);
-    
+    const blog = blogData.find((item: blogDataType) => item.slug === blogSlug);
+
     if (!blog) {
         return {
             notFound: true

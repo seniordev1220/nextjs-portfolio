@@ -1,7 +1,8 @@
 import { BlogItem } from "../store/blogs/types";
 import request from "../helpers/utils/request";
+import { getToken } from "../hooks/useToken";
 
-export const getBlogsApi = (showHidden:boolean, limit:number, offset:number) => {
+export const getBlogsApi = (showHidden: boolean, limit: number, offset: number) => {
     const endpoint = "blogs";
     return request.GET({ endpoint, params: { showHidden: showHidden, limit, offset } });
 };
@@ -14,15 +15,19 @@ export const getBlogItemApi = (id: number) => {
 
 export const addBlogApi = (item: BlogItem) => {
     const endpoint = "blogs";
-    return request.POST({ endpoint, body: item });
+    const token = getToken()
+    const response = request.POST({ endpoint, body: item, headers: { 'Authorization': 'Bearer ' + token } });
+    return response
 };
 
 export const updateBlogApi = (item: BlogItem) => {
+    const token = getToken()
     const endpoint = `blogs/${item.id}`;
-    return request.PUT({ endpoint, body: item });
+    return request.PUT({ endpoint, body: item, headers: { 'Authorization': 'Bearer ' + token } });
 };
 
 export const deleteBlogApi = (id: number) => {
+    const token = getToken()
     const endpoint = `blogs/${id}`;
-    return request.DELETE({ endpoint });
+    return request.DELETE({ endpoint, headers: { 'Authorization': 'Bearer ' + token } });
 };

@@ -1,9 +1,12 @@
 import { Box, Typography } from '@mui/material';
+import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 import RssFeedIcon from '@mui/icons-material/RssFeed';
 import { ScrollDown } from '../scrolldown';
 import Header from './header/header';
 import classes from "./layout.module.scss";
+import { Logo } from '../Logo';
+import { Background } from '../background';
 
 const iconStyle = {
     color: "#2753d7",
@@ -30,7 +33,7 @@ function Layout({ children, variant, title }: LayoutPropType) {
 
     return (
         <>
-            {variant === "main" && (
+            {variant === "l1" && (
                 <DarKModeContext.Provider value={{ isDarkMode: isDarkMode === "true" ? true : false }} >
                     <div>
                         <main className={classes.main}>
@@ -42,14 +45,14 @@ function Layout({ children, variant, title }: LayoutPropType) {
                 </DarKModeContext.Provider>)
             }
             {
-                variant === "sub" && (
+                variant === "l2" && (
                     <DarKModeContext.Provider value={{ isDarkMode: isDarkMode === "true" ? true : false }} >
                         <Box sx={{
                             display: "flex",
                             justifyContent: "space-between",
                             alignItems: "center",
                             padding: "0.3rem",
-                            marginBottom:"1.5rem"
+                            marginBottom: "1.5rem"
                         }}>
                             <Box sx={{ display: "flex" }}>
                                 {
@@ -72,13 +75,44 @@ function Layout({ children, variant, title }: LayoutPropType) {
                         </div>
                     </DarKModeContext.Provider>
                 )
+            },
+            {
+                variant === "l3" && (
+                    <DarKModeContext.Provider value={{ isDarkMode: isDarkMode === "true" ? true : false }} >
+                        <Box sx={{ position: "relative" }}>
+                            <Box sx={{
+                                padding: "0.3rem",
+                                marginBottom: "1.5rem",
+                                flexDirection: "column",
+
+                            }}>
+                                <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                                    <Link href="/">
+                                        <a><Logo /></a>
+                                    </Link>
+
+                                    <input checked={isDarkMode === "true" ? true : false}
+                                        className={classes.toggle}
+                                        type="checkbox"
+                                        onChange={onButtonToggle} />
+                                </Box>
+                                <div>
+                                    <main className={classes.main}>
+                                        {children}
+                                    </main>
+                                </div>
+                            </Box>
+                            <Background />
+                        </Box>
+                    </DarKModeContext.Provider>
+                )
             }
         </>)
 }
 
 interface LayoutPropType {
     children: JSX.Element;
-    variant: "main" | "sub";
+    variant: "l1" | "l2" | "l3";
     title?: "Blogs" | "Projects"
 }
 

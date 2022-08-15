@@ -9,7 +9,7 @@ const Blog = (props: any) => {
   const router = useRouter()
   const dispatch = useDispatch();
   const { blogItem, isLoading } = useSelector<RootState>(state => state.blog) as blogStateType;
-  console.log("blog", blogItem, router)
+  
   useEffect(() => {
     if (router.query.id) {
       dispatch(getBlogItem({ id: router.query.id }))
