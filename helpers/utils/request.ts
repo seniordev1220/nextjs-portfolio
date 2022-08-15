@@ -1,4 +1,4 @@
-export const server = process.env.SERVER||"http://localhost:3009";
+export const server = process.env.SERVER;
 type ReqOptions = {
     endpoint: string;
     body?: any;
