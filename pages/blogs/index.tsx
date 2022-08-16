@@ -10,7 +10,7 @@ function Blogs(props: any) {
     //alternative for data fetching 
     //request of url will be sent when this component is loaded
     
-    const { data }: any = useSWR(`/blogs`, fetcher)
+    const { data }: any = useSWR(`/blogs?showHidden=false`, fetcher)
     const blogs = data?.data?.blogs;
     if (!data) {
         return <p>Failed to load</p>
