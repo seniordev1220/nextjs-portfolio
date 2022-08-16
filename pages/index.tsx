@@ -55,38 +55,30 @@ const Main = () => {
         <Layout variant="l1">
           <>
             <Background />
-
             <section ref={homeRef} className={classes['section--header']}>
               <Home />
-              {/* <div className={classes['section--header__clippath']} /> */}
             </section>
             <section className={classes['section--quotes']}>
               <Quotes />
-              {/* <div className={classes['section--left__clippath']} /> */}
             </section>
             <section ref={portfolioRef} className={classes['section--projects']}>
               <CardList description='Showcasing Some Of My Best Work' title="My Portfolio"
                 data={projects} sectionMapping={sectionMapping.portfolio}
               />
-              {/* <div className={classes['section--right__clippath']} /> */}
             </section>
             <section ref={blogRef} className={classes['section--projects']}>
               <CardList description='Check Out My Latest Blog Posts' title=" My Blogs"
                 data={blogs} sectionMapping={sectionMapping.blogs}
               />
-              {/* <div className={classes['section--left__clippath']} /> */}
             </section>
             <section ref={skillRef} className={classes['section--projects']}>
               <Skills />
-              {/* <div className={classes['section--right__clippath']} /> */}
             </section>
             <section ref={aboutRef} className={classes['section--about']}>
               <About />
-              {/* <div className={classes['section--left__clippath']} /> */}
             </section>
             <section ref={contactRef} className={classes['section--projects']}>
               <Contact />
-              {/* <div className={classes['section--right__clippath']} /> */}
             </section>
           </>
         </Layout>
