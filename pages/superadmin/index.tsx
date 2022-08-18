@@ -10,7 +10,7 @@ import { blogStateType, deleteBlogItem, editBlogItem, getBlogs } from '../../sto
 import { RootState } from '../../store/types';
 import { BlogItem } from '../../store/blogs/types';
 import { emailDataItem } from '../../store/email/types';
-import { Emails } from './emails';
+import { Emails } from '../../components/emails';
 
 const Dashboard = (props: any) => {
     const [selectedTab, setSelectedTab] = useState<"blog" | "project" | "emails">("blog");
