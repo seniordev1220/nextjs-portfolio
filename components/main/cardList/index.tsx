@@ -9,6 +9,7 @@ import classes from "./blogs.module.scss"
 import { ScrollRight } from '../../scrollRight';
 const props = ["description", "title", "data", "sectionMapping"]
 interface CardListProps {
+    type: string,
     description: string;
     title: string;
     data: {
@@ -23,7 +24,7 @@ interface CardListProps {
     sectionMapping: number
 }
 
-export const CardList = ({ description, title, data, sectionMapping }: CardListProps) => {
+export const CardList = ({ type, description, title, data, sectionMapping }: CardListProps) => {
 
     const { ref, inView } = useSetTab(sectionMapping);
     const { isDarkMode } = useDarkMode()
@@ -52,6 +53,7 @@ export const CardList = ({ description, title, data, sectionMapping }: CardListP
                         <Box sx={{ display: 'flex', justifyContent: 'center', width: "100%" }}>
                             <Card
                                 {...blog}
+                                endpoint={type}
                             />
                         </Box>
 

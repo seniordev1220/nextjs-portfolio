@@ -8,7 +8,7 @@ import { RootState } from '../../../store/types';
 const Project = (props: any) => {
   const router = useRouter()
   const dispatch = useDispatch();
-  const { projectItem, isLoading } = useSelector<RootState>(state => state.project) as projectStateType;
+  const { projectItem } = useSelector<RootState>(state => state.project) as projectStateType;
   
   useEffect(() => {
     if (router.query.id) {

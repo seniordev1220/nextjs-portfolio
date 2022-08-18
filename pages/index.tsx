@@ -80,9 +80,9 @@ const Main = () => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <TabContext.Provider value={{ tabValue, handleTabChange }}>
-      {!(isBlogsLoading || isProjectLoading) ?
-        <Layout variant="l1">
-          
+        {!(isBlogsLoading || isProjectLoading) ?
+          <Layout variant="l1">
+
             <>
               <Background />
               <section ref={homeRef} className={classes['section--header']}>
@@ -92,12 +92,12 @@ const Main = () => {
                 <Quotes />
               </section>
               <section ref={portfolioRef} className={classes['section--projects']}>
-                <CardList description='Showcasing Some Of My Best Work' title="My Portfolio"
+                <CardList type="projects" description='Showcasing Some Of My Best Work' title="My Portfolio"
                   data={projects} sectionMapping={sectionMapping.portfolio}
                 />
               </section>
               <section ref={blogRef} className={classes['section--projects']}>
-                <CardList description='Check Out My Latest Blog Posts' title=" My Blogs"
+                <CardList type="blogs" description='Check Out My Latest Blog Posts' title=" My Blogs"
                   data={blogs} sectionMapping={sectionMapping.blogs}
                 />
               </section>
@@ -112,9 +112,9 @@ const Main = () => {
               </section>
             </>
 
-        </Layout> :
-            <Loading />
-          }
+          </Layout> :
+          <Loading />
+        }
 
       </TabContext.Provider>
     </div>
