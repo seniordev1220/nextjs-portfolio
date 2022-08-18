@@ -9,7 +9,7 @@ import { fetcher } from '../../helpers/utils/fetcher'
 function Blogs(props: any) {
     //alternative for data fetching 
     //request of url will be sent when this component is loaded
-    
+
     const { data }: any = useSWR(`/blogs?showHidden=false`, fetcher)
     const blogs = data?.data?.blogs;
     if (!data) {
@@ -23,7 +23,7 @@ function Blogs(props: any) {
             <Grid container spacing={1}>
                 {blogs?.map((data: any) => (
                     <Grid key={data.title} justifyContent="center" display="flex" xs={12} sm={3}>
-                        <Card {...data} />
+                        <Card {...data} endpoint="blogs"/>
                     </Grid>
                 ))}
             </Grid>

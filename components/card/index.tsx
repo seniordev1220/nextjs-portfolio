@@ -4,17 +4,17 @@ import { useDarkMode } from "../../hooks/useDarkMode"
 import { CardItemProps } from "./card.type"
 import classes from "./cardItem.module.scss"
 
-export const Card = ({ title, date, description, image, slug }: CardItemProps) => {
+export const Card = ({ title, date, description, image, slug , endpoint}: CardItemProps) => {
     const { isDarkMode } = useDarkMode();
     const router = useRouter();
-    const handleRedirect=()=>{
+    const handleRedirect = () => {
         router.push(
             {
-                pathname: `blogs/${slug}`,
+                pathname: `${endpoint}/${slug}`,
             })
     }
     return (
-        
+
         <Box
             className={classes.card}
             onClick={handleRedirect}
@@ -23,7 +23,7 @@ export const Card = ({ title, date, description, image, slug }: CardItemProps) =
                 padding: "1rem",
                 margin: "1rem", width: "330px",
                 ...isDarkMode && { backgroundColor: "#141212" },
-                ...!isDarkMode&&{ backgroundImage:"linear-gradient(to right, #c1deff,#c1deff,#c1deff,#a1cdff ,#a1cdff )"},
+                ...!isDarkMode && { backgroundImage: "linear-gradient(to right, #c1deff,#c1deff,#c1deff,#a1cdff ,#a1cdff )" },
                 maxWidth: "280px",
                 aspectRatio: "9/12",
                 display: "flex",
@@ -39,6 +39,6 @@ export const Card = ({ title, date, description, image, slug }: CardItemProps) =
             <Typography sx={{ color: "#2753d7", fontWeight: "600" }}>{date}</Typography>
             <Typography component="h2" sx={{ fontWeight: "600", fontSize: "large" }}>{title}</Typography>
             <Typography sx={{ height: "100px", marginTop: "1rem" }}>{description}</Typography>
-        </Box>    
+        </Box>
     )
 }

@@ -8,8 +8,8 @@ import { RootState } from '../../../store/types';
 const Blog = (props: any) => {
   const router = useRouter()
   const dispatch = useDispatch();
-  const { blogItem, isLoading } = useSelector<RootState>(state => state.blog) as blogStateType;
-  
+  const { blogItem } = useSelector<RootState>(state => state.blog) as blogStateType;
+
   useEffect(() => {
     if (router.query.id) {
       dispatch(getBlogItem({ id: router.query.id }))
@@ -17,7 +17,7 @@ const Blog = (props: any) => {
   }, [router.query.id])
   return (
     <>
-      {blogItem && <CreateTemplate blogItem={blogItem} title={"Edit Content"} />}
+      {blogItem && <CreateTemplate blogItem={blogItem} title={"Edit Content"} isProject={false} />}
     </>
   )
 }
