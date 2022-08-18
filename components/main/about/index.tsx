@@ -133,19 +133,19 @@ export const About = () => {
                 </Box>
                 <Box sx={{ display: "flex", marginTop: "1rem", justifyContent: "center" }}>
                     <Link sx={{ margin: "0.5rem", color: isDarkMode ? "white" : "black" }}
-                        href="https://twitter.com/ANANDKRISHNAN6">
+                        href="https://twitter.com/ANANDKRISHNAN6" target="_blank">
                         <TwitterIcon sx={{ fontSize: "2rem" }} />
                     </Link>
                     <Link sx={{ margin: "0.5rem", color: isDarkMode ? "white" : "black" }}
-                        href="https://www.linkedin.com/in/anand-krishnan-mj-a6332b154/">
+                        href="https://www.linkedin.com/in/anand-krishnan-mj-a6332b154/" target="_blank">
                         <LinkedInIcon sx={{ fontSize: "2rem" }} />
                     </Link>
                     <Link sx={{ margin: "0.5rem", color: isDarkMode ? "white" : "black" }}
-                        href="https://www.facebook.com/anandkrishnan.anandkrishnan">
+                        href="https://www.facebook.com/anandkrishnan.anandkrishnan" target="_blank">
                         <FacebookIcon sx={{ fontSize: "2rem" }} />
                     </Link>
                     <Link sx={{ margin: "0.5rem", color: isDarkMode ? "white" : "black" }}
-                        href="https://github.com/Anand-Krishnan-M-J">
+                        href="https://github.com/Anand-Krishnan-M-J" target="_blank">
                         <GitHubIcon sx={{ fontSize: "2rem" }} />
                     </Link>
                 </Box>

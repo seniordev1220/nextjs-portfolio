@@ -14,6 +14,7 @@ import { sectionMapping } from "../components/main/sectionMapping";
 import classes from "./index.module.scss"
 import { projects } from '../mock/projects'
 import { RootState } from '../store/types'
+import Head from 'next/head'
 
 export const TabContext = React.createContext({ tabValue: 0, handleTabChange: (event: React.SyntheticEvent, newValue: number) => { } });
 
@@ -44,12 +45,35 @@ const Main = () => {
   const { blogs } = useSelector<RootState>(state => state.blog) as blogStateType;
 
   useEffect(() => {
-    dispatch(getBlogs({showHidden:false, limit:5, offset:0}))
+    dispatch(getBlogs({ showHidden: false, limit: 5, offset: 0 }))
   }, [])
 
   return (
 
     <div className={classes['section__container']}>
+      <Head>
+        <title>Anand Krishnan M J Portfolio</title>
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+        <meta name="theme-color" content="#ffffff" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <TabContext.Provider value={{ tabValue, handleTabChange }}>
 
         <Layout variant="l1">
