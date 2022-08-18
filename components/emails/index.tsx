@@ -1,13 +1,9 @@
-import { Box, TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody, Typography, Switch, Button, Modal } from '@mui/material';
-import { Router } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import { Box, TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody, Typography } from '@mui/material';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Dashboard from '..';
-import TemplateForm from '../../../components/TemplateForm';
-import { BlogItem } from '../../../store/blogs/types';
-import { emailStateType, getEmails } from '../../../store/email/reducer';
-import { emailDataItem } from '../../../store/email/types';
-import { RootState } from '../../../store/types';
+import { emailStateType, getEmails } from '../../store/email/reducer';
+import { emailDataItem } from '../../store/email/types';
+import { RootState } from '../../store/types';
 
 
 export const Emails = (props: any) => {
