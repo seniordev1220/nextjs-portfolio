@@ -15,6 +15,8 @@ import classes from "./index.module.scss"
 import { projects } from '../mock/projects'
 import { RootState } from '../store/types'
 import Head from 'next/head'
+import { getProjects, projectStateType } from '../store/projects/reducer'
+import { Loading } from '../components/Loading'
 
 export const TabContext = React.createContext({ tabValue: 0, handleTabChange: (event: React.SyntheticEvent, newValue: number) => { } });
 
@@ -42,10 +44,13 @@ const Main = () => {
   };
 
   const dispatch = useDispatch();
-  const { blogs } = useSelector<RootState>(state => state.blog) as blogStateType;
+  const { blogs, isBlogsLoading } = useSelector<RootState>(state => state.blog) as blogStateType;
+  const { projects, isProjectLoading } = useSelector<RootState>(state => state.project) as projectStateType;
 
   useEffect(() => {
     dispatch(getBlogs({ showHidden: false, limit: 5, offset: 0 }))
+    dispatch(getProjects({ showHidden: false, limit: 5, offset: 0 }))
+
   }, [])
 
   return (
@@ -75,37 +80,42 @@ const Main = () => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <TabContext.Provider value={{ tabValue, handleTabChange }}>
-
+      {!(isBlogsLoading || isProjectLoading) ?
         <Layout variant="l1">
-          <>
-            <Background />
-            <section ref={homeRef} className={classes['section--header']}>
-              <Home />
-            </section>
-            <section className={classes['section--quotes']}>
-              <Quotes />
-            </section>
-            <section ref={portfolioRef} className={classes['section--projects']}>
-              <CardList description='Showcasing Some Of My Best Work' title="My Portfolio"
-                data={projects} sectionMapping={sectionMapping.portfolio}
-              />
-            </section>
-            <section ref={blogRef} className={classes['section--projects']}>
-              <CardList description='Check Out My Latest Blog Posts' title=" My Blogs"
-                data={blogs} sectionMapping={sectionMapping.blogs}
-              />
-            </section>
-            <section ref={skillRef} className={classes['section--projects']}>
-              <Skills />
-            </section>
-            <section ref={aboutRef} className={classes['section--about']}>
-              <About />
-            </section>
-            <section ref={contactRef} className={classes['section--projects']}>
-              <Contact />
-            </section>
-          </>
-        </Layout>
+          
+            <>
+              <Background />
+              <section ref={homeRef} className={classes['section--header']}>
+                <Home />
+              </section>
+              <section className={classes['section--quotes']}>
+                <Quotes />
+              </section>
+              <section ref={portfolioRef} className={classes['section--projects']}>
+                <CardList description='Showcasing Some Of My Best Work' title="My Portfolio"
+                  data={projects} sectionMapping={sectionMapping.portfolio}
+                />
+              </section>
+              <section ref={blogRef} className={classes['section--projects']}>
+                <CardList description='Check Out My Latest Blog Posts' title=" My Blogs"
+                  data={blogs} sectionMapping={sectionMapping.blogs}
+                />
+              </section>
+              <section ref={skillRef} className={classes['section--projects']}>
+                <Skills />
+              </section>
+              <section ref={aboutRef} className={classes['section--about']}>
+                <About />
+              </section>
+              <section ref={contactRef} className={classes['section--projects']}>
+                <Contact />
+              </section>
+            </>
+
+        </Layout> :
+            <Loading />
+          }
+
       </TabContext.Provider>
     </div>
   )

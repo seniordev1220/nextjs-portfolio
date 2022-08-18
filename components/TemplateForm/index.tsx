@@ -3,24 +3,32 @@ import { Box, Button, Checkbox, TextField, Typography } from '@mui/material'
 import { BlogItem } from '../../store/blogs/types'
 import { useDispatch } from 'react-redux'
 import { editBlogItem, addBlog } from '../../store/blogs/reducer'
+import { editProjectItem, addProject } from '../../store/projects/reducer'
 
-const TemplateForm = ({ closeModal, formtitle, isFormDetailsEdit, initialFormData }:
+const TemplateForm = ({ closeModal, formtitle, isFormDetailsEdit, initialFormData, isProject }:
     {
         closeModal: () => void,
         formtitle: string,
         initialFormData: BlogItem,
-        isFormDetailsEdit: boolean
+        isFormDetailsEdit: boolean,
+        isProject: boolean
     }) => {
     const dispatch = useDispatch();
     const [templateFormData, setTemplateFormData] = useState(initialFormData);
-    const handleChange = (value: string|boolean, key: string) => {
+    const handleChange = (value: string | boolean, key: string) => {
         setTemplateFormData(prev => ({ ...prev, [key]: value }))
     }
     const handleSave = () => {
-        isFormDetailsEdit ?
-            (dispatch(editBlogItem({ data: templateFormData, closeModal:closeModal }))) :
-            (dispatch(addBlog({ data: templateFormData, closeModal:closeModal })))
-
+        if (isProject) {
+            isFormDetailsEdit ?
+                (dispatch(editProjectItem({ data: templateFormData, closeModal: closeModal }))) :
+                (dispatch(addProject({ data: templateFormData, closeModal: closeModal })))
+        }
+        else{
+            isFormDetailsEdit ?
+                (dispatch(editBlogItem({ data: templateFormData, closeModal: closeModal }))) :
+                (dispatch(addBlog({ data: templateFormData, closeModal: closeModal })))
+        }
     }
     return (
         <Box sx={{
@@ -38,8 +46,9 @@ const TemplateForm = ({ closeModal, formtitle, isFormDetailsEdit, initialFormDat
                 <Typography sx={{ marginLeft: "1rem", color: "black" }}>Show in portfolio</Typography>
                 <Checkbox value={templateFormData.showinportfolio}
                     onChange={(e) => {
-                       
-                        handleChange(e.target.value==="true"?true:false, "showinportfolio")}} />
+
+                        handleChange(e.target.value === "true" ? true : false, "showinportfolio")
+                    }} />
             </Box>
             <Button onClick={handleSave} sx={{ margin: "1rem" }} variant="contained">{isFormDetailsEdit ? "Edit" : "Add"}</Button>
             <Button onClick={closeModal} sx={{ margin: "1rem", color: "red", borderColor: "red" }} variant="outlined">Cancel</Button>

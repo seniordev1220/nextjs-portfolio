@@ -1,4 +1,5 @@
 import { BlogItem } from "./blogs/types";
+import { ProjectItem } from "./projects/types";
 
 export interface RootState {
   blog: {
@@ -8,8 +9,8 @@ export interface RootState {
     error: any;
   },
   project: {
-    projects: BlogItem[];
-    projectItem: BlogItem;
+    projects: ProjectItem[];
+    projectItem: ProjectItem;
     isLoading: boolean;
     error: any;
   },

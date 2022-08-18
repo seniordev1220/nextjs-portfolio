@@ -4,4 +4,5 @@ export interface CardItemProps {
     description: string;
     image: string;
     slug: string;
+    endpoint:string;
 }

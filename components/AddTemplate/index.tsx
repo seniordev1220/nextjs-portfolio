@@ -7,8 +7,11 @@ import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
 import { editBlogItem } from '../../store/blogs/reducer'
 import { BlogItem } from '../../store/blogs/types'
+import { ProjectItem } from '../../store/projects/types'
+import { editProjectItem } from '../../store/projects/reducer'
 
-const CreateTemplate = ({ title, blogItem }: { title: string, blogItem: BlogItem }) => {
+//log and project fields are handle the same way here
+const CreateTemplate = ({ title, blogItem, isProject }: { title: string, blogItem: BlogItem | ProjectItem, isProject: boolean }) => {
     const dispatch = useDispatch();
     const params: any = useRouter();
     const redirectToBlogsList = () => {
@@ -17,7 +20,7 @@ const CreateTemplate = ({ title, blogItem }: { title: string, blogItem: BlogItem
                 pathname: `/superadmin`
             })
     }
-    const [blogFormData, setBlogFormData] = useState<BlogItem>(blogItem);
+    const [blogFormData, setBlogFormData] = useState<BlogItem | ProjectItem>(blogItem);
     useEffect(() => {
         setBlogFormData(blogItem)
     }, [blogItem])
@@ -26,7 +29,10 @@ const CreateTemplate = ({ title, blogItem }: { title: string, blogItem: BlogItem
         setBlogFormData(prev => ({ ...prev, content: value, id: params.query.id }))
     }
     const handleSave = () => {
-        dispatch(editBlogItem({ data: blogFormData, closeModal: redirectToBlogsList }))
+        isProject ? (
+            dispatch(editProjectItem({ data: blogFormData, closeModal: redirectToBlogsList }))) :
+            (dispatch(editBlogItem({ data: blogFormData, closeModal: redirectToBlogsList })))
+
     }
 
     return (

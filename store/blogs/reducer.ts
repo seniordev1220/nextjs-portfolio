@@ -3,7 +3,7 @@ import { BlogItem } from './types';
 export interface blogStateType {
     blogs: BlogItem[],
     blogItem: BlogItem,
-    isLoading: boolean,
+    isBlogsLoading: boolean,
     error: any,
     
 }
@@ -20,7 +20,7 @@ const intialState: blogStateType = {
         content: "",
         showinportfolio: true
     },
-    isLoading: false,
+    isBlogsLoading: true,
     error: null
 }
 
@@ -34,58 +34,58 @@ export const blogSlice:any = createSlice({
             // doesn't actually mutate the state because it uses the Immer library,
             // which detects changes to a "draft state" and produces a brand new
             // immutable state based off those changes
-            state.isLoading = true
+            state.isBlogsLoading = true
         },
         getBlogsSuccess: (state, action) => {
-            state.isLoading = false;
+            state.isBlogsLoading = false;
             state.blogs = action.payload
         },
         getBlogsFailed: (state, action) => {
 
-            state.isLoading = false;
+            state.isBlogsLoading = false;
             state.error = action.payload
         },
 
         getBlogItem: (state, action) => {
-            state.isLoading = true
+            state.isBlogsLoading = true
         },
         getBlogItemSuccess: (state, action) => {
-            state.isLoading = false;
+            state.isBlogsLoading = false;
             state.blogItem = action.payload
         },
         getBlogItemFailed: (state, action) => {
-            state.isLoading = false;
+            state.isBlogsLoading = false;
             state.error = action.payload;
 
         },
         addBlog: (state, action) => {
-            state.isLoading = false;
+            state.isBlogsLoading = false;
         },
         addBlogSuccess: (state, action) => {
-            state.isLoading = false;
+            state.isBlogsLoading = false;
         },
         addBlogFailed: (state, action) => {
-            state.isLoading = false;
+            state.isBlogsLoading = false;
             state.error = action.payload;
         },
         editBlogItem: (state, action) => {
-            state.isLoading = true
+            state.isBlogsLoading = true
         },
         editBlogItemSuccess: (state, action) => {
-            state.isLoading = false;
+            state.isBlogsLoading = false;
         },
         editBlogItemFailed: (state, action) => {
-            state.isLoading = false;
+            state.isBlogsLoading = false;
             state.error = action.payload;
         },
         deleteBlogItem: (state, action) => {
-            state.isLoading = true
+            state.isBlogsLoading = true
         },
         deleteBlogItemSuccess: (state, action) => {
-            state.isLoading = false;
+            state.isBlogsLoading = false;
         },
         deleteBlogItemFailed: (state, action) => {
-            state.isLoading = false;
+            state.isBlogsLoading = false;
             state.error = action.payload;
         }
     }
