@@ -1,5 +1,5 @@
-import React from 'react'
-import { Box, Button, Grid, TextField, Typography } from '@mui/material';
+import React, { useState } from 'react'
+import { Box, Button, Grid, Snackbar, TextField, Typography } from '@mui/material';
 import Link from 'next/link';
 import { joinClass } from '../../../helpers/utils';
 import { useDarkMode } from '../../../hooks/useDarkMode';
@@ -8,18 +8,85 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import { sectionMapping } from '../sectionMapping';
+import { useDispatch, useSelector } from 'react-redux';
 import { useSetTab } from '../../../hooks/useSetTab';
 import classes from "./contact.module.scss"
+import { emailStateType, sendEmail } from '../../../store/email/reducer';
+import { RootState } from '../../../store/types';
 
+interface contactDataType {
+    name: string
+    email: string
+    subject: string
+    message: string
+}
 export const Contact = () => {
     const { ref, inView } = useSetTab(sectionMapping.contact);
     const { isDarkMode } = useDarkMode();
+
+    const [open, setOpen] = React.useState(false);
+    const { isLoading } = useSelector<RootState>(state => state.email) as emailStateType;
+    console.log(isLoading, "isLoading")
+    const dispatch = useDispatch();
     const textFieldStyle = {
+        marginTop: "0.5rem",
         backgroundColor: isDarkMode ? "#rgb(54 54 54 / 87%)" : "#ffffff00",
-        boxShadow: isDarkMode ? "0 0 10px rgb(0 0 0 / 85%)" : "0 0 10px rgb(125 125 125 / 35%)",
         width: "100%",
-        marginTop: "1rem"
+        ".css-1d3z3hw-MuiOutlinedInput-notchedOutline ": {
+            borderWidth: "2px",
+            boxShadow: isDarkMode ? "0 0 10px rgb(0 0 0 / 85%)" : "0 0 10px rgb(125 125 125 / 35%)"
+        }
     }
+    const initialFormData = {
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+    }
+
+    const [contactData, setContactData] = useState<contactDataType>(initialFormData);
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setContactData(prev => ({ ...prev, [event.target.name]: event.target.value }))
+    }
+    const [errors, setErrors] = useState({ name: false, email: false, subject: false, message: false });
+
+    const onSendmessage = () => {
+        let errors = { name: false, email: false, subject: false, message: false }
+        Object.keys(contactData).map((item) => {
+            const dataItem = contactData[item as keyof typeof contactData];
+            dataItem === "" ? errors = { ...errors, [item]: true } : errors = { ...errors, [item]: false }
+        })
+        const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+        if (contactData.email.match(mailFormat)) {
+            errors = { ...errors, email: false }
+        }
+        else {
+            errors = { ...errors, email: true }
+        }
+        setErrors(errors);
+        const validity = !Object.values(errors).includes(true);
+        if (validity === true) {
+            dispatch(sendEmail({
+                data: contactData, reset: () => {
+                    setContactData(initialFormData);
+                    handleSuccess()
+                }
+            }))
+        }
+    }
+
+    const handleSuccess = () => {
+        setOpen(true);
+    };
+
+    const handleClose = (event: React.SyntheticEvent | Event, reason?: string) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpen(false);
+    };
+   
+
     return (
         <Box ref={ref} sx={{
             backgroundColor: isDarkMode ? "#141414" : "white",
@@ -39,10 +106,10 @@ export const Contact = () => {
             }}>
                 <p>Feel Free To Contact Me</p>
             </Box>
-            
-            <Box component="span" sx={{margin:"auto"}}>
-                <Typography className={joinClass(classes.contact__title, inView?classes['header--show'] : classes['header--hide'])} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
-                My Contact</Typography>
+
+            <Box component="span" sx={{ margin: "auto" }}>
+                <Typography className={joinClass(classes.contact__title, inView ? classes['header--show'] : classes['header--hide'])} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
+                    My Contact</Typography>
             </Box>
             <Box className={classes.contact__content__wrapper}>
                 <Grid container spacing={2} className={inView ? classes['contact--show'] : classes['contact--hide']}>
@@ -52,23 +119,45 @@ export const Contact = () => {
                             <Grid container spacing={2}>
                                 <Grid item xs={12} md={6}>
                                     <TextField
+                                        error={errors.name}
+                                        helperText={errors.name ? "Please enter your name" : " "}
                                         label={<Typography fontWeight={600} color="#696969">Name</Typography>}
                                         sx={textFieldStyle}
-                                        inputProps={{ style: { color: isDarkMode ? 'white' : 'black' }}}
+                                        name="name"
+                                        value={contactData.name}
+                                        onChange={handleChange}
+                                        inputProps={{ style: { color: isDarkMode ? 'white' : 'black' } }}
                                         color="primary"
                                         variant="outlined" />
                                 </Grid>
                                 <Grid item xs={12} md={6}>
                                     <TextField
-                                        sx={textFieldStyle} inputProps={{ style:{ color: isDarkMode ? 'white' : 'black' }}}
+                                        error={errors.email}
+                                        helperText={errors.email ? "Please enter your valid Email Id" : " "}
+                                        name="email"
+                                        value={contactData.email}
+                                        onChange={handleChange}
+                                        sx={textFieldStyle} inputProps={{ style: { color: isDarkMode ? 'white' : 'black' } }}
                                         label={<Typography fontWeight={600} color="#696969">Email</Typography>} variant="outlined" />
                                 </Grid>
                             </Grid>
-                            <TextField sx={textFieldStyle} inputProps={{ style: { color: isDarkMode ? 'white' : 'black' } }}
+                            <TextField
+                                error={errors.subject}
+                                helperText={errors.subject ? "Please enter the email subject" : " "}
+                                onChange={handleChange}
+                                name="subject"
+                                value={contactData.subject}
+                                sx={textFieldStyle} inputProps={{ style: { color: isDarkMode ? 'white' : 'black' } }}
                                 label={<Typography fontWeight={600} color="#696969">Subject</Typography>}
-                                variant="outlined" 
+                                variant="outlined"
                             />
-                            <TextField multiline minRows={5} maxRows={5} sx={textFieldStyle}  inputProps={{ style: { color: isDarkMode ? 'white' : 'black' } }}
+                            <TextField
+                                error={errors.message}
+                                helperText={errors.message ? "Please enter the the email message" : " "}
+                                onChange={handleChange}
+                                name="message"
+                                value={contactData.message}
+                                multiline minRows={5} maxRows={5} sx={textFieldStyle} inputProps={{ style: { color: isDarkMode ? 'white' : 'black' } }}
                                 label={<Typography fontWeight={600} color="#696969">Message</Typography>}
                                 variant="outlined" />
                             <Box sx={{
@@ -79,7 +168,9 @@ export const Contact = () => {
                                 justifyContent: "center",
                                 alignItems: "center",
                             }}>
-                                <Button sx={{ width: "200px", backgroundColor: "#2753d7" }} variant='contained'>
+                                <Button
+                                    onClick={onSendmessage}
+                                    sx={{ width: "200px", backgroundColor: "#2753d7" }} variant='contained'>
                                     Send message
                                 </Button>
                             </Box>
@@ -124,6 +215,12 @@ export const Contact = () => {
                         </Box>
                     </Grid>
                 </Grid>
+                <Snackbar
+                    open={open}
+                    autoHideDuration={6000}
+                    onClose={handleClose}
+                    message="Email Sent Successfully"
+                />
             </Box>
         </Box>
     )

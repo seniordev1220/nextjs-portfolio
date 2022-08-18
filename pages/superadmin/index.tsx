@@ -9,9 +9,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { blogStateType, deleteBlogItem, editBlogItem, getBlogs } from '../../store/blogs/reducer';
 import { RootState } from '../../store/types';
 import { BlogItem } from '../../store/blogs/types';
+import { emailDataItem } from '../../store/email/types';
+import { Emails } from './emails';
 
 const Dashboard = (props: any) => {
-    const [selectedTab, setSelectedTab] = useState<"blog" | "project">("blog");
+    const [selectedTab, setSelectedTab] = useState<"blog" | "project" | "emails">("blog");
     const [formModalOpen, setFormModalOpen] = useState(false);
     const [editId, setEditId] = useState(-1);
     const dispatch = useDispatch();
@@ -19,23 +21,27 @@ const Dashboard = (props: any) => {
     // const { projects } = useSelector<RootState>(state => state.project) as projectStateType;
 
     // const tableData: { blog: BlogItem[] } = { blog: blogs }
-    const [tableData, setTableData] = useState<{ blog: BlogItem[], project: BlogItem[] }>({ blog: [], project: [] })
+    const [tableData, setTableData] = useState<{ blog: BlogItem[], project: BlogItem[], emails: emailDataItem[] }>({ blog: [], project: [], emails: [] })
     useEffect(() => {
-        dispatch(getBlogs({showHidden:true, limit:999, offset:0}))
+        dispatch(getBlogs({ showHidden: true, limit: 999, offset: 0 }))
     }, [])
 
-    const handleChange = (e: React.SyntheticEvent<Element, Event>, value: "blog" | "project") => {
+    const handleChange = (e: React.SyntheticEvent<Element, Event>, value: "blog" | "project" | "emails") => {
         setSelectedTab(value)
     }
     const handleFormModalClose = () => {
         setFormModalOpen(false)
     }
-    const handleShowChange = (id:number) => {
-        dispatch(editBlogItem({ data: {...tableData.blog.find((item: { id: number }) => item.id === id),
-        showinportfolio:!tableData.blog.find((item: { id: number }) => item.id === id)?.showinportfolio } }))
+    const handleShowChange = (id: number) => {
+        dispatch(editBlogItem({
+            data: {
+                ...tableData.blog.find((item: { id: number }) => item.id === id),
+                showinportfolio: !tableData.blog.find((item: { id: number }) => item.id === id)?.showinportfolio
+            }
+        }))
     }
-    const handleDelete=(id:number)=>{
-        if(selectedTab==="blog"){
+    const handleDelete = (id: number) => {
+        if (selectedTab === "blog") {
             dispatch(deleteBlogItem(id))
         }
 
@@ -54,6 +60,7 @@ const Dashboard = (props: any) => {
                     <Tabs value={selectedTab} onChange={handleChange}>
                         <Tab label="Blog" value="blog" />
                         <Tab label="Project" value="project" />
+                        <Tab label="Emails" value="emails" />
                     </Tabs>
                     <Box sx={{ display: "flex", alignItems: "center" }}>
                         <Button variant="contained"
@@ -65,47 +72,54 @@ const Dashboard = (props: any) => {
                     </Box>
 
                 </Box>
-                <TableContainer component={Paper}>
-                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                        <TableHead>
-                            <TableRow>
-                                <TableCell width="10%">SL No</TableCell>
-                                {tableHeadings.map((heading, index) => (
-                                    <TableCell key={heading.label + index} width={heading.width} sx={{ width: `${heading.width}` }}>{heading.label}</TableCell>
-                                ))}
-                                <TableCell width="10%">Action</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {tableData[selectedTab]?.map((row: BlogItem, index: number) => (
-                                <TableRow key={row.title} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                                    <TableCell component="th" scope="row">  {index + 1} </TableCell>
-                                    <TableCell >{row.title}</TableCell>
-                                    <TableCell>{row.date}</TableCell>
-                                    <TableCell > <Typography >{row.description}</Typography></TableCell>
-                                    <TableCell>  <img style={{ maxWidth: "5rem" }} src={row.image} alt={row.title} /> </TableCell>
-                                    <TableCell >{row.slug}</TableCell>
-                                    <TableCell>
-                                        <Switch checked={row.showinportfolio} onChange={()=>handleShowChange(row.id)} />
-                                        <Button onClick={() => {
-                                            Router.push(`superadmin/${selectedTab}?id=${row.id}`)
-                                        }}><PreviewIcon /></Button>
-                                        <Button onClick={() => {
-                                            setEditId(row.id)
-                                            setFormModalOpen(true)
-                                        }}><EditIcon /></Button>
-                                        <Button onClick={()=>handleDelete(row.id)}><DeleteIcon /></Button>
-                                    </TableCell>
+                {selectedTab === "blog" &&
+                    <TableContainer component={Paper}>
+                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell width="10%">SL No</TableCell>
+                                    {tableHeadings.map((heading, index) => (
+                                        <TableCell key={heading.label + index} width={heading.width} sx={{ width: `${heading.width}` }}>{heading.label}</TableCell>
+                                    ))}
+                                    <TableCell width="10%">Action</TableCell>
                                 </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
+                            </TableHead>
+                            <TableBody>
+                                {
+                                    blogs?.map((row: BlogItem, index: number) => (
+                                        <TableRow key={row.title} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                                            <TableCell component="th" scope="row">  {index + 1} </TableCell>
+                                            <TableCell >{row.title}</TableCell>
+                                            <TableCell>{row.date}</TableCell>
+                                            <TableCell > <Typography >{row.description}</Typography></TableCell>
+                                            <TableCell>  <img style={{ maxWidth: "5rem" }} src={row.image} alt={row.title} /> </TableCell>
+                                            <TableCell >{row.slug}</TableCell>
+                                            <TableCell>
+                                                <Switch checked={row.showinportfolio} onChange={() => handleShowChange(row.id)} />
+                                                <Button onClick={() => {
+                                                    Router.push(`superadmin/${selectedTab}?id=${row.id}`)
+                                                }}><PreviewIcon /></Button>
+                                                <Button onClick={() => {
+                                                    setEditId(row.id)
+                                                    setFormModalOpen(true)
+                                                }}><EditIcon /></Button>
+                                                <Button onClick={() => handleDelete(row.id)}><DeleteIcon /></Button>
+                                            </TableCell>
+                                        </TableRow>
+                                    ))
+                                }
+
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                }
+                {
+                    selectedTab === "emails" && <Emails />
+                }
             </Box>
-           
             <Modal sx={{ display: "flex", justifyContent: "center" }} onBackdropClick={handleFormModalClose} open={formModalOpen}
                 onClose={handleFormModalClose}>
-                <TemplateForm  closeModal={handleFormModalClose}
+                <TemplateForm closeModal={handleFormModalClose}
                     formtitle={selectedTab}
                     isFormDetailsEdit={editId !== -1}
                     initialFormData={
