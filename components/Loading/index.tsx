@@ -4,7 +4,7 @@ import { joinClass } from '../../helpers/utils';
 import MiniLogo from '../miniLogo';
 import classes from "./styles.module.scss"
 
-export const Loading = () => {
+export const Loading = ({sxProp}:{sxProp?:any}) => {
     return (
         <Box sx={
             {
@@ -16,7 +16,8 @@ export const Loading = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 width: "100%",
-                height: "100vh"
+                height: "100vh",
+                ...sxProp
             }}>
             <MiniLogo />
             <Box sx={{ postition: "relative", display: "flex", flexDirection: "row", marginTop: "1rem" }}>

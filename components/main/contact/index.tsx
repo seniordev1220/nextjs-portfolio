@@ -13,6 +13,7 @@ import { useSetTab } from '../../../hooks/useSetTab';
 import classes from "./contact.module.scss"
 import { emailStateType, sendEmail } from '../../../store/email/reducer';
 import { RootState } from '../../../store/types';
+import { Loading } from '../../Loading';
 
 interface contactDataType {
     name: string
@@ -26,7 +27,7 @@ export const Contact = () => {
 
     const [open, setOpen] = React.useState(false);
     const { isLoading } = useSelector<RootState>(state => state.email) as emailStateType;
-    console.log(isLoading, "isLoading")
+    
     const dispatch = useDispatch();
     const textFieldStyle = {
         marginTop: "0.5rem",
@@ -89,6 +90,7 @@ export const Contact = () => {
 
     return (
         <Box ref={ref} sx={{
+            position:"relative",
             backgroundColor: isDarkMode ? "#141414" : "white",
             borderRadius: "1rem",
             color: "white",
@@ -222,6 +224,8 @@ export const Contact = () => {
                     message="Email Sent Successfully"
                 />
             </Box>
+            {isLoading&&<Loading sxProp={{position:"absolute"}}/>}
+
         </Box>
     )
 }
