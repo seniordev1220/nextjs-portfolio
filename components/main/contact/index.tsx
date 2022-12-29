@@ -34,8 +34,8 @@ export const Contact = () => {
         backgroundColor: isDarkMode ? "#rgb(54 54 54 / 87%)" : "#ffffff00",
         width: "100%",
         ".css-1d3z3hw-MuiOutlinedInput-notchedOutline ": {
-            borderWidth: "2px",
-            boxShadow: isDarkMode ? "0 0 10px rgb(0 0 0 / 85%)" : "0 0 10px rgb(125 125 125 / 35%)"
+            border:"solid 1px #2753d79e",
+            boxShadow: isDarkMode ? "0 0 1px #2753d7" : "0 0 2px rgb(125 125 125 / 35%)"
         }
     }
     const initialFormData = {
