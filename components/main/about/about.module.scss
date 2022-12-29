@@ -1,3 +1,9 @@
+.quote{
+        @media screen and (max-width:767px) {
+            display: none;
+        }
+    }
+
 .about {
     &__title {
         background: -webkit-linear-gradient(#353839, #2753d7);
@@ -30,7 +36,7 @@
         box-shadow: 0 0 0.5rem #00000049;
         padding-bottom: 3rem;
 
-        @media screen and (max-width:"767px") {
+        @media screen and (max-width:767px) {
             background-color: #ffffff00;
             box-shadow: none;
             width: 100%;
@@ -39,7 +45,7 @@
             height: 100vh;
         }
 
-        overflow-x:"hidden";
+        overflow-x:hidden;
         overflow-y: scroll;
 
         &::-webkit-scrollbar-track {

@@ -84,11 +84,11 @@ export const RotaryMenu = () => {
 
     const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible(false);
     const [rotatebyAngle, setRotateByAngle] = useState(0);
-    const [is, setIs] = useState(isComponentVisible);
+    const [isVisible, setIsVisible] = useState(isComponentVisible);
 
 
     useEffect(() => {
-        setIs(isComponentVisible)
+        setIsVisible(isComponentVisible)
     }, [isComponentVisible])
     useEffect(() => {
         if (!isComponentVisible) {
@@ -98,7 +98,7 @@ export const RotaryMenu = () => {
 
     return (
         <div
-            className={is ? classes["mainContainer--open"] : classes["mainContainer--close"]}
+            className={isVisible ? classes["mainContainer--open"] : classes["mainContainer--close"]}
             style={{
                 
                 width: "100%",
@@ -111,11 +111,11 @@ export const RotaryMenu = () => {
                     transition: "transform 1s ease"
                 }}
                 ref={ref}
-                className={is ? classes['rotaryMenu--open'] :
+                className={isVisible ? classes['rotaryMenu--open'] :
                     classes['rotaryMenu--close']}
                 onClick={() => {
                     setIsComponentVisible(true);
-                    setIs(true)
+                    setIsVisible(true)
                 }}
             >
                 <div className={classes.rotoryMenu__container}>
@@ -127,12 +127,12 @@ export const RotaryMenu = () => {
                         <MenuIcon sx={iconStyle} />
                     </div>
                  
-                    {is && <div className={classes['rotaryMenu__icons__wrapper']}>
+                    {isVisible && <div className={classes['rotaryMenu__icons__wrapper']}>
                         {newI.map((item, index) =>
                             <div
                                 onClick={() => {
                                     handleTabChange(null as any, item.tabNumber)
-                                    setIs(false);
+                                    setIsVisible(false);
                                 }}
                                 key={`rotaryIcon-${item.xCordinate}-${index}`}
                                 className={classes['rotaryMenu__icons']}

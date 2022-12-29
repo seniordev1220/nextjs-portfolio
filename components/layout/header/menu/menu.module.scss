@@ -10,6 +10,7 @@ $animation-duration: 0.4s;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    pointer-events: none;
 }
 
 @-webkit-keyframes bounce {
@@ -94,6 +95,7 @@ $animation-duration: 0.4s;
     display: flex;
     justify-content: center;
     width: max-content;
+    pointer-events: all;
 }
 
 @keyframes open {

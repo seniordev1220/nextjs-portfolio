@@ -9,6 +9,9 @@
         scroll-snap-type: y mandatory;
         overflow-y: scroll;
         height: 100vh;
+        @media screen and (min-width:767px) {
+            overflow-y: hidden;
+        }
     }
 
     &--header {

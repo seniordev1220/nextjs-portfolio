@@ -12,6 +12,7 @@ import { useSetTab } from '../../../hooks/useSetTab';
 import CircleIcon from '@mui/icons-material/Circle';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import classes from "./about.module.scss"
+import { Quotes } from '../quotes';
 
 
 const experience = [
@@ -216,7 +217,7 @@ export const About = () => {
                                 <Box key={`expMobTab-${index}`}>
                                     <Accordion sx={{ backgroundColor: isDarkMode ? "#29292930" : "#a1cdff1c" }}>
                                         <AccordionSummary
-                                            expandIcon={<ExpandMoreIcon sx={{color:isDarkMode ? "#696969" : "#353839aa"}}/>}
+                                            expandIcon={<ExpandMoreIcon sx={{ color: isDarkMode ? "#696969" : "#353839aa" }} />}
                                             aria-controls="panel1a-content"
                                             id="panel1a-header"
                                             sx={{ color: "inherit" }}
@@ -235,7 +236,7 @@ export const About = () => {
                                                         <ListItemIcon>
                                                             <CircleIcon sx={{ color: isDarkMode ? "#696969" : "#353839aa", marginTop: "0.5rem" }} fontSize="small" />
                                                         </ListItemIcon>
-                                                        <ListItemText sx={{color: isDarkMode ? "#696969" : "#353839aa"}} primary={item} />
+                                                        <ListItemText sx={{ color: isDarkMode ? "#696969" : "#353839aa" }} primary={item} />
                                                     </Box>
                                                 ))}
                                             </List>
@@ -299,6 +300,9 @@ export const About = () => {
                             </Box>
                         ))}
                     </Box>
+                </Box>
+                <Box className={classes['quote']}>
+                    <Quotes />
                 </Box>
             </Box>
 
