@@ -147,7 +147,8 @@ export const RotaryMenu = () => {
                                     height: "3rem",
                                     display: "flex",
                                     justifyContent: "center",
-                                    alignItems: "center"
+                                    alignItems: "center",
+                                    pointerEvents: 'all'
                                 }}>
                                 {item.IconComponent}
                             </div>
