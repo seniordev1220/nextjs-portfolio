@@ -1,13 +1,15 @@
 $darkBg: rgba(21, 21, 21);
-$lightBg:#add3ff;
+$lightBg: #add3ff;
 $caret-color-dark: b6d8ff;
 $caret-color-light: rgb(0, 0, 0);
 $text-length: 23;
 $animation-time: 2s;
+
 @mixin animateDescription {
     animation: zoom 1s ease forwards;
     animation-delay: 2s;
 }
+
 @mixin animateProfession {
     animation: fadeInProfession 1s ease forwards;
     animation-delay: 1.5s;
@@ -24,7 +26,7 @@ $animation-time: 2s;
 @keyframes zoom {
     from {
         opacity: 0;
-       
+
         transform: scale(0);
     }
 
@@ -45,10 +47,10 @@ $animation-time: 2s;
         opacity: 1;
     }
 }
+
 @keyframes fadeInProfession {
     from {
         opacity: 0;
-        transform: translateX(-10rem);
     }
 
     to {
@@ -86,7 +88,7 @@ $animation-time: 2s;
 
 .intro {
     &__container {
-       
+
         background-color: #ffffff04;
         box-shadow: 0 0 0.5rem #00000049;
         width: 85%;
@@ -98,6 +100,7 @@ $animation-time: 2s;
         border-radius: 0.5rem;
         padding-left: 2rem;
         padding-right: 2rem;
+
         @media screen and (max-width:767px) {
             height: 100vh;
         }
@@ -105,6 +108,11 @@ $animation-time: 2s;
 
     &__image__container {
         width: 500px;
+
+        @media screen and (max-width:767px) {
+            width: 400px;
+        }
+
         @include animateImage;
     }
 
@@ -112,9 +120,11 @@ $animation-time: 2s;
         &--dark {
             @include commonSelf();
         }
-        &--light{
+
+        &--light {
             @include commonSelf();
-            &::after{
+
+            &::after {
                 background: $lightBg;
                 color: $caret-color-light;
             }
@@ -209,7 +219,7 @@ $animation-time: 2s;
 
 .slider {
     margin-top: 1rem;
-    margin-bottom:1rem;
+    margin-bottom: 1rem;
     height: 2.5rem;
     overflow: hidden;
 }
@@ -225,16 +235,16 @@ $animation-time: 2s;
     font-size: inherit;
     animation: slide 10s linear infinite;
     animation-delay: 1.5s;
-    
+
 }
 
 .slider__text2 {
     font-size: inherit;
-    text-size-adjust: auto;;
+    text-size-adjust: auto;
 }
 
 .slider__text3 {
-  font-size: inherit;
+    font-size: inherit;
     text-size-adjust: auto;
 
 }
@@ -356,4 +366,7 @@ $animation-time: 2s;
     .slider__text1 {
         animation: slideMobile 10s linear infinite;
     }
+}
+.main__image {
+    max-width: 400px;
 }
