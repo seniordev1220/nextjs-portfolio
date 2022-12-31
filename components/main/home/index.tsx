@@ -20,17 +20,15 @@ export const Home = () => {
 
         <div className={classes.slider__wrapper}>
           <div className={classes.slider}>
-            <h1 className={classes.slider__text1}>SOFTWARE ENGINEER</h1>
-            <h1 className={classes.slider__text2}>FULLSTACK DEVELOPER</h1>
-            <h1 className={classes.slider__text3}>Passionate Mentor </h1>
+            <h1 className={classes.slider__text1}>{homeMessages.SOFTWARE_ENGINEER}</h1>
+            <h1 className={classes.slider__text2}>{homeMessages.FULLSTACK_DEVELOPER}</h1>
+            <h1 className={classes.slider__text3}>{homeMessages.Passionate_Mentor}</h1>
           </div>
         </div>
 
         <div className={classes.intro__horizontalSeparation} />
         <p className={classes.intro__description}>{
-          `I specialize on building complex web applications that runs across platforms & devices.
-          I am passionate about
-          building excellent software that improves the lives of the user.`}
+          homeMessages.intro}
         </p>
       </div>
     </div>
