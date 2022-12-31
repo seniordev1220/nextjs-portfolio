@@ -1,10 +1,16 @@
 import { BlogItem } from "../store/blogs/types";
 import request from "../helpers/utils/request";
 import { getToken } from "../hooks/useToken";
+import { blogs } from "../mock/projects";
 
 export const getBlogsApi = (showHidden: boolean, limit: number, offset: number) => {
     const endpoint = "blogs";
-    return request.GET({ endpoint, params: { showHidden: showHidden, limit, offset } });
+    return {
+        data: {
+            blogs: blogs
+        }
+    }
+    // return request.GET({ endpoint, params: { showHidden: showHidden, limit, offset } });
 };
 
 export const getBlogItemApi = (id: number) => {

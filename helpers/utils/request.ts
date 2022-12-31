@@ -39,9 +39,10 @@ export function getReqOptions(
     method: ReqMethods,
     { headers, body }: ReqOptions
 ): RequestInit {
-    const reqHeaders:any = {
+    const reqHeaders: any = {
         Accept: "application/json",
         "Access-Control-Allow-Private-Network": true,
+        "Access-Control-Allow-Origin": '*',
         ...headers
     };
 
@@ -72,18 +73,22 @@ function parseJSON(response: Response): any {
 
 function request(
     method: ReqMethods,
-    reqOptions: ReqOptions
+    reqOptions: ReqOptions,
+    isOwnAPI?: boolean
 ): Promise<Response> {
-    const url = getReqUrl(reqOptions);
+    let url = getReqUrl(reqOptions);
     const options = getReqOptions(method, reqOptions);
     // options.credentials = reqOptions.credentials || "include";
- 
+    if (isOwnAPI) {
+        url = "/api/email"
+    }
+
     return fetch(url, options).then(parseJSON);
 }
 
 export default {
     GET: (req: ReqOptions): Promise<Response> => request("GET", req),
-    POST: (req: ReqOptions): Promise<Response> => request("POST", req),
+    POST: (req: ReqOptions, isOwnAPI: boolean = false): Promise<Response> => request("POST", req, isOwnAPI),
     PUT: (req: ReqOptions): Promise<Response> => request("PUT", req),
     DELETE: (req: ReqOptions): Promise<Response> => request("DELETE", req),
     PATCH: (req: ReqOptions): Promise<Response> => request("PATCH", req)
