@@ -40,7 +40,7 @@ function Layout({ children, variant, title }: LayoutPropType) {
                             {children}
                         </main>
                         <Header onDarkModeToggle={onButtonToggle} />
-                        <ScrollDown />
+                        
                     </div>
                 </DarKModeContext.Provider>)
             }

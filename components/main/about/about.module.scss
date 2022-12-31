@@ -102,7 +102,7 @@
         display: flex;
         justify-content: flex-start;
 
-        @media screen and (max-width:"767px") {
+        @media screen and (max-width:767px) {
             justify-content: center;
         }
 
@@ -110,7 +110,14 @@
     }
 }
 
-
+.desc__container{
+    margin: auto;
+    flex-direction: row;
+    @media screen and (max-width:767px) {
+        justify-content: center;
+        flex-direction: column;
+    }
+}
 .header {
     &--show {
         animation: moveHeader ease 0.3s forwards;

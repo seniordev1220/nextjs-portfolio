@@ -13,6 +13,8 @@ import CircleIcon from '@mui/icons-material/Circle';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import classes from "./about.module.scss"
 import { Quotes } from '../quotes';
+import { homeMessages } from '../../../messages/home';
+import { ProfileCard } from '../../profileCard';
 
 
 const experience = [
@@ -166,8 +168,23 @@ export const About = () => {
                 <Typography className={joinClass(classes.about__title, inView ? classes['career--show'] : classes['career--hide'])} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
                     My Resume</Typography>
             </Box>
+            <Box className={joinClass(inView ? classes['career--show'] : classes['career--hide'], classes.desc__container)}
+                sx={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}
+            >
+                <Box sx={{ margin: '1rem' , display:'flex', justifyContent:'center'}}>
+                    <ProfileCard />
+                </Box>
+                <Box sx={{ margin:'1rem', maxWidth: '800px', display:'flex', justifyContent:'center', flexDirection:'column'}}>
+                    <Typography sx={{ marginBottom: '1rem' }}>{
+                        homeMessages.aboutPara1}
+                    </Typography>
+                    <Typography >{
+                        homeMessages.aboutPara2}
+                    </Typography>
+                </Box>
+            </Box>
             <Box className={inView ? classes['career--show'] : classes['career--hide']} >
-                <Box sx={{ display: "flex", justifyContent: "center", minHeight: "300px" }} >
+                <Box sx={{ display: "flex", justifyContent: "center", minHeight: "320px" }} >
                     <Box sx={{ width: "100%" }}>
                         <Typography sx={{ fontSize: "xx-large", fontWeight: "600", marginRight: "1rem", marginLeft: "2rem" }}>
                             Experience
@@ -301,6 +318,7 @@ export const About = () => {
                         ))}
                     </Box>
                 </Box>
+
                 <Box className={classes['quote']}>
                     <Quotes />
                 </Box>
