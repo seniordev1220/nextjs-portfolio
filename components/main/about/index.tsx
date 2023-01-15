@@ -129,10 +129,15 @@ export const About = () => {
             <Box className={inView ? classes['button--show'] : classes['button--hide']}>
                 <Box
                     sx={{ display: "flex", marginTop: "1rem", justifyContent: "center" }}>
-                    <Button
-                        variant="contained" sx={{ color: "white", marginBottom: "1rem" }}>
-                        Download CV<DownloadIcon sx={{ marginLeft: "0.5rem" }} />
-                    </Button>
+
+                    <Link sx={{ color: isDarkMode ? "white" : "black", textDecoration:'none' }}
+                        href="https://drive.google.com/uc?id=1y88Vas0fdeVwE9FNSx1gf6Q-myFftKdX&export=download" target="_blank">
+                        <Button
+                            variant="contained" sx={{ color: "white", marginBottom: "1rem" }}>
+                            Download CV<DownloadIcon sx={{ marginLeft: "0.5rem" }} />
+                        </Button>
+                    </Link>
+
                 </Box>
                 <Box sx={{ display: "flex", marginTop: "1rem", justifyContent: "center" }}>
                     <Link sx={{ margin: "0.5rem", color: isDarkMode ? "white" : "black" }}
@@ -171,10 +176,10 @@ export const About = () => {
             <Box className={joinClass(inView ? classes['career--show'] : classes['career--hide'], classes.desc__container)}
                 sx={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}
             >
-                <Box sx={{ margin: '1rem' , display:'flex', justifyContent:'center'}}>
+                <Box sx={{ margin: '1rem', display: 'flex', justifyContent: 'center' }}>
                     <ProfileCard />
                 </Box>
-                <Box sx={{ margin:'1rem', maxWidth: '800px', display:'flex', justifyContent:'center', flexDirection:'column'}}>
+                <Box sx={{ margin: '1rem', maxWidth: '800px', display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
                     <Typography sx={{ marginBottom: '1rem' }}>{
                         homeMessages.aboutPara1}
                     </Typography>
@@ -324,6 +329,6 @@ export const About = () => {
                 </Box>
             </Box>
 
-        </div>
+        </div >
     )
 }
