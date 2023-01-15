@@ -1,5 +1,5 @@
 import classes from './ProfileCard.module.scss'
-import profile from "../../assets/images/idea.png"
+import profile from "../../assets/images/profile.png"
 import { Box, Typography } from "@mui/material"
 import { useDarkMode } from '../../hooks/useDarkMode';
 
@@ -8,7 +8,7 @@ export const ProfileCard = () => {
     return (
         <Box
             sx={{
-                backgroundImage: isDarkMode ? 'linear-gradient(to right, #2c2c2c,#202020,#202020,#181818 ,#000000)'
+                backgroundImage: isDarkMode ? 'linear-gradient(to right, #000000,#0c0b0b,#0c0b0b,#000000 ,#000000)'
                     : 'linear-gradient(to right, #e7f6ff,#c3dfff,#b6d8ff,#a1cdff ,#a1cdff)'
 
             }}
