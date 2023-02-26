@@ -1,12 +1,14 @@
 import React from 'react'
 import { Box, Button, Typography } from '@mui/material';
 import Link from 'next/link';
-import { joinClass } from '../../../helpers/utils';
 import { useDarkMode } from '../../../hooks/useDarkMode';
 import { Card } from '../../card';
 import { useSetTab } from '../../../hooks/useSetTab';
+import { Background } from '../../background';
 import classes from "./blogs.module.scss"
-import { ScrollRight } from '../../scrollRight';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 const props = ["description", "title", "data", "sectionMapping"]
 interface CardListProps {
     type: string,
@@ -26,62 +28,63 @@ interface CardListProps {
 
 export const CardList = ({ type, description, title, data, sectionMapping }: CardListProps) => {
 
-    const { ref, inView } = useSetTab(sectionMapping);
+    const { ref } = useSetTab(sectionMapping);
     const { isDarkMode } = useDarkMode()
     return (
-        <div ref={ref} className={joinClass(classes.blogs__container)}>
-            <Box className={inView ? classes['header--show'] : classes['header--hide']} sx={{
-                display: "flex",
-                justifyContent: "center",
-                marginTop: "3rem",
-                color: isDarkMode ? "#696969" : "#353839aa",
-                fontWeight: "800"
+        <div ref={ref} className={classes.blogs__container}>
+            <Background/>
+            <Box sx={{ marginTop: '3rem', display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
+                <Box sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    color: isDarkMode ? "#696969" : "#353839aa",
+                    fontWeight: "800"
 
-            }}>
-                <p>{description}</p>
+                }}>
+                    <p>{description}</p>
+                </Box>
+                <Box component="span" sx={{ margin: "auto" }}>
+                    <Typography className={classes.blogs__title} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
+                        {title}</Typography>
+                </Box>
             </Box>
-            <Box component="span" sx={{ margin: "auto" }}>
-                <Typography className={joinClass(classes.blogs__title, inView ? classes['header--show'] : classes['header--hide'])} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
-                    {title}</Typography>
-            </Box>
-
-            <Box className={classes.blogs__content__wrapper}>
-                {data.map((blog, index) => (
-                    <Box key={`title:${blog.title}-${index}`} className={joinClass(inView ?
-                        classes['blog--show'] : classes['blog--hide'], classes.blogs__item)}
-                    >
-                        <Box sx={{ display: 'flex', justifyContent: 'center', width: "100%" }}>
+            <Box sx={{ width: '90%'}}>
+                <Carousel
+                    emulateTouch
+                    axis='horizontal'
+                    centerMode
+                    centerSlidePercentage={100}
+                >
+                    {data?.map((blog, index) => (
+                        <Box key={`title:${blog.title}-${index}`}>
                             <Card
                                 {...blog}
                                 endpoint={type}
                             />
                         </Box>
-
+                    )) as any
+                    }
+                    <Box sx={{
+                        width: "330px",
+                        marginBottom: "2rem",
+                        marginTop: "1rem",
+                        marginLeft: "1rem",
+                        marginRight: "1rem",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center"
+                    }}>
+                        <Button variant='contained'
+                        ><Link href="/blogs">View More</Link>
+                        </Button>
                     </Box>
-                ))
-                }
-                <Box sx={{
-                    width: "330px",
-                    marginBottom: "2rem",
-                    marginTop: "1rem",
-                    marginLeft: "1rem",
-                    marginRight: "1rem",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center"
-                }}
-                    className={
-                        joinClass(inView ? classes['button--show'] : classes['button--hide'], classes.blogs__item)}>
-                    <Button variant='contained'
-                    ><Link href="/blogs">View More</Link>
-                    </Button>
-                </Box>
-
-
+                </Carousel>
             </Box>
-            <Box className={classes.blogs__right__arrow}>
+
+            {/* <Box className={classes.blogs__right__arrow}>
                 {inView && <ScrollRight />}
-            </Box>
-        </div>
+                </Box> */}
+
+        </div >
     )
 }

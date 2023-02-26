@@ -35,13 +35,12 @@ function Layout({ children, variant, title }: LayoutPropType) {
         <>
             {variant === "l1" && (
                 <DarKModeContext.Provider value={{ isDarkMode: isDarkMode === "true" ? true : false }} >
-                    <div>
+                    <Box>
                         <main className={classes.main}>
                             {children}
                         </main>
                         <Header onDarkModeToggle={onButtonToggle} />
-                        
-                    </div>
+                    </Box>
                 </DarKModeContext.Provider>)
             }
             {

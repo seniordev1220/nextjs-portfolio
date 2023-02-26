@@ -25,14 +25,14 @@ const Main = () => {
 
   const homeRef = useRef(null);
   const portfolioRef = useRef(null);
-  const blogRef = useRef(null);
+  // const blogRef = useRef(null);
   const contactRef = useRef(null);
   const aboutRef = useRef(null);
   const skillRef = useRef(null);
   const refMap: any = {
     0: homeRef,
     1: portfolioRef,
-    2: blogRef,
+    // 2: blogRef,
     3: skillRef,
     4: aboutRef,
     5: contactRef,
@@ -85,8 +85,8 @@ const Main = () => {
           <Layout variant="l1">
 
             <>
-              <Background />
-              <section ref={homeRef} className={classes['section--header']}>
+             <Background />
+              <section ref={homeRef} className={classes['section--home']}>
                 <Home />
               </section>
               <section className={classes['section--quotes']}>
@@ -97,18 +97,18 @@ const Main = () => {
                   data={projects} sectionMapping={sectionMapping.portfolio}
                 />
               </section>
-              <section ref={blogRef} className={classes['section--projects']}>
+              {/* <section ref={blogRef} className={classes['section--projects']}>
                 <CardList type="blogs" description='Check Out My Latest Blog Posts' title=" My Blogs"
                   data={blogs} sectionMapping={sectionMapping.blogs}
                 />
-              </section>
-              <section ref={skillRef} className={classes['section--projects']}>
+              </section> */}
+              <section ref={skillRef} className={classes['section--skills']}>
                 <Skills />
               </section>
               <section ref={aboutRef} className={classes['section--about']}>
                 <About />
               </section>
-              <section ref={contactRef} className={classes['section--projects']}>
+              <section ref={contactRef} className={classes['section--contact']}>
                 <Contact />
               </section>
             </>

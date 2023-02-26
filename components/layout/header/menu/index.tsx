@@ -2,8 +2,9 @@ import { useState, useEffect, useContext } from "react";
 import useComponentVisible from "../../../../hooks/useComponentVisible";
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import HomeIcon from '@mui/icons-material/Home';
-import RssFeedIcon from '@mui/icons-material/RssFeed';
+import DownloadIcon from '@mui/icons-material/Download';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
+import { Link } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -18,7 +19,7 @@ const yOffset = 20;
 const rotateOffset = 180;
 
 export const RotaryMenu = () => {
-    const { tabValue, handleTabChange } = useContext(TabContext)
+    const { handleTabChange } = useContext(TabContext)
     const { isDarkMode } = useDarkMode()
     const iconStyle = {
         color: "#2753d7",
@@ -43,12 +44,14 @@ export const RotaryMenu = () => {
 
         },
         {
-            name: "My Blogs",
+            name: "Download CV",
             tabNumber: 2,
-            IconComponent: <RssFeedIcon sx={iconStyle} />
+            IconComponent: (<Link sx={{ color: isDarkMode ? "white" : "black", textDecoration: 'none' }}
+                href="https://drive.google.com/uc?id=1y88Vas0fdeVwE9FNSx1gf6Q-myFftKdX&export=download"
+                target="_blank"> <DownloadIcon sx={iconStyle} /></Link>)
 
         },
-        
+
         {
             name: "Home",
             tabNumber: 0,
@@ -100,7 +103,7 @@ export const RotaryMenu = () => {
         <div
             className={isVisible ? classes["mainContainer--open"] : classes["mainContainer--close"]}
             style={{
-                
+
                 width: "100%",
                 position: "fixed",
                 height: rotorSize * 2, display: "flex", justifyContent: "center"
@@ -119,14 +122,14 @@ export const RotaryMenu = () => {
                 }}
             >
                 <div className={classes.rotoryMenu__container}>
-                    <div className={joinClass(classes.menuIcon,!isComponentVisible?classes.bounce:"")} onClick={() => {
+                    <div className={joinClass(classes.menuIcon, !isComponentVisible ? classes.bounce : "")} onClick={() => {
                         window.navigator.vibrate(10);
                         setRotateByAngle(rotateOffset);
 
                     }} >
                         <MenuIcon sx={iconStyle} />
                     </div>
-                 
+
                     {isVisible && <div className={classes['rotaryMenu__icons__wrapper']}>
                         {newI.map((item, index) =>
                             <div

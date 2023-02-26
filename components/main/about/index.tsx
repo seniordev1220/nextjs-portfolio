@@ -12,9 +12,9 @@ import { useSetTab } from '../../../hooks/useSetTab';
 import CircleIcon from '@mui/icons-material/Circle';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import classes from "./about.module.scss"
-import { Quotes } from '../quotes';
 import { homeMessages } from '../../../messages/home';
 import { ProfileCard } from '../../profileCard';
+import { Background } from '../../background';
 
 
 const experience = [
@@ -68,7 +68,7 @@ const education = [
 ]
 
 export const About = () => {
-    const { ref, inView } = useSetTab(sectionMapping.about);
+    const { ref } = useSetTab(sectionMapping.about);
     const { isDarkMode } = useDarkMode();
     const today = new Date();
     const birthDate = new Date("1997-09-18");
@@ -84,22 +84,24 @@ export const About = () => {
 
     return (
         <div ref={ref} className={joinClass(classes.about__container)}>
-            <Box className={joinClass(classes.shortDescription, inView ? classes['header--show'] : classes['header--hide'])} sx={{
-                display: "flex",
-                justifyContent: "center",
-                marginTop: "3rem",
-                color: isDarkMode ? "#696969" : "#353839aa",
-                fontWeight: "800"
+            <Background/>
+            <Box
+                sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    marginTop: "3rem",
+                    color: isDarkMode ? "#696969" : "#353839aa",
+                    fontWeight: "800"
 
-            }}>
+                }}>
                 <p>Somethings about me</p>
             </Box>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
-                <Typography className={joinClass(classes.about__title, inView ? classes['header--show'] : classes['header--hide'])} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
+                <Typography className={classes.about__title} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
                     About Me</Typography>
             </Box>
             <Box sx={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-                <Box className={inView ? classes['about--show'] : classes['about--hide']}>
+                <Box>
                     <Typography sx={{ fontSize: "xx-large", fontWeight: "600", marginBottom: "1rem" }}>Personal Informations</Typography>
                     <Grid container>
                         <Grid item xs={12} md={5} sx={{ margin: "1rem" }}>
@@ -126,11 +128,11 @@ export const About = () => {
                 </Box>
 
             </Box>
-            <Box className={inView ? classes['button--show'] : classes['button--hide']}>
+            <Box>
                 <Box
                     sx={{ display: "flex", marginTop: "1rem", justifyContent: "center" }}>
 
-                    <Link sx={{ color: isDarkMode ? "white" : "black", textDecoration:'none' }}
+                    <Link sx={{ color: isDarkMode ? "white" : "black", textDecoration: 'none' }}
                         href="https://drive.google.com/uc?id=1y88Vas0fdeVwE9FNSx1gf6Q-myFftKdX&export=download" target="_blank">
                         <Button
                             variant="contained" sx={{ color: "white", marginBottom: "1rem" }}>
@@ -158,7 +160,7 @@ export const About = () => {
                     </Link>
                 </Box>
             </Box>
-            <Box className={joinClass(classes.shortDescription, inView ? classes['career--show'] : classes['career--hide'])} sx={{
+            <Box sx={{
                 display: "flex",
                 justifyContent: "center",
                 marginTop: "3rem",
@@ -170,12 +172,10 @@ export const About = () => {
             </Box>
 
             <Box sx={{ display: "flex", justifyContent: "center" }}>
-                <Typography className={joinClass(classes.about__title, inView ? classes['career--show'] : classes['career--hide'])} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
+                <Typography className={classes.about__title} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
                     My Resume</Typography>
             </Box>
-            <Box className={joinClass(inView ? classes['career--show'] : classes['career--hide'], classes.desc__container)}
-                sx={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}
-            >
+            <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '1rem' }} >
                 <Box sx={{ margin: '1rem', display: 'flex', justifyContent: 'center' }}>
                     <ProfileCard />
                 </Box>
@@ -188,7 +188,7 @@ export const About = () => {
                     </Typography>
                 </Box>
             </Box>
-            <Box className={inView ? classes['career--show'] : classes['career--hide']} >
+            <Box>
                 <Box sx={{ display: "flex", justifyContent: "center", minHeight: "320px" }} >
                     <Box sx={{ width: "100%" }}>
                         <Typography sx={{ fontSize: "xx-large", fontWeight: "600", marginRight: "1rem", marginLeft: "2rem" }}>
@@ -322,10 +322,6 @@ export const About = () => {
                             </Box>
                         ))}
                     </Box>
-                </Box>
-
-                <Box className={classes['quote']}>
-                    <Quotes />
                 </Box>
             </Box>
 
