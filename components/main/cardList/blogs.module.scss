@@ -40,8 +40,6 @@
 
         }
 
-        overflow-x:"hidden";
-        overflow-y: scroll;
 
         &::-webkit-scrollbar-track {
             display: block;
@@ -96,7 +94,7 @@
         width: 100%;
         display: flex;
         justify-content: flex-start;
-        flex-wrap: wrap;
+        // flex-wrap: wrap;
 
 
         @media screen and (max-width:767px) {

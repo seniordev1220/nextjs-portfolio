@@ -14,6 +14,7 @@ import classes from "./contact.module.scss"
 import { emailStateType, sendEmail } from '../../../store/email/reducer';
 import { RootState } from '../../../store/types';
 import { Loading } from '../../Loading';
+import { Background } from '../../background';
 
 interface contactDataType {
     name: string
@@ -22,19 +23,19 @@ interface contactDataType {
     message: string
 }
 export const Contact = () => {
-    const { ref, inView } = useSetTab(sectionMapping.contact);
+    const { ref } = useSetTab(sectionMapping.contact);
     const { isDarkMode } = useDarkMode();
 
     const [open, setOpen] = React.useState(false);
     const { isLoading } = useSelector<RootState>(state => state.email) as emailStateType;
-    
+
     const dispatch = useDispatch();
     const textFieldStyle = {
         marginTop: "0.5rem",
         backgroundColor: isDarkMode ? "#rgb(54 54 54 / 87%)" : "#ffffff00",
         width: "100%",
         ".css-1d3z3hw-MuiOutlinedInput-notchedOutline ": {
-            border:"solid 1px #2753d79e",
+            border: "solid 1px #2753d79e",
             boxShadow: isDarkMode ? "0 0 1px #2753d7" : "0 0 2px rgb(125 125 125 / 35%)"
         }
     }
@@ -86,11 +87,10 @@ export const Contact = () => {
         }
         setOpen(false);
     };
-   
+
 
     return (
         <Box ref={ref} sx={{
-            position:"relative",
             backgroundColor: isDarkMode ? "#141414" : "white",
             borderRadius: "1rem",
             color: "white",
@@ -98,7 +98,7 @@ export const Contact = () => {
 
         }}
             className={joinClass(classes.contact__container)}>
-            <Box className={joinClass(classes.shortDescription, inView ? classes['header--show'] : classes['header--hide'])} sx={{
+            <Box className={classes.shortDescription} sx={{
                 display: "flex",
                 justifyContent: "center",
                 marginTop: "3rem",
@@ -110,11 +110,11 @@ export const Contact = () => {
             </Box>
 
             <Box component="span" sx={{ margin: "auto" }}>
-                <Typography className={joinClass(classes.contact__title, inView ? classes['header--show'] : classes['header--hide'])} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
+                <Typography className={classes.contact__title} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
                     My Contact</Typography>
             </Box>
             <Box className={classes.contact__content__wrapper}>
-                <Grid container spacing={2} className={inView ? classes['contact--show'] : classes['contact--hide']}>
+                <Grid container spacing={2} >
                     <Grid item xs={12} md={7} >
                         <Box sx={{ padding: "1rem" }}>
                             <Typography fontWeight={600} color={isDarkMode ? "white" : "#696969"} component="p" fontSize="x-large">Contact Me</Typography>
@@ -179,7 +179,7 @@ export const Contact = () => {
                         </Box>
 
                     </Grid>
-                    <Grid item xs={12} md={5} sx={{marginBottom:'5rem'}}>
+                    <Grid item xs={12} md={5} sx={{ marginBottom: '5rem' }}>
                         <Box sx={{ padding: "1rem" }}>
                             <Typography fontWeight={600} color={isDarkMode ? "white" : "#696969"} fontSize="x-large">Contact Info</Typography>
                             <Box sx={{ display: "flex", flexDirection: "row", marginTop: "1rem", marginBottom: "1rem" }}>
@@ -224,8 +224,7 @@ export const Contact = () => {
                     message="Email Sent Successfully"
                 />
             </Box>
-            {isLoading&&<Loading sxProp={{position:"absolute"}}/>}
-
+            {isLoading && <Loading sxProp={{ position: "absolute" }} />}
         </Box>
     )
 }

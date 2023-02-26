@@ -1,48 +1,41 @@
 @mixin sectionCommon {
-    height: 101vh;
-    scroll-snap-align: start;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .section {
-    &__container {
-        overscroll-behavior-y: contain;
-        scroll-snap-type: y mandatory;
-        overflow-y: scroll;
-        height: 100vh;
-        @media screen and (min-width:767px) {
-            overflow-y: hidden;
+    &--home {
+        @include sectionCommon();
+    }
+
+    &--projects {
+        @include sectionCommon();
+        @media screen and (max-width:767px) {
+            min-height:70vh;
         }
     }
 
-    &--header {
-        position: relative;
-        display: flex;
-        align-items: center;
-        height: 101vh;
-        scroll-snap-align: start;
-    }
-
     &--quotes {
-        position: relative;
+        @include sectionCommon();
+
+        @media screen and (max-width:767px) {
+            height: 60vh;
+            min-height:60vh;
+        }
+    }
+
+    &--skills {
         @include sectionCommon();
     }
 
-  
-
-    &--projects {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
+    &--contact {
         @include sectionCommon();
-
     }
 
     &--about {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
         @include sectionCommon();
     }
 
@@ -51,4 +44,3 @@
 
     }
 }
-

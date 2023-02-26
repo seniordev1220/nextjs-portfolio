@@ -21,7 +21,7 @@ export const Card = ({ title, date, description, image, slug , endpoint}: CardIt
             sx={{
                 height: "420px",
                 padding: "1rem",
-                margin: "1rem", width: "330px",
+                margin: "1rem", 
                 ...isDarkMode && { backgroundColor: "#141212" },
                 ...!isDarkMode && { backgroundImage: "linear-gradient(to right, #c1deff,#c1deff,#c1deff,#a1cdff ,#a1cdff )" },
                 maxWidth: "280px",

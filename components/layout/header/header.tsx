@@ -35,12 +35,6 @@ function Header({ onDarkModeToggle }: HeaderProps) {
 
             },
             {
-                name: "My Blogs",
-                href: "/blogs",
-                IconComponent: <RssFeedIcon sx={iconStyle} />
-
-            },
-            {
                 name: "Skills",
                 href: "/skills",
                 IconComponent: <PsychologyIcon sx={iconStyle} />
