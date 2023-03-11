@@ -31,8 +31,13 @@ export const CardList = ({ type, description, title, data, sectionMapping }: Car
     const { ref } = useSetTab(sectionMapping);
     const { isDarkMode } = useDarkMode()
     return (
-        <div ref={ref} className={classes.blogs__container}>
-            <Background/>
+        <Box ref={ref} className={classes.blogs__container} sx={{
+            ...isDarkMode && {
+                border: 'solid 1px #2f2f2fc4',
+                boxShadow: '0 0 1rem #00000078'
+            }
+        }}>
+            <Background />
             <Box sx={{ marginTop: '3rem', display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
                 <Box sx={{
                     display: "flex",
@@ -48,8 +53,12 @@ export const CardList = ({ type, description, title, data, sectionMapping }: Car
                         {title}</Typography>
                 </Box>
             </Box>
-            <Box sx={{ width: '90%'}}>
+            <Box sx={{ width: '90%' }}>
                 <Carousel
+                    className={classes.carousel}
+                    verticalSwipe='standard'
+                    useKeyboardArrows
+                    showArrows
                     emulateTouch
                     axis='horizontal'
                     centerMode
@@ -65,7 +74,7 @@ export const CardList = ({ type, description, title, data, sectionMapping }: Car
                     )) as any
                     }
                     <Box sx={{
-                        width: "330px",
+                        height: '100%',
                         marginBottom: "2rem",
                         marginTop: "1rem",
                         marginLeft: "1rem",
@@ -75,7 +84,7 @@ export const CardList = ({ type, description, title, data, sectionMapping }: Car
                         justifyContent: "center"
                     }}>
                         <Button variant='contained'
-                        ><Link href="/blogs">View More</Link>
+                        ><Link href="/projects">View More</Link>
                         </Button>
                     </Box>
                 </Carousel>
@@ -85,6 +94,6 @@ export const CardList = ({ type, description, title, data, sectionMapping }: Car
                 {inView && <ScrollRight />}
                 </Box> */}
 
-        </div >
+        </Box >
     )
 }

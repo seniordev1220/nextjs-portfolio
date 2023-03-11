@@ -28,7 +28,11 @@ export const Skills = () => {
             position: 'relative',
             borderRadius: "1rem",
             backgroundColor: isDarkMode ? "#ffffff04" : "white",
-            ...!isDarkMode && { backgroundImage: "linear-gradient(to right, #e7f6ff,#c3dfff,#b6d8ff,#a1cdff ,#a1cdff )" }
+            ...!isDarkMode && { backgroundImage: "linear-gradient(to right, #e7f6ff,#c3dfff,#b6d8ff,#a1cdff ,#a1cdff )" },
+            ...isDarkMode && {
+                border: 'solid 1px #2f2f2fc4',
+                boxShadow: '0 0 1rem #00000078'
+            },
         }}
             className={joinClass(classes.skills__container)}>
             <Background />

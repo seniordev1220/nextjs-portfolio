@@ -74,7 +74,7 @@ function Layout({ children, variant, title }: LayoutPropType) {
                         </div>
                     </DarKModeContext.Provider>
                 )
-            },
+            }
             {
                 variant === "l3" && (
                     <DarKModeContext.Provider value={{ isDarkMode: isDarkMode === "true" ? true : false }} >

@@ -28,7 +28,6 @@ export const Contact = () => {
 
     const [open, setOpen] = React.useState(false);
     const { isLoading } = useSelector<RootState>(state => state.email) as emailStateType;
-
     const dispatch = useDispatch();
     const textFieldStyle = {
         marginTop: "0.5rem",
@@ -91,10 +90,15 @@ export const Contact = () => {
 
     return (
         <Box ref={ref} sx={{
+            position:'relative',
             backgroundColor: isDarkMode ? "#141414" : "white",
             borderRadius: "1rem",
             color: "white",
-            ...!isDarkMode && { backgroundImage: "linear-gradient(to right, #e7f6ff,#c3dfff,#b6d8ff,#a1cdff ,#a1cdff )" }
+            ...!isDarkMode && { backgroundImage: "linear-gradient(to right, #e7f6ff,#c3dfff,#b6d8ff,#a1cdff ,#a1cdff )" },
+            ...isDarkMode && {
+                border: 'solid 1px #2f2f2fc4',
+                boxShadow: '0 0 1rem #00000078'
+            },
 
         }}
             className={joinClass(classes.contact__container)}>

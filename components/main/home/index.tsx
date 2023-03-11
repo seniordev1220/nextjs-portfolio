@@ -6,12 +6,19 @@ import { DarKModeContext } from '../../layout/layout'
 import { sectionMapping } from '../sectionMapping';
 import { useSetTab } from '../../../hooks/useSetTab';
 import classes from './home.module.scss'
+import { Box } from '@mui/material'
 
 export const Home = () => {
   const { isDarkMode } = useContext(DarKModeContext)
   const { ref } = useSetTab(sectionMapping.home);
   return (
-    <div ref={ref} className={classes.intro__container}>
+    <Box ref={ref} className={classes.intro__container}
+      sx={isDarkMode ? {
+        border: 'solid 1px #2f2f2fc4',
+        boxShadow: '0 0 1rem #00000078'
+
+      } : {}}
+    >
       <div className={classes.intro__image__container}>
         <Image alt="Web Developer" priority src={image} />
       </div>
@@ -31,6 +38,6 @@ export const Home = () => {
           homeMessages.intro}
         </p>
       </div>
-    </div>
+    </Box>
   )
 }

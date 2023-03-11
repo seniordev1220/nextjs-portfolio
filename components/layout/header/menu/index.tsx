@@ -22,12 +22,13 @@ export const RotaryMenu = () => {
     const { handleTabChange } = useContext(TabContext)
     const { isDarkMode } = useDarkMode()
     const iconStyle = {
-        color: "#2753d7",
+        color: isDarkMode ? "#fff" : "#2753d7",
         fontSize: "3rem",
-        backgroundColor: isDarkMode ? "rgba(8, 8, 8, 1)" : "#fff",
+        backgroundColor: isDarkMode ? "#2753d7" : "#fff",
         padding: "0.5rem",
         borderRadius: "50%",
-        boxShadow: "0 0 0.5rem #2753d7"
+        boxShadow: "0 0 0.5rem #2753d7",
+        border:'solid 1px #0000'
     }
 
     const icons = [
@@ -122,7 +123,7 @@ export const RotaryMenu = () => {
                 }}
             >
                 <div className={classes.rotoryMenu__container}>
-                    <div className={joinClass(classes.menuIcon, !isComponentVisible ? classes.bounce : "")} onClick={() => {
+                    <div className={classes.menuIcon} onClick={() => {
                         window.navigator.vibrate(10);
                         setRotateByAngle(rotateOffset);
 

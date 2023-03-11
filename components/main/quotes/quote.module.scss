@@ -21,13 +21,13 @@
         animation-delay: 0.1s;
     }
 }
-.miniLogoContainer{
+
+.miniLogoContainer {
     @media screen and (min-width:767px) {
-        margin-top:8rem;
+        margin-top: 8rem;
 
     }
 }
-
 
 @keyframes drawCircle {
     from {
@@ -39,28 +39,32 @@
     }
 }
 
-.animateLogo{
+.animateLogo {
     stroke-dasharray: 744;
     stroke-dashoffset: -744;
     animation: drawCircle 1s infinite ease;
 }
+
 @keyframes scale {
     100% {
         transform: scale(1);
     }
 }
-
 .quote__each {
     display: inline-block;
-    opacity: 0;
-    filter: blur(4px);
+    margin-right: 0.7rem;
 }
 
-@for $i from 1 through 20 {
-    .quote__each:nth-child(#{$i}) {
-        animation: fade-in 0.6s $i*0.01s forwards cubic-bezier(0.11, 0, 0.5, 0);
 
-        margin-right: 0.7rem;
+@media only screen and (min-width:480px) {
+    .quote__each {
+        opacity: 0;
+        filter: blur(4px);
+    }
+    @for $i from 1 through 20 {
+        .quote__each:nth-child(#{$i}) {
+            animation: fade-in 0.6s $i*0.01s forwards cubic-bezier(0.11, 0, 0.5, 0);
+        }
     }
 }
 

@@ -106,6 +106,10 @@ function Header({ onDarkModeToggle }: HeaderProps) {
                 height: "100vh"
             }} className={classes.desktop__menu}>
                 <Box sx={{
+                    ...isDarkMode && {
+                        border: 'solid 1px #2f2f2fc4',
+                        boxShadow: '0 0 1rem #00000078'
+                    },
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-between",

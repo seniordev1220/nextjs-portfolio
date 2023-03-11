@@ -42,7 +42,7 @@ const experience = [
                 href="https://www.springerprofessional.de/en/dual-band-fss-backed-printed-antenna-with-fractal-geometry-for-w/18830738"
             > 7th international conference on Computer and devices for Communication (CODEC)</a> held on December, 2019
             </span>,
-            <span key="pub2">Later on I came with my second prototype and was published in <a
+            <span key="pub2">Later on I came up with my second prototype and was published in <a
                 style={{ textDecoration: "underline" }}
                 target="blank"
                 href="https://ieeexplore.ieee.org/document/9113517"
@@ -83,8 +83,13 @@ export const About = () => {
     };
 
     return (
-        <div ref={ref} className={joinClass(classes.about__container)}>
-            <Background/>
+        <Box ref={ref} className={joinClass(classes.about__container)} sx={{
+            ...isDarkMode && {
+                border: 'solid 1px #2f2f2fc4',
+                boxShadow: '0 0 1rem #00000078'
+            }
+        }}>
+            <Background />
             <Box
                 sx={{
                     display: "flex",
@@ -325,6 +330,6 @@ export const About = () => {
                 </Box>
             </Box>
 
-        </div >
+        </Box >
     )
 }
