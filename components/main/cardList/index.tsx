@@ -8,6 +8,7 @@ import { Background } from '../../background';
 import classes from "./blogs.module.scss"
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Parallax } from 'react-scroll-parallax';
 
 const props = ["description", "title", "data", "sectionMapping"]
 interface CardListProps {
@@ -46,7 +47,9 @@ export const CardList = ({ type, description, title, data, sectionMapping }: Car
                     fontWeight: "800"
 
                 }}>
-                    <p>{description}</p>
+                    <Parallax opacity={[0, 1]} translateX={['-50%', '0%']}>
+                        <p>{description}</p>
+                    </Parallax>
                 </Box>
                 <Box component="span" sx={{ margin: "auto" }}>
                     <Typography className={classes.blogs__title} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
