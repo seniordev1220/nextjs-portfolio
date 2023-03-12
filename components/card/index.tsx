@@ -1,10 +1,10 @@
-import { Box, Typography } from "@mui/material"
+import { Box, Typography, Button, Grid } from "@mui/material"
 import { useRouter } from 'next/router'
 import { useDarkMode } from "../../hooks/useDarkMode"
 import { CardItemProps } from "./card.type"
 import classes from "./cardItem.module.scss"
 
-export const Card = ({ title, date, description, image, slug , endpoint}: CardItemProps) => {
+export const Card = ({ title, date, description, image, slug, endpoint }: CardItemProps) => {
     const { isDarkMode } = useDarkMode();
     const router = useRouter();
     const handleRedirect = () => {
@@ -15,30 +15,30 @@ export const Card = ({ title, date, description, image, slug , endpoint}: CardIt
     }
     return (
 
-        <Box
+        <Grid container
             className={classes.card}
-            onClick={handleRedirect}
+            justifyContent='center'
+
             sx={{
-                height: "420px",
                 padding: "1rem",
-                margin: "1rem", 
-                ...isDarkMode && { backgroundColor: "#141212" },
-                ...!isDarkMode && { backgroundImage: "linear-gradient(to right, #c1deff,#c1deff,#c1deff,#a1cdff ,#a1cdff )" },
-                maxWidth: "280px",
-                aspectRatio: "9/12",
-                display: "flex",
-                flexDirection: "column",
-                position: "relative",
-                borderRadius: "7px",
-                overflow: "hidden",
-                boxShadow: "0 0 6px rgb(46 43 43 / 85%)"
+                width: "98%",
+                minHeight: '50vh'
             }}>
-            <Box className={classes.card__container} sx={{ marginBottom: "1rem", overflow: "hidden" }}>
+            <Grid item xs={12} md={4} className={classes.card__container} sx={{ margin: "1rem" }}>
                 <img className={classes.card__image} src={image} alt={title} />
-            </Box>
-            <Typography sx={{ color: "#2753d7", fontWeight: "600" }}>{date}</Typography>
-            <Typography component="h2" sx={{ fontWeight: "600", fontSize: "large" }}>{title}</Typography>
-            <Typography sx={{ height: "100px", marginTop: "1rem" }}>{description}</Typography>
-        </Box>
+            </Grid>
+            <Grid item xs={12} md={6} justifyContent='flex-start'
+                sx={{ textAlign: 'left', margin: '1rem' }}>
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+                    <Typography component="h2" sx={{ fontWeight: "600", fontSize: "large" }}>{title}</Typography>
+                    <Typography sx={{ color: "#2753d7", fontWeight: "600" }}>{date}</Typography>
+                </Box>
+                <Typography sx={{  marginTop: "2rem", textOverflow: "ellipsis" }}>
+                    {description}
+                </Typography>
+                <Button
+                    onClick={handleRedirect}>Read more</Button>
+            </Grid>
+        </Grid>
     )
 }

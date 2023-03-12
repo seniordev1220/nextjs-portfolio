@@ -10,7 +10,7 @@ export const getEmailsApi = (limit: number, offset: number) => {
 
 export const sendEmailApi = (item: emailDataItem) => {
     const endpoint = "email";
-    const response = request.POST({ endpoint, body: item }, true);
+    const response = request.POST({ endpoint, body: item });
     return response
 };
 

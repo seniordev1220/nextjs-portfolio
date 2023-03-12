@@ -3,19 +3,28 @@ body {
     color: rgb(194, 194, 194);
     transition-timing-function: ease-in;
 }
+
 ::-webkit-scrollbar {
     display: none;
-} 
+}
 
-body{
-    
-}::-webkit-scrollbar-thumb {
+.control-arrow {
+    opacity: unset;
+}
+
+.carousel.carousel-slider .control-arrow:hover {
+    background: none !important;
+}
+
+body {}
+
+::-webkit-scrollbar-thumb {
     display: none;
 }
 
 body.light-mode {
     background-color: rgb(245, 245, 245);
-    background-image: linear-gradient(to right, #e7f6ff,#c3dfff,#b6d8ff,#a1cdff ,#a1cdff );
+    background-image: linear-gradient(to right, #e7f6ff, #c3dfff, #b6d8ff, #a1cdff, #a1cdff);
     color: rgb(49, 49, 49);
 }
 

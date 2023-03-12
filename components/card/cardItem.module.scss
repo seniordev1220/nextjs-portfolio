@@ -13,12 +13,8 @@
   overflow: hidden;
   border-radius: 10px;
   transition: all 0.5s;
-&__container{
-  border-radius: 10px;
-}
-  &:hover {
-    transform: translate(0px, -20px);
-    cursor: pointer;
+  &__container {
+    border-radius: 10px;
   }
 }
 
