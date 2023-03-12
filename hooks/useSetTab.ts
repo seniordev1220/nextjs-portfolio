@@ -13,7 +13,7 @@ export const useSetTab = (tabNumber:number) => {
     const { tabValue, handleTabChange } = useContext(TabContext)
     useEffect(() => {
         if (inView === true) {
-            handleTabChange(null as any, tabNumber, false)
+            handleTabChange(null as any, tabNumber)
 
         }
     }, [inView])
