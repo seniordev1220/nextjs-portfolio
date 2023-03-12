@@ -56,17 +56,17 @@
 }
 
 
-// @media only screen and (min-width:480px) {
-//     .quote__each {
-//         opacity: 1;
-//         filter: blur(4px);
-//     }
-//     @for $i from 1 through 20 {
-//         // .quote__each:nth-child(#{$i}) {
-//         //     animation: fade-in 0.6s $i*0.01s forwards cubic-bezier(0.11, 0, 0.5, 0);
-//         // }
-//     }
-// }
+@media only screen and (min-width:480px) {
+    .quote__each {
+        opacity: 0;
+        filter: blur(4px);
+    }
+    @for $i from 1 through 20 {
+        .quote__each:nth-child(#{$i}) {
+            animation: fade-in 0.6s $i*0.01s forwards cubic-bezier(0.11, 0, 0.5, 0);
+        }
+    }
+}
 
 @keyframes fade-in {
     100% {
