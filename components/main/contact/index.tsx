@@ -90,7 +90,9 @@ export const Contact = () => {
 
 
     return (
-        <Box ref={ref} sx={{
+        <Box
+         ref={ref}
+          sx={{
             position: 'relative',
             backgroundColor: isDarkMode ? "#141414" : "white",
             borderRadius: "1rem",

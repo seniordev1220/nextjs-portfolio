@@ -32,7 +32,9 @@ export const CardList = ({ type, description, title, data, sectionMapping }: Car
     const { ref } = useSetTab(sectionMapping);
     const { isDarkMode } = useDarkMode()
     return (
-        <Box ref={ref} className={classes.blogs__container} sx={{
+        <Box 
+        ref={ref} 
+        className={classes.blogs__container} sx={{
             ...isDarkMode && {
                 border: 'solid 1px #2f2f2fc4',
                 boxShadow: '0 0 1rem #00000078'

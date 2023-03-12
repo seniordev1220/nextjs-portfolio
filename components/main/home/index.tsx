@@ -10,9 +10,11 @@ import { Box } from '@mui/material'
 
 export const Home = () => {
   const { isDarkMode } = useContext(DarKModeContext)
-  const { ref } = useSetTab(sectionMapping.home);
+  // const { ref } = useSetTab(sectionMapping.home);
   return (
-    <Box ref={ref} className={classes.intro__container}
+    <Box
+    //  ref={ref}
+      className={classes.intro__container}
       sx={isDarkMode ? {
         border: 'solid 1px #2f2f2fc4',
         boxShadow: '0 0 1rem #00000078'

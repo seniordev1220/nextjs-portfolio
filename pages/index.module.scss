@@ -20,11 +20,6 @@
 
     &--quotes {
         @include sectionCommon();
-
-        @media screen and (max-width:767px) {
-            height: 60vh;
-            min-height:60vh;
-        }
     }
 
     &--skills {

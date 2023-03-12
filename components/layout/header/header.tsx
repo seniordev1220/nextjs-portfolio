@@ -128,7 +128,7 @@ function Header({ onDarkModeToggle }: HeaderProps) {
                     <Box>
                         <nav>
                             <Tabs orientation='vertical'
-                                value={tabValue}
+                                // value={tabValue}
                                 onChange={handleTabChange}
                                 TabIndicatorProps={{ style: { border: `solid 0.1px ${isDarkMode ? "black" : "white"}`, width: "4px" } }}
                             >
