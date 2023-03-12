@@ -14,6 +14,7 @@ import classes from "./contact.module.scss"
 import { emailStateType, sendEmail } from '../../../store/email/reducer';
 import { RootState } from '../../../store/types';
 import { Loading } from '../../Loading';
+import { Parallax } from 'react-scroll-parallax';
 import { Background } from '../../background';
 
 interface contactDataType {
@@ -90,7 +91,7 @@ export const Contact = () => {
 
     return (
         <Box ref={ref} sx={{
-            position:'relative',
+            position: 'relative',
             backgroundColor: isDarkMode ? "#141414" : "white",
             borderRadius: "1rem",
             color: "white",
@@ -110,7 +111,9 @@ export const Contact = () => {
                 fontWeight: "800"
 
             }}>
-                <p>Feel Free To Contact Me</p>
+                <Parallax easing={"easeInOut"} opacity={[0, 1]} translateX={['-50%', '0%']}>
+                    <p>Feel Free To Contact Me</p>
+                </Parallax>
             </Box>
 
             <Box component="span" sx={{ margin: "auto" }}>

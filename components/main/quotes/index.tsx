@@ -1,4 +1,5 @@
 import { Box, Grid } from "@mui/material";
+import { Parallax } from 'react-scroll-parallax';
 import { useInView } from "react-intersection-observer";
 import MiniLogo from "../../miniLogo";
 import classes from "./quote.module.scss"
@@ -27,7 +28,9 @@ export const Quotes = () => {
                     </div>
                 </Grid>
                 <Grid className={classes.miniLogoContainer} item xs={5} sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
-                    {inView && <MiniLogo />}
+                    <Parallax easing={"easeInOut"} opacity={[0, 1]} translateX={['-50%', '0%']}>
+                        <MiniLogo />
+                    </Parallax>
                 </Grid>
             </Grid>
         </Box>

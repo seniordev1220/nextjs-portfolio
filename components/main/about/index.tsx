@@ -11,6 +11,7 @@ import { sectionMapping } from '../sectionMapping';
 import { useSetTab } from '../../../hooks/useSetTab';
 import CircleIcon from '@mui/icons-material/Circle';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Parallax } from 'react-scroll-parallax';
 import classes from "./about.module.scss"
 import { homeMessages } from '../../../messages/home';
 import { ProfileCard } from '../../profileCard';
@@ -99,7 +100,9 @@ export const About = () => {
                     fontWeight: "800"
 
                 }}>
-                <p>Somethings about me</p>
+                <Parallax easing={"easeInOut"} opacity={[0, 1]} translateX={['-50%', '0%']}>
+                    <p>Somethings about me</p>
+                </Parallax>
             </Box>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
                 <Typography className={classes.about__title} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
@@ -173,7 +176,9 @@ export const About = () => {
                 fontWeight: "800"
 
             }}>
-                <p>Check Out My Resume</p>
+                <Parallax opacity={[0, 1]} translateX={['-50%', '0%']}>
+                    <p>Check Out My Resume</p>
+                </Parallax>
             </Box>
 
             <Box sx={{ display: "flex", justifyContent: "center" }}>

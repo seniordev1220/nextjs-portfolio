@@ -7,6 +7,7 @@ import { Background } from '../../background';
 import CircleIcon from '@mui/icons-material/Circle';
 import idea from "../../../assets/images/idea.png";
 import classes from "./skills.module.scss";
+import { Parallax } from 'react-scroll-parallax';
 
 const skills = [
     "Javascript", "HTML/CSS", "React JS",
@@ -36,6 +37,7 @@ export const Skills = () => {
         }}
             className={joinClass(classes.skills__container)}>
             <Background />
+
             <Box
                 className={classes.shortDescription} sx={{
                     display: "flex",
@@ -44,7 +46,9 @@ export const Skills = () => {
                     color: isDarkMode ? "#696969" : "#353839aa",
                     fontWeight: "800",
                 }}>
-                <p>Things that I am good at</p>
+                <Parallax easing={"easeInOut"} opacity={[0, 1]} translateX={['-50%', '0%']}>
+                    <p>Things that I am good at</p>
+                </Parallax>
             </Box>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
                 <Typography className={classes.skills__title} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
@@ -52,7 +56,9 @@ export const Skills = () => {
             </Box>
             <Box className={classes.skills__content__wrapper}>
                 <Box sx={{ display: "flex", justifyContent: "center" }} className={classes.image}>
-                    <Image width={400} height={400} src={idea} alt="Skills" />
+                    <Parallax opacity={[0.4, 1]} >
+                        <Image width={400} height={400} src={idea} alt="Skills" />
+                    </Parallax>
                 </Box>
                 <Box
                     sx={{ display: "flex", flexDirection: "row", justifyContent: "space-around", width: "100%" }}>
