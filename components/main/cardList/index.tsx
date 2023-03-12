@@ -52,8 +52,10 @@ export const CardList = ({ type, description, title, data, sectionMapping }: Car
                     </Parallax>
                 </Box>
                 <Box component="span" sx={{ margin: "auto" }}>
+                <Parallax opacity={[0.5, 1]}  translateX={['10%', '0%']}>
                     <Typography className={classes.blogs__title} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
                         {title}</Typography>
+                        </Parallax>
                 </Box>
             </Box>
             <Box sx={{ width: '90%' }}>
