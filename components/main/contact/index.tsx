@@ -98,7 +98,7 @@ export const Contact = () => {
             ref={ref}
             sx={{
                 position: 'relative',
-                backgroundColor: isDarkMode && "#141414",
+                backgroundColor: isDarkMode ? "#141414" : "",
                 borderRadius: "1rem",
                 color: "white",
                 border: isDarkMode ? 'solid 1px #2f2f2fc4' : 'none',
