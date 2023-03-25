@@ -1,8 +1,9 @@
 .card {
   &__image {
     border-radius: 12px;
-    height: 150px;
+    height: 250px;
     width: 350px;
+    max-width: 100%;
     object-fit: cover;
     border-radius: 10px;
   }
@@ -19,6 +20,12 @@
 }
 
 @media only screen and (max-width: 780px) {
+  .description{
+    max-height: 40vh;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 
   .card-container {
     .card {

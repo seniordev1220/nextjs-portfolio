@@ -60,6 +60,7 @@ export const projects = [
         image: "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGhvc3Rpbmd8ZW58MHx8MHx8&w=1000&q=80",
         slug: "How_To_Work_Better_Efficiency_Tools_Every_Logo_Designer_Needs",
         content: "/projects",
+        techStack:'Next.JS, Redux, Saga, Vercel',
         showinportfolio: true
     },
     {
@@ -70,6 +71,7 @@ export const projects = [
         image: "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGhvc3Rpbmd8ZW58MHx8MHx8&w=1000&q=80",
         slug: "How_To_Work_Better_Efficiency_Tools_Every_Logo_Designer_Needs",
         content: "/projects",
+        techStack:'Next.JS, Redux, Saga, Vercel',
         showinportfolio: true
     },
     {
@@ -80,6 +82,7 @@ export const projects = [
         image: "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGhvc3Rpbmd8ZW58MHx8MHx8&w=1000&q=80",
         slug: "How_To_Work_Better_Efficiency_Tools_Every_Logo_Designer_Needs",
         content: "/projects",
+        techStack:'Next.JS, Redux, Saga, Vercel',
         showinportfolio: true
     },
     {
@@ -90,6 +93,7 @@ export const projects = [
         image: "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGhvc3Rpbmd8ZW58MHx8MHx8&w=1000&q=80",
         slug: "How_To_Work_Better_Efficiency_Tools_Every_Logo_Designer_Needs",
         content: "/projects",
+        techStack:'Next.JS, Redux, Saga, Vercel',
         showinportfolio: true
     },
     {
@@ -100,6 +104,7 @@ export const projects = [
         image: "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGhvc3Rpbmd8ZW58MHx8MHx8&w=1000&q=80",
         slug: "How_To_Work_Better_Efficiency_Tools_Every_Logo_Designer_Needs",
         content: "/projects",
+        techStack:'Next.JS, Redux, Saga, Vercel',
         showinportfolio: true
     }
 ]

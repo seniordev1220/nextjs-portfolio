@@ -1,28 +1,28 @@
-import React, { useContext } from 'react'
-import Image from "next/image"
-import { homeMessages } from "../../../messages/home"
-import image from "../../../assets/images/4.png"
-import { DarKModeContext } from '../../layout/layout'
-import { sectionMapping } from '../sectionMapping';
-import { useSetTab } from '../../../hooks/useSetTab';
-import classes from './home.module.scss'
-import { Box } from '@mui/material'
+import React, { useContext } from 'react';
+import Image from "next/image";
+import { homeMessages } from "../../../messages/home";
+import { DarKModeContext } from '../../layout/layout';
+import classes from './home.module.scss';
+import { Box } from '@mui/material';
 
 export const Home = () => {
-  const { isDarkMode } = useContext(DarKModeContext)
-  // const { ref } = useSetTab(sectionMapping.home);
+  const { isDarkMode } = useContext(DarKModeContext);
+
   return (
     <Box
-    //  ref={ref}
       className={classes.intro__container}
       sx={isDarkMode ? {
         border: 'solid 1px #2f2f2fc4',
         boxShadow: '0 0 1rem #00000078'
-
       } : {}}
     >
       <div className={classes.intro__image__container}>
-        <Image alt="Web Developer" priority src={image} />
+        <Image
+          src={require('../../../assets/images/4.png')}
+          alt="Photo of Anand, a full-stack web developer"
+          loading="eager"
+          priority
+        />
       </div>
       <div className={classes.intro__content}>
         <h2 className={isDarkMode ? classes['intro__self--dark'] : classes['intro__self--light']}>{homeMessages.anand}<span className={classes.line}></span></h2>
@@ -36,10 +36,8 @@ export const Home = () => {
         </div>
 
         <div className={classes.intro__horizontalSeparation} />
-        <p className={classes.intro__description}>{
-          homeMessages.intro}
-        </p>
+        <p className={classes.intro__description}>{homeMessages.intro}</p>
       </div>
     </Box>
-  )
-}
+  );
+};

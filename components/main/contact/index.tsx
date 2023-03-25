@@ -26,17 +26,21 @@ interface contactDataType {
 export const Contact = () => {
     const { ref } = useSetTab(sectionMapping.contact);
     const { isDarkMode } = useDarkMode();
-
+    const iconStyle = {
+        color: "#2753d7",
+        marginRight: "1rem",
+        fontSize: "2.5rem"
+    }
     const [open, setOpen] = React.useState(false);
     const { isLoading } = useSelector<RootState>(state => state.email) as emailStateType;
     const dispatch = useDispatch();
     const textFieldStyle = {
         marginTop: "0.5rem",
-        backgroundColor: isDarkMode ? "#rgb(54 54 54 / 87%)" : "#ffffff00",
+        backgroundColor: isDarkMode ? "#00000" : "#ffffff00",
         width: "100%",
         ".css-1d3z3hw-MuiOutlinedInput-notchedOutline ": {
             border: "solid 1px #2753d79e",
-            boxShadow: isDarkMode ? "0 0 1px #2753d7" : "0 0 2px rgb(125 125 125 / 35%)"
+            boxShadow: isDarkMode ? "0 0 3px #2753d7" : "0 0 2px rgb(125 125 125 / 35%)"
         }
     }
     const initialFormData = {
@@ -91,38 +95,42 @@ export const Contact = () => {
 
     return (
         <Box
-         ref={ref}
-          sx={{
-            position: 'relative',
-            backgroundColor: isDarkMode ? "#141414" : "white",
-            borderRadius: "1rem",
-            color: "white",
-            ...!isDarkMode && { backgroundImage: "linear-gradient(to right, #e7f6ff,#c3dfff,#b6d8ff,#a1cdff ,#a1cdff )" },
-            ...isDarkMode && {
-                border: 'solid 1px #2f2f2fc4',
-                boxShadow: '0 0 1rem #00000078'
-            },
+            ref={ref}
+            sx={{
+                position: 'relative',
+                backgroundColor: isDarkMode && "#141414",
+                borderRadius: "1rem",
+                color: "white",
+                ...isDarkMode && {
+                    border: 'solid 1px #2f2f2fc4',
+                    boxShadow: '0 0 1rem #00000078'
+                },
 
-        }}
+            }}
             className={joinClass(classes.contact__container)}>
-            <Box className={classes.shortDescription} sx={{
+            <Box sx={{
                 display: "flex",
                 justifyContent: "center",
                 marginTop: "3rem",
                 color: isDarkMode ? "#696969" : "#353839aa",
-                fontWeight: "800"
+                fontWeight: "800",
+                flexDirection:'column'
 
             }}>
-                <Parallax easing={"easeInOut"} opacity={[0, 1]} translateX={['-50%', '0%']}>
-                    <p>Feel Free To Contact Me</p>
-                </Parallax>
+                <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                    <Parallax easing={"easeInOut"} opacity={[0.3, 1]} translateX={['-50%', '0%']}>
+                        <p>Feel Free To Contact Me</p>
+                    </Parallax>
+                </Box>
+                <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                    <Parallax easing="easeInOut" opacity={[0.5, 1]} translateX={['20%', '0%']}>
+                        <Typography className={classes.contact__title} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
+                            My Contact
+                        </Typography>
+                    </Parallax>
+                </Box>
             </Box>
-
-            <Box component="span" sx={{ margin: "auto" }}>
-                <Typography className={classes.contact__title} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
-                    My Contact</Typography>
-            </Box>
-            <Box className={classes.contact__content__wrapper}>
+            <Box sx={{marginTop:"1rem"}}>
                 <Grid container spacing={2} >
                     <Grid item xs={12} md={7} >
                         <Box sx={{ padding: "1rem" }}>
@@ -192,21 +200,21 @@ export const Contact = () => {
                         <Box sx={{ padding: "1rem" }}>
                             <Typography fontWeight={600} color={isDarkMode ? "white" : "#696969"} fontSize="x-large">Contact Info</Typography>
                             <Box sx={{ display: "flex", flexDirection: "row", marginTop: "1rem", marginBottom: "1rem" }}>
-                                <PersonIcon sx={{ color: "#2753d7", marginRight: "1rem", fontSize: "2.5rem" }} />
+                                <PersonIcon sx={iconStyle} />
                                 <Box>
                                     <Typography component="p" color={isDarkMode ? "white" : "#696969"} fontWeight={600}>Name</Typography>
                                     <Typography color="#2753d7">Anand krishnan M J</Typography>
                                 </Box>
                             </Box>
                             <Box sx={{ display: "flex", flexDirection: "row", marginTop: "1rem", marginBottom: "1rem" }}>
-                                <LocationOnIcon sx={{ color: "#2753d7", marginRight: "1rem", fontSize: "2.5rem" }} />
+                                <LocationOnIcon sx={iconStyle} />
                                 <Box>
                                     <Typography component="p" color={isDarkMode ? "white" : "#696969"} fontWeight={600}>Location</Typography>
                                     <Typography color="#2753d7">695571, Kerala, India</Typography>
                                 </Box>
                             </Box>
                             <Box sx={{ display: "flex", flexDirection: "row", marginTop: "1rem", marginBottom: "1rem" }}>
-                                <PhoneIcon sx={{ color: "#2753d7", marginRight: "1rem", fontSize: "2.5rem" }} />
+                                <PhoneIcon sx={iconStyle} />
                                 <Box>
                                     <Typography component="p" color={isDarkMode ? "white" : "#696969"} fontWeight={600}>Call Me</Typography>
                                     <Typography color="#2753d7">
@@ -215,7 +223,7 @@ export const Contact = () => {
                                 </Box>
                             </Box>
                             <Box sx={{ display: "flex", flexDirection: "row", marginTop: "1rem", marginBottom: "1rem" }}>
-                                <EmailIcon sx={{ color: "#2753d7", marginRight: "1rem", fontSize: "2.5rem" }} />
+                                <EmailIcon sx={iconStyle} />
                                 <Box>
                                     <Typography component="p" color={isDarkMode ? "white" : "#696969"} fontWeight={600}>Email Me</Typography>
                                     <Typography color="#2753d7">
