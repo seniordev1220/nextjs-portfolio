@@ -101,11 +101,8 @@ export const Contact = () => {
                 backgroundColor: isDarkMode && "#141414",
                 borderRadius: "1rem",
                 color: "white",
-                ...isDarkMode && {
-                    border: 'solid 1px #2f2f2fc4',
-                    boxShadow: '0 0 1rem #00000078'
-                },
-
+                border: isDarkMode ? 'solid 1px #2f2f2fc4' : 'none',
+                boxShadow: isDarkMode ? '0 0 1rem #00000078' : 'none'
             }}
             className={joinClass(classes.contact__container)}>
             <Box sx={{
@@ -114,7 +111,7 @@ export const Contact = () => {
                 marginTop: "3rem",
                 color: isDarkMode ? "#696969" : "#353839aa",
                 fontWeight: "800",
-                flexDirection:'column'
+                flexDirection: 'column'
 
             }}>
                 <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
@@ -130,7 +127,7 @@ export const Contact = () => {
                     </Parallax>
                 </Box>
             </Box>
-            <Box sx={{marginTop:"1rem"}}>
+            <Box sx={{ marginTop: "1rem" }}>
                 <Grid container spacing={2} >
                     <Grid item xs={12} md={7} >
                         <Box sx={{ padding: "1rem" }}>
