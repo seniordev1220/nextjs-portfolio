@@ -5,12 +5,12 @@ import { projects } from "../mock/projects";
 
 export const getProjectsApi = (showHidden: boolean, limit: number, offset: number) => {
     const endpoint = "projects";
-    // return {
-    //     data:{
-    //         projects:projects
-    //     }
-    // }
-    return request.GET({ endpoint, params: { showHidden: showHidden, limit, offset } });
+    return {
+        data:{
+            projects:projects
+        }
+    }
+    // return request.GET({ endpoint, params: { showHidden: showHidden, limit, offset } });
 };
 
 export const getProjectItemApi = (id: number) => {
