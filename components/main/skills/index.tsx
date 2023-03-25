@@ -31,7 +31,7 @@ export const Skills = () => {
       sx={{
         position: 'relative',
         borderRadius: "1rem",
-        backgroundColor: isDarkMode && "#ffffff04",
+        backgroundColor: isDarkMode ? "#ffffff04":"",
         ...isDarkMode && {
           border: 'solid 1px #2f2f2fc4',
           boxShadow: '0 0 1rem #00000078'
