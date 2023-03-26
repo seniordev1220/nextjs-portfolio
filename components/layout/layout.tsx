@@ -19,9 +19,10 @@ function Layout({ children, variant, title }: LayoutPropType) {
     const [isDarkMode, setIsDarkMode] = useState("true");
     useEffect(() => {
         const isDark: string = window?.sessionStorage?.getItem("isDarkMode") as any;
-        setIsDarkMode(isDark);
+        if (isDark === "false") {
+            setIsDarkMode(isDark);
+        }
         isDark === "false" && document.body.classList.add("light-mode");
-        isDark === "false" && document.body.classList.add("dark-mode");
     }, [])
     const onButtonToggle = () => {
         window.sessionStorage.setItem("isDarkMode", isDarkMode === "false" ? "true" : "false")
