@@ -37,16 +37,10 @@
 }
 
 .toggle {
-    &__desktop {
-        position: fixed;
-        top: 0.5rem;
-        right: 0.5rem;
-
-        @media screen and (min-width:"767px") {
-            display: none;
-        }
-    }
-
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
     --size: 2rem;
     -webkit-touch-callout: none;
     -webkit-user-select: none;

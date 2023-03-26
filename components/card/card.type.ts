@@ -6,4 +6,5 @@ export interface CardItemProps {
     image: string;
     slug: string;
     endpoint: string;
+    isListVariant?: boolean;
 }

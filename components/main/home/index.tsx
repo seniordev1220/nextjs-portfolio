@@ -7,7 +7,7 @@ import { Box } from '@mui/material';
 
 export const Home = () => {
   const { isDarkMode } = useContext(DarKModeContext);
-
+console.log("lllll", isDarkMode)
   return (
     <Box
       className={classes.intro__container}

@@ -7,34 +7,34 @@
 }
 
 .section {
-    &--home {
+    &__home {
         @include sectionCommon();
     }
 
-    &--projects {
+    &__projects {
         @include sectionCommon();
         @media screen and (max-width:767px) {
             min-height:70vh;
         }
     }
 
-    &--quotes {
+    &__quotes {
         @include sectionCommon();
     }
 
-    &--skills {
+    &__skills {
         @include sectionCommon();
     }
 
-    &--contact {
+    &__contact {
         @include sectionCommon();
     }
 
-    &--about {
+    &__about {
         @include sectionCommon();
     }
 
-    &--footer {
+    &__footer {
         padding-bottom: 3rem;
 
     }

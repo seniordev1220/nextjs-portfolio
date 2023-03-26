@@ -2,6 +2,7 @@ import { Box, Typography } from '@mui/material';
 import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 import RssFeedIcon from '@mui/icons-material/RssFeed';
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import Header from './header/header';
 import classes from "./layout.module.scss";
 import { Logo } from '../Logo';
@@ -15,7 +16,7 @@ const iconStyle = {
 export const DarKModeContext = React.createContext({ isDarkMode: false });
 function Layout({ children, variant, title }: LayoutPropType) {
 
-    const [isDarkMode, setIsDarkMode] = useState("true");
+    const [isDarkMode, setIsDarkMode] = useState(window?.sessionStorage?.getItem("isDarkMode"));
     useEffect(() => {
         const isDark: string = window?.sessionStorage?.getItem("isDarkMode") as any;
         if (isDark === "false") {
@@ -48,29 +49,35 @@ function Layout({ children, variant, title }: LayoutPropType) {
                         <Box sx={{
                             display: "flex",
                             justifyContent: "space-between",
+                            flexDirection: 'column',
                             alignItems: "center",
                             padding: "0.3rem",
                             marginBottom: "1.5rem"
                         }}>
-                            <Box sx={{ display: "flex" }}>
+                            <Box sx={{ display: "flex", justifyContent: "flex-start", width:'100%', margin:'1rem', alignItems:'center' }}>
                                 {
                                     title === "Blogs" && <RssFeedIcon sx={iconStyle} />
                                 }
                                 {
-                                    title === "Projects" && <RssFeedIcon sx={iconStyle} />
+                                    title === "Projects" && <BusinessCenterIcon sx={iconStyle} />
                                 }
-                                <Typography sx={{ fontSize: "xx-large", fontWeight: "600" }} className={classes.sub_layout_title} >{title}</Typography>
+                                <Typography
+                                    sx={{ fontSize: "x-large", fontWeight: "600" }}
+                                    className={classes.sub_layout_title} >
+                                    {title === "Projects" ? "Things I have built" : title}
+                                </Typography>
                             </Box>
-                            <input checked={isDarkMode === "true" ? true : false}
-                                className={classes.toggle}
-                                type="checkbox"
-                                onChange={onButtonToggle} />
+
+                            <Box sx={{ width: '1400px', maxWidth: '90%' }}>
+                                <main className={classes.main}>
+                                    {children}
+                                </main>
+                            </Box>
                         </Box>
-                        <div>
-                            <main className={classes.main}>
-                                {children}
-                            </main>
-                        </div>
+                        <input checked={isDarkMode === "true" ? true : false}
+                            className={classes.toggle}
+                            type="checkbox"
+                            onChange={onButtonToggle} />
                     </DarKModeContext.Provider>
                 )
             }
@@ -94,11 +101,11 @@ function Layout({ children, variant, title }: LayoutPropType) {
                                         type="checkbox"
                                         onChange={onButtonToggle} />
                                 </Box>
-                                <div>
+                                <Box>
                                     <main className={classes.main}>
                                         {children}
                                     </main>
-                                </div>
+                                </Box>
                             </Box>
                             <Background />
                         </Box>
