@@ -38,7 +38,7 @@ const Project = ({ title, date, image, content, description, techStack }: Projec
                 <h1>{title}</h1>
                 <span>{date}</span>
                 <Grid container sx={{ display: 'flex' }}>
-                    <Grid xs={12} md={5} item sx={{ width: "400px", maxWidth: '50%%' }}>
+                    <Grid xs={12} md={5} item sx={{ width: "400px", maxWidth: '50%' }}>
                         <Image
                             src={image}
                             alt={title}
