@@ -50,7 +50,7 @@ const Project = ({ title, date, image, content, description, techStack }: Projec
                         />
                         <TechUsed techStack={techStack} />
                     </Grid>
-                    <Grid xs={12} md={7} item sx={{ padding: "2rem", lineHeight: "1.5" }}>
+                    <Grid xs={12} md={7} item sx={{ padding: "1rem", lineHeight: "1.5" }}>
                         <Typography
                             sx={{ marginBottom: '1rem' }}
                             fontWeight={600} fontSize="large" >
