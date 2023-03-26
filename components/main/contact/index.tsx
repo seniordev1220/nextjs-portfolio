@@ -101,8 +101,10 @@ export const Contact = () => {
                 backgroundColor: isDarkMode ? "#141414" : "",
                 borderRadius: "1rem",
                 color: "white",
-                border: isDarkMode ? 'solid 1px #2f2f2fc4' : 'none',
-                boxShadow: isDarkMode ? '0 0 1rem #00000078' : 'none'
+                ...isDarkMode && {
+                    border: 'solid 1px #2f2f2fc4',
+                    boxShadow: '0 0 1rem #00000078'
+                }
             }}
             className={joinClass(classes.contact__container)}>
             <Box sx={{

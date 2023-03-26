@@ -5,14 +5,16 @@
         -webkit-text-fill-color: transparent;
         margin-block-start: 0 !important;
     }
+
     &__container {
         display: flex;
         flex-direction: column;
         width: 85%;
         min-height: 90vh;
         box-shadow: 0 0 0.5rem #00000049;
-        padding:1rem;
-        @media screen and (max-width:"767px") {
+        padding: 1rem;
+
+        @media screen and (max-width:767px) {
             width: 100%;
             border: none;
             border-radius: 0rem;
