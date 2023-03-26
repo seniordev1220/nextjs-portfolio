@@ -15,15 +15,15 @@ const iconStyle = {
 }
 export const DarKModeContext = React.createContext({ isDarkMode: false });
 function Layout({ children, variant, title }: LayoutPropType) {
-    const csrLayout = ['l1']
-    const [isDarkMode, setIsDarkMode] = useState(
-        csrLayout.includes(variant) ? window?.sessionStorage?.getItem("isDarkMode") : "true");
 
+    const [isDarkMode, setIsDarkMode] = useState("true");
     useEffect(() => {
         const isDark: string = window?.sessionStorage?.getItem("isDarkMode") as any;
-        setIsDarkMode(isDark);
+        if (isDark === "false") {
+            setIsDarkMode(isDark);
+        }
+
         isDark === "false" && document.body.classList.add("light-mode");
-        isDark === "true" && document.body.classList.add("dark-mode");
     }, [])
     const onButtonToggle = () => {
         window.sessionStorage.setItem("isDarkMode", isDarkMode === "false" ? "true" : "false")
@@ -54,7 +54,7 @@ function Layout({ children, variant, title }: LayoutPropType) {
                             padding: "0.3rem",
                             marginBottom: "1.5rem"
                         }}>
-                            <Box sx={{ display: "flex", justifyContent: "flex-start", width: '100%', margin: '1rem', alignItems: 'center' }}>
+                            <Box sx={{ display: "flex", justifyContent: "flex-start", width:'100%', margin:'1rem', alignItems:'center' }}>
                                 {
                                     title === "Blogs" && <RssFeedIcon sx={iconStyle} />
                                 }
