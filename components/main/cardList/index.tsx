@@ -82,10 +82,12 @@ export const CardList = ({
             <Box sx={{ width: '90%' }}>
                 <Carousel
                     className={classes.carousel}
-                    verticalSwipe="standard"
+                    verticalSwipe="natural"
                     useKeyboardArrows
                     showArrows
                     emulateTouch
+                    preventMovementUntilSwipeScrollTolerance={true}
+                    swipeScrollTolerance={50}
                     axis="horizontal"
                     centerMode
                     centerSlidePercentage={100}
