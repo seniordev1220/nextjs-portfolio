@@ -38,7 +38,16 @@ export const Contact = () => {
         marginTop: "0.5rem",
         backgroundColor: isDarkMode ? "#00000" : "#ffffff00",
         width: "100%",
-        ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root .css-1v4ccyo .css-dpjnhs-MuiInputBase-root-MuiOutlinedInput-root .css-1hof3tc" : {
+        ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
+            boxShadow: isDarkMode ? "0 0 3px #2753d7" : "0 0 2px rgb(125 125 125 / 35%)"
+        },
+        ".css-1v4ccyo": {
+            boxShadow: isDarkMode ? "0 0 3px #2753d7" : "0 0 2px rgb(125 125 125 / 35%)"
+        },
+        ".css-dpjnhs-MuiInputBase-root-MuiOutlinedInput-root": {
+            boxShadow: isDarkMode ? "0 0 3px #2753d7" : "0 0 2px rgb(125 125 125 / 35%)"
+        },
+        ".css-1hof3tc": {
             boxShadow: isDarkMode ? "0 0 3px #2753d7" : "0 0 2px rgb(125 125 125 / 35%)"
         }
     }
