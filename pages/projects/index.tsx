@@ -15,10 +15,10 @@ function Projects(props: any) {
     //request of url will be sent when this component is loaded
     // const { data }: any = useSWR(`/projects?showHidden=false`, fetcher)
     const router = useRouter();
-    const handleRedirect = () => {
+    const handleRedirect = (slug:string) => {
         router.push(
             {
-                pathname: `projects/${props.data.slug}`,
+                pathname: `projects/${slug}`,
             })
     }
     return <>
@@ -58,7 +58,7 @@ function Projects(props: any) {
                                     </Typography>
                                     <Button
                                         sx={{ marginTop: '1rem' }}
-                                        onClick={handleRedirect}>
+                                        onClick={()=>handleRedirect(data.slug)}>
                                         Read more
                                     </Button>
                                 </Grid>
