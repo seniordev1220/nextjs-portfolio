@@ -15,8 +15,10 @@ const iconStyle = {
 }
 export const DarKModeContext = React.createContext({ isDarkMode: false });
 function Layout({ children, variant, title }: LayoutPropType) {
+    const csrLayout = ['l1']
+    const [isDarkMode, setIsDarkMode] = useState(
+        csrLayout.includes(variant) ? window?.sessionStorage?.getItem("isDarkMode") : "false");
 
-    const [isDarkMode, setIsDarkMode] = useState(window?.sessionStorage?.getItem("isDarkMode"));
     useEffect(() => {
         const isDark: string = window?.sessionStorage?.getItem("isDarkMode") as any;
         if (isDark === "false") {
@@ -54,7 +56,7 @@ function Layout({ children, variant, title }: LayoutPropType) {
                             padding: "0.3rem",
                             marginBottom: "1.5rem"
                         }}>
-                            <Box sx={{ display: "flex", justifyContent: "flex-start", width:'100%', margin:'1rem', alignItems:'center' }}>
+                            <Box sx={{ display: "flex", justifyContent: "flex-start", width: '100%', margin: '1rem', alignItems: 'center' }}>
                                 {
                                     title === "Blogs" && <RssFeedIcon sx={iconStyle} />
                                 }
