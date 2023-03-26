@@ -6,5 +6,6 @@ export interface ProjectItem {
     image: string,
     slug: string,
     content: string,
-    showinportfolio: boolean
+    showinportfolio: boolean,
+    techStack: string
 }

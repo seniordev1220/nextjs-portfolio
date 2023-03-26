@@ -100,13 +100,16 @@ export const About = () => {
                     fontWeight: "800"
 
                 }}>
-                <Parallax easing={"easeInOut"} opacity={[0, 1]} translateX={['-50%', '0%']}>
+                <Parallax easing={"easeInOut"} opacity={[0.3, 1]} translateX={['-50%', '0%']}>
                     <p>Somethings about me</p>
                 </Parallax>
             </Box>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
-                <Typography className={classes.about__title} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
-                    About Me</Typography>
+                <Parallax easing="easeInOut" opacity={[0.5, 1]} translateX={['20%', '0%']}>
+                    <Typography className={classes.about__title} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
+                        About Me
+                    </Typography>
+                </Parallax>
             </Box>
             <Box sx={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
                 <Box>
@@ -182,8 +185,10 @@ export const About = () => {
             </Box>
 
             <Box sx={{ display: "flex", justifyContent: "center" }}>
-                <Typography className={classes.about__title} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
-                    My Resume</Typography>
+                <Parallax easing="easeInOut" opacity={[0.5, 1]} translateX={['20%', '0%']}>
+                    <Typography className={classes.about__title} sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}>
+                        My Resume</Typography>
+                </Parallax>
             </Box>
             <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '1rem' }} >
                 <Box sx={{ margin: '1rem', display: 'flex', justifyContent: 'center' }}>

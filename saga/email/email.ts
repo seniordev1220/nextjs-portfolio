@@ -23,7 +23,7 @@ function* getEmailsSaga(action: { type: string, payload: { limit: number, offset
 }
 function* sendEmailSaga(action: { payload: { data: emailDataItem, reset: () => {} } }) {
     try {
-        yield call(sendEmailApi, action.payload.data);
+        yield call(sendEmailApi, action.payload.data, true);
         yield put(sendEmailSuccess(null));
     } catch (e) {
         yield put(sendEmailFailed(e));

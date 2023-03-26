@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useContext, useCallback, useMemo } from 'react'
+import React, { useContext, useMemo } from 'react'
 import { useRouter } from 'next/router';
 import { Box, Tab, Tabs, Tooltip as MuiToolTip, TooltipProps, tooltipClasses, Zoom } from '@mui/material'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import HomeIcon from '@mui/icons-material/Home';
-import RssFeedIcon from '@mui/icons-material/RssFeed';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import PersonIcon from '@mui/icons-material/Person';
 import PsychologyIcon from '@mui/icons-material/Psychology';
@@ -18,7 +17,7 @@ import classes from './header.module.scss'
 const iconColor = "#2753d7"
 function Header({ onDarkModeToggle }: HeaderProps) {
     const { isDarkMode } = useContext(DarKModeContext)
-    const { tabValue, handleTabChange } = useContext(TabContext)
+    const { handleTabChange } = useContext(TabContext)
     const routes = useMemo(() => {
         const iconStyle = { color: iconColor, fontSize: "2rem", stroke: isDarkMode ? "rgba(0, 0, 0, 1)" : "rgba(255, 255, 255, 1)", }
         return ([

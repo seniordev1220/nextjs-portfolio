@@ -29,7 +29,7 @@ export const Quotes = () => {
                     </div>
                 </Grid>
                 <Grid className={classes.miniLogoContainer} item xs={5} sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
-                    <Parallax easing={"easeInOut"} opacity={[0.5, 1]} translateX={['-30%', '0%']}>
+                    <Parallax easing={"easeInOut"} translateX={['-70%', '0%']}>
                         <MiniLogo />
                     </Parallax>
                 </Grid>

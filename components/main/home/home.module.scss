@@ -88,7 +88,7 @@ $animation-time: 2s;
 
 .intro {
     &__container {
-
+        min-height: 80vh;
         background-color: #ffffff04;
         box-shadow: 0 0 0.5rem #00000049;
         width: 85%;
