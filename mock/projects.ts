@@ -3,7 +3,7 @@ export const blogs = [
         id: 1,
         title: "A journey to master Data Structure and Algorithm",
         date: "10 Dec, 2021",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas. ",
+        description: "The portfolio website is a dynamic and interactive platform that showcases their skills and experience in design and development. Built with Next.js, MUI, Redux, and Redux Saga, the website provides a seamless and optimized user experience. The backend of the website is powered by Node.js and Express.js, and uses Postgres as the database management system, ensuring reliability and scalability. Overall, the portfolio website is a well-designed and well-implemented digital representation of their professional work and capabilities.",
         image: "https://w10.naukri.com/mailers/2022/naukri-learning/what-is/What-is-Data-Structures-and-Algorithms.jpg",
         slug: "How_To_Work_Better_Efficiency_Tools_Every_Logo_Designer_Needs",
         content: `<p>Blog content</p>`,
@@ -54,57 +54,24 @@ export const blogs = [
 export const projects = [
     {
         id: 1,
-        title: "Portfolio SPA",
+        title: "Portfolio Frontend Application",
         date: "10 Dec, 2021 - 19 July, 2022",
-        description: "Good tools make application development quicker and easier to maintain than if you did everything by hand.Good tools make application development quicker and easier to maintain than if you did everything by hand.Good tools make application development quicker and easier to maintain than if you did everything by hand.Good tools make application development quicker and easier to maintain than if you did everything by hand..",
-        image: "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGhvc3Rpbmd8ZW58MHx8MHx8&w=1000&q=80",
-        slug: "How_To_Work_Better_Efficiency_Tools_Every_Logo_Designer_Needs",
+        description: "My portfolio website is a dynamic and interactive platform that showcases their skills and experience in design and development. Built with Next.js, MUI, Redux, and Redux Saga, the website provides a seamless and optimized user experience. The backend of the website is powered by Node.js and Express.js, and uses Postgres as the database management system, ensuring reliability and scalability. Overall, the portfolio website is a well-designed and well-implemented digital representation of my professional work and capabilities.",
+        image: "/images/portfolio_spa.png",
+        slug: "my_portfolio_website_spa",
         content: "/projects",
-        techStack:'Next.JS, Redux, Saga, Vercel',
+        techStack: 'Next.JS, Redux, Saga, Material UI, SCSS',
         showinportfolio: true
     },
     {
         id: 2,
-        title: "Portfolio Backend",
+        title: "Portfolio Backend Application",
         date: "10 Dec, 2021 - 19 July, 2022",
-        description: "Good tools make application development quicker and easier to maintain than if you did everything by hand.Good tools make application development quicker and easier to maintain than if you did everything by hand..",
-        image: "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGhvc3Rpbmd8ZW58MHx8MHx8&w=1000&q=80",
-        slug: "How_To_Work_Better_Efficiency_Tools_Every_Logo_Designer_Needs",
+        description: "My portfolio website's backend application was built using Node.js and Express.js for server-side functionality, and PostgreSQL as the database management system to store and retrieve data. I also used Docker for containerization, which helped to simplify the deployment process. The application is deployed on Amazon Web Services (AWS), which ensures reliability, scalability, and high availability. Overall, the backend application provides a robust and scalable architecture for handling the data and functionality of my portfolio website.",
+        image: "/images/portfolio_BE.png",
+        slug: "my_portfolio_website_backend",
         content: "/projects",
-        techStack:'Next.JS, Redux, Saga, Vercel',
-        showinportfolio: true
-    },
-    {
-        id: 3,
-        title: "Portfolio SPA",
-        date: "10 Dec, 2021 - 19 July, 2022",
-        description: "Good tools make application development quicker and easier to maintain than if you did everything by hand.Good tools make application development quicker and easier to maintain than if you did everything by hand..",
-        image: "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGhvc3Rpbmd8ZW58MHx8MHx8&w=1000&q=80",
-        slug: "How_To_Work_Better_Efficiency_Tools_Every_Logo_Designer_Needs",
-        content: "/projects",
-        techStack:'Next.JS, Redux, Saga, Vercel',
-        showinportfolio: true
-    },
-    {
-        id: 4,
-        title: "Portfolio Backend",
-        date: "10 Dec, 2021 - 19 July, 2022",
-        description: "Good tools make application development quicker and easier to maintain than if you did everything by hand. Good tools make application development quicker and easier to maintain than if you did everything by hand..",
-        image: "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGhvc3Rpbmd8ZW58MHx8MHx8&w=1000&q=80",
-        slug: "How_To_Work_Better_Efficiency_Tools_Every_Logo_Designer_Needs",
-        content: "/projects",
-        techStack:'Next.JS, Redux, Saga, Vercel',
-        showinportfolio: true
-    },
-    {
-        id: 5,
-        title: "Portfolio SPA",
-        date: "10 Dec, 2021 - 19 July, 2022",
-        description: "Good tools make application development quicker and easier to maintain than if you did everything by hand. Good tools make application development quicker and easier to maintain than if you did everything by hand..",
-        image: "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGhvc3Rpbmd8ZW58MHx8MHx8&w=1000&q=80",
-        slug: "How_To_Work_Better_Efficiency_Tools_Every_Logo_Designer_Needs",
-        content: "/projects",
-        techStack:'Next.JS, Redux, Saga, Vercel',
+        techStack: 'Node.JS, Express.JS, Docker, PostgreSQL',
         showinportfolio: true
     }
 ]
