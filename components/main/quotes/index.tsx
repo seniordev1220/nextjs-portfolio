@@ -9,7 +9,8 @@ const quote = `" There are no limits to what you can do or heal, as long as you 
 
 export const Quotes = () => {
     const { ref, inView } = useInView({
-        threshold: 0
+        threshold: 0,
+        triggerOnce: true
     });
 
     return (
