@@ -18,7 +18,7 @@ function Projects(props: any) {
     const handleRedirect = () => {
         router.push(
             {
-                pathname: `${props.data.endpoint}/${props.data.slug}`,
+                pathname: `projects/${props.data.slug}`,
             })
     }
     return <>
