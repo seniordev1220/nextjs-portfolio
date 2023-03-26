@@ -69,7 +69,6 @@ const education = [
 ]
 
 export const About = () => {
-    const { ref } = useSetTab(sectionMapping.about);
     const { isDarkMode } = useDarkMode();
     const today = new Date();
     const birthDate = new Date("1997-09-18");
@@ -84,7 +83,7 @@ export const About = () => {
     };
 
     return (
-        <Box ref={ref} className={joinClass(classes.about__container)} sx={{
+        <Box className={joinClass(classes.about__container)} sx={{
             ...isDarkMode && {
                 border: 'solid 1px #2f2f2fc4',
                 boxShadow: '0 0 1rem #00000078'

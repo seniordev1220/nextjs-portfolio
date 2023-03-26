@@ -24,7 +24,6 @@ interface contactDataType {
     message: string
 }
 export const Contact = () => {
-    const { ref } = useSetTab(sectionMapping.contact);
     const { isDarkMode } = useDarkMode();
     const iconStyle = {
         color: "#2753d7",
@@ -103,7 +102,6 @@ export const Contact = () => {
 
     return (
         <Box
-            ref={ref}
             sx={{
                 position: 'relative',
                 backgroundColor: isDarkMode ? "#141414" : "",

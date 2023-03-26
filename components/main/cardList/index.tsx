@@ -35,12 +35,10 @@ export const CardList = ({
     data,
     sectionMapping,
 }: CardListProps) => {
-    const { ref } = useSetTab(sectionMapping);
     const { isDarkMode } = useDarkMode();
 
     return (
         <Box
-            ref={ref}
             className={classes.blogs__container}
             sx={{
                 ...(isDarkMode && {
