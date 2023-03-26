@@ -6,7 +6,7 @@ export const blogs = [
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas. ",
         image: "https://w10.naukri.com/mailers/2022/naukri-learning/what-is/What-is-Data-Structures-and-Algorithms.jpg",
         slug: "How_To_Work_Better_Efficiency_Tools_Every_Logo_Designer_Needs",
-        content: `<p>Blog content</p>`,
+        content: ``,
         showinportfolio:false
     },
     {
