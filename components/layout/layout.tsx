@@ -15,15 +15,13 @@ const iconStyle = {
 }
 export const DarKModeContext = React.createContext({ isDarkMode: false });
 function Layout({ children, variant, title }: LayoutPropType) {
-    const csrLayout = ['l1']
-    const [isDarkMode, setIsDarkMode] = useState(csrLayout.includes(variant)?window?.sessionStorage?.getItem("isDarkMode"):"false");
-    
+
+    const [isDarkMode, setIsDarkMode] = useState("true");
     useEffect(() => {
         const isDark: string = window?.sessionStorage?.getItem("isDarkMode") as any;
         if (isDark === "false") {
             setIsDarkMode(isDark);
         }
-
         isDark === "false" && document.body.classList.add("light-mode");
     }, [])
     const onButtonToggle = () => {
