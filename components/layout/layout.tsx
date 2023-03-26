@@ -21,10 +21,7 @@ function Layout({ children, variant, title }: LayoutPropType) {
 
     useEffect(() => {
         const isDark: string = window?.sessionStorage?.getItem("isDarkMode") as any;
-        if (isDark === "false") {
-            setIsDarkMode(isDark);
-        }
-
+        setIsDarkMode(isDark);
         isDark === "false" && document.body.classList.add("light-mode");
         isDark === "true" && document.body.classList.add("dark-mode");
     }, [])
