@@ -26,6 +26,7 @@ function Layout({ children, variant, title }: LayoutPropType) {
         }
 
         isDark === "false" && document.body.classList.add("light-mode");
+        isDark === "true" && document.body.classList.add("dark-mode");
     }, [])
     const onButtonToggle = () => {
         window.sessionStorage.setItem("isDarkMode", isDarkMode === "false" ? "true" : "false")
