@@ -11,7 +11,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import classes from "./menu.module.scss";
 import { useDarkMode } from "../../../../hooks/useDarkMode";
 import { TabContext } from "../../../../pages";
-import { joinClass } from "../../../../helpers/utils";
 
 const rotorSize = 81;
 const xOffset = 24;
@@ -34,7 +33,7 @@ export const RotaryMenu = () => {
     const icons = [
         {
             name: "Skills",
-            tabNumber: 3,
+            tabNumber: 2,
             IconComponent: <PsychologyIcon sx={iconStyle} />
 
         },
@@ -46,7 +45,7 @@ export const RotaryMenu = () => {
         },
         {
             name: "Download CV",
-            tabNumber: 2,
+            tabNumber: 5,
             IconComponent: (<Link sx={{ color: isDarkMode ? "white" : "black", textDecoration: 'none' }}
                 href="https://drive.google.com/uc?id=1y88Vas0fdeVwE9FNSx1gf6Q-myFftKdX&export=download"
                 target="_blank"> <DownloadIcon sx={iconStyle} /></Link>)
@@ -61,14 +60,14 @@ export const RotaryMenu = () => {
         },
         {
             name: "About",
-            tabNumber: 4,
+            tabNumber: 3,
             IconComponent: <PersonIcon sx={iconStyle} />
 
 
         },
         {
             name: "Contact",
-            tabNumber: 5,
+            tabNumber: 4,
             IconComponent: <ContactPhoneIcon sx={iconStyle} />
 
         }
@@ -135,7 +134,7 @@ export const RotaryMenu = () => {
                         {newI.map((item, index) =>
                             <div
                                 onClick={() => {
-                                    handleTabChange(null as any, item.tabNumber)
+                                    handleTabChange(null as any, item.tabNumber!)
                                     setIsVisible(false);
                                 }}
                                 key={`rotaryIcon-${item.xCordinate}-${index}`}

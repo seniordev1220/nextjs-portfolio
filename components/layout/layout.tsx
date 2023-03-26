@@ -2,7 +2,6 @@ import { Box, Typography } from '@mui/material';
 import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 import RssFeedIcon from '@mui/icons-material/RssFeed';
-import { ScrollDown } from '../scrolldown';
 import Header from './header/header';
 import classes from "./layout.module.scss";
 import { Logo } from '../Logo';
