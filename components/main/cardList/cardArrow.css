@@ -1,0 +1,8 @@
+.carousel .control-next.control-arrow:before {
+
+    border-left: solid 0.8rem #2753d7 !important;
+}
+
+.carousel .control-prev.control-arrow:before {
+    border-right: solid 0.8rem #2753d7 !important;
+}
