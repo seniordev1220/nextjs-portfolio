@@ -10,6 +10,8 @@ import { Background } from '../../background';
 import more from "../../../assets/images/5.png"
 import classes from './blogs.module.scss';
 
+const viewMore = ` Embark on my career journey with me and discover what's next! Check out what's currently in the works and beyond by clicking below.`
+
 interface Blog {
     id: number;
     title: string;
@@ -119,7 +121,10 @@ export const CardList = ({
                                 alt={"view More"} />
                         </Box>
                         <Box sx={{ width: '350px', maxWidth: '100%' }}>
-                            <Typography sx={{ margin: '1rem', textAlign: 'left' }}>Embark on my career journey with me and discover what's next! Check out what's currently in the works and beyond by clicking below.</Typography>
+                            <Typography
+                                sx={{ margin: '1rem', textAlign: 'left' }}>
+                                {viewMore}
+                            </Typography>
                             <Button variant="contained">
                                 <Link href="/projects">View More</Link>
                             </Button>
