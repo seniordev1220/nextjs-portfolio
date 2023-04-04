@@ -1,13 +1,14 @@
 import { Box, Button, Typography } from '@mui/material';
 import Link from 'next/link';
-import { useDarkMode } from '../../../hooks/useDarkMode';
-import { Card } from '../../card';
-import { useSetTab } from '../../../hooks/useSetTab';
-import { Background } from '../../background';
-import classes from './blogs.module.scss';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Parallax } from 'react-scroll-parallax';
+import { useDarkMode } from '../../../hooks/useDarkMode';
+import { Card } from '../../card';
+import Image from "next/image"
+import { Background } from '../../background';
+import more from "../../../assets/images/5.png"
+import classes from './blogs.module.scss';
 
 interface Blog {
     id: number;
@@ -69,13 +70,13 @@ export const CardList = ({
                     </Parallax>
                 </Box>
                 <Box component="span" sx={{ margin: 'auto' }}>
-                <Parallax easing="easeInOut" opacity={[0.5, 1]} translateX={['20%', '0%']}>
-                    <Typography
-                        className={classes.blogs__title}
-                        sx={{ fontSize: '3rem', fontWeight: '600', marginBottom: '2rem' }}
-                    >
-                        {title}
-                    </Typography>
+                    <Parallax easing="easeInOut" opacity={[0.5, 1]} translateX={['20%', '0%']}>
+                        <Typography
+                            className={classes.blogs__title}
+                            sx={{ fontSize: '3rem', fontWeight: '600', marginBottom: '2rem' }}
+                        >
+                            {title}
+                        </Typography>
                     </Parallax>
                 </Box>
             </Box>
@@ -99,19 +100,30 @@ export const CardList = ({
                     )) as any}
                     <Box
                         sx={{
-                            height: '100%',
-                            marginBottom: '2rem',
-                            marginTop: '1rem',
-                            marginLeft: '1rem',
-                            marginRight: '1rem',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
+                            flexWrap: 'wrap'
                         }}
                     >
-                        <Button variant="contained">
-                            <Link href="/projects">View More</Link>
-                        </Button>
+                        <Box sx={{
+                            width: '350px',
+                            maxWidth: '100%'
+                        }}>
+                            <Image
+                                // layout="fill"
+                                priority
+                                width={320}
+                                height={300}
+                                src={more}
+                                alt={"view More"} />
+                        </Box>
+                        <Box sx={{ width: '350px', maxWidth: '100%' }}>
+                            <Typography sx={{ margin: '1rem', textAlign: 'left' }}>Embark on my career journey with me and discover what's next! Check out what's currently in the works and beyond by clicking below.</Typography>
+                            <Button variant="contained">
+                                <Link href="/projects">View More</Link>
+                            </Button>
+                        </Box>
                     </Box>
                 </Carousel>
             </Box>

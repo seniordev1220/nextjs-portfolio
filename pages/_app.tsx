@@ -2,9 +2,8 @@ import type { AppProps } from 'next/app'
 import { Provider } from 'react-redux'
 import store from '../store'
 import "../components/layout/layout.css"
+import "../components/main/cardList/cardArrow.css"
 import '../styles/globals.css'
-import { useRouter } from 'next/router'
-import { useState, useEffect } from 'react'
 import { Loading } from '../components/Loading'
 import { useSsrPageLoading } from '../hooks/useIsSsrPageLoading'
 import Head from 'next/head'
