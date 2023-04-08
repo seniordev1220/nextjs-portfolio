@@ -72,7 +72,9 @@ export const About = () => {
     const { isDarkMode } = useDarkMode();
     const today = new Date();
     const birthDate = new Date("1997-09-18");
-    const age = today.getFullYear() - birthDate.getFullYear();
+    const years = today.getFullYear() - birthDate.getFullYear();
+    const months = today.getMonth() - birthDate.getMonth();
+    const age = Math.floor(years + (months / 12));
     const [experienceTabValue, setExperienceTabValue] = useState(0);
     const [educationTabValue, setEducationTabValue] = useState(0);
     const handleExperienceTabChange = (event: React.SyntheticEvent, newValue: number) => {
