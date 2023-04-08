@@ -1,5 +1,5 @@
 import classes from './ProfileCard.module.scss'
-import profile from "../../assets/images/profile.png"
+import profile from "../../assets/images/d.png"
 import { Box, Typography } from "@mui/material"
 import { useDarkMode } from '../../hooks/useDarkMode';
 
