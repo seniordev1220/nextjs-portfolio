@@ -34,7 +34,7 @@ const experience = [
         institute: "IIT-BHU",
         startDate: "June 2019",
         endDate: "Aug 2019",
-        designation: "Trainee @ Indian Institute of Technology, BHU, Varanai",
+        designation: "Trainee @ Indian Institute of Technology, BHU, Varanasi",
         worksDone: [
             "Worked on designing, simulating and testing of Meta-Surface based Antennas for radio frequency wireless communication.",
             <span key="pub1" >One of my first works was approved and published in the <a
