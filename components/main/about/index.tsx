@@ -81,7 +81,10 @@ export const About = () => {
     const handleEducationTabChange = (event: React.SyntheticEvent, newValue: number) => {
         setEducationTabValue(newValue);
     };
-
+    const InfoText = ({ title, content }: { title: string, content: string }) => (
+        <Typography sx={{ margin: "0.5rem", color: isDarkMode ? "#afafaf" : "#353535" }} component="p">{title} <Typography
+            component="span" sx={{ color: isDarkMode ? "white" : "black", fontWeight: "600" }}>{content}</Typography></Typography>
+    )
     return (
         <Box className={joinClass(classes.about__container)} sx={{
             ...isDarkMode && {
@@ -115,24 +118,16 @@ export const About = () => {
                     <Typography sx={{ fontSize: "xx-large", fontWeight: "600", marginBottom: "1rem" }}>Personal Informations</Typography>
                     <Grid container>
                         <Grid item xs={12} md={5} sx={{ margin: "1rem" }}>
-                            <Typography sx={{ margin: "0.5rem", color: isDarkMode ? "#afafaf" : "#353535" }} component="p">First Name: <Typography
-                                component="span" sx={{ color: isDarkMode ? "white" : "black", fontWeight: "600" }}>Anand</Typography></Typography>
-                            <Typography sx={{ margin: "0.5rem" }} component="p">Last Name: <Typography
-                                component="span" sx={{ color: isDarkMode ? "white" : "black", fontWeight: "600" }}>Krishnan M J</Typography></Typography>
-                            <Typography sx={{ margin: "0.5rem" }} component="p">Address: <Typography
-                                component="span" sx={{ color: isDarkMode ? "white" : "black", fontWeight: "600" }}>695571, Trivandrum, Kerala</Typography></Typography>
-                            <Typography sx={{ margin: "0.5rem" }} component="p">From: <Typography component="span"
-                                sx={{ color: isDarkMode ? "white" : "black", fontWeight: "600" }}>🇮🇳 India</Typography></Typography>
+                            <InfoText title="First Name: " content="Anand" />
+                            <InfoText title="Last Name: " content="Krishnan M J" />
+                            <InfoText title="Address: " content="695571, Trivandrum, Kerala" />
+                            <InfoText title="From: " content="🇮🇳 India" />
                         </Grid>
                         <Grid item xs={12} md={5} sx={{ margin: "1rem" }}>
-                            <Typography sx={{ margin: "0.5rem" }} component="p">Age: <Typography component="span"
-                                sx={{ color: isDarkMode ? "white" : "black", fontWeight: "600" }}>{age} years</Typography></Typography>
-                            <Typography sx={{ margin: "0.5rem", color: isDarkMode ? "#afafaf" : "#353535" }} component="p">Phone: <Typography
-                                component="span" sx={{ color: isDarkMode ? "white" : "black", fontWeight: "600" }}>+91 7907614429</Typography></Typography>
-                            <Typography sx={{ margin: "0.5rem", color: isDarkMode ? "#afafaf" : "#353535" }} component="p">E-Mail: <Typography
-                                component="span" sx={{ color: isDarkMode ? "white" : "black", fontWeight: "600" }}>anandkrishmj@gmail.com</Typography></Typography>
-                            <Typography sx={{ margin: "0.5rem", color: isDarkMode ? "#afafaf" : "#353535" }} component="p">Languages: <Typography
-                                component="span" sx={{ color: isDarkMode ? "white" : "black", fontWeight: "600" }}>English, Malayalam, Hindi</Typography></Typography>
+                            <InfoText title="Age: " content={`${age} years`} />
+                            <InfoText title="Phone: " content={`+91 7907614429`} />
+                            <InfoText title="E-Mail: " content={`anandkrishmj@gmail.com`} />
+                            <InfoText title="Languages: " content={`English, Malayalam, Hindi`} />
                         </Grid>
                     </Grid>
                 </Box>
