@@ -27,7 +27,7 @@ export const RotaryMenu = () => {
         padding: "0.5rem",
         borderRadius: "50%",
         boxShadow: "0 0 0.5rem #2753d7",
-        border:'solid 1px #0000'
+        border: 'solid 1px #0000'
     }
 
     const icons = [
@@ -87,12 +87,6 @@ export const RotaryMenu = () => {
 
     const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible(false);
     const [rotatebyAngle, setRotateByAngle] = useState(0);
-    const [isVisible, setIsVisible] = useState(isComponentVisible);
-
-
-    useEffect(() => {
-        setIsVisible(isComponentVisible)
-    }, [isComponentVisible])
     useEffect(() => {
         if (!isComponentVisible) {
             setRotateByAngle(0);
@@ -101,7 +95,7 @@ export const RotaryMenu = () => {
 
     return (
         <div
-            className={isVisible ? classes["mainContainer--open"] : classes["mainContainer--close"]}
+            className={isComponentVisible ? classes["mainContainer--open"] : classes["mainContainer--close"]}
             style={{
 
                 width: "100%",
@@ -114,28 +108,31 @@ export const RotaryMenu = () => {
                     transition: "transform 1s ease"
                 }}
                 ref={ref}
-                className={isVisible ? classes['rotaryMenu--open'] :
+                className={isComponentVisible ? classes['rotaryMenu--open'] :
                     classes['rotaryMenu--close']}
-                onClick={() => {
+                onClick={(e) => {
+                    e.stopPropagation();
                     setIsComponentVisible(true);
-                    setIsVisible(true)
                 }}
             >
                 <div className={classes.rotoryMenu__container}>
-                    <div className={classes.menuIcon} onClick={() => {
-                        window.navigator.vibrate(10);
-                        setRotateByAngle(rotateOffset);
+                    <div className={classes.menuIcon}
+                        onClick={() => {
+                            window.navigator.vibrate(10);
+                            setRotateByAngle(rotateOffset);
 
-                    }} >
+                        }}
+                    >
                         <MenuIcon sx={iconStyle} />
                     </div>
 
-                    {isVisible && <div className={classes['rotaryMenu__icons__wrapper']}>
+                    {isComponentVisible && <div className={classes['rotaryMenu__icons__wrapper']}>
                         {newI.map((item, index) =>
                             <div
-                                onClick={() => {
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setIsComponentVisible(false);
                                     handleTabChange(null as any, item.tabNumber!)
-                                    setIsVisible(false);
                                 }}
                                 key={`rotaryIcon-${item.xCordinate}-${index}`}
                                 className={classes['rotaryMenu__icons']}
