@@ -26,16 +26,17 @@ import {
 } from "../../store/blogs/reducer";
 import { BlogItem } from "../../store/blogs/types";
 
-function* getBlogsSaga(action: {
-  type: string;
-  payload: { showHidden: boolean; limit: number; offset: number };
-}): any {
+function* getBlogsSaga(): any {
+  //   action: {
+  //   type: string;
+  //   payload: { showHidden: boolean; limit: number; offset: number };
+  // }
   try {
     const response = yield call(
-      getBlogsApi,
-      action.payload.showHidden,
-      action.payload.limit,
-      action.payload.offset
+      getBlogsApi
+      // action.payload.showHidden,
+      // action.payload.limit,
+      // action.payload.offset
     );
     yield put(getBlogsSuccess(response.data.blogs));
   } catch (e) {

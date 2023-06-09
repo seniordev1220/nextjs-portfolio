@@ -39,49 +39,49 @@ const Blog = ({ title, date, content }: BlogDetailsType) => {
     </Layout>
   );
 };
-const getBlogs = async () => {
-  // const response: any = await getBlogsApi(false, 999, 0);
-  // return await response.data.blogs;
-};
+// const getBlogs = async () => {
+// const response: any = await getBlogsApi(false, 999, 0);
+// return await response.data.blogs;
+// };
 
-export async function getStaticPaths() {
-  const blogs: any = await getBlogs();
-  const slugs = blogs.map((item: { slug: string }) => item.slug);
-  const pregeneratedPaths = slugs.map((item: string) => {
-    return { params: { blogSlug: item.toString() } };
-  });
-  return {
-    paths: pregeneratedPaths,
-    fallback: true,
-  };
-}
-export async function getStaticProps() {
-  // context: {
-  // params: { blogSlug: string };
-  // }
-  // const blogSlug = context.params.blogSlug;
-  // interface blogDataType {
-  //   id: number;
-  //   title: string;
-  //   date: string;
-  //   description: string;
-  //   image: string;
-  //   slug: string;
-  //   content: string;
-  // }
-  // const blogData = await getBlogs();
-  // const blog = blogData.find((item: blogDataType) => item.slug === blogSlug);
-  // if (!blog) {
-  //   return {
-  //     notFound: true,
-  //   };
-  // }
-  // return {
-  //   props: {
-  //     ...blog,
-  //   },
-  //   revalidate: 10,
-  // };
-}
+// export async function getStaticPaths() {
+// const blogs: any = await getBlogs();
+// const slugs = blogs.map((item: { slug: string }) => item.slug);
+// const pregeneratedPaths = slugs.map((item: string) => {
+//   return { params: { blogSlug: item.toString() } };
+// });
+// return {
+//   paths: pregeneratedPaths,
+//   fallback: true,
+// };
+// }
+// export async function getStaticProps() {
+// context: {
+// params: { blogSlug: string };
+// }
+// const blogSlug = context.params.blogSlug;
+// interface blogDataType {
+//   id: number;
+//   title: string;
+//   date: string;
+//   description: string;
+//   image: string;
+//   slug: string;
+//   content: string;
+// }
+// const blogData = await getBlogs();
+// const blog = blogData.find((item: blogDataType) => item.slug === blogSlug);
+// if (!blog) {
+//   return {
+//     notFound: true,
+//   };
+// }
+// return {
+//   props: {
+//     ...blog,
+//   },
+//   revalidate: 10,
+// };
+// }
 
 export default Blog;
