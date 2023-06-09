@@ -4,6 +4,7 @@ import { useState, useContext, useEffect } from "react";
 import { Logo } from "../../Logo";
 import { DarKModeContext } from "../layout";
 import { Maybe } from "../../../types";
+import { joinClass } from "../../../helpers/utils";
 
 import classes from "./scrollHeader.module.scss";
 
@@ -55,16 +56,19 @@ export const ScrollHeader = ({
           <Logo />
         </Link>
       </Box>
-      {!hideToggle && (
-        <Box className={classes.toggle__desktop}>
-          <input
-            checked={isDarkMode}
-            className={classes.toggle}
-            type="checkbox"
-            onChange={onDarkModeToggle}
-          />
-        </Box>
-      )}
+      <Box
+        className={joinClass(
+          classes.toggle__desktop,
+          hideToggle ? classes.header_l1_toggle : ""
+        )}
+      >
+        <input
+          checked={isDarkMode}
+          className={classes.toggle}
+          type="checkbox"
+          onChange={onDarkModeToggle}
+        />
+      </Box>
     </Box>
   );
 };

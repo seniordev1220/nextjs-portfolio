@@ -8,6 +8,17 @@
   /* Adjust the height as needed */
   transition: transform 0.3s ease-in-out;
   transform: translateY(0);
+  @media screen and (max-width:767px) {
+   box-shadow: 0rem 0rem 0.5rem rgba(73, 73, 73, 0.377);
+  }
+}
+
+.header_l1_toggle {
+  margin: 0.3rem;
+
+  @media screen and (min-width:767px) {
+    display: none;
+  }
 }
 
 .header_hidden {
