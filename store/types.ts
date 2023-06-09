@@ -7,15 +7,15 @@ export interface RootState {
     blogItem: BlogItem;
     isLoading: boolean;
     error: any;
-  },
+  };
   project: {
     projects: ProjectItem[];
     projectItem: ProjectItem;
     isLoading: boolean;
     error: any;
-  },
+  };
   email: {
     isLoading: boolean;
     error: any;
-  }
+  };
 }

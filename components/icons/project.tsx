@@ -1,9 +1,33 @@
-import classes from "./icon.module.scss"
-export const Project = ({ height = "2.5rem", width="2.5rem" })=> {
-    return <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-        className={classes.shadow}
-        x="0px" y="0px" width={width} height={height} viewBox="0 0 512 512" enableBackground="new 0 0 512 512" xmlSpace="preserve">  <image id="image0" width="512" height="512" x="0" y="0"
-            href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+import classes from "./icon.module.scss";
+export const Project = ({
+  height = "2.5rem",
+  width = "2.5rem",
+}: {
+  height: string;
+  width: string;
+}) => {
+  return (
+    <svg
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      className={classes.shadow}
+      x="0px"
+      y="0px"
+      width={width}
+      height={height}
+      viewBox="0 0 512 512"
+      enableBackground="new 0 0 512 512"
+      xmlSpace="preserve"
+    >
+      {" "}
+      <image
+        id="image0"
+        width="512"
+        height="512"
+        x="0"
+        y="0"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
         AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAA
         CXBIWXMAAAsTAAALEwEAmpwYAACAAElEQVR42uydd3hUxdeA3y3phQSSUELILiy9NwWVjgI2QAVB
         pCgIYgVREQEFVJoFCyoIiIqIBRVQERDp0nsvS3ZpARICIb1s+f4I+KE/IXM3u3t3w7zPk4d25t4z
@@ -978,6 +1002,8 @@ export const Project = ({ height = "2.5rem", width="2.5rem" })=> {
         tmkuQmfaboYBO7Bdi0OuqNuePy53i9Pz07Se/wd85/XQTMbrjgAAACV0RVh0ZGF0ZTpjcmVhdGUA
         MjAyMi0wMy0yOFQxNTozMDo0MiswMDowMCyiDeQAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjItMDMt
         MjhUMTU6MzA6NDIrMDA6MDBd/7VYAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48
-        GgAAAABJRU5ErkJggg==" />
+        GgAAAABJRU5ErkJggg=="
+      />
     </svg>
-}
+  );
+};

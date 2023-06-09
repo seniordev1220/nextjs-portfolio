@@ -25,7 +25,6 @@ body {}
 }
 
 body.light-mode {
-    color: rgb(49, 49, 49);
     background-image: linear-gradient(to right, #e7f6ff, #c3dfff, #b6d8ff, #a1cdff, #a1cdff);
     color: rgb(49, 49, 49);
 }

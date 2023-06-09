@@ -1,11 +1,32 @@
-import classes from "./icon.module.scss"
-export const Email = ({ height = "2.5rem", width="2.5rem" }) => {
-    return (<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-    className={classes.shadow}
-        x="0px" y="0px" width={width} height={height} viewBox="0 0 673 672" enableBackground="new 0 0 673 672"
-    >  <image id="image0" width="673" height="672" x="0" y="0"
-    
-    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAqEAAAKgCAMAAACcIFTJAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+import classes from "./icon.module.scss";
+export const Email = ({
+  height = "2.5rem",
+  width = "2.5rem",
+}: {
+  height: string;
+  width: string;
+}) => {
+  return (
+    <svg
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      className={classes.shadow}
+      x="0px"
+      y="0px"
+      width={width}
+      height={height}
+      viewBox="0 0 673 672"
+      enableBackground="new 0 0 673 672"
+    >
+      {" "}
+      <image
+        id="image0"
+        width="673"
+        height="672"
+        x="0"
+        y="0"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAqEAAAKgCAMAAACcIFTJAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
     AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAADAFBMVEVHcEytr7G6vL5mpsqv
     sbO3ubt6p8CytLaXm59SUlKipKapq60Em+UCoe8Ip/UHnugImeILoOovpN4DpPIus/QBo/JCo+BG
     tu5Iv/gEnuote6MTm94bbaNRhKWn3/Ws3/Oy4PBcw/Ww4PKk3fR5z/jb7fPu9PZpyPYHf8AAhMUH
@@ -976,6 +997,8 @@ export const Email = ({ height = "2.5rem", width="2.5rem" }) => {
     WsqEum2SOxpivEwBdXea3NEgQxJR94K8OxpmYBF12yR3NNQgIuruNLmjoQY6DuLw0HF3uMPV8Yrb
     JrmjYcdLbpvkjgYdryxx2yR3NOh4yW2ThPH/Acy+NL8MCVHjAAAAJXRFWHRkYXRlOmNyZWF0ZQAy
     MDIyLTAzLTI4VDE1OjMxOjU1KzAwOjAwym1YygAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMi0wMy0y
-    OFQxNTozMTo1NSswMDowMLsw4HYAAAAASUVORK5CYII=" />
-    </svg> )
-}
+    OFQxNTozMTo1NSswMDowMLsw4HYAAAAASUVORK5CYII="
+      />
+    </svg>
+  );
+};

@@ -1,11 +1,31 @@
-import classes from "./icon.module.scss"
-export const Home = ({ height = "2.5rem", width="2.5rem" }) => {
-    return (
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-            className={classes.shadow}
-            x="0px" y="0px" width={width} height={height} viewBox="0 0 800 800" enableBackground="new 0 0 800 800" >
-            <image id="image0" width="800" height="800" x="0" y="0"
-                href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAMgCAYAAADbcAZoAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+import classes from "./icon.module.scss";
+export const Home = ({
+  height = "2.5rem",
+  width = "2.5rem",
+}: {
+  height: string;
+  width: string;
+}) => {
+  return (
+    <svg
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      className={classes.shadow}
+      x="0px"
+      y="0px"
+      width={width}
+      height={height}
+      viewBox="0 0 800 800"
+      enableBackground="new 0 0 800 800"
+    >
+      <image
+        id="image0"
+        width="800"
+        height="800"
+        x="0"
+        y="0"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAMgCAYAAADbcAZoAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
                 AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAACA
                 AElEQVR42ux9d7wtVXn2866ZXc45t1EUsRF7A0SCaDSJGk00Gguxd9TYYjfNfBoJxkRNsRtLYiQx
                 GjEC9mgsibFEgQgKigqiiAoIXLjltL1n1vr+mLbarHdmz9n3nnvvPPw29+wpq83std5nvY3Qo0eP
@@ -5434,8 +5454,8 @@ export const Home = ({ height = "2.5rem", width="2.5rem" }) => {
                 AXB+gBHbAGfrcRytw2CNMayBsxVGbBWMDRnHEIQBF2LAgYSAS3wEZlG4BIIBdxggNVpPwTAlgwlA
                 YwKNiWgEgxE4trNpugWwLSLaVDAnKFcnFDfHI6JjeZ4f++Vf/uXN/V7jHj169OixPP4/jJs1WOxN
                 qwwAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDMtMjhUMTU6MzM6MjIrMDA6MDAB+r9gAAAAJXRF
-                WHRkYXRlOm1vZGlmeQAyMDIyLTAzLTI4VDE1OjMzOjI0KzAwOjAwE3cy5gAAAABJRU5ErkJggg==" />
-        </svg>
-
-    )
-}
+                WHRkYXRlOm1vZGlmeQAyMDIyLTAzLTI4VDE1OjMzOjI0KzAwOjAwE3cy5gAAAABJRU5ErkJggg=="
+      />
+    </svg>
+  );
+};

@@ -1,3 +1,3 @@
 export interface HeaderProps {
-    onDarkModeToggle: () => void;
+  onDarkModeToggle: () => void;
 }

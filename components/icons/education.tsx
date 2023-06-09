@@ -1,8 +1,31 @@
-import classes from "./icon.module.scss"
-export const Education = ({ height = "2.5rem", width="2.5rem" })=> (
-    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" className={classes.shadow}
-     x="0px" y="0px" width={width} height={height} viewBox="0 0 250 250" enableBackground="new 0 0 250 250" >  <image id="image0" width="250" height="250" x="0" y="0"
-    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAMAAAC/MqoPAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+import classes from "./icon.module.scss";
+export const Education = ({
+  height = "2.5rem",
+  width = "2.5rem",
+}: {
+  height: string;
+  width: string;
+}) => (
+  <svg
+    version="1.1"
+    id="Layer_1"
+    xmlns="http://www.w3.org/2000/svg"
+    className={classes.shadow}
+    x="0px"
+    y="0px"
+    width={width}
+    height={height}
+    viewBox="0 0 250 250"
+    enableBackground="new 0 0 250 250"
+  >
+    {" "}
+    <image
+      id="image0"
+      width="250"
+      height="250"
+      x="0"
+      y="0"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAMAAAC/MqoPAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
 AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAC/VBMVEVHcEwAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAABAQEAAAAAAABqamqgoKC7u7vPz8/b29vi4uLn5+fu7u7y8vL19fX2
 9vb5+fn7+/v7+/uzs7PX19f7+/v9/f1nZ2fMzMy6urrT09MzMzPy8vKNjY1PT0/CwsIBAQHo6Oi2
@@ -207,7 +230,7 @@ g7YB29mO1jfmnpAebpJ+Mqt8wF/gCvxL6QcAT8DH19fPz89fJ35+vr4+wExDLwVq1wUMNvbvyXcS
 N0vPKp/Btwd+F3gAyxYvXeru7uGx3EA8PDzcgXkZQLsAtT2Lzaj7DuM2wAftY378APATWODi4uq6
 BIsbCP1/XF1dABmYMTSmBm3bHPv/AeHTsiGc7c2rAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIyLTA0
 LTAzVDE2OjIxOjI5KzAwOjAwv5W4mAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMi0wNC0wM1QxNjoy
-MToyOSswMDowMM7IACQAAAAASUVORK5CYII=" />
-</svg>
-
-)
+MToyOSswMDowMM7IACQAAAAASUVORK5CYII="
+    />
+  </svg>
+);

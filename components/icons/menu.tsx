@@ -1,13 +1,30 @@
-import classes from "./icon.module.scss"
-export const Menu =({ height = "2.5rem", width="2.5rem" }) => {
-    return (
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-        className={classes.shadow}
-            x="0px" y="0px" width={width} height={height} viewBox="0 0 275 275" enableBackground="new 0 0 275 275"
-        > 
-
-         <image id="image0" width="275" height="275" x="0" y="0"
-        
+import classes from "./icon.module.scss";
+export const Menu = ({
+  height = "2.5rem",
+  width = "2.5rem",
+}: {
+  height: string;
+  width: string;
+}) => {
+  return (
+    <svg
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      className={classes.shadow}
+      x="0px"
+      y="0px"
+      width={width}
+      height={height}
+      viewBox="0 0 275 275"
+      enableBackground="new 0 0 275 275"
+    >
+      <image
+        id="image0"
+        width="275"
+        height="275"
+        x="0"
+        y="0"
         href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAETCAYAAAAVqeK4AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
         AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAACA
         AElEQVR42uz9ebxt11XfiX7HmGvtfc65na46S7bcyMFGGGODDYYYYxNI6BwIpCAQAqkKefUhFK8C
@@ -1250,9 +1267,8 @@ export const Menu =({ height = "2.5rem", width="2.5rem" }) => {
         ZldtCdb4PMwmJNaNwfdZvJ9Qy4KW+fbG8SHXyoGFlvcNR+2ji4uyd3HIexYH8uCBeb7/0Hxz7+Li
         wt1HEcZ3f/n/Aa2uT/whDY4nAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIyLTAzLTI4VDE1OjM0OjE5
         KzAwOjAwb673AAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMi0wMy0yOFQxNTozNDoyMCswMDowMAXk
-        DYwAAAAASUVORK5CYII=" />
-        </svg>
-
-
-    )
-}
+        DYwAAAAASUVORK5CYII="
+      />
+    </svg>
+  );
+};

@@ -1,10 +1,31 @@
-import classes from "./icon.module.scss"
-export const Blog = ({ height = "2.5rem", width="2.5rem" }) => (
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" 
-className={classes.shadow}
-x="0px" y="0px" width={width} height={height} viewBox="0 0 512 512" 
-enableBackground="new 0 0 512 512" >  <image id="image0" width="512" height="512" x="0" y="0"
-    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAMAAADDpiTIAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+import classes from "./icon.module.scss";
+export const Blog = ({
+  height = "2.5rem",
+  width = "2.5rem",
+}: {
+  height: string;
+  width: string;
+}) => (
+  <svg
+    version="1.1"
+    id="Layer_1"
+    xmlns="http://www.w3.org/2000/svg"
+    className={classes.shadow}
+    x="0px"
+    y="0px"
+    width={width}
+    height={height}
+    viewBox="0 0 512 512"
+    enableBackground="new 0 0 512 512"
+  >
+    {" "}
+    <image
+      id="image0"
+      width="512"
+      height="512"
+      x="0"
+      y="0"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAMAAADDpiTIAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
 AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAC/VBMVEVHcEwfJRM3PyFKWC1Z
 bzlmikVroE5rs1Rnv1hhyVpkw1lqt1VsqFBokUheeD1OXDA9RyUlKxZSYzNlhkNrnk1iyFpovVdn
 jkdCTigqMRpWajZsrFJqtVVqmktFUisxOR1nwVhhfT9qmEtpulZPYDJso09rr1NcdDtjgkFplElj
@@ -248,6 +269,7 @@ MP0m8dPnr/Fjxo7AGg7IrgUunXarGPWdo4xBfS82pYCQD5g546abb5kqjO88De5zwQCQAvsEXHrD
 NSLK52yNHzPyXMN5gQ0Cplx93a3XixE/RdRrcJ+RA/VmBskQMH3GtGuuFeN9Kmr0qDFDx555FgrC
 ryz85qdfNu3ym68Uv/rUV8Z3t91+x5133X3Pvfe+amL1v//97//4xx3//Odt332XDob//waP/1NO
 V8NtAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIyLTA0LTAzVDE1OjM4OjM1KzAwOjAwNM5KtgAAACV0
-RVh0ZGF0ZTptb2RpZnkAMjAyMi0wNC0wM1QxNTozODozNSswMDowMEWT8goAAAAASUVORK5CYII=" />
-</svg>
-)
+RVh0ZGF0ZTptb2RpZnkAMjAyMi0wNC0wM1QxNTozODozNSswMDowMEWT8goAAAAASUVORK5CYII="
+    />
+  </svg>
+);

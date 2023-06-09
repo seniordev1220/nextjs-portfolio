@@ -1,9 +1,31 @@
-import classes from "./icon.module.scss"
-export const Phone = ({ height = "2.5rem", width="2.5rem" }) => {
-    return (
-        <svg className={classes.shadow} version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-            x="0px" y="0px" width={width} height={height} viewBox="0 0 275 275" enableBackground="new 0 0 275 275"
-        >  <image id="image0" width="275" height="275" x="0" y="0"
+import classes from "./icon.module.scss";
+export const Phone = ({
+  height = "2.5rem",
+  width = "2.5rem",
+}: {
+  height: string;
+  width: string;
+}) => {
+  return (
+    <svg
+      className={classes.shadow}
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      x="0px"
+      y="0px"
+      width={width}
+      height={height}
+      viewBox="0 0 275 275"
+      enableBackground="new 0 0 275 275"
+    >
+      {" "}
+      <image
+        id="image0"
+        width="275"
+        height="275"
+        x="0"
+        y="0"
         href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAV4AAAEjCAYAAAB6l2kFAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
         AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAACA
         AElEQVR42uz9V7NtS5YmCH3DxRRLbHH0ufdcca6IGzozI7MEld1YdXVX0110Y0AbFPAXsH7pP8Ab
@@ -1321,6 +1343,8 @@ export const Phone = ({ height = "2.5rem", width="2.5rem" }) => {
         keMoB4HiQRztw/x+JOU4Ag1bc/0JyJ7IiRwfoYf87VgCrhfx+If4jcqjgOcJ4J7IiRxNeVjwXee3
         IylPEgg9zLU8Sdd9IifyJMjDgOexA9qufFUA6KtynSdyIk+SHHuAXSb/f9lDEN5yneFRAAAAJXRF
         WHRkYXRlOmNyZWF0ZQAyMDIyLTAzLTI4VDE1OjMyOjM4KzAwOjAwhuKLjgAAACV0RVh0ZGF0ZTpt
-        b2RpZnkAMjAyMi0wMy0yOFQxNTozMjozOSswMDowMFHIOIYAAAAASUVORK5CYII=" />
-        </svg>
-    )}
+        b2RpZnkAMjAyMi0wMy0yOFQxNTozMjozOSswMDowMFHIOIYAAAAASUVORK5CYII="
+      />
+    </svg>
+  );
+};
