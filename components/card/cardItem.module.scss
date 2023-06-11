@@ -1,18 +1,18 @@
-.card {
-  &__image--desk {
-    border-radius: 12px;
-    width: 350px;
-    max-width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-
+@media only screen and (min-width: 780px) {
+  .card {
+    &__image--desk {
+      border-radius: 12px;
+      width: 350px;
+      max-width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
   }
 }
 
 .card {
   &__image--mob {
     display: none;
-
   }
 }
 
