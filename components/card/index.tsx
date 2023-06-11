@@ -55,9 +55,6 @@ export const Card = ({
           className={classes["card__image--desk"]}
           sx={{
             margin: "1rem",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-start",
           }}
         >
           <Image
