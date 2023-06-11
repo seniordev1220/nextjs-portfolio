@@ -98,7 +98,7 @@ export const Skills = () => {
         </Tabs>
         <Box className={classes.skills__content}
           sx={{
-            margin: '1rem', display: 'flex',
+            margin: 'auto', display: 'flex', padding: "1rem",
             justifyContent: "space-evenly", flexWrap: 'wrap', flexDirection: 'row'
           }}>
           {skills[value].items.map(item => <Box sx={{ width: item.width, maxWidth: item.maxWidth, margin: "auto 1rem auto 1rem", padding: "1rem 0rem" }}>

@@ -6,6 +6,10 @@
         margin-block-start: 0 !important;
     }
 
+    &__content {
+        margin: auto;
+    }
+
     @media screen and (min-width:767px) {
         &__content {
             width: 75%;
