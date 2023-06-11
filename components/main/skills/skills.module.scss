@@ -6,6 +6,14 @@
         margin-block-start: 0 !important;
     }
 
+    @media screen and (min-width:767px) {
+        &__content {
+            width: 75%;
+            margin: auto;
+            margin-top: 2rem;
+        }
+    }
+
     &--show--left {
         opacity: 0;
         animation: moveContent ease 1s forwards;
@@ -28,11 +36,13 @@
         min-height: 90vh;
         box-shadow: 0 0 0.5rem #00000049;
         padding-bottom: 3rem;
+        margin-bottom: 5rem;
 
         @media screen and (max-width:767px) {
             background-color: #ffffff00;
             box-shadow: none;
             width: 100%;
+            margin-bottom: 3rem;
             // height: 100vh;
 
         }
@@ -84,24 +94,11 @@
 
         opacity: 0.8;
         text-align: Left;
-        margin: 1rem;
+        margin: 0rem 2rem 0rem 2rem;
     }
 
     &__content__wrapper {
-        max-width: 1400px;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        height:100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-
-        @media screen and (max-width:"767px") {
-
-            flex-direction: column;
-        }
+        margin: 1rem;
 
     }
 }
@@ -132,12 +129,12 @@
     &--show {
         animation: moveHeader ease 0.4s forwards;
         margin-top: 2.5rem;
- 
+
     }
 
     &--hide {
         animation: fadeOutText ease 1s forwards;
- 
+
 
     }
 }
@@ -202,13 +199,13 @@
     &--show {
         opacity: 0;
         animation: zoomImage ease 1.5s forwards;
-    
+
 
     }
 
     &--hide {
         opacity: 0;
- 
+
     }
 }
 

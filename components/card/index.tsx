@@ -52,7 +52,7 @@ export const Card = ({
           item
           xs={12}
           md={4}
-          className={classes.card__container}
+          className={classes["card__image--desk"]}
           sx={{
             margin: "1rem",
             display: "flex",
@@ -100,13 +100,32 @@ export const Card = ({
               {date}
             </Typography>
           </Box>
+          <Box className={classes["card__image--mob"]}>
+            <Box sx={{ width: "50%" }}>
+              <Image
+                layout="responsive"
+                priority
+                width={400}
+                height={300}
+                src={image}
+                alt={title}
+              />
+            </Box>
+
+            <TechUsed techStack={techStack} />
+          </Box>
           <Typography
             className={classes.description}
-            sx={{ marginTop: "2rem", textOverflow: "ellipsis" }}
+            sx={{ marginTop: "1rem", textOverflow: "ellipsis" }}
           >
             {description}
           </Typography>
-          <Button onClick={handleRedirect}>Read more</Button>
+          <Button
+            sx={{ margin: "1rem 0rem 1rem 0rem" }}
+            onClick={handleRedirect}
+          >
+            Read more
+          </Button>
         </Grid>
       </Grid>
     </Box>

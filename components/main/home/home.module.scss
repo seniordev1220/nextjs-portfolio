@@ -87,6 +87,9 @@ $animation-time: 2s;
 }
 
 .intro {
+    &__content{
+        margin-top:1.5rem;
+    }
     &__container {
         min-height: 80vh;
         background-color: #ffffff04;

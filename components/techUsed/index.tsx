@@ -4,10 +4,11 @@ export const TechUsed = ({ techStack }: { techStack: string }) => {
   return (
     <Box
       sx={{
-        marginTop: "1rem",
+        margin: "1rem",
         display: "flex",
         justifyContent: "flex-start",
         flexDirection: "column",
+        textAlign: "left",
       }}
     >
       <Typography fontWeight={600}>Tech stack</Typography>

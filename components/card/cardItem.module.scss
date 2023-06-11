@@ -1,11 +1,18 @@
 .card {
-  &__image {
+  &__image--desk {
     border-radius: 12px;
-    height: 250px;
     width: 350px;
     max-width: 100%;
     object-fit: cover;
     border-radius: 10px;
+
+  }
+}
+
+.card {
+  &__image--mob {
+    display: none;
+
   }
 }
 
@@ -14,17 +21,22 @@
   overflow: hidden;
   border-radius: 10px;
   transition: all 0.5s;
+
   &__container {
     border-radius: 10px;
   }
 }
 
 @media only screen and (max-width: 780px) {
-  .description{
-    max-height: 40vh;
+  .description {
+    display: block;
+    max-height: 400px;
     text-overflow: ellipsis;
     overflow: hidden;
-    white-space: nowrap;
+    white-space: pre-wrap;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 8;
   }
 
   .card-container {
@@ -34,7 +46,20 @@
       animation: hvr 5s infinite ease-in-out;
       transition: none;
     }
+  }
 
+  .card {
+    &__image--desk {
+      display: none;
+    }
+  }
+
+  .card {
+    &__image--mob {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
   }
 
   @keyframes hvr {

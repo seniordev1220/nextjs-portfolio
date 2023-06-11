@@ -1,41 +1,23 @@
 import React from "react";
 import Image from "next/image";
-import { Box, ListItemIcon, ListItemText, Typography } from "@mui/material";
-import CircleIcon from "@mui/icons-material/Circle";
+import { Box, Tab, Tabs, Typography } from "@mui/material";
 import { Parallax } from "react-scroll-parallax";
 
 import { joinClass } from "../../../helpers/utils";
 import { useDarkMode } from "../../../hooks/useDarkMode";
 import { Background } from "../../background";
-import idea from "../../../assets/images/idea.png";
+import skills from "../../../constants/skills";
 
 import classes from "./skills.module.scss";
 
-const skills = [
-  "Javascript",
-  "HTML/CSS",
-  "React JS",
-  "Next JS",
-  "Sass",
-  "Material-UI",
-  "Webpack",
-  "Rollup",
-  "Storybook",
-  "Node JS",
-  "Express JS",
-  "Docker",
-  "PostgreSQL",
-  "LocalStack",
-  "Git",
-  "Visual Studio Code",
-];
-
 export const Skills = () => {
   const { isDarkMode } = useDarkMode();
+  const [value, setValue] = React.useState(0);
+  /* eslint-disable */
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
+  };
 
-  const middleIndex = Math.ceil(skills.length / 2);
-  const firstHalf = skills.slice(0, middleIndex);
-  const secondHalf = skills.slice(-middleIndex);
 
   return (
     <Box
@@ -87,66 +69,47 @@ export const Skills = () => {
         </Parallax>
       </Box>
 
-      <Box className={classes.skills__content__wrapper}>
-        <Box
-          sx={{ display: "flex", justifyContent: "center" }}
-          className={classes.image}
-        >
-          <Image width={400} height={400} src={idea} alt="Skills" />
-        </Box>
-
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-around",
-            width: "100%",
+      <Box className={classes.skills__content__wrapper}
+        sx={{ boxShadow: "1px 1px 0.5rem #44444462", borderRadius: '1rem', minHeight: "65vh" }}>
+        <Tabs
+          TabIndicatorProps={{
+            style: {
+              backgroundColor: '#2753d7',
+              boxShadow: "0px 0px 3rem #2753d7"
+            }
           }}
+          centered
+          selectionFollowsFocus
+          sx={{ width: "100%" }}
+          value={value}
+          onChange={handleChange}
+          variant="fullWidth"
+          scrollButtons={false}
+          aria-label="scrollable prevent tabs example"
         >
-          <Box sx={{ margin: "1rem" }}>
-            {firstHalf.map((item) => (
-              <Box
-                key={item}
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                }}
-              >
-                <ListItemIcon>
-                  <CircleIcon
-                    sx={{
-                      color: isDarkMode ? "#696969" : "#353839aa",
-                      fontSize: "1rem",
-                    }}
-                  />
-                </ListItemIcon>
-                <ListItemText primary={item} />
-              </Box>
-            ))}
-          </Box>
+          {skills.map(skill =>
+            <Tab label={<Typography sx={
+              {
+                color: isDarkMode ? "white" : "rgb(49, 49, 49)",
+                fontWeight: "600"
+              }
+            }>{skill.tabLabel}</Typography>} />
+          )}
+        </Tabs>
+        <Box className={classes.skills__content}
+          sx={{
+            margin: '1rem', display: 'flex',
+            justifyContent: "space-evenly", flexWrap: 'wrap', flexDirection: 'row'
+          }}>
+          {skills[value].items.map(item => <Box sx={{ width: item.width, maxWidth: item.maxWidth, margin: "auto 1rem auto 1rem", padding: "1rem 0rem" }}>
+            <Image
+              src={item.src} alt={item.skillLabel}
+              layout="responsive"
+              loading="eager"
+              priority
+            />
 
-          <Box sx={{ margin: "1rem" }}>
-            {secondHalf.map((item) => (
-              <Box
-                key={item}
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                }}
-              >
-                <ListItemIcon>
-                  <CircleIcon
-                    sx={{
-                      color: isDarkMode ? "#696969" : "#353839aa",
-                      fontSize: "1rem",
-                    }}
-                  />
-                </ListItemIcon>
-                <ListItemText primary={item} />
-              </Box>
-            ))}
-          </Box>
+          </Box>)}
         </Box>
       </Box>
     </Box>
