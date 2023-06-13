@@ -101,7 +101,8 @@ export const Skills = () => {
             margin: 'auto', display: 'flex', padding: "1rem",
             justifyContent: "space-evenly", flexWrap: 'wrap', flexDirection: 'row'
           }}>
-          {skills[value].items.map(item => <Box sx={{ width: item.width, maxWidth: item.maxWidth, margin: "auto 1rem auto 1rem", padding: "1rem 0rem" }}>
+          {skills[value].items.map(item => <Box key={item.skillLabel}
+            sx={{ width: item.width, maxWidth: item.maxWidth, margin: "auto 1rem auto 1rem", padding: "1rem 0rem" }}>
             <Image
               src={item.src} alt={item.skillLabel}
               layout="responsive"

@@ -17,6 +17,17 @@ import localstack from "../assets/skills/localstack.png";
 import sendgrid from "../assets/skills/sendgrid.png";
 import ga from "../assets/skills/ga.png";
 import firebase from "../assets/skills/firebase.png";
+import jest from "../assets/skills/jest.png";
+import rtl from "../assets/skills/rtl.png";
+import swagger from "../assets/skills/swagger.png";
+import postman from "../assets/skills/postman.png";
+import datadog from "../assets/skills/datadog.png";
+import git from "../assets/skills/git.png";
+import jira from "../assets/skills/jira.png";
+import confluence from "../assets/skills/confluence.png";
+import devTools from "../assets/skills/devTools.png";
+import nginx from "../assets/skills/nginx.png";
+import jenkins from "../assets/skills/jenkins.png";
 
 const skills = [
   {
@@ -55,8 +66,14 @@ const skills = [
       {
         skillLabel: "Sass",
         src: sass,
+        width: "120px",
+        maxWidth: "25%",
+      },
+      {
+        skillLabel: "datadog",
+        src: datadog,
         width: "130px",
-        maxWidth: "20%",
+        maxWidth: "30%",
       },
       {
         skillLabel: "Material-UI",
@@ -100,6 +117,18 @@ const skills = [
         width: "300px",
         maxWidth: "40%",
       },
+      {
+        skillLabel: "Jest",
+        src: jest,
+        width: "180px",
+        maxWidth: "30%",
+      },
+      {
+        skillLabel: "RTL",
+        src: rtl,
+        width: "250px",
+        maxWidth: "35%",
+      },
     ],
   },
   {
@@ -115,7 +144,7 @@ const skills = [
         skillLabel: "express",
         src: express,
         width: "300px",
-        maxWidth: "40%",
+        maxWidth: "45%",
       },
       {
         skillLabel: "postgres",
@@ -141,35 +170,71 @@ const skills = [
         width: "250px",
         maxWidth: "35%",
       },
+      {
+        skillLabel: "swagger",
+        src: swagger,
+        width: "250px",
+        maxWidth: "35%",
+      },
+      {
+        skillLabel: "postman",
+        src: postman,
+        width: "250px",
+        maxWidth: "35%",
+      },
     ],
   },
   {
     tabLabel: "Others",
     items: [
       {
+        skillLabel: "Confluence",
+        src: confluence,
+        width: "125px",
+        maxWidth: "32%",
+      },
+      {
+        skillLabel: "Jira",
+        src: jira,
+        width: "80px",
+        maxWidth: "20%",
+      },
+      {
         skillLabel: "Git",
-        src: "",
-        width: "150px",
-        maxWidth: "30%",
+        src: git,
+        width: "120px",
+        maxWidth: "25%",
+      },
+      {
+        skillLabel: "Chrome_dev_tools",
+        src: devTools,
+        width: "220px",
+        maxWidth: "40%",
+      },
+      {
+        skillLabel: "Nginx",
+        src: nginx,
+        width: "250px",
+        maxWidth: "50%",
+      },
+      {
+        skillLabel: "Jenkins",
+        src: jenkins,
+        width: "200px",
+        maxWidth: "40%",
       },
     ],
   },
 ];
-// "Javascript",
-//   "HTML/CSS",
-//   "React JS",
-//   "Next JS",
-//   "Sass",
-//   "Material-UI",
-//   "Webpack",
-//   "Rollup",
-//   "Storybook",
-//   "Node JS",
-//   "Express JS",
-//   "Docker",
-//   "PostgreSQL",
-//   "LocalStack",
-//   "Git",
-//   "Visual Studio Code",
-// ];
+
 export default skills;
+
+//other
+//git
+//jira
+//confluence
+//VS code
+//postman
+//Datadog
+//Akamai
+//
