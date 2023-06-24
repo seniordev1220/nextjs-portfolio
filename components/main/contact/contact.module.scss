@@ -1,4 +1,5 @@
 @use '../../../styles/theme.module.scss' as *;
+
 .contact {
     &__title {
         background: -webkit-linear-gradient(#353839, #2753d7);
@@ -14,12 +15,10 @@
         min-height: 90vh;
         @include section__border;
         padding: 1rem;
+        border-radius: 1rem;
 
         @media screen and (max-width:767px) {
             width: 100%;
-            border: none;
-            border-radius: 0rem;
-            box-shadow: none;
         }
     }
 }
