@@ -43,15 +43,15 @@ export const Home = () => {
 
         <div className={classes.slider__wrapper}>
           <div className={classes.slider}>
-            <h1 className={classes.slider__text1}>
+            <h2 className={classes.slider__text1}>
               {homeMessages.SOFTWARE_ENGINEER}
-            </h1>
-            <h1 className={classes.slider__text2}>
+            </h2>
+            <h2 className={classes.slider__text2}>
               {homeMessages.FULLSTACK_DEVELOPER}
-            </h1>
-            <h1 className={classes.slider__text3}>
+            </h2>
+            <h2 className={classes.slider__text3}>
               {homeMessages.Passionate_Mentor}
-            </h1>
+            </h2>
           </div>
         </div>
 
