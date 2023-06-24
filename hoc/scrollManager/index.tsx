@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import React, { useEffect } from "react";
+import { useRouter } from "next/router";
 
 const withScrollToPosition = <P extends object>(
   WrappedComponent: React.ComponentType<P>
@@ -20,10 +20,10 @@ const withScrollToPosition = <P extends object>(
         sessionStorage.setItem(pageKey, window.scrollY.toString());
       };
 
-      window.addEventListener('scroll', handleScroll);
+      window.addEventListener("scroll", handleScroll);
 
       return () => {
-        window.removeEventListener('scroll', handleScroll);
+        window.removeEventListener("scroll", handleScroll);
       };
     }, [router.asPath]);
 

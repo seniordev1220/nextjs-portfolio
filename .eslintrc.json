@@ -34,7 +34,7 @@
     "prefer-arrow-callback": "error",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "error",
-    "react/jsx-props-no-spreading": "error",
+    "react/jsx-props-no-spreading": "off",
     "react/jsx-filename-extension": [
       "error",
       {

@@ -15,13 +15,13 @@ import { sectionMapping } from "../components/main/sectionMapping";
 import { RootState } from "../store/types";
 import { getProjects, projectStateType } from "../store/projects/reducer";
 import { Loading } from "../components/Loading";
+import withScrollToPosition from "../hoc/scrollManager";
 
 import classes from "./index.module.scss";
-import withScrollToPosition from "../hoc/scrollManager";
 
 export const TabContext = React.createContext({
   tabValue: 0,
- /* eslint-disable */
+  /* eslint-disable */
   handleTabChange: (event: React.SyntheticEvent, newValue: number) => {},
 });
 
