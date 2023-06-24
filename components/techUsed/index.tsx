@@ -24,7 +24,7 @@ export const TechUsed = ({
         <Typography>{techStack.join(", ")}</Typography>
       ) : (
         <Box sx={{ display: "flex", flexWrap: "wrap", marginTop: "0.5rem" }}>
-          {techStack.map((item) => (
+          {techStack?.map((item) => (
             <Typography
               sx={{
                 backgroundColor: "#353839aa",

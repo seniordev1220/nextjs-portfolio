@@ -50,7 +50,7 @@ const Project = ({
         <h1>{title}</h1>
         <span>{date}</span>
         <Grid container sx={{ display: "flex" }}>
-          <Grid xs={12} md={5} item sx={{ width: "400px", maxWidth: "50%" }}>
+          <Grid xs={12} md={5} item={true}>
             <Image
               src={image}
               alt={title}
@@ -115,6 +115,7 @@ export async function getStaticProps(context: {
     image: string;
     slug: string;
     content: string;
+    techStack: string[];
   }
   const projectData = await getProjects();
   const project = projectData.find(
