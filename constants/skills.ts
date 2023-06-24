@@ -52,6 +52,24 @@ const skills = [
         maxWidth: "22%",
       },
       {
+        skillLabel: "HTML",
+        src: html,
+        width: "80px",
+        maxWidth: "15%",
+      },
+      {
+        skillLabel: "CSS",
+        src: css,
+        width: "80px",
+        maxWidth: "15%",
+      },
+      {
+        skillLabel: "Javascript",
+        src: js,
+        width: "80px",
+        maxWidth: "15%",
+      },
+      {
         skillLabel: "GA",
         src: ga,
         width: "200px",
@@ -81,24 +99,7 @@ const skills = [
         width: "350px",
         maxWidth: "55%",
       },
-      {
-        skillLabel: "HTML",
-        src: html,
-        width: "80px",
-        maxWidth: "15%",
-      },
-      {
-        skillLabel: "CSS",
-        src: css,
-        width: "80px",
-        maxWidth: "15%",
-      },
-      {
-        skillLabel: "Javascript",
-        src: js,
-        width: "80px",
-        maxWidth: "15%",
-      },
+      
       {
         skillLabel: "Babel",
         src: babel,
@@ -147,30 +148,6 @@ const skills = [
         maxWidth: "45%",
       },
       {
-        skillLabel: "postgres",
-        src: postgres,
-        width: "120px",
-        maxWidth: "30%",
-      },
-      {
-        skillLabel: "docker",
-        src: docker,
-        width: "350px",
-        maxWidth: "40%",
-      },
-      {
-        skillLabel: "localstack",
-        src: localstack,
-        width: "250px",
-        maxWidth: "40%",
-      },
-      {
-        skillLabel: "sendgrid",
-        src: sendgrid,
-        width: "250px",
-        maxWidth: "35%",
-      },
-      {
         skillLabel: "swagger",
         src: swagger,
         width: "250px",
@@ -182,6 +159,30 @@ const skills = [
         width: "250px",
         maxWidth: "35%",
       },
+      {
+        skillLabel: "docker",
+        src: docker,
+        width: "350px",
+        maxWidth: "40%",
+      },
+      {
+        skillLabel: "localstack",
+        src: localstack,
+        width: "280px",
+        maxWidth: "40%",
+      },
+      {
+        skillLabel: "sendgrid",
+        src: sendgrid,
+        width: "250px",
+        maxWidth: "45%",
+      },
+      {
+        skillLabel: "postgres",
+        src: postgres,
+        width: "120px",
+        maxWidth: "30%",
+      }
     ],
   },
   {

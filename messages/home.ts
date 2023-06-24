@@ -2,7 +2,7 @@ export const homeMessages = {
   SOFTWARE_ENGINEER: "SOFTWARE ENGINEER",
   FULLSTACK_DEVELOPER: "FULLSTACK DEVELOPER",
   intro:
-    "I'm a software engineer, specializing in building complex, SEO friendly and interactive web applications that run across platforms & devices. ",
+    "I specialize in  building inclusive products and delivering exceptional digital experiences on the web. From applications that cater to millions of users to complex proof-of-concepts and custom tools, I have gained valuable experience in a diverse range of projects.",
   aboutPara1: `Hi there! My name is Anand Krishnan M J and I am a full stack JavaScript developer with a passion for building high-quality 
     web applications. With a strong foundation in HTML, CSS, and JavaScript, I have developed responsive and interactive web applications 
     using modern libraries and frameworks such as React.JS, Next.JS, Express.JS and Node.js.`,
@@ -12,6 +12,6 @@ export const homeMessages = {
   Passionate_Mentor: "Passionate Mentor",
   fullStackWebDeveloper: "Full Stack Web Developer",
   introDescription:
-    "I'm a software engineer, specializing in building complex, SEO friendly and interactive web applications that run across platforms & devices.",
+    "I specialize in building inclusive products and delivering exceptional digital experiences on the web. From applications that cater to millions of users to complex proof-of-concepts and custom tools, I have gained valuable experience in a diverse range of projects.",
   anand: "Hi, I'm Anand Krishnan.",
 };
