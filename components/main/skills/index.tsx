@@ -72,6 +72,7 @@ export const Skills = () => {
       <Box className={classes.skills__content__wrapper}
         sx={{ boxShadow: "1px 1px 0.5rem #44444462", borderRadius: '1rem', minHeight: "65vh" }}>
         <Tabs
+          className={classes.skill__tab}
           TabIndicatorProps={{
             style: {
               backgroundColor: '#2753d7',

@@ -1,3 +1,4 @@
+@use '../../../styles/theme.module.scss' as *;
 $darkBg: rgba(21, 21, 21);
 $lightBg: #add3ff;
 $caret-color-dark: b6d8ff;
@@ -94,7 +95,7 @@ $animation-time: 2s;
     &__container {
         min-height: 80vh;
         background-color: #ffffff04;
-        box-shadow: 0 0 0.5rem #00000049;
+        @include section__border;
         width: 85%;
         margin: auto;
         display: flex;
@@ -244,7 +245,7 @@ $animation-time: 2s;
 
 .slider__text3 {
     font-size: inherit;
-    height: 3rem; 
+    height: 3rem;
     margin: 0;
 }
 
@@ -252,6 +253,7 @@ $animation-time: 2s;
     0% {
         margin-top: 0rem;
     }
+
     10% {
         margin-top: 0rem;
     }
@@ -271,7 +273,8 @@ $animation-time: 2s;
     50% {
         margin-top: -6rem;
     }
-    60%{
+
+    60% {
         margin-top: -6rem;
     }
 
@@ -279,6 +282,7 @@ $animation-time: 2s;
     70% {
         margin-top: -3rem;
     }
+
     80% {
         margin-top: -3rem;
     }
@@ -292,12 +296,23 @@ $animation-time: 2s;
     }
 }
 
-@media screen and (max-width:1024px) {
+@media screen and (max-width:992px) {
     .slider__wrapper {
         font-size: 1.25rem;
         display: flex;
         align-items: center;
     }
+
+    .intro__self {
+        &--dark {
+            font-size: 1.5rem;
+        }
+
+        &--light {
+            font-size: 1.5rem;
+        }
+    }
+
 }
 
 .main__image {

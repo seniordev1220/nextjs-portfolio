@@ -1,3 +1,4 @@
+@use '../../../styles/theme.module.scss' as *;
 .about {
     &__title {
         background: -webkit-linear-gradient(#353839, #2753d7);
@@ -12,14 +13,13 @@
         width: 85%;
         margin-bottom: 2rem;
         background-color: #ffffff04;
-        box-shadow: 0 0 0.5rem #00000049;
+        @include section__border;
         padding-bottom: 3rem;
         position: relative;
         border-radius: 1rem;
 
         @media screen and (max-width:767px) {
             background-color: #ffffff00;
-            box-shadow: none;
             width: 100%;
             padding-left: 1rem;
             padding-right: 1rem;

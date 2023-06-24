@@ -15,7 +15,6 @@ export const Home = () => {
       sx={
         isDarkMode
           ? {
-              border: "solid 1px #2f2f2fc4",
               boxShadow: "0 0 1rem #00000078",
             }
           : {}

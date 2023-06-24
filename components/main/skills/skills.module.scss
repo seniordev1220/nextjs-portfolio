@@ -1,3 +1,5 @@
+@use '../../../styles/theme.module.scss' as *;
+
 .skills {
     &__title {
         background: -webkit-linear-gradient(#353839, #2753d7);
@@ -38,7 +40,7 @@
         flex-direction: column;
         width: 85%;
         min-height: 90vh;
-        box-shadow: 0 0 0.5rem #00000049;
+        @include section__border;
         padding-bottom: 3rem;
         margin-bottom: 5rem;
 
@@ -224,4 +226,8 @@
         opacity: 1;
     }
 
+}
+
+.skill__tab {
+    border-bottom: solid 1px rgba(128, 128, 128, 0.308);
 }

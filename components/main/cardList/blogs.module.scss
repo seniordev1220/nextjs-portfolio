@@ -1,3 +1,4 @@
+@use '../../../styles/theme.module.scss' as *;
 .blogs {
     &__title {
         background: -webkit-linear-gradient(#353839, #2753d7);
@@ -27,7 +28,7 @@
         flex-direction: column;
         width: 85%;
         background-color: #ffffff04;
-        box-shadow: 0 0 0.5rem #00000049;
+        @include section__border;
         padding-bottom: 3rem;
         position: relative;
         border-radius: 1rem;

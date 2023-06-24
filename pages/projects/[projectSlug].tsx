@@ -5,6 +5,7 @@ import Image from "next/image";
 import Layout from "../../components/layout/layout";
 import { getProjectsApi } from "../../services/projects";
 import { TechUsed } from "../../components/techUsed";
+import withScrollToPosition from "../../hoc/scrollManager";
 
 interface ProjectDetailsType {
   id: string;
@@ -133,4 +134,4 @@ export async function getStaticProps(context: {
   };
 }
 
-export default Project;
+export default withScrollToPosition(Project);

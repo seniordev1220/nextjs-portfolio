@@ -17,6 +17,7 @@ import { getProjects, projectStateType } from "../store/projects/reducer";
 import { Loading } from "../components/Loading";
 
 import classes from "./index.module.scss";
+import withScrollToPosition from "../hoc/scrollManager";
 
 export const TabContext = React.createContext({
   tabValue: 0,
@@ -105,4 +106,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default withScrollToPosition(Main);
