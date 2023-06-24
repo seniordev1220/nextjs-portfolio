@@ -111,7 +111,7 @@ function Header({ onDarkModeToggle }: HeaderProps) {
               flexDirection: "column",
               justifyContent: "space-between",
               alignItems: "center",
-              height: "71vh",
+              minHeight: "71vh",
               boxShadow: "0 0 0.5rem #00000049",
               backgroundColor: "#ffffff04",
               borderRadius: "5rem",
