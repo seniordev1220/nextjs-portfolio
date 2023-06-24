@@ -1,7 +1,7 @@
 export interface CardItemProps {
   title: string;
   date: string;
-  techStack: string;
+  techStack: string[];
   description: string;
   image: string;
   slug: string;

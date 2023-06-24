@@ -98,7 +98,7 @@ export const projects = [
 
         <p>Thank you for visiting My Exciting Portfolio SPA. I hope you enjoy exploring my work, and if you have any questions or comments, please feel free to use the contact form to get in touch with me!</p>
       `,
-    techStack: "Next.JS, Redux, Saga, Material UI, SCSS",
+    techStack: ["Next.JS", "Redux", "Saga", "Material UI", "SCSS"],
     showinportfolio: true,
   },
   {
@@ -123,7 +123,7 @@ export const projects = [
         <h4>Deployment on Heroku and AWS</h4>
         <p>I initially deployed my backend on Heroku's free tier, which allowed me to easily deploy, manage, and scale my application without worrying about server management or configuration. However, when the free tier was no longer available, I moved my application to AWS's free tier, which provides similar benefits and features for free.</p>
       `,
-    techStack: "Node.JS, Express.JS, Docker, PostgreSQL",
+    techStack: ["Node.JS", "Express.JS", "Docker", "PostgreSQL"],
     showinportfolio: true,
   },
 ];

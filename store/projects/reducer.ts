@@ -19,7 +19,7 @@ const intialState: projectStateType = {
     slug: "",
     content: "",
     showinportfolio: true,
-    techStack: "",
+    techStack: [],
   },
   isProjectLoading: true,
   error: null,

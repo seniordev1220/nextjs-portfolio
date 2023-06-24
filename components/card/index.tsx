@@ -1,9 +1,7 @@
 import { Box, Typography, Button, Grid } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/router";
-
 import { TechUsed } from "../techUsed";
-
 import { CardItemProps } from "./card.type";
 import classes from "./cardItem.module.scss";
 
@@ -98,7 +96,7 @@ export const Card = ({
             </Typography>
           </Box>
           <Box className={classes["card__image--mob"]}>
-            <Box sx={{ width: "50%" }}>
+            <Box sx={{ width: "60%" }}>
               <Image
                 layout="responsive"
                 priority
@@ -109,7 +107,7 @@ export const Card = ({
               />
             </Box>
 
-            <TechUsed techStack={techStack} />
+            <TechUsed variant="minimal" techStack={techStack} />
           </Box>
           <Typography
             className={classes.description}

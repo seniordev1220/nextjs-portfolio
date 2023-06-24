@@ -7,5 +7,5 @@ export interface ProjectItem {
   slug: string;
   content: string;
   showinportfolio: boolean;
-  techStack: string;
+  techStack: string[];
 }
