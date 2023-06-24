@@ -99,7 +99,7 @@ const skills = [
         width: "350px",
         maxWidth: "55%",
       },
-      
+
       {
         skillLabel: "Babel",
         src: babel,
@@ -182,7 +182,7 @@ const skills = [
         src: postgres,
         width: "120px",
         maxWidth: "30%",
-      }
+      },
     ],
   },
   {

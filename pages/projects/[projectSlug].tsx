@@ -14,7 +14,7 @@ interface ProjectDetailsType {
   description: string;
   image: string;
   content: string;
-  techStack: string;
+  techStack: string[];
 }
 
 const Project = ({

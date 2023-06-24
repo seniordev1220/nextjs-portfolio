@@ -1,7 +1,9 @@
 import { Box, Typography, Button, Grid } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/router";
+
 import { TechUsed } from "../techUsed";
+
 import { CardItemProps } from "./card.type";
 import classes from "./cardItem.module.scss";
 

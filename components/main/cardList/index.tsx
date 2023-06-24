@@ -4,10 +4,12 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Parallax } from "react-scroll-parallax";
 import Image from "next/image";
+
 import { useDarkMode } from "../../../hooks/useDarkMode";
 import { Card } from "../../card";
 import { Background } from "../../background";
 import more from "../../../assets/images/5.png";
+
 import classes from "./blogs.module.scss";
 
 const viewMore = ` Embark on my career journey with me and discover what's next! Check out what's currently in the works and beyond by clicking below.`;
