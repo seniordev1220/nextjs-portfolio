@@ -58,6 +58,8 @@ const experience = [
       "Collaborated with a cross-functional team to develop a high-performance Content Management System (CMS) for a prominent travel hotel booking company. This powerful CMS facilitated efficient management of an extensive hotel portfolio, ensuring a seamless booking experience for travelers.",
       "Crafted multiple project estimations and proposals tailored specifically for potential Japanese clients, leveraging deep understanding of their unique business needs and preferences.",
       "Ignited growth and expertise in web development through personalized mentorship programs for both freshers and experienced lateral entry employees. Delivered cutting-edge techniques and stacks, empowering individuals across India and Japan to elevate their skills and thrive in the ever-evolving landscape of web development. ",
+      "Developed two impactful proof-of-concept (POC) tools for a prestigious Japanese fashion retail E-commerce client. The first tool, the Endpoint Diagramming Tool, revolutionized issue identification by providing insightful visualizations of API calls between microservices, BFF, and SPA. This streamlined the workflow for customer service, operations, as well as PDMs and developers.",
+      "Additionally, the Error Handling Documentation Tool captured and documented error scenarios across multiple releases, empowering the team to swiftly resolve issues. As a result of these successful POCs, I seamlessly transitioned into the development team, where I continue to deliver captivating experiences for their customer-facing eCommerce application."
     ],
   },
   {
@@ -379,9 +381,8 @@ export const About = () => {
                       left: 0,
                     },
                     margin: "1rem",
-                    borderLeft: `solid 1px ${
-                      isDarkMode ? "#696969" : "#353839aa"
-                    }`,
+                    borderLeft: `solid 1px ${isDarkMode ? "#696969" : "#353839aa"
+                      }`,
                   }}
                 >
                   {experience.map((item, index) => (
@@ -587,9 +588,8 @@ export const About = () => {
                       left: 0,
                     },
                     margin: "1rem",
-                    borderLeft: `solid 1px ${
-                      isDarkMode ? "#696969" : "#353839aa"
-                    }`,
+                    borderLeft: `solid 1px ${isDarkMode ? "#696969" : "#353839aa"
+                      }`,
                   }}
                 >
                   {education.map((item, index) => (
