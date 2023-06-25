@@ -55,7 +55,9 @@ export const Home = () => {
         </div>
 
         <div className={classes.intro__horizontalSeparation} />
-        <Typography className={classes.intro__description}>{homeMessages.intro}</Typography>
+        <Typography className={classes.intro__description}>
+          {homeMessages.intro}
+        </Typography>
       </div>
     </Box>
   );

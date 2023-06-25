@@ -44,7 +44,7 @@ const experience = [
       "Managed a significant number of Jira tickets with precision, showcasing exceptional organizational skills and attention to detail.",
       "Took ownership of technical debt test-case tickets, significantly improving test coverage and elevating the coverage to an impressive 95% from 65%.",
       "Actively participated in cross-functional meetings, providing valuable insights and ensuring alignment between stakeholders.",
-      "Generated user-friendly documentation, simplifying the deployment process and enabling team members to navigate with ease."
+      "Generated user-friendly documentation, simplifying the deployment process and enabling team members to navigate with ease.",
     ],
   },
   {
@@ -57,7 +57,7 @@ const experience = [
       "Contributed to a medium-scale project with a Japanese client, serving as the Project-In-Charge (PIC) for building a custom UI-Component Library for a hotel management tool. Led a team of three junior developers to create over two dozen reusable and responsive components, meeting the specific requirements of the client.",
       "Collaborated with a cross-functional team to develop a high-performance Content Management System (CMS) for a prominent travel hotel booking company. This powerful CMS facilitated efficient management of an extensive hotel portfolio, ensuring a seamless booking experience for travelers.",
       "Crafted multiple project estimations and proposals tailored specifically for potential Japanese clients, leveraging deep understanding of their unique business needs and preferences.",
-      "Ignited growth and expertise in web development through personalized mentorship programs for both freshers and experienced lateral entry employees. Delivered cutting-edge techniques and stacks, empowering individuals across India and Japan to elevate their skills and thrive in the ever-evolving landscape of web development. "
+      "Ignited growth and expertise in web development through personalized mentorship programs for both freshers and experienced lateral entry employees. Delivered cutting-edge techniques and stacks, empowering individuals across India and Japan to elevate their skills and thrive in the ever-evolving landscape of web development. ",
     ],
   },
   {
@@ -68,7 +68,7 @@ const experience = [
     designation: "Junior Software Engineer",
     worksDone: [
       "Developed a custom React.JS UI-Component Library, creating reusable and responsive components used in multiple internal projects.",
-      "Started as a junior developer and advanced to become the Project-in-Charge (PIC) for an Email Newsletter Builder SPA. Led the development of a user-friendly drag-and-drop interface, enabling effortless creation and editing of HTML templates, along with advanced features for scheduling, sending emails, and managing users."
+      "Started as a junior developer and advanced to become the Project-in-Charge (PIC) for an Email Newsletter Builder SPA. Led the development of a user-friendly drag-and-drop interface, enabling effortless creation and editing of HTML templates, along with advanced features for scheduling, sending emails, and managing users.",
     ],
   },
   {
@@ -158,7 +158,9 @@ export const About = () => {
       </Typography>
     </Typography>
   );
-  const currentExperience = experience.find(item => item.id === experienceTabValue)
+  const currentExperience = experience.find(
+    (item) => item.id === experienceTabValue
+  );
   return (
     <Box
       className={joinClass(classes.about__container)}
@@ -351,17 +353,19 @@ export const About = () => {
         </Box>
       </Box>
       <Box>
-        <Box
-          sx={{ minHeight: "320px" }}
-        >
+        <Box sx={{ minHeight: "320px" }}>
           <Box sx={{ width: "100%" }}>
             <Box
               className={classes["experience--desktop"]}
-              sx={{ display: "flex", width: "100%", flexDirection: "column", maxWidth: "1200px", margin: "auto" }}
+              sx={{
+                display: "flex",
+                width: "100%",
+                flexDirection: "column",
+                maxWidth: "1200px",
+                margin: "auto",
+              }}
             >
-              <Typography
-                className={classes.experience__title}
-              >
+              <Typography className={classes.experience__title}>
                 Experience
               </Typography>
               <Box sx={{ display: "flex", flexDirection: "row" }}>
@@ -375,8 +379,9 @@ export const About = () => {
                       left: 0,
                     },
                     margin: "1rem",
-                    borderLeft: `solid 1px ${isDarkMode ? "#696969" : "#353839aa"
-                      }`,
+                    borderLeft: `solid 1px ${
+                      isDarkMode ? "#696969" : "#353839aa"
+                    }`,
                   }}
                 >
                   {experience.map((item, index) => (
@@ -387,25 +392,22 @@ export const About = () => {
                         color: isDarkMode ? "#696969" : "#353839aa",
                         textTransform: "none",
                         fontWeight: "600",
-                        textAlign: 'left'
+                        textAlign: "left",
                       }}
                       value={item.id}
                       label={
-                        <Box sx={{
-                          display: "flex",
-                          flexDirection: "column",
-                          width: "100%",
-                          position: "relative"
-                        }}>
-                          <Typography
-                            fontSize={"1.1rem"}
-                            fontWeight="600"
-                          >
+                        <Box
+                          sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            width: "100%",
+                            position: "relative",
+                          }}
+                        >
+                          <Typography fontSize={"1.1rem"} fontWeight="600">
                             {item.designation}
                           </Typography>
-                          <Typography >
-                            {item.institute}
-                          </Typography>
+                          <Typography>{item.institute}</Typography>
                         </Box>
                       }
                     />
@@ -418,30 +420,31 @@ export const About = () => {
                         sx={{ marginTop: "0.2rem", marginBottom: "1rem" }}
                       >{`${currentExperience?.startDate} - ${currentExperience?.endDate}`}</Typography>
 
-                      {currentExperience?.worksDone.map(
-                        (item, index) => (
-                          <Box
-                            key={`expListTab-${index}`}
-                            sx={{
-                              display: "flex",
-                              flexDirection: "row",
-                              alignItems: "flex-start",
-                            }}
-                          >
-                            <ListItemIcon>
-                              <CircleIcon
-                                sx={{
-                                  width: "0.9rem",
-                                  color: isDarkMode ? "#696969" : "#353839aa",
-                                  marginTop: "0.5rem"
-                                }}
-                                fontSize="small"
-                              />
-                            </ListItemIcon>
-                            <ListItemText sx={{ marginLeft: "-1rem" }} primary={item} />
-                          </Box>
-                        )
-                      )}
+                      {currentExperience?.worksDone.map((item, index) => (
+                        <Box
+                          key={`expListTab-${index}`}
+                          sx={{
+                            display: "flex",
+                            flexDirection: "row",
+                            alignItems: "flex-start",
+                          }}
+                        >
+                          <ListItemIcon>
+                            <CircleIcon
+                              sx={{
+                                width: "0.9rem",
+                                color: isDarkMode ? "#696969" : "#353839aa",
+                                marginTop: "0.5rem",
+                              }}
+                              fontSize="small"
+                            />
+                          </ListItemIcon>
+                          <ListItemText
+                            sx={{ marginLeft: "-1rem" }}
+                            primary={item}
+                          />
+                        </Box>
+                      ))}
                     </List>
                   </Box>
                 }
@@ -450,7 +453,7 @@ export const About = () => {
             <Box className={classes["experience--mobile"]}>
               <Typography
                 className={classes.experience__title}
-                sx={{ margin: '0rem 0rem 1rem 0rem' }}
+                sx={{ margin: "0rem 0rem 1rem 0rem" }}
               >
                 Experience
               </Typography>
@@ -459,20 +462,30 @@ export const About = () => {
                   <Accordion
                     sx={{
                       backgroundColor: isDarkMode ? "#29292930" : "#a1cdff1c",
-                      boxShadow: "0rem 0rem 0.1rem grey"
+                      boxShadow: "0rem 0rem 0.1rem grey",
                     }}
                   >
                     <AccordionSummary
                       expandIcon={
                         <ExpandMoreIcon
-                          sx={{ color: isDarkMode ? "#a1a1a1" : "#353839aa", display: "flex", flexDirection: "column" }}
+                          sx={{
+                            color: isDarkMode ? "#a1a1a1" : "#353839aa",
+                            display: "flex",
+                            flexDirection: "column",
+                          }}
                         />
                       }
                       aria-controls="panel1a-content"
                       id="panel1a-header"
                       sx={{ color: "inherit" }}
                     >
-                      <Box sx={{ display: "flex", flexDirection: "column", width: "100%" }}>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          flexDirection: "column",
+                          width: "100%",
+                        }}
+                      >
                         <Typography
                           sx={{
                             fontWeight: "600",
@@ -489,7 +502,7 @@ export const About = () => {
                             color: isDarkMode ? "#a1a1a1" : "#353839aa",
                           }}
                         >
-                          {item.institute}  ({item?.startDate} - {item?.endDate})
+                          {item.institute} ({item?.startDate} - {item?.endDate})
                         </Typography>
                       </Box>
                     </AccordionSummary>
@@ -497,7 +510,7 @@ export const About = () => {
                       <List
                         sx={{
                           display: "flex",
-                          flexDirection: "column"
+                          flexDirection: "column",
                         }}
                       >
                         {item.worksDone.map((item, index) => (
@@ -510,14 +523,14 @@ export const About = () => {
                                 sx={{
                                   width: "0.8rem",
                                   color: isDarkMode ? "#a1a1a1" : "#353839aa",
-                                  marginTop: "0.5rem"
+                                  marginTop: "0.5rem",
                                 }}
                               />
                             </ListItemIcon>
                             <ListItemText
                               sx={{
                                 color: isDarkMode ? "#a1a1a1" : "#353839aa",
-                                marginLeft: "-1.5rem"
+                                marginLeft: "-1.5rem",
                               }}
                               primary={item}
                             />
@@ -548,7 +561,7 @@ export const About = () => {
                 maxWidth: "1200px",
                 flexDirection: "column",
                 margin: "auto",
-                marginTop: "1.5rem"
+                marginTop: "1.5rem",
               }}
             >
               <Typography
@@ -559,7 +572,7 @@ export const About = () => {
               >
                 Education
               </Typography>
-              <Box sx={{ display: "flex", flexDirection: "row" }} >
+              <Box sx={{ display: "flex", flexDirection: "row" }}>
                 <Tabs
                   orientation="vertical"
                   value={educationTabValue}
@@ -570,7 +583,9 @@ export const About = () => {
                       left: 0,
                     },
                     margin: "1rem",
-                    borderLeft: `solid 1px ${isDarkMode ? "#696969" : "#353839aa"}`,
+                    borderLeft: `solid 1px ${
+                      isDarkMode ? "#696969" : "#353839aa"
+                    }`,
                   }}
                 >
                   {education.map((item, index) => (
@@ -589,8 +604,12 @@ export const About = () => {
                   ))}
                 </Tabs>
                 {
-                  <Box sx={{ maxWidth: "70%", marginLeft: '2rem' }}>
-                    <Typography component="h2" fontWeight="600" fontSize="1.5rem">
+                  <Box sx={{ maxWidth: "70%", marginLeft: "2rem" }}>
+                    <Typography
+                      component="h2"
+                      fontWeight="600"
+                      fontSize="1.5rem"
+                    >
                       {education[educationTabValue].designation}
                     </Typography>
                     <Typography
@@ -603,10 +622,13 @@ export const About = () => {
               </Box>
             </Box>
           </Box>
-          <Box sx={{ marginTop: "1.5rem" }} className={classes["experience--mobile"]}>
+          <Box
+            sx={{ marginTop: "1.5rem" }}
+            className={classes["experience--mobile"]}
+          >
             <Typography
               className={classes.experience__title}
-              sx={{ margin: '0rem 0rem 1rem 0rem' }}
+              sx={{ margin: "0rem 0rem 1rem 0rem" }}
             >
               Educaton
             </Typography>
