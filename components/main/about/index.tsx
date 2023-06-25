@@ -630,7 +630,7 @@ export const About = () => {
               className={classes.experience__title}
               sx={{ margin: "0rem 0rem 1rem 0rem" }}
             >
-              Educaton
+              Education
             </Typography>
             {education.map((item, index) => (
               <Box key={`eduMobTab-${index}`}>
