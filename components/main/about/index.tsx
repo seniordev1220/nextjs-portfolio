@@ -50,7 +50,7 @@ const experience = [
   {
     id: 2,
     institute: "QBurst",
-    startDate: "Aug 2021",
+    startDate: "Mar 2021",
     endDate: "Feb 2022",
     designation: "Module Lead",
     worksDone: [
@@ -66,7 +66,7 @@ const experience = [
     id: 3,
     institute: "QBurst",
     startDate: "Sep 2020",
-    endDate: "Aug 2021",
+    endDate: "Mar 2021",
     designation: "Junior Software Engineer",
     worksDone: [
       "Developed a custom React.JS UI-Component Library, creating reusable and responsive components used in multiple internal projects.",
