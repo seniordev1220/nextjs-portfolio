@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Image from "next/image";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 import { homeMessages } from "../../../messages/home";
 import { DarKModeContext } from "../../layout/layout";
@@ -55,7 +55,7 @@ export const Home = () => {
         </div>
 
         <div className={classes.intro__horizontalSeparation} />
-        <p className={classes.intro__description}>{homeMessages.intro}</p>
+        <Typography className={classes.intro__description}>{homeMessages.intro}</Typography>
       </div>
     </Box>
   );

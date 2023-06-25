@@ -173,6 +173,7 @@ $animation-time: 2s;
     }
 
     &__description {
+        font-weight: 500;
         max-width: 480px;
         width: 90%;
         line-height: 1.6;
@@ -199,7 +200,6 @@ $animation-time: 2s;
 
         &__image__container {
             width: 70%;
-            height: 35vh;
         }
     }
 

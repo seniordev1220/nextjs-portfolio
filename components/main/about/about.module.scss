@@ -29,6 +29,10 @@
 }
 
 .experience {
+    &__title{
+        font-size: xx-large;
+        font-weight: 600;
+    }
     &--mobile {
         display: none !important;
     }

@@ -42,7 +42,7 @@ const Project = ({
           margin: "auto",
           marinTop: "2rem",
           marginBottom: "2rem",
-          boxShadow: "0 0 2px grey",
+          boxShadow: "0 0 0.3rem grey",
           padding: "2rem",
           lineHeight: "1.5",
         }}
