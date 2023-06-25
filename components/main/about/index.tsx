@@ -453,7 +453,11 @@ export const About = () => {
             <Box className={classes["experience--mobile"]}>
               <Typography
                 className={classes.experience__title}
-                sx={{ margin: "0rem 0rem 1rem 0rem" }}
+                sx={{
+                  margin: "0rem 0rem 1rem 0rem",
+                  fontSize: "2rem",
+                  fontWeight: 600,
+                }}
               >
                 Experience
               </Typography>
@@ -628,7 +632,11 @@ export const About = () => {
           >
             <Typography
               className={classes.experience__title}
-              sx={{ margin: "0rem 0rem 1rem 0rem" }}
+              sx={{
+                margin: "0rem 0rem 1rem 0rem",
+                fontSize: "2rem",
+                fontWeight: 600,
+              }}
             >
               Education
             </Typography>
