@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import Image from "next/image";
-import { Box, Typography } from "@mui/material";
-
+import { Box, Button, Link, Typography } from "@mui/material";
+import DownloadIcon from "@mui/icons-material/Download";
 import { homeMessages } from "../../../messages/home";
 import { DarKModeContext } from "../../layout/layout";
-
+import { resume } from "../../../constants";
 import classes from "./home.module.scss";
 
 export const Home = () => {
@@ -15,8 +15,8 @@ export const Home = () => {
       sx={
         isDarkMode
           ? {
-              boxShadow: "0 0 1rem #00000078",
-            }
+            boxShadow: "0 0 1rem #00000078",
+          }
           : {}
       }
     >
@@ -58,6 +58,32 @@ export const Home = () => {
         <Typography className={classes.intro__description}>
           {homeMessages.intro}
         </Typography>
+        <Box className={classes.intro__button__container}>
+          <Link
+            sx={{
+              color: isDarkMode ? "white" : "black",
+              textDecoration: "none",
+            }}
+            href={resume}
+            target="_blank"
+          >
+            <Button
+              variant="outlined"
+              sx={{
+                marginTop: "1rem",
+                border: `solid 1px ${isDarkMode ? "#4e4e4e" : "#00000059"}`,
+                color: isDarkMode ? "#a5a5a5" : "#00000098",
+                ':hover': {
+                  borderColor: "#2753d7"
+                },
+              }}
+            >
+              Download Resume
+              <DownloadIcon
+                sx={{ marginLeft: "0.5rem", color: isDarkMode ? "#a5a5a5" : "#00000059" }} />
+            </Button>
+          </Link>
+        </Box>
       </div>
     </Box>
   );

@@ -2,7 +2,7 @@ export const homeMessages = {
   SOFTWARE_ENGINEER: "SOFTWARE ENGINEER",
   FULLSTACK_DEVELOPER: "FULLSTACK DEVELOPER",
   intro:
-    "Crafting extraordinary digital experiences, I specialize in building inclusive web products. From scalable applications to groundbreaking proof-of-concepts and custom tools, my expertise spans diverse projects. Let's bring your vision to life and make a lasting impact with cutting-edge innovation.",
+    "Specializing in crafting remarkable digital experiences, I excel in building scalable applications, pioneering POCs, and customized tools. Let's collaborate to bring your unique vision to life!",
   aboutPara1: `Hi there! My name is Anand Krishnan M J and I am a full stack JavaScript developer with a passion for building high-quality 
     web applications. With a strong foundation in HTML, CSS, and JavaScript, I have developed responsive and interactive web applications 
     using modern libraries and frameworks such as React.JS, Next.JS, Express.JS and Node.js.`,

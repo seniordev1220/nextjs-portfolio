@@ -22,7 +22,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import CircleIcon from "@mui/icons-material/Circle";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Parallax } from "react-scroll-parallax";
-
+import { resume } from "../../../constants";
 import { useDarkMode } from "../../../hooks/useDarkMode";
 import { joinClass } from "../../../helpers/utils";
 import { homeMessages } from "../../../messages/home";
@@ -30,6 +30,7 @@ import { ProfileCard } from "../../profileCard";
 import { Background } from "../../background";
 
 import classes from "./about.module.scss";
+
 
 const experience = [
   {
@@ -133,7 +134,7 @@ export const About = () => {
   const months = today.getMonth() - birthDate.getMonth();
   const age = Math.floor(years + months / 12);
   const [experienceTabValue, setExperienceTabValue] = useState(1);
-  const [educationTabValue, setEducationTabValue] = useState(1);
+  const [educationTabValue, setEducationTabValue] = useState(0);
   const handleExperienceTabChange = (
     event: React.SyntheticEvent,
     newValue: number
@@ -255,14 +256,14 @@ export const About = () => {
               color: isDarkMode ? "white" : "black",
               textDecoration: "none",
             }}
-            href="https://drive.google.com/uc?id=1y88Vas0fdeVwE9FNSx1gf6Q-myFftKdX&export=download"
+            href={resume}
             target="_blank"
           >
             <Button
               variant="contained"
               sx={{ color: "white", marginBottom: "1rem" }}
             >
-              Download CV
+              Download Resume
               <DownloadIcon sx={{ marginLeft: "0.5rem" }} />
             </Button>
           </Link>

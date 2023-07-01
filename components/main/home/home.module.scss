@@ -7,13 +7,18 @@ $text-length: 23;
 $animation-time: 2s;
 
 @mixin animateDescription {
-    animation: zoom 1s ease forwards;
-    animation-delay: 2s;
+    animation: fadeInProfession 1s ease forwards;
+    animation-delay: 1.8s;
 }
 
 @mixin animateProfession {
-    animation: fadeInProfession 1s ease forwards;
+    animation: fadeInProfession 1.5s ease forwards;
     animation-delay: 1.5s;
+}
+
+@mixin animateCvButton {
+    animation: fadeInProfession 1.5s ease forwards;
+    animation-delay: 2.1s;
 }
 
 @mixin animateImage {
@@ -174,14 +179,20 @@ $animation-time: 2s;
 
     &__description {
         font-weight: 500;
-        max-width: 480px;
+        font-size: 1.05rem;
+        max-width: 670px;
         width: 90%;
         line-height: 1.6;
-        margin: 1rem;
-        transform: scale(0);
+        margin-top: 1rem;
+        opacity: 0;
         @include animateDescription;
     }
 
+    &__button__container {
+        max-width: 670px;
+        opacity: 0;
+        @include animateCvButton;
+    }
 }
 
 @media only screen and (max-width:768px) {
@@ -221,12 +232,17 @@ $animation-time: 2s;
     font-weight: bold;
     text-transform: uppercase;
     opacity: 0;
+    margin-top: 1rem;
     @include animateProfession;
 }
 
 .slider {
     height: 3rem;
     overflow: hidden;
+
+    @media screen and (max-width:992px) {
+        height: 2rem;
+    }
 }
 
 .slider__text1 {
@@ -298,7 +314,7 @@ $animation-time: 2s;
 
 @media screen and (max-width:992px) {
     .slider__wrapper {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         display: flex;
         align-items: center;
     }

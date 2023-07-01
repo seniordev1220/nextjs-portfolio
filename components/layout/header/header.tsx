@@ -85,81 +85,79 @@ function Header({ onDarkModeToggle }: HeaderProps) {
   }));
 
   return (
-    <>
-      <header>
-        <ScrollHeader onDarkModeToggle={onDarkModeToggle} hideToggle={true} />
-        <div className={classes.ham__wrapper}>
-          <RotaryMenu />
-        </div>
+    <header className={classes.header__section}>
+      <ScrollHeader onDarkModeToggle={onDarkModeToggle} hideToggle={true} />
+      <div className={classes.ham__wrapper}>
+        <RotaryMenu />
+      </div>
+      <Box
+        sx={{
+          position: "fixed",
+          top: "0rem",
+          right: "1rem",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "100vh",
+        }}
+        className={classes.desktop__menu}
+      >
         <Box
+          className={classes.side__menu}
           sx={{
-            position: "fixed",
-            top: "0rem",
-            right: "1rem",
             display: "flex",
             flexDirection: "column",
+            justifyContent: "space-between",
             alignItems: "center",
-            justifyContent: "center",
-            height: "100vh",
+            minHeight: "71vh",
+            boxShadow: "0 0 0.5rem #00000049",
+            backgroundColor: "#ffffff04",
+            borderRadius: "5rem",
+            paddingTop: "2rem",
+            paddingBottom: "2rem",
           }}
-          className={classes.desktop__menu}
         >
-          <Box
-            className={classes.side__menu}
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              alignItems: "center",
-              minHeight: "71vh",
-              boxShadow: "0 0 0.5rem #00000049",
-              backgroundColor: "#ffffff04",
-              borderRadius: "5rem",
-              paddingTop: "2rem",
-              paddingBottom: "2rem",
-            }}
-          >
-            <Box>
-              <input
-                checked={isDarkMode}
-                className={classes.toggle}
-                type="checkbox"
-                onChange={onDarkModeToggle}
-              />
-            </Box>
-            <Box>
-              <nav>
-                <Tabs
-                  orientation="vertical"
-                  // value={tabValue}
-                  onChange={handleTabChange as any}
-                  TabIndicatorProps={{
-                    style: {
-                      border: `solid 0.1px ${isDarkMode ? "black" : "white"}`,
-                      width: "4px",
-                    },
-                  }}
-                >
-                  {routes.map((route) => (
-                    <Tooltip
-                      key={`tab-${route.name}`}
-                      title={route.name}
-                      placement="left"
-                      TransitionComponent={Zoom}
-                    >
-                      <Tab
-                        sx={{ minWidth: "1rem" }}
-                        label={route.IconComponent}
-                      />
-                    </Tooltip>
-                  ))}
-                </Tabs>
-              </nav>
-            </Box>
+          <Box>
+            <input
+              checked={isDarkMode}
+              className={classes.toggle}
+              type="checkbox"
+              onChange={onDarkModeToggle}
+            />
+          </Box>
+          <Box>
+            <nav>
+              <Tabs
+                orientation="vertical"
+                // value={tabValue}
+                onChange={handleTabChange as any}
+                TabIndicatorProps={{
+                  style: {
+                    border: `solid 0.1px ${isDarkMode ? "black" : "white"}`,
+                    width: "4px",
+                  },
+                }}
+              >
+                {routes.map((route) => (
+                  <Tooltip
+                    key={`tab-${route.name}`}
+                    title={route.name}
+                    placement="left"
+                    TransitionComponent={Zoom}
+                  >
+                    <Tab
+                      sx={{ minWidth: "1rem" }}
+                      label={route.IconComponent}
+                    />
+                  </Tooltip>
+                ))}
+              </Tabs>
+            </nav>
           </Box>
         </Box>
-      </header>
-    </>
+      </Box>
+    </header>
   );
 }
 export default Header;

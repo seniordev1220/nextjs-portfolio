@@ -66,7 +66,7 @@ export const projects = [
     title: "Portfolio Frontend Application",
     date: "10 Dec, 2021 - 19 July, 2022",
     description:
-      "The website features a sleek and professional design that showcases my skills, experience, and projects.With Next.js, I was able to leverage server-side rendering and static site generation for improved performance and faster load times. MUI, a library of pre-built React components, was used for the website's design, which follows Material Design principles. I also integrated Redux and Saga for efficient state management and smooth user interactions, resulting in a faster and more seamless user experience. The website is a great representation of my abilities as a web developer and demonstrates my skills in designing and developing modern web applications.",
+      "The website features a sleek design that highlights my skills, experience, and projects. It utilizes Next.js, Redux, and MUI to provide a fast and seamless user experience, demonstrating my proficiency in modern web development. To explore more about the website and its features, click the link below",
     image: "/images/portfolio_spa.png",
     slug: "my_portfolio_website_spa",
     content: ` <p>My Exciting Portfolio website is a Single Page Application (SPA) that's designed to showcase my work and make it easy for visitors to navigate and explore my content. Here are some of the features that you can expect to find on my site:</p>

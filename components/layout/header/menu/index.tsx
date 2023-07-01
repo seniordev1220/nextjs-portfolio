@@ -7,7 +7,7 @@ import { Box, Link } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import PsychologyIcon from "@mui/icons-material/Psychology";
 import MenuIcon from "@mui/icons-material/Menu";
-
+import { resume } from "../../../../constants";
 import useComponentVisible from "../../../../hooks/useComponentVisible";
 import { useDarkMode } from "../../../../hooks/useDarkMode";
 import { TabContext } from "../../../../pages";
@@ -49,7 +49,7 @@ export const RotaryMenu = () => {
       IconComponent: (
         <Link
           sx={{ color: isDarkMode ? "white" : "black", textDecoration: "none" }}
-          href="https://drive.google.com/uc?id=1y88Vas0fdeVwE9FNSx1gf6Q-myFftKdX&export=download"
+          href={resume}
           target="_blank"
         >
           {" "}
