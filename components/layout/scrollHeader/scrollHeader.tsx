@@ -49,7 +49,7 @@ export const ScrollHeader = ({
           position: "fixed",
           top: "0.5rem",
           left: "0.5rem",
-          height: "5rem"
+          height: "5rem",
         }}
       >
         <Link href="/">

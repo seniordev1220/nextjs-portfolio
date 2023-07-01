@@ -7,6 +7,7 @@ import { Box, Link } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import PsychologyIcon from "@mui/icons-material/Psychology";
 import MenuIcon from "@mui/icons-material/Menu";
+
 import { resume } from "../../../../constants";
 import useComponentVisible from "../../../../hooks/useComponentVisible";
 import { useDarkMode } from "../../../../hooks/useDarkMode";

@@ -22,6 +22,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import CircleIcon from "@mui/icons-material/Circle";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Parallax } from "react-scroll-parallax";
+
 import { resume } from "../../../constants";
 import { useDarkMode } from "../../../hooks/useDarkMode";
 import { joinClass } from "../../../helpers/utils";
@@ -30,7 +31,6 @@ import { ProfileCard } from "../../profileCard";
 import { Background } from "../../background";
 
 import classes from "./about.module.scss";
-
 
 const experience = [
   {
