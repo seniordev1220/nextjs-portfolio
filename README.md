@@ -1,34 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio Website Readme
 
-## Getting Started
+This is a detailed guide to set up, run, and customize your portfolio website built with Next.js, TypeScript, Sass, Material UI, SendGrid, Redux, and Redux Saga.
 
-First, run the development server:
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [Deployment](#deployment)
+- [Feedback](#feedback)
+
+
+## Introduction
+
+This portfolio website template is built with a combination of powerful technologies to provide an elegant and professional online presence. It leverages Next.js for server-side rendering and routing, TypeScript for type safety, Sass for styling, Material UI for UI components, SendGrid for email integration, and Redux with Redux Saga for state management.
+
+## Features
+
+- Responsive design
+- Server-side rendering (SSR) for better performance and SEO
+- TypeScript for type safety and enhanced developer experience
+- Sass for styling with modular CSS support
+- Material UI for beautiful and customizable UI components
+- SendGrid integration for sending emails from the website
+- Redux and Redux Saga for state management and asynchronous actions
+
+## Requirements
+
+To run this portfolio website, you need the following prerequisites:
+
+- Node.js (version 12 or above)
+- npm or yarn package manager
+- SendGrid account (for email functionality)
+
+## Installation
+
+1. Clone the repository:
+git clone <repository_url>
+
+2. Install the dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
+cd portfolio-website
+npm install   # or using yarn: yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Configuration
+1. Rename the .env.example file to .env.local.
+2. Open the .env.local file and provide the necessary configuration:
+```bash
+SERVER = <your_sendgrid_api_key>
+SENDGRID_API_KEY=<your_sendgrid_api_key>
+```
+## Usage
+To start the development server and run the portfolio website locally, run the following command:
+```bash
+npm run dev    # or using yarn: yarn dev
+```
+Access the website in your browser at http://localhost:4000.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Deployment
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+The portfolio website has been deployed to https://akmj.social using Vercel. It is automatically built and deployed when changes are pushed to the main branch. The deployment process is handled by Vercel and requires no additional steps.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Feedback
+I value your feedback! If you have any suggestions, improvements, or questions, please feel free to contact me through the contact section on https://akmj.social  or by emailing to anandkrishmj@gmail.com.
