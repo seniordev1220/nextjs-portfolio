@@ -1,6 +1,7 @@
 import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
 
 import store from "../store";
 import "../components/layout/layout.css";
@@ -137,6 +138,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         {/* eslint-disable  */}
         <Component {...pageProps} />
       </Provider>
+      <Analytics/>
     </>
   );
 }
