@@ -46,7 +46,7 @@
 
   @media only screen and (max-width: 780px) {
     .scrollRight {
-      display: none;
+      display: none !important;
     }
 
     .description {
