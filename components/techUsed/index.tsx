@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { useDarkMode } from "../../hooks/useDarkMode";
 
 export const TechUsed = ({
   techStack,
@@ -7,6 +8,7 @@ export const TechUsed = ({
   techStack: string[];
   variant?: string;
 }) => {
+  const {isDarkMode} = useDarkMode()
   return (
     <Box
       sx={{
@@ -27,15 +29,15 @@ export const TechUsed = ({
           {techStack?.map((item) => (
             <Typography
               sx={{
-                backgroundColor: "#353839aa",
+                backgroundColor: isDarkMode?"#353839aa":"#a1c0e726",
                 borderRadius: "0.5rem",
                 margin: "0.3rem 0.25rem",
                 padding: "0rem 0.3rem",
                 fontWeight: 500,
-                fontSize: "0.9rem",
-                color: "white",
-                boxShadow: "0rem 0rem 0.2rem grey",
-                border: "solid 1px #353839aa",
+                fontSize: "0.8rem",
+                color: isDarkMode?"white":"#4d4d4d",
+                boxShadow: isDarkMode?"0rem 0rem 0.2rem grey":"0rem 0rem 0.2rem #8080804f",
+                border: isDarkMode?"solid 1px #353839aa":"solid 1px #3538393b",
               }}
               key={item}
               component={"span"}
