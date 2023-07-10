@@ -43,7 +43,6 @@ export const Loading = ({ sxProp }: { sxProp?: any }) => {
           ></div>
         </Box>
       </Box>
-      {!darkModeIsloading && (
         <Box
           sx={{
             position: "fixed",
@@ -59,7 +58,6 @@ export const Loading = ({ sxProp }: { sxProp?: any }) => {
             zIndex: 1000,
           }}
         ></Box>
-      )}
     </>
   );
 };

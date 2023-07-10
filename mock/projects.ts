@@ -68,7 +68,7 @@ export const projects = [
     description:
       "I had the privilege of collaborating with a diverse multinational team in developing and managing this SPA application with over 40+ million monthly visits. Throughout the project, I gained valuable expertise in optimizing scalability, flexibility, and maintainability through the implementation of mono repository and microservice architecture.",
     image: "/images/E-commerce-spa.png",
-    slug: "my_portfolio_website_spa",
+    slug: "e-commerce_spa",
     content: ` 
     <h3>Overview: Embarking on an Exciting Opportunity<br>
     </h3>
@@ -291,10 +291,10 @@ Recognizing the importance of effective documentation and testing, I spearheaded
   },
   {
     id: 5,
-    title: "Portfolio Frontend Application",
+    title: "Portfolio Frontend Application (Personal Project)",
     date: "10 Dec, 2021 - 19 July, 2022",
     description:
-      "The website features a sleek design that highlights my skills, experience, and projects. It utilizes Next.js, Redux, and MUI to provide a fast and seamless user experience, demonstrating my proficiency in modern web development. To explore more about the website and its features, click the link below",
+      " From design to development, deployment to domain acquisition, every aspect of this website was meticulously crafted by me. This immersive project served as a remarkable learning opportunity, allowing me to gain valuable insights and sharpen my skills. Join me in exploring this passion-driven website, where innovation meets personal growth.",
     image: "/images/portfolio_spa.png",
     slug: "my_portfolio_website_spa",
     content: ` <p>My Exciting Portfolio website is a Single Page Application (SPA) that's designed to showcase my work and make it easy for visitors to navigate and explore my content. Here are some of the features that you can expect to find on my site:</p>
@@ -338,7 +338,7 @@ Recognizing the importance of effective documentation and testing, I spearheaded
   },
   {
     id: 6,
-    title: "Portfolio Backend Application",
+    title: "Portfolio Backend Application (Personal Project)",
     date: "10 Dec, 2021 - 19 July, 2022",
     description:
       "My portfolio website's backend application was built using Node.js and Express.js for server-side functionality, and PostgreSQL as the database management system to store and retrieve data. I also used Docker for containerization, which helped to simplify the deployment process. The application is deployed on Amazon Web Services (AWS), which ensures reliability, scalability, and high availability. Overall, the backend application provides a robust and scalable architecture for handling the data and functionality of my portfolio website.",
