@@ -10,14 +10,14 @@ export const TechUsed = ({
   return (
     <Box
       sx={{
-        margin: "1rem",
+        marginTop: "1rem",
         display: "flex",
         justifyContent: "flex-start",
         flexDirection: "column",
         textAlign: "left",
       }}
     >
-      <Typography sx={{ fontSize: "1.3rem" }} fontWeight={600}>
+      <Typography sx={{ fontSize: "1.1rem" }} fontWeight={600}>
         Tech stack
       </Typography>
       {variant === "minimal" ? (
@@ -29,7 +29,7 @@ export const TechUsed = ({
               sx={{
                 backgroundColor: "#353839aa",
                 borderRadius: "0.5rem",
-                margin: "0.1rem 0.25rem",
+                margin: "0.3rem 0.25rem",
                 padding: "0rem 0.3rem",
                 fontWeight: 500,
                 fontSize: "0.9rem",
