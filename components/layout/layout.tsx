@@ -14,15 +14,17 @@ const iconStyle = {
   fontSize: "3rem",
   padding: "0.5rem",
 };
-export const DarKModeContext = React.createContext({ isDarkMode: false });
+export const DarKModeContext = React.createContext({
+  isDarkMode: false,
+  darkModeIsloading: true,
+});
+
 function Layout({ children, variant, title }: LayoutPropType) {
-  const [isDarkMode, setIsDarkMode] = useState("true");
+  const [isDarkMode, setIsDarkMode] = useState("");
   useEffect(() => {
     const isDark: string = window?.sessionStorage?.getItem("isDarkMode") as any;
-    if (isDark === "false") {
-      setIsDarkMode(isDark);
-    }
-    isDark === "false" && document.body.classList.add("light-mode");
+    setIsDarkMode(isDark);
+    isDark === "true" && document.body.classList.add("dark-mode");
   }, []);
   const onButtonToggle = () => {
     window.sessionStorage.setItem(
@@ -30,14 +32,17 @@ function Layout({ children, variant, title }: LayoutPropType) {
       isDarkMode === "false" ? "true" : "false"
     );
     setIsDarkMode((isDarkMode) => (isDarkMode === "false" ? "true" : "false"));
-    document.body.classList.toggle("light-mode");
+    document.body.classList.toggle("dark-mode");
   };
 
   return (
     <>
       {variant === "l1" && (
         <DarKModeContext.Provider
-          value={{ isDarkMode: isDarkMode === "true" ? true : false }}
+          value={{
+            isDarkMode: isDarkMode === "true" ? true : false,
+            darkModeIsloading: isDarkMode === "",
+          }}
         >
           <Box>
             <main className={classes.main}>{children}</main>
@@ -47,7 +52,10 @@ function Layout({ children, variant, title }: LayoutPropType) {
       )}
       {variant === "l2" && (
         <DarKModeContext.Provider
-          value={{ isDarkMode: isDarkMode === "true" ? true : false }}
+          value={{
+            isDarkMode: isDarkMode === "true" ? true : false,
+            darkModeIsloading: isDarkMode === "",
+          }}
         >
           <Box
             sx={{
@@ -92,7 +100,10 @@ function Layout({ children, variant, title }: LayoutPropType) {
       )}
       {variant === "l3" && (
         <DarKModeContext.Provider
-          value={{ isDarkMode: isDarkMode === "true" ? true : false }}
+          value={{
+            isDarkMode: isDarkMode === "true" ? true : false,
+            darkModeIsloading: isDarkMode === "",
+          }}
         >
           <Box sx={{ position: "relative" }}>
             <Box
