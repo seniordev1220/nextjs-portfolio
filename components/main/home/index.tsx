@@ -10,7 +10,7 @@ import { resume } from "../../../constants";
 import classes from "./home.module.scss";
 
 export const Home = () => {
-  const { isDarkMode } = useContext(DarKModeContext);
+  const { isDarkMode, darkModeIsloading } = useContext(DarKModeContext);
   return (
     <Box
       className={classes.intro__container}
@@ -31,17 +31,18 @@ export const Home = () => {
         />
       </div>
       <div className={classes.intro__content}>
-        <h2
-          className={
-            isDarkMode
-              ? classes["intro__self--dark"]
-              : classes["intro__self--light"]
-          }
-        >
-          {homeMessages.anand}
-          <span className={classes.line}></span>
-        </h2>
-
+        {!darkModeIsloading && (
+          <h2
+            className={
+              isDarkMode
+                ? classes["intro__self--dark"]
+                : classes["intro__self--light"]
+            }
+          >
+            {homeMessages.anand}
+            <span className={classes.line}></span>
+          </h2>
+        )}
         <div className={classes.slider__wrapper}>
           <div className={classes.slider}>
             <h2 className={classes.slider__text1}>

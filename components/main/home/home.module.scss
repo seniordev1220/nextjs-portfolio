@@ -4,21 +4,21 @@ $lightBg: #add3ff;
 $caret-color-dark: b6d8ff;
 $caret-color-light: rgb(0, 0, 0);
 $text-length: 23;
-$animation-time: 2s;
+$animation-time: 1.3s;
 
 @mixin animateDescription {
     animation: fadeInProfession 1s ease forwards;
-    animation-delay: 1.8s;
+    animation-delay: 1.3s;
 }
 
 @mixin animateProfession {
-    animation: fadeInProfession 1.5s ease forwards;
-    animation-delay: 1.5s;
+    animation: fadeInProfession 1s ease forwards;
+    animation-delay: 1s;
 }
 
 @mixin animateCvButton {
-    animation: fadeInProfession 1.5s ease forwards;
-    animation-delay: 2.1s;
+    animation: fadeInProfession 1s ease forwards;
+    animation-delay: 1.6s;
 }
 
 @mixin animateImage {
@@ -44,12 +44,10 @@ $animation-time: 2s;
 
 @keyframes fadeInRightImage {
     from {
-        transform: scale(0);
         opacity: 0;
     }
 
     to {
-        transform: scale(1);
         opacity: 1;
     }
 }
