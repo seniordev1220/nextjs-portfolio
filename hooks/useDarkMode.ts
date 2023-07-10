@@ -3,6 +3,6 @@ import { useContext } from "react";
 import { DarKModeContext } from "../components/layout/layout";
 
 export const useDarkMode = () => {
-  const { isDarkMode } = useContext(DarKModeContext);
-  return { isDarkMode };
+  const { isDarkMode, darkModeIsloading } = useContext(DarKModeContext);
+  return { isDarkMode, darkModeIsloading };
 };
