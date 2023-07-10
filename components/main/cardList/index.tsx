@@ -95,7 +95,7 @@ export const CardList = ({ type, description, title, data }: CardListProps) => {
           showArrows
           emulateTouch
           preventMovementUntilSwipeScrollTolerance={true}
-          swipeScrollTolerance={25}
+          swipeScrollTolerance={35}
           axis="horizontal"
           centerMode
           centerSlidePercentage={100}
