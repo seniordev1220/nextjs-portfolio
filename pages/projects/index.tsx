@@ -71,7 +71,7 @@ function Projects() {
                       alt={data.title}
                     />
                   </Grid>
-                  <Grid xs={12} item md={7} sx={{padding:"0rem 1rem"}}>
+                  <Grid xs={12} item md={7} sx={{ padding: "0rem 1rem" }}>
                     <TechUsed techStack={data.techStack} />
                     <Typography sx={{ marginTop: "1rem" }}>
                       {data.description}

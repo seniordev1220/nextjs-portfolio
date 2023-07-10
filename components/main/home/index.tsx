@@ -17,7 +17,7 @@ export const Home = () => {
       sx={
         isDarkMode
           ? {
-              boxShadow: "0 0 1rem #00000078"
+              boxShadow: "0 0 1rem #00000078",
             }
           : {}
       }
@@ -76,15 +76,15 @@ export const Home = () => {
                 border: `solid 1px ${isDarkMode ? "#4e4e4e" : "#00000059"}`,
                 color: isDarkMode ? "#a5a5a5" : "#313131",
                 ":hover": {
-                  borderColor: "#2753d7"
-                }
+                  borderColor: "#2753d7",
+                },
               }}
             >
               Download Resume
               <DownloadIcon
                 sx={{
                   marginLeft: "0.5rem",
-                  color: isDarkMode ? "#a5a5a5" : "#00000059"
+                  color: isDarkMode ? "#a5a5a5" : "#00000059",
                 }}
               />
             </Button>
