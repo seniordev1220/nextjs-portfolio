@@ -114,7 +114,7 @@ export async function getStaticProps(context: {
   }
   const projectData = await getProjects();
   const project = projectData.find(
-    (item: projectDataType) => item.slug === projectSlug
+    (item: projectDataType) => item.slug === projectSlug,
   );
 
   if (!project) {

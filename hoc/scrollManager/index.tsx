@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 
 const withScrollToPosition = <P extends object>(
-  WrappedComponent: React.ComponentType<P>
+  WrappedComponent: React.ComponentType<P>,
 ) => {
   const WithScrollToPosition: React.FC<P> = (props) => {
     const router = useRouter();

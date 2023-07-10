@@ -59,7 +59,7 @@ export const ScrollHeader = ({
       <Box
         className={joinClass(
           classes.toggle__desktop,
-          hideToggle ? classes.header_l1_toggle : ""
+          hideToggle ? classes.header_l1_toggle : "",
         )}
       >
         <input

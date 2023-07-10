@@ -13,7 +13,7 @@ const Project = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const { projectItem } = useSelector<RootState>(
-    (state) => state.project
+    (state) => state.project,
   ) as projectStateType;
 
   useEffect(() => {

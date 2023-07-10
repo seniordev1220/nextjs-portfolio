@@ -28,15 +28,15 @@ const TemplateForm = ({
     if (isProject) {
       isFormDetailsEdit
         ? dispatch(
-            editProjectItem({ data: templateFormData, closeModal: closeModal })
+            editProjectItem({ data: templateFormData, closeModal: closeModal }),
           )
         : dispatch(
-            addProject({ data: templateFormData, closeModal: closeModal })
+            addProject({ data: templateFormData, closeModal: closeModal }),
           );
     } else {
       isFormDetailsEdit
         ? dispatch(
-            editBlogItem({ data: templateFormData, closeModal: closeModal })
+            editBlogItem({ data: templateFormData, closeModal: closeModal }),
           )
         : dispatch(addBlog({ data: templateFormData, closeModal: closeModal }));
     }
@@ -100,7 +100,7 @@ const TemplateForm = ({
           onChange={(e) => {
             handleChange(
               e.target.value === "true" ? true : false,
-              "showinportfolio"
+              "showinportfolio",
             );
           }}
         />

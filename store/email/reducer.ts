@@ -38,7 +38,7 @@ export const emailSlice: any = createSlice({
 
     sendEmail: (
       state,
-      action: { payload: { data: emailDataItem; reset: () => void } }
+      action: { payload: { data: emailDataItem; reset: () => void } },
     ) => {
       state.isLoading = true;
       state.reset = action.payload.reset;

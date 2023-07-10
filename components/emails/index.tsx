@@ -19,7 +19,7 @@ import { RootState } from "../../store/types";
 export const Emails = () => {
   const dispatch = useDispatch();
   const { emails } = useSelector<RootState>(
-    (state) => state.email
+    (state) => state.email,
   ) as emailStateType;
 
   useEffect(() => {

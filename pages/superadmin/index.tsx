@@ -42,16 +42,16 @@ import {
 
 const Dashboard = () => {
   const [selectedTab, setSelectedTab] = useState<"blog" | "project" | "emails">(
-    "blog"
+    "blog",
   );
   const [formModalOpen, setFormModalOpen] = useState(false);
   const [editId, setEditId] = useState(-1);
   const dispatch = useDispatch();
   const { blogs } = useSelector<RootState>(
-    (state) => state.blog
+    (state) => state.blog,
   ) as blogStateType;
   const { projects } = useSelector<RootState>(
-    (state) => state.project
+    (state) => state.project,
   ) as projectStateType;
 
   // const { projects } = useSelector<RootState>(state => state.project) as projectStateType;
@@ -69,7 +69,7 @@ const Dashboard = () => {
 
   const handleChange = (
     e: React.SyntheticEvent<Element, Event>,
-    value: "blog" | "project" | "emails"
+    value: "blog" | "project" | "emails",
   ) => {
     setSelectedTab(value);
   };
@@ -83,10 +83,10 @@ const Dashboard = () => {
           data: {
             ...tableData.blog.find((item: { id: number }) => item.id === id),
             showinportfolio: !tableData.blog.find(
-              (item: { id: number }) => item.id === id
+              (item: { id: number }) => item.id === id,
             )?.showinportfolio,
           },
-        })
+        }),
       );
     } else if (selectedTab === "project") {
       dispatch(
@@ -94,10 +94,10 @@ const Dashboard = () => {
           data: {
             ...tableData.project.find((item: { id: number }) => item.id === id),
             showinportfolio: !tableData.project.find(
-              (item: { id: number }) => item.id === id
+              (item: { id: number }) => item.id === id,
             )?.showinportfolio,
           },
-        })
+        }),
       );
     }
   };
@@ -310,11 +310,11 @@ const Dashboard = () => {
           initialFormData={
             (selectedTab === "blog" &&
               tableData.blog.find(
-                (item: { id: number }) => item.id === editId
+                (item: { id: number }) => item.id === editId,
               )) ||
             (selectedTab === "project" &&
               tableData.project.find(
-                (item: { id: number }) => item.id === editId
+                (item: { id: number }) => item.id === editId,
               )) ||
             ({
               id: -1,

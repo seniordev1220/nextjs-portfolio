@@ -33,7 +33,7 @@ function* getBlogsSaga(): any {
   // }
   try {
     const response = yield call(
-      getBlogsApi
+      getBlogsApi,
       // action.payload.showHidden,
       // action.payload.limit,
       // action.payload.offset

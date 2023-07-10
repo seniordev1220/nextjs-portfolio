@@ -11,13 +11,13 @@ type ReqMethods = "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
 
 export function getUrlWithQueryParams(
   base: string,
-  queryData: any = {}
+  queryData: any = {},
 ): string {
   const queries = Object.keys(queryData);
 
   return queries.reduce((acc: string, query: string, index: number): string => {
     const url = `${acc}${encodeURIComponent(query)}=${encodeURIComponent(
-      queryData[query]
+      queryData[query],
     )}`;
 
     return index + 1 < queries.length ? `${url}&` : url;
@@ -33,7 +33,7 @@ export function getReqUrl({ params, endpoint }: ReqOptions): string {
 
 export function getReqOptions(
   method: ReqMethods,
-  { headers, body }: ReqOptions
+  { headers, body }: ReqOptions,
 ): RequestInit {
   const reqHeaders: any = {
     Accept: "application/json",
@@ -70,7 +70,7 @@ function parseJSON(response: Response): any {
 function request(
   method: ReqMethods,
   reqOptions: ReqOptions,
-  isOwnAPI?: boolean
+  isOwnAPI?: boolean,
 ): Promise<Response> {
   let url = getReqUrl(reqOptions);
   const options = getReqOptions(method, reqOptions);

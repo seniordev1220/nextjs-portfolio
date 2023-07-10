@@ -19,7 +19,7 @@ function* getEmailsSaga(action: {
     const response = yield call(
       getEmailsApi,
       action.payload.limit,
-      action.payload.offset
+      action.payload.offset,
     );
     yield put(getEmailsSuccess(response.data.emails));
   } catch (e) {

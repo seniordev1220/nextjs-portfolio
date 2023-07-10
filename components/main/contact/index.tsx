@@ -38,7 +38,7 @@ export const Contact = () => {
   };
   const [open, setOpen] = React.useState(false);
   const { isLoading } = useSelector<RootState>(
-    (state) => state.email
+    (state) => state.email,
   ) as emailStateType;
   const dispatch = useDispatch();
   const textFieldStyle = {

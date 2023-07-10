@@ -33,7 +33,7 @@ function* getProjectsSaga(): any {
   // }
   try {
     const response = yield call(
-      getProjectsApi
+      getProjectsApi,
       // action.payload.showHidden,
       // action.payload.limit,
       // action.payload.offset

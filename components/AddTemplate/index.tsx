@@ -30,7 +30,7 @@ const CreateTemplate = ({
     });
   };
   const [blogFormData, setBlogFormData] = useState<BlogItem | ProjectItem>(
-    blogItem
+    blogItem,
   );
   useEffect(() => {
     setBlogFormData(blogItem);
@@ -49,10 +49,10 @@ const CreateTemplate = ({
           editProjectItem({
             data: blogFormData,
             closeModal: redirectToBlogsList,
-          })
+          }),
         )
       : dispatch(
-          editBlogItem({ data: blogFormData, closeModal: redirectToBlogsList })
+          editBlogItem({ data: blogFormData, closeModal: redirectToBlogsList }),
         );
   };
 

@@ -29,7 +29,7 @@ function Layout({ children, variant, title }: LayoutPropType) {
   const onButtonToggle = () => {
     window.sessionStorage.setItem(
       "isDarkMode",
-      isDarkMode === "false" ? "true" : "false"
+      isDarkMode === "false" ? "true" : "false",
     );
     setIsDarkMode((isDarkMode) => (isDarkMode === "false" ? "true" : "false"));
     document.body.classList.toggle("dark-mode");

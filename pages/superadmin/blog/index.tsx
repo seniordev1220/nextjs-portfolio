@@ -10,7 +10,7 @@ const Blog = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const { blogItem } = useSelector<RootState>(
-    (state) => state.blog
+    (state) => state.blog,
   ) as blogStateType;
 
   useEffect(() => {

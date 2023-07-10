@@ -137,13 +137,13 @@ export const About = () => {
   const [educationTabValue, setEducationTabValue] = useState(0);
   const handleExperienceTabChange = (
     event: React.SyntheticEvent,
-    newValue: number
+    newValue: number,
   ) => {
     setExperienceTabValue(newValue);
   };
   const handleEducationTabChange = (
     event: React.SyntheticEvent,
-    newValue: number
+    newValue: number,
   ) => {
     setEducationTabValue(newValue);
   };
@@ -162,7 +162,7 @@ export const About = () => {
     </Typography>
   );
   const currentExperience = experience.find(
-    (item) => item.id === experienceTabValue
+    (item) => item.id === experienceTabValue,
   );
   return (
     <Box
