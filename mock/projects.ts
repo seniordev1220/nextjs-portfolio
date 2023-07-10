@@ -63,6 +63,234 @@ export const blogs = [
 export const projects = [
   {
     id: 1,
+    title: "Fashion Retail E-Commerce Application ",
+    date: "",
+    description:
+      "I had the privilege of collaborating with a diverse multinational team in developing and managing this SPA application with over 40+ million monthly visits. My passion for coding and creating exceptional user experiences motivated me to give my utmost contribution. Throughout the project, I gained valuable expertise in optimizing scalability, flexibility, and maintainability through the implementation of mono repository and microservice architecture.",
+    image: "/images/E-commerce-spa.png",
+    slug: "my_portfolio_website_spa",
+    content: ` 
+    <h3>Overview: Embarking on an Exciting Opportunity<br>
+    </h3>
+    <p></p>
+    <p>It all began when the client approached my current company, seeking a skilled developer to create Proof of Concepts (POCs). Intrigued by the challenge, I was chosen by my company to spearhead this exciting opportunity. Collaborating closely with client-side Product Development Managers (PDMs) and Project Managers (PMs), I navigated through the intricate requirements and successfully completed the POCs, showcasing my strong problem-solving abilities and attention to detail.<br>
+    </p>
+    <p></p>
+    <h3>The Journey Begins:&nbsp;Recognizing Value and Retention</h3>
+    <p></p>
+    <p>As the POCs reached fruition, the client recognized the value I brought to the table. Impressed by my technical expertise and dedication, they sought to retain me for their client-facing e-commerce SPA. And so, my journey with the application began</p>
+    <p></p>
+    <h3>Expanding Expertise and Embracing Challenges:&nbsp;Growth through Experience<br>
+    </h3>
+    <p></p>
+    <p>Throughout this journey, I gained invaluable knowledge and exposure to a wide array of new skills and concepts. Working on the customer-facing e-commerce application allowed me to expand my expertise in various areas and explore new horizons. I learned valuable lessons in problem-solving, documentation, collaboration, technical debt management, and effective communication. This experience has not only enhanced my professional growth but also equipped me with the confidence and adaptability to take on new challenges in the future.</p>
+    
+    <h3><strong>Roles and responsibilities:</strong></h3>
+  
+    <ul>
+    <li>Successfully managed a significant number of Jira tickets, demonstrating strong organizational skills and attention to detail.</li>
+      <li>Facilitated the creation of comprehensive technical documentation for future reference.</li>
+      <li>Conducted in-depth root cause analysis for Jira tickets, showcasing exceptional problem-solving abilities.</li>
+      <li>Applied effective debugging techniques and implemented timely bug fixes.</li>
+      <li>Collaborated with cross-functional teams, leveraging collective knowledge to deliver optimal solutions.</li>
+      <li>Proactively took ownership of technical debt test-case tickets, significantly improving test coverage by 27% (from 68% to 95%).</li>
+      <li>Generated user-friendly documentation for the deployment process, enhancing team understanding.</li>
+      <li>Actively participated in meetings, providing valuable insights and ensuring alignment between stakeholders through effective communication.</li>
+    </ul>
+    <p></p>
+    <h3>Commitment to Confidentiality:&nbsp;Upholding Loyalty and Discretion</h3>
+    <p></p>
+    <p>Due to the confidentiality and non-disclosure agreements in place, I am committed to maintaining the utmost loyalty and discretion regarding the specific details of the project. Rest assured, my experience in collaborating with this esteemed client has enriched my skillset and deepened my understanding of the complexities involved in developing successful e-commerce applications. I look forward to applying the valuable insights and expertise gained from this collaboration to future endeavors while upholding the trust placed in me by all parties involved.</p>
+    <p></p>
+    <h3>Future Growth and Opportunities:&nbsp;Eagerly Embracing New Journeys</h3>
+    <p></p>
+    <p>As I continue to grow in my career, I eagerly look forward to embarking on new journeys, taking on fresh challenges, and embracing the opportunities that lie ahead. My experiences thus far have prepared me to tackle new projects with confidence, and I am excited to contribute to the success of future endeavors.</p>
+    <p></p>
+    <p><br>
+    </p>
+    <p></p>
+    <p> </p>
+`,
+    techStack: [
+      "React.JS",
+      "Typescript",
+      "Redux",
+      "Saga",
+      "Monorepo",
+      "Lerna",
+      "SSR",
+      "Google Analytics",
+      "Datadog",
+      "Jenkins",
+      "AWS",
+      "React Testing Library",
+      "Jest",
+      "Babel",
+      "Firebase",
+      "Webpack",
+      "Google Map",
+      "Jira",
+      "Confluence",
+    ],
+    showinportfolio: true,
+  },
+  {
+    id: 2,
+    title:
+      "Innovating Error Handling, Endpoint Visualization, and E-commerce for a Retail Giant (POCs)",
+    date: "",
+    description:
+      "Developed two proof-of-concept (POC) projects for a leading Japanese fashion retail giant. The first POC involved creating an error handling documentation tool for their application with numerous microservices. This tool replaced the previous method of using Google Sheets, enabling easier identification and tracking of customer-reported issues. The second POC focused on building an endpoint diagramming tool to visually represent API calls between various components such as SPA, BFF, and microservices.",
+    image: "/images/poc.png",
+    slug: "POCs_for_Fashion_Retail_Gaint",
+    content: `<h3>Introduction</h3>
+    <h3>Overview</h3>
+<p>Collaborating with a renowned Japanese fashion retail giant, I held a pivotal role in two crucial proof-of-concept (POC) projects. The first project aimed to revolutionize error handling processes within their application, which consisted of over 50 different microservices. Previously, the client relied on Google Sheets for documenting error scenarios. To streamline this process and enhance efficiency, I single-handedly developed a comprehensive and user-friendly error handling documentation tool. The second project involved creating an endpoint diagramming tool to visually represent API calls within the application, providing valuable insights into its complex interactions.</p>
+
+<h3>My roles and responsibilities encompassed:</h3>
+
+<p><strong>Error Handling Documentation Tool:</strong></p>
+
+<ul>
+  <li>Conceptualizing, designing, and implementing a streamlined error handling documentation tool to replace the previous reliance on Google Sheets.</li>
+  <li>Integrating the tool seamlessly with the existing infrastructure, significantly reducing the time and effort required to identify and track customer-reported issues.</li>
+  <li>Collaborating closely with customer service teams, operations teams, and product managers to ensure seamless collaboration and efficient problem-solving processes.</li>
+  <li>Empowering root cause analysis by implementing a systematic approach to identify and address customer-reported issues.</li>
+</ul>
+
+<p><strong>Endpoint Diagramming Tool:</strong></p>
+
+<ul>
+  <li>Creating a proof-of-concept endpoint diagramming tool that visually represented API calls between the Single Page Application (SPA), Backend for Frontend (BFF), and other microservices.</li>
+  <li>Enhancing troubleshooting capabilities by providing developers and operations teams with a comprehensive visualization of the application&apos;s API communication.</li>
+  <li>Ensuring scalability and flexibility by designing the tool to adapt to evolving microservice architectures and facilitate future development and maintenance.</li>
+</ul>
+
+      `,
+    techStack: [
+      "React.JS",
+      "Typescript",
+      "Node.JS",
+      "Express.JS",
+      "Webpack",
+      "Mermaid.JS",
+      "Localstack",
+      "Material UI",
+      "SCSS",
+      "AWS S3",
+      "Docker",
+      "Git",
+    ],
+    showinportfolio: true,
+  },
+  {
+    id: 3,
+    title: "Building a React Component Library for a Japanese client",
+    date: "",
+    description:
+      "Developed a monorepo React component library using npm and Storybook. This initiative aimed to improve UI development by creating a centralized and reusable library of components. In this article, I will provide a brief overview of the project, including the utilization of npm for package management and Storybook for component documentation and testing.",
+    image: "/images/ui_lib.png",
+    slug: "ui_component_library",
+    content: ` 
+    <h3>Overview</h3>
+<p>I played a pivotal role in transforming this vision into reality. Working closely with a talented team of three junior developers, our collective focus was on delivering a collection of reusable components that would guarantee consistency throughout the hotel management application.<br>
+</p>
+
+<h3>My Roles and Responsibilities:&nbsp;</h3>
+
+<ol>
+  <li>
+<p><strong>Project Planning and Execution:</strong>
+I actively participated in the project&apos;s planning and execution phases. Working closely with the team, we defined clear project goals, established milestones, and allocated tasks effectively to ensure smooth progress.</p>
+  </li>
+  <li>
+<p><strong>Component Architecture and Development:
+</strong>Leveraging my expertise in UI development, I played a pivotal role in the design and development of the React component library. I focused on creating reusable components that met the specific requirements of the hotel management application while upholding best practices and ensuring a cohesive user interface.</p>
+  </li>
+  <li>
+<p><strong>Monorepo Implementation:
+</strong>I actively contributed to the implementation of the monorepo architecture, enabling efficient code sharing and maintenance. By organizing multiple packages within a single repository, we fostered seamless collaboration among team members and set the foundation for future scalability.</p>
+  </li>
+  <li>
+<p><strong>Integration of Storybook:</strong>
+Recognizing the importance of effective documentation and testing, I spearheaded the integration of Storybook into our development workflow. This powerful tool served as a platform for documenting and visually testing the components in isolation, facilitating collaboration with stakeholders and ensuring their reliability.</p>
+  </li>
+</ol>
+      `,
+    techStack: [
+      "React.JS",
+      "Typescript",
+      "Storybook",
+      "Sass",
+      "Webpack",
+      "Rollup",
+    ],
+    showinportfolio: true,
+  },
+  {
+    id: 4,
+    title: "Email Template Builder Application",
+    date: "",
+    description:
+      "As a junior developer and later the Project In-Charge (PIC), I played a pivotal role in developing an internal email template builder application for my company. This project aimed to enhance internal communication within the organization by providing a user-friendly interface for creating and managing email templates.",
+    image: "/images/email_template_builder.png",
+    slug: "email_template_builder",
+    content: ` <h3>Overview</h3>
+
+    <p> </p>
+    
+    <p>As the Project In-Charge (PIC) for an internal email template builder application, I played a pivotal role in enhancing internal communication within the organization. This project focused on developing a user-friendly interface for creating and managing email templates. In this article, I will highlight my key responsibilities and contributions to the project.</p>
+    
+    <p> </p>
+    
+    <h3>Roles and Responsibilities</h3>
+    
+    <p> </p>
+    
+    <ol>
+      <li> 
+    <p><strong>Project Leadership:</strong>
+        I led the project, overseeing the entire development process from start to finish. This involved defining project goals, coordinating with the development team, and ensuring timely and successful delivery of the application.</p>
+     </li>
+      <li> 
+    <p><strong>Requirement Analysis:</strong>
+        I conducted thorough requirement analysis, working closely with stakeholders to understand their needs and expectations. This helped shape the scope and features of the email template builder application.</p>
+     </li>
+      <li> 
+    <p><strong>User-Friendly Interface:</strong>
+        I worked closely with the design team to create an intuitive and visually appealing user interface for the application. This interface allowed users to easily create and manage email templates, ensuring a seamless user experience.</p>
+     </li>
+      <li> 
+    <p><strong>Email Template Management:</strong>
+        I designed and implemented functionalities for effective email template management. This included features to organize templates, making it easier for users to categorize and retrieve them as needed.</p>
+     </li>
+      <li> 
+    <p><strong>Draft Creation and Editing:
+    </strong>    I oversaw the development of features that enabled users to create drafts with actual data. This allowed users to preview and fine-tune the content before sending internal emails, ensuring accuracy and personalized communication.</p>
+     </li>
+      <li> 
+    <p><strong>Scheduling and Sending Emails:
+    </strong>    I played a key role in implementing features for scheduling and sending emails within the application. This allowed users to set specific dates and times for sending internal emails, ensuring timely delivery and efficient communication.</p>
+     </li>
+    </ol>
+    
+    <p> </p>
+    
+
+      `,
+    techStack: [
+      "React.JS",
+      "Typescript",
+      "Webpack",
+      "Redux",
+      "Saga",
+      "Sass",
+      "Sendgrid",
+    ],
+    showinportfolio: true,
+  },
+  {
+    id: 5,
     title: "Portfolio Frontend Application",
     date: "10 Dec, 2021 - 19 July, 2022",
     description:
@@ -98,11 +326,18 @@ export const projects = [
 
         <p>Thank you for visiting My Exciting Portfolio SPA. I hope you enjoy exploring my work, and if you have any questions or comments, please feel free to use the contact form to get in touch with me!</p>
       `,
-    techStack: ["Next.JS", "Redux", "Saga", "Material UI", "SCSS"],
+    techStack: [
+      "Next.JS",
+      "Typescript",
+      "Redux",
+      "Saga",
+      "Material UI",
+      "SCSS",
+    ],
     showinportfolio: true,
   },
   {
-    id: 2,
+    id: 6,
     title: "Portfolio Backend Application",
     date: "10 Dec, 2021 - 19 July, 2022",
     description:
@@ -123,7 +358,7 @@ export const projects = [
         <h4>Deployment on Heroku and AWS</h4>
         <p>I initially deployed my backend on Heroku's free tier, which allowed me to easily deploy, manage, and scale my application without worrying about server management or configuration. However, when the free tier was no longer available, I moved my application to AWS's free tier, which provides similar benefits and features for free.</p>
       `,
-    techStack: ["Node.JS", "Express.JS", "Docker", "PostgreSQL"],
+    techStack: ["Node.JS", "Express.JS", "Typescript", "Docker", "PostgreSQL"],
     showinportfolio: true,
   },
 ];

@@ -2,13 +2,9 @@ export const homeMessages = {
   SOFTWARE_ENGINEER: "SOFTWARE ENGINEER",
   FULLSTACK_DEVELOPER: "FULLSTACK DEVELOPER",
   intro:
-    "Specializing in crafting remarkable digital experiences, I excel in building scalable applications, pioneering POCs, and customized tools. Let's collaborate to bring your unique vision to life!",
-  aboutPara1: `Hi there! My name is Anand Krishnan M J and I am a full stack JavaScript developer with a passion for building high-quality 
-    web applications. With a strong foundation in HTML, CSS, and JavaScript, I have developed responsive and interactive web applications 
-    using modern libraries and frameworks such as React.JS, Next.JS, Express.JS and Node.js.`,
-  aboutPara2: `In my previous roles, I have had the opportunity to work on a variety of projects ranging from small business websites to 
-    large enterprise applications, consistently delivering reliable and well-designed solutions. 
-    I am highly skilled in problem-solving and have a keen eye for detail, ensuring that my projects meet the highest standards.`,
+    "With a knack for transforming ideas into captivating digital experiences, I harness the power of code to craft extraordinary web applications. Let's collaborate to bring your vision to life and make waves in the digital landscape.",
+  aboutPara1: `Greetings! I'm Anand Krishnan M J, a coding virtuoso and master of web wizardry.`,
+  aboutPara2: `With a passion for pushing boundaries and crafting extraordinary digital experiences, I'm on a mission to create awe-inspiring web applications that will make your heart skip a beat. Join me in shaping the future of the digital realm, where innovation knows no bounds.`,
   Passionate_Mentor: "Passionate Mentor",
   fullStackWebDeveloper: "Full Stack Web Developer",
   introDescription:
