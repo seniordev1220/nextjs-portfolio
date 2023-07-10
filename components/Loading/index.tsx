@@ -8,7 +8,7 @@ import { useDarkMode } from "../../hooks/useDarkMode";
 import classes from "./styles.module.scss";
 
 export const Loading = ({ sxProp }: { sxProp?: any }) => {
-  const { isDarkMode, darkModeIsloading } = useDarkMode();
+  const { isDarkMode } = useDarkMode();
   return (
     <>
       <Box
@@ -43,21 +43,21 @@ export const Loading = ({ sxProp }: { sxProp?: any }) => {
           ></div>
         </Box>
       </Box>
-        <Box
-          sx={{
-            position: "fixed",
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            height: "100vh",
-            width: "100%",
-            backgroundColor: isDarkMode
-              ? "rgba(25, 25, 25, 0.8)"
-              : "rgba(10, 10, 10, 0.5)",
-            zIndex: 1000,
-          }}
-        ></Box>
+      <Box
+        sx={{
+          position: "fixed",
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: "100vh",
+          width: "100%",
+          backgroundColor: isDarkMode
+            ? "rgba(25, 25, 25, 0.8)"
+            : "rgba(10, 10, 10, 0.5)",
+          zIndex: 1000,
+        }}
+      ></Box>
     </>
   );
 };
