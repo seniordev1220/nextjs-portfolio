@@ -14,7 +14,6 @@ import { Background } from "../components/background";
 import { sectionMapping } from "../components/main/sectionMapping";
 import { RootState } from "../store/types";
 import { getProjects, projectStateType } from "../store/projects/reducer";
-import { Loading } from "../components/Loading";
 import withScrollToPosition from "../hoc/scrollManager";
 
 import classes from "./index.module.scss";
@@ -68,9 +67,6 @@ const Main = () => {
                 <section ref={homeRef} className={classes["section__home"]}>
                   <Home />
                 </section>
-                <section className={classes["section__quotes"]}>
-                  <Quotes />
-                </section>
                 <section
                   ref={portfolioRef}
                   className={classes["section__projects"]}
@@ -89,6 +85,9 @@ const Main = () => {
                 <section ref={aboutRef} className={classes["section__about"]}>
                   <About />
                 </section>
+                <section className={classes["section__quotes"]}>
+                  <Quotes />
+                </section>
                 <section
                   ref={contactRef}
                   className={classes["section__contact"]}
@@ -98,8 +97,7 @@ const Main = () => {
               </>
             </Layout>
           </TabContext.Provider>
-        ) : (
-          <Loading />
+        ) : (<></>
         )}
       </div>
     </ParallaxProvider>
