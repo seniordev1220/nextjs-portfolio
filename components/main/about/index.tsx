@@ -476,7 +476,7 @@ export const About = () => {
                       expandIcon={
                         <ExpandMoreIcon
                           sx={{
-                            color: isDarkMode ? "#a1a1a1" : "#353839aa",
+                            color: isDarkMode ? "#a1a1a1" : "",
                             display: "flex",
                             flexDirection: "column",
                           }}
@@ -497,7 +497,7 @@ export const About = () => {
                           sx={{
                             fontWeight: "600",
                             fontSize: "1.2rem",
-                            color: isDarkMode ? "#a1a1a1" : "#353839aa",
+                            color: isDarkMode ? "#a1a1a1" : "",
                           }}
                         >
                           {`${item.designation}`}
@@ -529,14 +529,14 @@ export const About = () => {
                               <CircleIcon
                                 sx={{
                                   width: "0.8rem",
-                                  color: isDarkMode ? "#a1a1a1" : "#353839aa",
+                                  color: isDarkMode ? "#a1a1a1" : "",
                                   marginTop: "0.5rem",
                                 }}
                               />
                             </ListItemIcon>
                             <ListItemText
                               sx={{
-                                color: isDarkMode ? "#a1a1a1" : "#353839aa",
+                                color: isDarkMode ? "#a1a1a1" : "",
                                 marginLeft: "-1.5rem",
                               }}
                               primary={item}
