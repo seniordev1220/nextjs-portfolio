@@ -1,8 +1,4 @@
 
-.box{
-	transform: translate(-50%, -50%);
-}
-
 .box span{
 	display: inline-block;
 	width: 20px;
@@ -10,7 +6,6 @@
 	border-bottom: 2px solid rgb(126, 126, 126);
 	border-right: 2px solid rgb(126, 126, 126);
 	transform: rotate(-45deg);
-	margin: -10px;
 	animation: animate 2s infinite;
 }
 
