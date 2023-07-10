@@ -60,7 +60,6 @@ const Project = ({
               loading="eager"
               priority
             />
-            <TechUsed techStack={techStack} />
           </Grid>
           <Grid xs={12} md={7} item sx={{ padding: "1rem", lineHeight: "1.5" }}>
             <Typography
@@ -72,15 +71,11 @@ const Project = ({
             </Typography>
             <div ref={descriptionRef}></div>
           </Grid>
+          <Grid item xs={12} md={10}>
+            <TechUsed techStack={techStack} />
+          </Grid>
         </Grid>
         <Box sx={{ marginTop: "2rem" }}>
-          <Typography
-            sx={{ marginBottom: "1rem" }}
-            fontWeight={600}
-            fontSize="large"
-          >
-            Let me show you something more exciting!
-          </Typography>
           <div ref={contentRef}></div>
         </Box>
       </Box>
