@@ -70,7 +70,11 @@ export const Skills = () => {
       </Box>
 
       <Box className={classes.skills__content__wrapper}
-        sx={{ boxShadow: "1px 1px 0.5rem #44444462", borderRadius: '1rem', minHeight: "65vh" }}>
+        sx={
+          {
+            borderRadius: '1rem',
+            minHeight: "65vh",
+          }}>
         <Tabs
           className={classes.skill__tab}
           TabIndicatorProps={{
@@ -103,7 +107,12 @@ export const Skills = () => {
             justifyContent: "space-evenly", flexWrap: 'wrap', flexDirection: 'row'
           }}>
           {skills[value].items.map(item => <Box key={item.skillLabel}
-            sx={{ width: item.width, maxWidth: item.maxWidth, margin: "auto 1rem auto 1rem", padding: "1rem 0rem" }}>
+            sx={{
+              width: item.width,
+              maxWidth: item.maxWidth,
+              margin: "auto 0.5rem",
+              padding: "0.5rem 0rem",
+            }}>
             <Image
               src={item.src} alt={item.skillLabel}
               layout="responsive"
