@@ -1,4 +1,8 @@
   .card {
+    &__container{
+    }:hover{
+      cursor: grab;
+    }
     &__image--desk {
       border-radius: 12px;
       width: 350px;
@@ -8,6 +12,18 @@
       display: flex;
       flex-direction: column !important;
       justify-content: flex-start;
+    }
+    &__image{
+      border-radius: 1rem;
+    }
+  }
+
+  .card {
+    &__tech {
+      @media only screen and (max-width: 780px) {
+        display: none;
+      }
+
     }
   }
 
@@ -29,6 +45,10 @@
   }
 
   @media only screen and (max-width: 780px) {
+    .scrollRight {
+      display: none;
+    }
+
     .description {
       display: block;
       max-height: 400px;
@@ -50,7 +70,7 @@
     }
 
     .card {
-      &__image--desk {
+      &__tech {
         display: none;
       }
     }

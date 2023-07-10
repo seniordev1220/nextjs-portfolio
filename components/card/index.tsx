@@ -3,13 +3,14 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 
 import { TechUsed } from "../techUsed";
+import { useDarkMode } from "../../hooks/useDarkMode";
+import { ScrollRight } from "../scrollRight";
 
 import { CardItemProps } from "./card.type";
 import classes from "./cardItem.module.scss";
 
 export const Card = ({
   title,
-  date,
   description,
   techStack,
   image,
@@ -23,12 +24,15 @@ export const Card = ({
       pathname: `${endpoint}/${slug}`,
     });
   };
+  const { isDarkMode } = useDarkMode();
   return (
     <Box
+      className={classes.card__container}
       sx={{
         display: "flex",
         flexDirection: "column",
         boxShadow: isListVariant ? "0 0 3px grey" : "none",
+        userSelect: "none",
       }}
     >
       {isListVariant && (
@@ -57,22 +61,33 @@ export const Card = ({
             margin: "1rem",
           }}
         >
-          <Image
-            layout="responsive"
-            priority
-            width={400}
-            height={300}
-            src={image}
-            alt={title}
-          />
-          <TechUsed techStack={techStack} />
+          <Box>
+            <Image
+              className={classes.card__image}
+              layout="responsive"
+              priority
+              width={400}
+              height={300}
+              src={image}
+              alt={title}
+            />
+          </Box>
+          <Box className={classes.card__tech}>
+            <TechUsed techStack={techStack} />
+          </Box>
         </Grid>
         <Grid
           item
           xs={12}
           md={6}
           justifyContent="flex-start"
-          sx={{ textAlign: "left", margin: "1rem" }}
+          sx={{
+            textAlign: "left",
+            margin: "1rem",
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column",
+          }}
         >
           <Box
             sx={{
@@ -93,23 +108,6 @@ export const Card = ({
                 {title}
               </Typography>
             )}
-            <Typography sx={{ color: "#2753d7", fontWeight: "600" }}>
-              {date}
-            </Typography>
-          </Box>
-          <Box className={classes["card__image--mob"]}>
-            <Box sx={{ width: "60%" }}>
-              <Image
-                layout="responsive"
-                priority
-                width={400}
-                height={300}
-                src={image}
-                alt={title}
-              />
-            </Box>
-
-            <TechUsed variant="minimal" techStack={techStack} />
           </Box>
           <Typography
             className={classes.description}
@@ -118,11 +116,30 @@ export const Card = ({
             {description}
           </Typography>
           <Button
-            sx={{ margin: "1rem 0rem 1rem 0rem" }}
+            variant="outlined"
             onClick={handleRedirect}
+            sx={{
+              width: "fit-content",
+              marginTop: "1rem",
+              border: `solid 1px ${isDarkMode ? "#4e4e4e" : "#00000059"}`,
+              color: isDarkMode ? "#a5a5a5" : "#00000098",
+              ":hover": {
+                borderColor: "#2753d7",
+              },
+            }}
           >
-            Read more
+            Read More
           </Button>
+          <Box
+            className={classes.scrollRight}
+            sx={{
+              display: "flex",
+              justifyContent: "flex-end",
+              marginTop: "5rem",
+            }}
+          >
+            <ScrollRight />
+          </Box>
         </Grid>
       </Grid>
     </Box>
