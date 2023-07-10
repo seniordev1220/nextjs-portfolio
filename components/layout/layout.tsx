@@ -22,6 +22,10 @@ export const DarKModeContext = React.createContext({
 function Layout({ children, variant, title }: LayoutPropType) {
   const [isDarkMode, setIsDarkMode] = useState("");
   useEffect(() => {
+    if (!window?.sessionStorage?.getItem("isDarkMode")) {
+      window?.sessionStorage?.setItem("isDarkMode", "false");
+      setIsDarkMode("false");
+    }
     const isDark: string = window?.sessionStorage?.getItem("isDarkMode") as any;
     setIsDarkMode(isDark);
     isDark === "true" && document.body.classList.add("dark-mode");
