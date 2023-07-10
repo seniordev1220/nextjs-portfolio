@@ -66,7 +66,7 @@ export const projects = [
     title: "Fashion Retail E-Commerce Application ",
     date: "",
     description:
-      "I had the privilege of collaborating with a diverse multinational team in developing and managing this SPA application with over 40+ million monthly visits. My passion for coding and creating exceptional user experiences motivated me to give my utmost contribution. Throughout the project, I gained valuable expertise in optimizing scalability, flexibility, and maintainability through the implementation of mono repository and microservice architecture.",
+      "I had the privilege of collaborating with a diverse multinational team in developing and managing this SPA application with over 40+ million monthly visits. Throughout the project, I gained valuable expertise in optimizing scalability, flexibility, and maintainability through the implementation of mono repository and microservice architecture.",
     image: "/images/E-commerce-spa.png",
     slug: "my_portfolio_website_spa",
     content: ` 
