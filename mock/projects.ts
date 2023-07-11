@@ -297,7 +297,7 @@ Recognizing the importance of effective documentation and testing, I spearheaded
       " From design to development, deployment to domain acquisition, every aspect of this website was meticulously crafted by me. This immersive project served as a remarkable learning opportunity, allowing me to gain valuable insights and sharpen my skills. Join me in exploring this passion-driven website, where innovation meets personal growth.",
     image: "/images/portfolio_spa.png",
     slug: "my_portfolio_website_spa",
-    content: ` <p>My Exciting Portfolio website is a Single Page Application (SPA) that's designed to showcase my work and make it easy for visitors to navigate and explore my content. Here are some of the features that you can expect to find on my site:</p>
+    content: ` <p>My Portfolio website is a Single Page Application (SPA) that's designed to showcase my work and make it easy for visitors to navigate and explore my content. Here are some of the features that you can expect to find on my site:</p>
 
         <h4>Admin Routes</h4>
         <p>I've included a secure login system that allows me to manage my site's content, including my blog posts and project listings. This means that I can easily add, edit, or delete content as needed, all while ensuring that my visitors only see the most up-to-date and accurate information.</p>
@@ -324,7 +324,7 @@ Recognizing the importance of effective documentation and testing, I spearheaded
         <h4>My Domain Name</h4>
         <p>I've also purchased a custom domain name for my site: akmj.social. I registered this domain with GoDaddy, which allowed me to easily manage my domain registration, DNS settings, and other important details. This makes it easy for visitors to remember my site and find me online!</p>
 
-        <p>Thank you for visiting My Exciting Portfolio SPA. I hope you enjoy exploring my work, and if you have any questions or comments, please feel free to use the contact form to get in touch with me!</p>
+        <p>Thank you for visiting My Portfolio SPA. I hope you enjoy exploring my work, and if you have any questions or comments, please feel free to use the contact form to get in touch with me!</p>
       `,
     techStack: [
       "Next.JS",
@@ -344,7 +344,7 @@ Recognizing the importance of effective documentation and testing, I spearheaded
       "My portfolio website's backend application was built using Node.js and Express.js for server-side functionality, and PostgreSQL as the database management system to store and retrieve data. I also used Docker for containerization, which helped to simplify the deployment process. The application is deployed on Amazon Web Services (AWS), which ensures reliability, scalability, and high availability. Overall, the backend application provides a robust and scalable architecture for handling the data and functionality of my portfolio website.",
     image: "/images/portfolio_BE.png",
     slug: "my_portfolio_website_backend",
-    content: ` <p>This Express.js application serves as the backend for my Exciting Portfolio SPA, providing the necessary server-side functionality and database access to make my site run smoothly. Here are some of the key features that you can expect to find in my backend:</p>
+    content: ` <p>This Express.js application serves as the backend for my Portfolio SPA, providing the necessary server-side functionality and database access to make my site run smoothly. Here are some of the key features that you can expect to find in my backend:</p>
 
         <h4>Node.js and Express.js</h4>
         <p>My backend is built using Node.js, a powerful and widely-used JavaScript runtime environment, and Express.js, a popular Node.js framework that allows me to easily manage routes, handle incoming requests, and send responses back to the client.</p>
