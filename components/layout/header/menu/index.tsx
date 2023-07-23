@@ -124,7 +124,7 @@ export const RotaryMenu = () => {
         }
         onClick={(e) => {
           e.stopPropagation();
-          setIsComponentVisible(true);
+          setIsComponentVisible(val=>!val);
         }}
       >
         <div className={classes.rotoryMenu__container}>
