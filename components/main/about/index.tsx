@@ -46,8 +46,8 @@ const experience = [
       "Improved test coverage from 65% to an impressive 95%, contributing to technical debt tickets as part of the team.",
       "Key role in developing impactful tools, streamlining issue identification and workflow efficiency.",
       "Crafted tailored project proposals for Japanese clients, understanding unique business needs as part of the team.",
-      "Mentored in web development, actively contributing to the growth of team members in India and Japan."
-    ]
+      "Mentored in web development, actively contributing to the growth of team members in India and Japan.",
+    ],
   },
   {
     id: 2,
@@ -90,17 +90,16 @@ const education = [
     institute: "Graduation",
     startDate: "2016",
     endDate: "2020",
-    designation:
-      "Engineering (BTech)",
+    designation: "Engineering (BTech)",
     organization: "Government Engineering College, Bartonhill, Trivandrum",
-    cgpa: "8.55"
+    cgpa: "8.55",
   },
   {
     institute: "Higher Secondary",
     startDate: "2013",
     endDate: "2015",
     designation: "Computer Science & Mathematics",
-    organization: "Central Board of Secondary Education"
+    organization: "Central Board of Secondary Education",
   },
 ];
 
@@ -360,8 +359,9 @@ export const About = () => {
                       left: 0,
                     },
                     margin: "1rem",
-                    borderLeft: `solid 1px ${isDarkMode ? "#696969" : "#353839aa"
-                      }`,
+                    borderLeft: `solid 1px ${
+                      isDarkMode ? "#696969" : "#353839aa"
+                    }`,
                   }}
                 >
                   {experience.map((item, index) => (
@@ -567,8 +567,9 @@ export const About = () => {
                       left: 0,
                     },
                     margin: "1rem",
-                    borderLeft: `solid 1px ${isDarkMode ? "#696969" : "#353839aa"
-                      }`,
+                    borderLeft: `solid 1px ${
+                      isDarkMode ? "#696969" : "#353839aa"
+                    }`,
                   }}
                 >
                   {education.map((item, index) => (
@@ -587,7 +588,14 @@ export const About = () => {
                   ))}
                 </Tabs>
                 {
-                  <Box sx={{ maxWidth: "70%", marginLeft: "2rem", display: "flex", flexDirection: "column" }}>
+                  <Box
+                    sx={{
+                      maxWidth: "70%",
+                      marginLeft: "2rem",
+                      display: "flex",
+                      flexDirection: "column",
+                    }}
+                  >
                     <Box>
                       <Typography
                         component="h2"
@@ -596,22 +604,20 @@ export const About = () => {
                       >
                         {education[educationTabValue].designation}
                       </Typography>
-
                     </Box>
 
-                    <Typography sx={{fontWeight:600}}>
+                    <Typography sx={{ fontWeight: 600 }}>
                       {education[educationTabValue].organization}
                     </Typography>
-                    <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                      <Typography
-                        sx={{ marginTop: "0.2rem" }}
-                      >
+                    <Box
+                      sx={{ display: "flex", justifyContent: "space-between" }}
+                    >
+                      <Typography sx={{ marginTop: "0.2rem" }}>
                         {`${education[educationTabValue].startDate} - ${education[educationTabValue].endDate}`}
                       </Typography>
-                      <Typography
-                        sx={{ marginTop: "0.2rem" }}
-                      >
-                        {education[educationTabValue].cgpa && `CGPA score - ${education[educationTabValue].cgpa}`}
+                      <Typography sx={{ marginTop: "0.2rem" }}>
+                        {education[educationTabValue].cgpa &&
+                          `CGPA score - ${education[educationTabValue].cgpa}`}
                       </Typography>
                     </Box>
                   </Box>
@@ -634,7 +640,14 @@ export const About = () => {
               Education
             </Typography>
             {education.map((item, index) => (
-              <Box key={`eduMobTab-${index}`} sx={{ boxShadow: "0rem 0rem 0.1rem grey", padding: "0.5rem", margin: "1rem 0rem" }}>
+              <Box
+                key={`eduMobTab-${index}`}
+                sx={{
+                  boxShadow: "0rem 0rem 0.1rem grey",
+                  padding: "0.5rem",
+                  margin: "1rem 0rem",
+                }}
+              >
                 <Typography
                   sx={{
                     marginTop: "1rem",
@@ -646,21 +659,27 @@ export const About = () => {
                   {item.institute}
                 </Typography>
                 <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                  <Typography sx={{
-                    fontWeight: "600",
-                    fontSize: "1.1rem",
-                  }}>{item.designation}</Typography>
-                  <Typography sx={{ marginTop: "0.2rem", marginBottom: "1rem" }}>
+                  <Typography
+                    sx={{
+                      fontWeight: "600",
+                      fontSize: "1.1rem",
+                    }}
+                  >
+                    {item.designation}
+                  </Typography>
+                  <Typography
+                    sx={{ marginTop: "0.2rem", marginBottom: "1rem" }}
+                  >
                     {`${item.startDate} - ${item.endDate}`}
                   </Typography>
                 </Box>
 
                 <Typography>{item.organization}</Typography>
-                {item.cgpa && <Typography sx={{ minWidth: "6rem" }}>CGPA: {item.cgpa}</Typography>}
-
-
-
-
+                {item.cgpa && (
+                  <Typography sx={{ minWidth: "6rem" }}>
+                    CGPA: {item.cgpa}
+                  </Typography>
+                )}
               </Box>
             ))}
           </Box>
