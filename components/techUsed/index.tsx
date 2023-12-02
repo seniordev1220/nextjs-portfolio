@@ -36,7 +36,7 @@ export const TechUsed = ({
                 padding: "0rem 0.3rem",
                 fontWeight: 500,
                 fontSize: "0.8rem",
-                color: isDarkMode ? "white" : "#4d4d4d",
+                color: isDarkMode ? "white" : "#000000",
                 boxShadow: isDarkMode
                   ? "0rem 0rem 0.2rem grey"
                   : "0rem 0rem 0.2rem #8080804f",

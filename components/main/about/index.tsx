@@ -36,46 +36,21 @@ const experience = [
   {
     id: 1,
     institute: "QBurst",
-    startDate: "Feb 2022",
+    startDate: "2020",
     endDate: "Present",
     designation: "Software Engineer",
     worksDone: [
-      "Spearheaded the development of a high-traffic Ecommerce SPA application for a renowned Japanese fashion retail giant with global presence, prioritizing seamless user experiences and customer satisfaction across diverse markets.",
-      "Successfully collaborated with a diverse, multinational team on various epics and bug fixes, leveraging collective expertise to deliver exceptional results.",
-      "Managed a significant number of Jira tickets with precision, showcasing exceptional organizational skills and attention to detail.",
-      "Took ownership of technical debt test-case tickets, significantly improving test coverage and elevating the coverage to an impressive 95% from 65%.",
-      "Actively participated in cross-functional meetings, providing valuable insights and ensuring alignment between stakeholders.",
-      "Generated user-friendly documentation, simplifying the deployment process and enabling team members to navigate with ease.",
-    ],
+      "Contributed to collaborative development, ensuring seamless user experiences for a high-traffic Ecommerce SPA.",
+      "Successfully collaborated with a multinational team, delivering exceptional results in critical projects.",
+      "Meticulously managed tasks, showcasing exceptional organizational skills and attention to detail.",
+      "Improved test coverage from 65% to an impressive 95%, contributing to technical debt tickets as part of the team.",
+      "Key role in developing impactful tools, streamlining issue identification and workflow efficiency.",
+      "Crafted tailored project proposals for Japanese clients, understanding unique business needs as part of the team.",
+      "Mentored in web development, actively contributing to the growth of team members in India and Japan."
+    ]
   },
   {
     id: 2,
-    institute: "QBurst",
-    startDate: "Mar 2021",
-    endDate: "Feb 2022",
-    designation: "Module Lead",
-    worksDone: [
-      "Developed two impactful proof-of-concept (POC) tools for a prestigious Japanese fashion retail E-commerce client. The first tool, the Endpoint Diagramming Tool, revolutionized issue identification by providing insightful visualizations of API calls between microservices, BFF, and SPA. This streamlined the workflow for customer service, operations, as well as PDMs and developers.",
-      "Additionally, the Error Handling Documentation Tool captured and documented error scenarios across multiple releases, empowering the team to swiftly resolve issues. As a result of these successful POCs, I seamlessly transitioned into the development team, where I continue to deliver captivating experiences for their customer-facing eCommerce application.",
-      "Contributed to a medium-scale project with a Japanese client, serving as the Project-In-Charge (PIC) for building a custom UI-Component Library for a hotel management tool. Led a team of three junior developers to create over two dozen reusable and responsive components, meeting the specific requirements of the client.",
-      "Collaborated with a cross-functional team to develop a high-performance Content Management System (CMS) for a prominent travel hotel booking company. This powerful CMS facilitated efficient management of an extensive hotel portfolio, ensuring a seamless booking experience for travelers.",
-      "Crafted multiple project estimations and proposals tailored specifically for potential Japanese clients, leveraging deep understanding of their unique business needs and preferences.",
-      "Ignited growth and expertise in web development through personalized mentorship programs for both freshers and experienced lateral entry employees. Delivered cutting-edge techniques and stacks, empowering individuals across India and Japan to elevate their skills and thrive in the ever-evolving landscape of web development. ",
-    ],
-  },
-  {
-    id: 3,
-    institute: "QBurst",
-    startDate: "Sep 2020",
-    endDate: "Mar 2021",
-    designation: "Junior Software Engineer",
-    worksDone: [
-      "Developed a custom React.JS UI-Component Library, creating reusable and responsive components used in multiple internal projects.",
-      "Started as a junior developer and advanced to become the Project-in-Charge (PIC) for an Email Newsletter Builder SPA. Led the development of a user-friendly drag-and-drop interface, enabling effortless creation and editing of HTML templates, along with advanced features for scheduling, sending emails, and managing users.",
-    ],
-  },
-  {
-    id: 4,
     institute: "IIT-BHU",
     startDate: "June 2019",
     endDate: "Aug 2019",
@@ -116,13 +91,16 @@ const education = [
     startDate: "2016",
     endDate: "2020",
     designation:
-      "Engineering in EC @ Government Engineering College, Bartonhill, Trivandrum",
+      "Engineering (BTech)",
+    organization: "Government Engineering College, Bartonhill, Trivandrum",
+    cgpa: "8.55"
   },
   {
     institute: "Higher Secondary",
     startDate: "2013",
     endDate: "2015",
-    designation: "Computer Science @ Central Board of Secondary Education",
+    designation: "Computer Science & Mathematics",
+    organization: "Central Board of Secondary Education"
   },
 ];
 
@@ -382,9 +360,8 @@ export const About = () => {
                       left: 0,
                     },
                     margin: "1rem",
-                    borderLeft: `solid 1px ${
-                      isDarkMode ? "#696969" : "#353839aa"
-                    }`,
+                    borderLeft: `solid 1px ${isDarkMode ? "#696969" : "#353839aa"
+                      }`,
                   }}
                 >
                   {experience.map((item, index) => (
@@ -590,9 +567,8 @@ export const About = () => {
                       left: 0,
                     },
                     margin: "1rem",
-                    borderLeft: `solid 1px ${
-                      isDarkMode ? "#696969" : "#353839aa"
-                    }`,
+                    borderLeft: `solid 1px ${isDarkMode ? "#696969" : "#353839aa"
+                      }`,
                   }}
                 >
                   {education.map((item, index) => (
@@ -611,19 +587,33 @@ export const About = () => {
                   ))}
                 </Tabs>
                 {
-                  <Box sx={{ maxWidth: "70%", marginLeft: "2rem" }}>
-                    <Typography
-                      component="h2"
-                      fontWeight="600"
-                      fontSize="1.5rem"
-                    >
-                      {education[educationTabValue].designation}
+                  <Box sx={{ maxWidth: "70%", marginLeft: "2rem", display: "flex", flexDirection: "column" }}>
+                    <Box>
+                      <Typography
+                        component="h2"
+                        fontWeight="600"
+                        fontSize="1.5rem"
+                      >
+                        {education[educationTabValue].designation}
+                      </Typography>
+
+                    </Box>
+
+                    <Typography sx={{fontWeight:600}}>
+                      {education[educationTabValue].organization}
                     </Typography>
-                    <Typography
-                      sx={{ marginTop: "0.2rem", marginBottom: "1rem" }}
-                    >
-                      {`${education[educationTabValue].startDate} - ${education[educationTabValue].endDate}`}
-                    </Typography>
+                    <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+                      <Typography
+                        sx={{ marginTop: "0.2rem" }}
+                      >
+                        {`${education[educationTabValue].startDate} - ${education[educationTabValue].endDate}`}
+                      </Typography>
+                      <Typography
+                        sx={{ marginTop: "0.2rem" }}
+                      >
+                        {education[educationTabValue].cgpa && `CGPA score - ${education[educationTabValue].cgpa}`}
+                      </Typography>
+                    </Box>
                   </Box>
                 }
               </Box>
@@ -644,21 +634,33 @@ export const About = () => {
               Education
             </Typography>
             {education.map((item, index) => (
-              <Box key={`eduMobTab-${index}`}>
+              <Box key={`eduMobTab-${index}`} sx={{ boxShadow: "0rem 0rem 0.1rem grey", padding: "0.5rem", margin: "1rem 0rem" }}>
                 <Typography
                   sx={{
                     marginTop: "1rem",
                     marginBottom: "1rem",
                     fontWeight: "600",
-                    fontSize: "1.2rem",
+                    fontSize: "1.4rem",
                   }}
                 >
                   {item.institute}
                 </Typography>
-                <Typography>{item.designation}</Typography>
-                <Typography sx={{ marginTop: "0.2rem", marginBottom: "1rem" }}>
-                  {`${item.startDate} - ${item.endDate}`}
-                </Typography>
+                <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+                  <Typography sx={{
+                    fontWeight: "600",
+                    fontSize: "1.1rem",
+                  }}>{item.designation}</Typography>
+                  <Typography sx={{ marginTop: "0.2rem", marginBottom: "1rem" }}>
+                    {`${item.startDate} - ${item.endDate}`}
+                  </Typography>
+                </Box>
+
+                <Typography>{item.organization}</Typography>
+                {item.cgpa && <Typography sx={{ minWidth: "6rem" }}>CGPA: {item.cgpa}</Typography>}
+
+
+
+
               </Box>
             ))}
           </Box>

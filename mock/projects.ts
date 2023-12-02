@@ -66,7 +66,7 @@ export const projects = [
     title: "Fashion Retail E-Commerce Application ",
     date: "",
     description:
-      "I had the privilege of collaborating with a diverse multinational team in developing and managing this SPA application with over 40+ million monthly visits. Throughout the project, I gained valuable expertise in optimizing scalability, flexibility, and maintainability through the implementation of mono repository and microservice architecture.",
+      "I collaborated with a diverse multinational team, developing and managing a high-traffic SPA with 40+ million monthly visits. Gained expertise in optimizing scalability, flexibility, and maintainability using mono repository and microservice architecture.",
     image: "/images/E-commerce-spa.png",
     slug: "e-commerce_spa",
     content: ` 
@@ -140,7 +140,7 @@ export const projects = [
       "Innovating Error Handling, Endpoint Visualization, and E-commerce for a Retail Giant (POCs)",
     date: "",
     description:
-      "Developed two proof-of-concept (POC) projects for a leading Japanese fashion retail giant. The first POC involved creating an error handling documentation tool for their application with numerous microservices. This tool replaced the previous method of using Google Sheets, enabling easier identification and tracking of customer-reported issues. The second POC focused on building an endpoint diagramming tool to visually represent API calls between various components such as SPA, BFF, and microservices.",
+      "Developed two impactful proof-of-concept (POC) projects for a top Japanese fashion retailer. The first project streamlined error handling documentation for numerous microservices, replacing Google Sheets for easier issue identification and tracking. The second project created an endpoint diagramming tool, enhancing visualization of API calls between SPA, BFF, and microservices components.",
     image: "/images/poc.png",
     slug: "POCs_for_Fashion_Retail_Gaint",
     content: `<h3>Introduction</h3>
@@ -188,7 +188,7 @@ export const projects = [
     title: "Building a React Component Library for a Japanese client",
     date: "",
     description:
-      "Developed a monorepo React component library using npm and Storybook. This initiative aimed to improve UI development by creating a centralized and reusable library of components. In this article, I will provide a brief overview of the project, including the utilization of npm for package management and Storybook for component documentation and testing.",
+      "Engineered a monorepo React component library using npm and Storybook to enhance UI development. This initiative centralized and standardized components for reusability. Explore this article for insights into the project, covering npm for package management and Storybook for comprehensive component documentation and testing.",
     image: "/images/ui_lib.png",
     slug: "ui_component_library",
     content: ` 
@@ -232,7 +232,7 @@ Recognizing the importance of effective documentation and testing, I spearheaded
     title: "Email Template Builder Application",
     date: "",
     description:
-      "As a junior developer and later the Project In-Charge (PIC), I played a pivotal role in developing an internal email template builder application for my company. This project aimed to enhance internal communication within the organization by providing a user-friendly interface for creating and managing email templates.",
+      "As the Project In-Charge (PIC), I played a pivotal role in developing an internal email template builder application for my company. This project aimed to enhance internal communication within the organization by providing a user-friendly interface for creating and managing email templates.",
     image: "/images/email_template_builder.png",
     slug: "email_template_builder",
     content: ` <h3>Overview</h3>
@@ -294,7 +294,7 @@ Recognizing the importance of effective documentation and testing, I spearheaded
     title: "Portfolio Frontend Application (Personal Project)",
     date: "10 Dec, 2021 - 19 July, 2022",
     description:
-      " From design to development, deployment to domain acquisition, every aspect of this website was meticulously crafted by me. This immersive project served as a remarkable learning opportunity, allowing me to gain valuable insights and sharpen my skills. Join me in exploring this passion-driven website, where innovation meets personal growth.",
+      "From meticulous design to seamless deployment and domain acquisition, every facet of this website was crafted with precision. This immersive project served as a valuable learning experience, offering insights and skill refinement. Join me in exploring this passion-driven website, where innovation converges with personal growth.",
     image: "/images/portfolio_spa.png",
     slug: "my_portfolio_website_spa",
     content: ` <p>My Portfolio website is a Single Page Application (SPA) that's designed to showcase my work and make it easy for visitors to navigate and explore my content. Here are some of the features that you can expect to find on my site:</p>
