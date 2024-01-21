@@ -6,6 +6,7 @@ import {
   Snackbar,
   TextField,
   Typography,
+  Link as MuiLink,
 } from "@mui/material";
 import Link from "next/link";
 import PersonIcon from "@mui/icons-material/Person";
@@ -14,6 +15,10 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import { useDispatch, useSelector } from "react-redux";
 import { Parallax } from "react-scroll-parallax";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 import { emailStateType, sendEmail } from "../../../store/email/reducer";
 import { RootState } from "../../../store/types";
@@ -160,9 +165,17 @@ export const Contact = () => {
           <Parallax
             easing={"easeInOut"}
             opacity={[0.3, 1]}
-            translateX={["-50%", "0%"]}
+            translateX={["-50%", "1%"]}
           >
-            <p>Feel Free To Contact Me</p>
+            <Typography
+              sx={{
+                fontSize: "large",
+                fontWeight: "300",
+                color: isDarkMode ? "#ffffffa6" : "#2d2d2d",
+              }}
+            >
+              Feel Free To Contact Me
+            </Typography>
           </Parallax>
         </Box>
         <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
@@ -186,9 +199,10 @@ export const Contact = () => {
             <Box sx={{ padding: "1rem" }}>
               <Typography
                 fontWeight={600}
-                color={isDarkMode ? "white" : "#696969"}
+                color={isDarkMode ? "white" : "black"}
                 component="p"
-                fontSize="x-large"
+                fontSize="xx-large"
+                marginBottom="1rem"
               >
                 Contact Me
               </Typography>
@@ -300,8 +314,8 @@ export const Contact = () => {
             <Box sx={{ padding: "1rem" }}>
               <Typography
                 fontWeight={600}
-                color={isDarkMode ? "white" : "#696969"}
-                fontSize="x-large"
+                color={isDarkMode ? "white" : "black"}
+                fontSize="xx-large"
               >
                 Contact Info
               </Typography>
@@ -390,6 +404,38 @@ export const Contact = () => {
                     </Link>
                   </Typography>
                 </Box>
+              </Box>
+              <Box
+                sx={{ display: "flex", marginTop: "1rem", justifyContent: "flex-start" }}
+              >
+                <MuiLink
+                  sx={{ margin: "0.8rem", color: "#2753d7" }}
+                  href="https://twitter.com/ANANDKRISHNAN6"
+                  target="_blank"
+                >
+                  <TwitterIcon sx={{ fontSize: "2rem" }} />
+                </MuiLink>
+                <MuiLink
+                  sx={{ margin: "0.8rem", color: "#2753d7" }}
+                  href="https://www.linkedin.com/in/anand-krishnan-mj-a6332b154/"
+                  target="_blank"
+                >
+                  <LinkedInIcon sx={{ fontSize: "2rem" }} />
+                </MuiLink>
+                <MuiLink
+                  sx={{ margin: "0.8rem", color: "#2753d7" }}
+                  href="https://www.facebook.com/anandkrishnan.anandkrishnan"
+                  target="_blank"
+                >
+                  <FacebookIcon sx={{ fontSize: "2rem" }} />
+                </MuiLink>
+                <MuiLink
+                  sx={{ margin: "0.8rem", color: "#2753d7" }}
+                  href="https://github.com/Anand-Krishnan-M-J"
+                  target="_blank"
+                >
+                  <GitHubIcon sx={{ fontSize: "2rem" }} />
+                </MuiLink>
               </Box>
             </Box>
           </Grid>

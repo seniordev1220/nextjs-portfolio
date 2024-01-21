@@ -7,4 +7,7 @@ export interface CardItemProps {
   slug: string;
   endpoint: string;
   isListVariant?: boolean;
+  visitWebsite?: string;
+  visitGithub?: string;
+  isPersonalProject?: boolean;
 }

@@ -66,10 +66,16 @@ export const CardList = ({ type, description, title, data }: CardListProps) => {
         >
           <Parallax
             easing="easeInOut"
-            opacity={[0.3, 1]}
-            translateX={["-50%", "0%"]}
+            opacity={[0.5, 1]}
+            translateX={["-50%", "1%"]}
           >
-            <p>{description}</p>
+            <Typography
+              sx={{
+                fontSize: "large",
+                fontWeight: "300",
+                color: isDarkMode ? "#ffffffa6" : "#2d2d2d",
+              }}
+            >{description}</Typography>
           </Parallax>
         </Box>
         <Box component="span" sx={{ margin: "auto" }}>

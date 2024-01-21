@@ -14,15 +14,23 @@ export const Card = ({
   description,
   techStack,
   image,
+  visitGithub,
+  visitWebsite,
   slug,
   endpoint,
   isListVariant,
+  isPersonalProject,
 }: CardItemProps) => {
   const router = useRouter();
   const handleRedirect = () => {
     router.push({
       pathname: `${endpoint}/${slug}`,
     });
+  };
+  const handleRedirectToWebSite = (redirectTo: string) => {
+    if (window) {
+      window.open(redirectTo, "_blank");
+    }
   };
   const { isDarkMode } = useDarkMode();
   return (
@@ -55,13 +63,13 @@ export const Card = ({
         <Grid
           item
           xs={12}
-          md={4}
+          md={3}
           className={classes["card__image--desk"]}
           sx={{
             margin: "1rem",
           }}
         >
-          <Box>
+          <Box className={classes.card__image}>
             <Image
               className={classes.card__image}
               layout="responsive"
@@ -79,7 +87,7 @@ export const Card = ({
         <Grid
           item
           xs={12}
-          md={6}
+          md={8}
           justifyContent="flex-start"
           sx={{
             textAlign: "left",
@@ -97,39 +105,97 @@ export const Card = ({
             }}
           >
             {!isListVariant && (
-              <Typography
-                component="h2"
-                sx={{
-                  fontWeight: "600",
-                  fontSize: "large",
-                  marginRight: "1rem",
-                }}
-              >
-                {title}
-              </Typography>
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <Typography
+                  component="h2"
+                  sx={{
+                    fontWeight: "600",
+                    fontSize: "large",
+                    marginRight: "1rem",
+                  }}
+                >
+                  {title}
+                </Typography>
+
+                <Typography
+                  component="p"
+                  sx={{
+                    fontSize: "large",
+                    marginRight: "1rem",
+                  }}
+                >
+                  {isPersonalProject
+                    ? " (Personal project)"
+                    : "(Organization contribution)"}
+                </Typography>
+              </Box>
             )}
           </Box>
           <Typography
             className={classes.description}
-            sx={{ marginTop: "1rem", textOverflow: "ellipsis" }}
+            sx={{
+              marginTop: "1rem",
+              textOverflow: "ellipsis",
+              color: isDarkMode ? "#a5a5a5" : "#434343",
+              lineHeight: 1.7,
+            }}
           >
             {description}
           </Typography>
-          <Button
-            variant="outlined"
-            onClick={handleRedirect}
-            sx={{
-              width: "fit-content",
-              marginTop: "1rem",
-              border: `solid 1px ${isDarkMode ? "#4e4e4e" : "#00000059"}`,
-              color: isDarkMode ? "#a5a5a5" : "#00000098",
-              ":hover": {
-                borderColor: "#2753d7",
-              },
-            }}
-          >
-            Read More
-          </Button>
+          <Box>
+            {visitWebsite && (
+              <Button
+                variant="outlined"
+                onClick={() => handleRedirectToWebSite(visitWebsite)}
+                sx={{
+                  width: "fit-content",
+                  margin: "1rem 1rem 0rem 0rem",
+                  fontWeight: "600",
+                  border: `solid 1px ${isDarkMode ? "#4e4e4e" : "#00000059"}`,
+                  color: isDarkMode ? "#a5a5a5" : "#434343",
+                  ":hover": {
+                    borderColor: "#2753d7",
+                  },
+                }}
+              >
+                See Live Demo
+              </Button>
+            )}
+            {visitGithub && (
+              <Button
+                variant="outlined"
+                onClick={() => handleRedirectToWebSite(visitGithub)}
+                sx={{
+                  width: "fit-content",
+                  margin: "1rem 1rem 0rem 0rem",
+                  fontWeight: "600",
+                  border: `solid 1px ${isDarkMode ? "#4e4e4e" : "#00000059"}`,
+                  color: isDarkMode ? "#a5a5a5" : "#434343",
+                  ":hover": {
+                    borderColor: "#2753d7",
+                  },
+                }}
+              >
+                Visit Github
+              </Button>
+            )}
+            <Button
+              variant="outlined"
+              onClick={handleRedirect}
+              sx={{
+                width: "fit-content",
+                marginTop: "1rem",
+                border: `solid 1px ${isDarkMode ? "#4e4e4e" : "#00000059"}`,
+                color: isDarkMode ? "#a5a5a5" : "#434343",
+                fontWeight: "600",
+                ":hover": {
+                  borderColor: "#2753d7",
+                },
+              }}
+            >
+              Read More
+            </Button>
+          </Box>
           <Box
             className={classes.scrollRight}
             sx={{

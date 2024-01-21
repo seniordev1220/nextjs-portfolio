@@ -41,16 +41,17 @@ export const Skills = () => {
         <Parallax
           easing={"easeInOut"}
           opacity={[0.3, 1]}
-          translateX={["-50%", "0%"]}
+          translateX={["-50%", "1%"]}
         >
-          <p
-            style={{
-              color: isDarkMode ? "#696969" : "#353839aa",
-              fontWeight: "800",
+          <Typography
+            sx={{
+              fontSize: "large",
+              fontWeight: "300",
+              color: isDarkMode ? "#ffffffa6" : "#2d2d2d",
             }}
           >
             Things that I am good at
-          </p>
+          </Typography>
         </Parallax>
       </Box>
 

@@ -28,7 +28,8 @@ function Projects() {
             <>
               <Box
                 sx={{
-                  boxShadow: "0 0 2px grey",
+                  boxShadow: "0 0 0.4rem #8181811c",
+                  border: "solid 1px rgba(126, 126, 126, 0.091)",
                   marginBottom: "2rem",
                   padding: "1rem",
                 }}
@@ -43,7 +44,11 @@ function Projects() {
                 >
                   <Typography
                     component="h2"
-                    sx={{ fontWeight: "600", fontSize: "x-large" }}
+                    sx={{
+                      fontWeight: "600",
+                      fontSize: "x-large",
+                      margin: "2rem 0rem",
+                    }}
                   >
                     {data.title}
                   </Typography>
@@ -55,23 +60,22 @@ function Projects() {
                   container
                   sx={{
                     display: "flex",
-                    alignItems: "center",
+                    alignItems: "flex-start",
                     flexDirection: "row",
                     justifyContent: "space-between",
                   }}
                 >
-                  <Grid item xs={12} md={5}>
+                  <Grid item xs={12} md={2}>
                     <Image
-                      layout="responsive"
                       loading="eager"
                       priority
-                      width={400}
-                      height={300}
+                      width={200}
+                      height={150}
                       src={data.image}
                       alt={data.title}
                     />
                   </Grid>
-                  <Grid xs={12} item md={7} sx={{ padding: "0rem 1rem" }}>
+                  <Grid xs={12} item md={10} sx={{ padding: "0rem 1rem" }}>
                     <TechUsed techStack={data.techStack} />
                     <Typography sx={{ marginTop: "1rem" }}>
                       {data.description}

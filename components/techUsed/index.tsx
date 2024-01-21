@@ -30,19 +30,13 @@ export const TechUsed = ({
           {techStack?.map((item) => (
             <Typography
               sx={{
-                backgroundColor: isDarkMode ? "#353839aa" : "#a1c0e726",
-                borderRadius: "0.5rem",
+                borderRadius: "0.25rem",
                 margin: "0.3rem 0.25rem",
-                padding: "0rem 0.3rem",
+                padding: "0.1rem 0.4rem",
                 fontWeight: 500,
                 fontSize: "0.8rem",
                 color: isDarkMode ? "white" : "#000000",
-                boxShadow: isDarkMode
-                  ? "0rem 0rem 0.2rem grey"
-                  : "0rem 0rem 0.2rem #8080804f",
-                border: isDarkMode
-                  ? "solid 1px #353839aa"
-                  : "solid 1px #3538393b",
+                border: isDarkMode ? "solid 1px #adadadaa" : "solid 1px grey",
               }}
               key={item}
               component={"span"}

@@ -112,8 +112,6 @@ function Header({ onDarkModeToggle }: HeaderProps) {
                 justifyContent: "space-between",
                 alignItems: "center",
                 minHeight: "71vh",
-                boxShadow: "0 0 0.5rem #00000049",
-                backgroundColor: "#ffffff04",
                 borderRadius: "5rem",
                 paddingTop: "2rem",
                 paddingBottom: "2rem"

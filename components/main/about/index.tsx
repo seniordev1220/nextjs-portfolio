@@ -5,7 +5,6 @@ import {
   AccordionSummary,
   Box,
   Button,
-  Grid,
   Link,
   List,
   ListItemIcon,
@@ -25,7 +24,6 @@ import { Parallax } from "react-scroll-parallax";
 
 import { resume } from "../../../constants";
 import { useDarkMode } from "../../../hooks/useDarkMode";
-import { joinClass } from "../../../helpers/utils";
 import { homeMessages } from "../../../messages/home";
 import { ProfileCard } from "../../profileCard";
 import { Background } from "../../background";
@@ -46,7 +44,7 @@ const experience = [
       "Improved test coverage from 65% to an impressive 95%, contributing to technical debt tickets as part of the team.",
       "Key role in developing impactful tools, streamlining issue identification and workflow efficiency.",
       "Crafted tailored project proposals for Japanese clients, understanding unique business needs as part of the team.",
-      "Mentored in web development, actively contributing to the growth of team members in India and Japan.",
+      "Mentored in web development, actively contributing to the growth of junior and lateral team members in India and Japan.",
     ],
   },
   {
@@ -105,11 +103,6 @@ const education = [
 
 export const About = () => {
   const { isDarkMode } = useDarkMode();
-  const today = new Date();
-  const birthDate = new Date("1997-09-18");
-  const years = today.getFullYear() - birthDate.getFullYear();
-  const months = today.getMonth() - birthDate.getMonth();
-  const age = Math.floor(years + months / 12);
   const [experienceTabValue, setExperienceTabValue] = useState(1);
   const [educationTabValue, setEducationTabValue] = useState(0);
   const handleExperienceTabChange = (
@@ -124,26 +117,13 @@ export const About = () => {
   ) => {
     setEducationTabValue(newValue);
   };
-  const InfoText = ({ title, content }: { title: string; content: string }) => (
-    <Typography
-      sx={{ margin: "0.5rem", color: isDarkMode ? "#afafaf" : "#353535" }}
-      component="p"
-    >
-      {title}{" "}
-      <Typography
-        component="span"
-        sx={{ color: isDarkMode ? "white" : "black", fontWeight: "600" }}
-      >
-        {content}
-      </Typography>
-    </Typography>
-  );
+
   const currentExperience = experience.find(
     (item) => item.id === experienceTabValue,
   );
   return (
     <Box
-      className={joinClass(classes.about__container)}
+      className={classes.about__container}
       sx={{
         ...(isDarkMode && {
           border: "solid 1px #2f2f2fc4",
@@ -161,134 +141,16 @@ export const About = () => {
           fontWeight: "800",
         }}
       >
-        <Parallax
-          easing={"easeInOut"}
-          opacity={[0.3, 1]}
-          translateX={["-50%", "0%"]}
-        >
-          <p>Somethings about me</p>
-        </Parallax>
-      </Box>
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
-        <Parallax
-          easing="easeInOut"
-          opacity={[0.5, 1]}
-          translateX={["20%", "0%"]}
-        >
-          <Typography
-            className={classes.about__title}
-            sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}
-          >
-            About Me
-          </Typography>
-        </Parallax>
-      </Box>
-      <Box
-        sx={{
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Box>
+        <Parallax opacity={[0, 1]} translateX={["-50%", "1%"]}>
           <Typography
             sx={{
-              fontSize: "xx-large",
-              fontWeight: "600",
-              marginBottom: "1rem",
+              fontSize: "large",
+              fontWeight: "300",
+              color: isDarkMode ? "#ffffffa6" : "#2d2d2d",
             }}
           >
-            Personal Informations
+            Check Out My Resume
           </Typography>
-          <Grid container>
-            <Grid item xs={12} md={5} sx={{ margin: "1rem" }}>
-              <InfoText title="First Name: " content="Anand" />
-              <InfoText title="Last Name: " content="Krishnan M J" />
-              <InfoText
-                title="Address: "
-                content="695571, Trivandrum, Kerala"
-              />
-              <InfoText title="From: " content="🇮🇳 India" />
-            </Grid>
-            <Grid item xs={12} md={5} sx={{ margin: "1rem" }}>
-              <InfoText title="Age: " content={`${age} years`} />
-              <InfoText title="Phone: " content={`+91 7907614429`} />
-              <InfoText title="E-Mail: " content={`anandkrishmj@gmail.com`} />
-              <InfoText
-                title="Languages: "
-                content={`English, Malayalam, Hindi`}
-              />
-            </Grid>
-          </Grid>
-        </Box>
-      </Box>
-      <Box>
-        <Box
-          sx={{ display: "flex", marginTop: "1rem", justifyContent: "center" }}
-        >
-          <Link
-            sx={{
-              color: isDarkMode ? "white" : "black",
-              textDecoration: "none",
-            }}
-            href={resume}
-            target="_blank"
-          >
-            <Button
-              variant="contained"
-              sx={{ color: "white", marginBottom: "1rem" }}
-            >
-              Download Resume
-              <DownloadIcon sx={{ marginLeft: "0.5rem" }} />
-            </Button>
-          </Link>
-        </Box>
-        <Box
-          sx={{ display: "flex", marginTop: "1rem", justifyContent: "center" }}
-        >
-          <Link
-            sx={{ margin: "0.5rem", color: isDarkMode ? "white" : "black" }}
-            href="https://twitter.com/ANANDKRISHNAN6"
-            target="_blank"
-          >
-            <TwitterIcon sx={{ fontSize: "2rem" }} />
-          </Link>
-          <Link
-            sx={{ margin: "0.5rem", color: isDarkMode ? "white" : "black" }}
-            href="https://www.linkedin.com/in/anand-krishnan-mj-a6332b154/"
-            target="_blank"
-          >
-            <LinkedInIcon sx={{ fontSize: "2rem" }} />
-          </Link>
-          <Link
-            sx={{ margin: "0.5rem", color: isDarkMode ? "white" : "black" }}
-            href="https://www.facebook.com/anandkrishnan.anandkrishnan"
-            target="_blank"
-          >
-            <FacebookIcon sx={{ fontSize: "2rem" }} />
-          </Link>
-          <Link
-            sx={{ margin: "0.5rem", color: isDarkMode ? "white" : "black" }}
-            href="https://github.com/Anand-Krishnan-M-J"
-            target="_blank"
-          >
-            <GitHubIcon sx={{ fontSize: "2rem" }} />
-          </Link>
-        </Box>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "3rem",
-          color: isDarkMode ? "#696969" : "#353839aa",
-          fontWeight: "800",
-        }}
-      >
-        <Parallax opacity={[0, 1]} translateX={["-50%", "0%"]}>
-          <p>Check Out My Resume</p>
         </Parallax>
       </Box>
 
@@ -302,7 +164,7 @@ export const About = () => {
             className={classes.about__title}
             sx={{ fontSize: "3rem", fontWeight: "600", marginBottom: "2rem" }}
           >
-            My Resume
+            About me
           </Typography>
         </Parallax>
       </Box>
@@ -333,199 +195,202 @@ export const About = () => {
         </Box>
       </Box>
       <Box>
-        <Box sx={{ minHeight: "320px" }}>
-          <Box sx={{ width: "100%" }}>
-            <Box
-              className={classes["experience--desktop"]}
+        <Box sx={{ width: "100%" }}>
+          <Box
+            className={classes["experience--desktop"]}
+            sx={{
+              display: "flex",
+              width: "100%",
+              flexDirection: "column",
+              maxWidth: "1200px",
+              margin: "auto",
+            }}
+          >
+            <Typography
               sx={{
-                display: "flex",
-                width: "100%",
-                flexDirection: "column",
-                maxWidth: "1200px",
-                margin: "auto",
+                fontSize: "xx-large",
+                fontWeight: "600",
               }}
             >
-              <Typography className={classes.experience__title}>
-                Experience
-              </Typography>
-              <Box sx={{ display: "flex", flexDirection: "row" }}>
-                <Tabs
-                  orientation="vertical"
-                  value={experienceTabValue}
-                  onChange={handleExperienceTabChange}
-                  TabIndicatorProps={{ style: { width: "2px" } }}
-                  sx={{
-                    ".MuiTabs-indicator": {
-                      left: 0,
-                    },
-                    margin: "1rem",
-                    borderLeft: `solid 1px ${
-                      isDarkMode ? "#696969" : "#353839aa"
-                    }`,
-                  }}
-                >
-                  {experience.map((item, index) => (
-                    <Tab
-                      key={`expTab-${index}`}
-                      sx={{
-                        minWidth: "1rem",
-                        color: isDarkMode ? "#696969" : "#353839aa",
-                        textTransform: "none",
-                        fontWeight: "600",
-                        textAlign: "left",
-                      }}
-                      value={item.id}
-                      label={
-                        <Box
-                          sx={{
-                            display: "flex",
-                            flexDirection: "column",
-                            width: "100%",
-                            position: "relative",
-                          }}
-                        >
-                          <Typography fontSize={"1.1rem"} fontWeight="600">
-                            {item.designation}
-                          </Typography>
-                          <Typography>{item.institute}</Typography>
-                        </Box>
-                      }
-                    />
-                  ))}
-                </Tabs>
-                {
-                  <Box sx={{ maxWidth: "70%", marginTop: "1rem" }}>
-                    <List sx={{ display: "flex", flexDirection: "column" }}>
-                      <Typography
-                        sx={{ marginTop: "0.2rem", marginBottom: "1rem" }}
-                      >{`${currentExperience?.startDate} - ${currentExperience?.endDate}`}</Typography>
-
-                      {currentExperience?.worksDone.map((item, index) => (
-                        <Box
-                          key={`expListTab-${index}`}
-                          sx={{
-                            display: "flex",
-                            flexDirection: "row",
-                            alignItems: "flex-start",
-                          }}
-                        >
-                          <ListItemIcon>
-                            <CircleIcon
-                              sx={{
-                                width: "0.9rem",
-                                color: isDarkMode ? "#696969" : "#353839aa",
-                                marginTop: "0.5rem",
-                              }}
-                              fontSize="small"
-                            />
-                          </ListItemIcon>
-                          <ListItemText
-                            sx={{ marginLeft: "-1rem" }}
-                            primary={item}
-                          />
-                        </Box>
-                      ))}
-                    </List>
-                  </Box>
-                }
-              </Box>
-            </Box>
-            <Box className={classes["experience--mobile"]}>
-              <Typography
-                className={classes.experience__title}
+              Work Experience
+            </Typography>
+            <Box sx={{ display: "flex", flexDirection: "row" }}>
+              <Tabs
+                orientation="vertical"
+                value={experienceTabValue}
+                onChange={handleExperienceTabChange}
+                TabIndicatorProps={{ style: { width: "2px" } }}
                 sx={{
-                  margin: "0rem 0rem 1rem 0rem",
-                  fontSize: "2rem",
-                  fontWeight: 600,
+                  ".MuiTabs-indicator": {
+                    left: 0,
+                  },
+                  margin: "1rem",
+                  borderLeft: `solid 1px ${
+                    isDarkMode ? "#696969" : "#353839aa"
+                  }`,
                 }}
               >
-                Experience
-              </Typography>
-              {experience.map((item, index) => (
-                <Box key={`expMobTab-${index}`}>
-                  <Accordion
+                {experience.map((item, index) => (
+                  <Tab
+                    key={`expTab-${index}`}
                     sx={{
-                      backgroundColor: isDarkMode ? "#29292930" : "#a1cdff1c",
-                      boxShadow: "0rem 0rem 0.1rem grey",
+                      minWidth: "1rem",
+                      color: isDarkMode ? "#696969" : "#353839aa",
+                      textTransform: "none",
+                      fontWeight: "600",
+                      textAlign: "left",
                     }}
-                  >
-                    <AccordionSummary
-                      expandIcon={
-                        <ExpandMoreIcon
-                          sx={{
-                            color: isDarkMode ? "#a1a1a1" : "",
-                            display: "flex",
-                            flexDirection: "column",
-                          }}
-                        />
-                      }
-                      aria-controls="panel1a-content"
-                      id="panel1a-header"
-                      sx={{ color: "inherit" }}
-                    >
+                    value={item.id}
+                    label={
                       <Box
                         sx={{
                           display: "flex",
                           flexDirection: "column",
                           width: "100%",
+                          position: "relative",
                         }}
                       >
-                        <Typography
-                          sx={{
-                            fontWeight: "600",
-                            fontSize: "1.2rem",
-                            color: isDarkMode ? "#a1a1a1" : "",
-                          }}
-                        >
-                          {`${item.designation}`}
+                        <Typography fontSize={"1.1rem"} fontWeight="600">
+                          {item.designation}
                         </Typography>
-                        <Typography
-                          sx={{
-                            fontWeight: "500",
-                            fontSize: "0.9rem",
-                            color: isDarkMode ? "#a1a1a1" : "#353839aa",
-                          }}
-                        >
-                          {item.institute} ({item?.startDate} - {item?.endDate})
-                        </Typography>
+                        <Typography>{item.institute}</Typography>
                       </Box>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <List
+                    }
+                  />
+                ))}
+              </Tabs>
+              {
+                <Box sx={{ maxWidth: "70%", marginTop: "1rem" }}>
+                  <List sx={{ display: "flex", flexDirection: "column" }}>
+                    <Typography
+                      sx={{ marginTop: "0.2rem", marginBottom: "1rem" }}
+                    >{`${currentExperience?.startDate} - ${currentExperience?.endDate}`}</Typography>
+
+                    {currentExperience?.worksDone.map((item, index) => (
+                      <Box
+                        key={`expListTab-${index}`}
                         sx={{
+                          display: "flex",
+                          flexDirection: "row",
+                          alignItems: "flex-start",
+                        }}
+                      >
+                        <ListItemIcon>
+                          <CircleIcon
+                            sx={{
+                              width: "0.9rem",
+                              color: isDarkMode ? "#696969" : "#353839aa",
+                              marginTop: "0.5rem",
+                            }}
+                            fontSize="small"
+                          />
+                        </ListItemIcon>
+                        <ListItemText
+                          sx={{ marginLeft: "-1rem" }}
+                          primary={item}
+                        />
+                      </Box>
+                    ))}
+                  </List>
+                </Box>
+              }
+            </Box>
+          </Box>
+          <Box className={classes["experience--mobile"]}>
+            <Typography
+              className={classes.experience__title}
+              sx={{
+                margin: "0rem 0rem 1rem 0rem",
+                fontSize: "2rem",
+                fontWeight: 600,
+              }}
+            >
+              Work Experience
+            </Typography>
+            {experience.map((item, index) => (
+              <Box key={`expMobTab-${index}`}>
+                <Accordion
+                  sx={{
+                    backgroundColor: isDarkMode ? "#29292930" : "#a1cdff1c",
+                    boxShadow: "0rem 0rem 0.1rem grey",
+                  }}
+                >
+                  <AccordionSummary
+                    expandIcon={
+                      <ExpandMoreIcon
+                        sx={{
+                          color: isDarkMode ? "#a1a1a1" : "",
                           display: "flex",
                           flexDirection: "column",
                         }}
+                      />
+                    }
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                    sx={{ color: "inherit" }}
+                  >
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        width: "100%",
+                      }}
+                    >
+                      <Typography
+                        sx={{
+                          fontWeight: "600",
+                          fontSize: "1.2rem",
+                          color: isDarkMode ? "#a1a1a1" : "",
+                        }}
                       >
-                        {item.worksDone.map((item, index) => (
-                          <Box
-                            key={`expMobListTab-${index}`}
-                            sx={{ display: "flex", flexDirection: "row" }}
-                          >
-                            <ListItemIcon>
-                              <CircleIcon
-                                sx={{
-                                  width: "0.8rem",
-                                  color: isDarkMode ? "#a1a1a1" : "",
-                                  marginTop: "0.5rem",
-                                }}
-                              />
-                            </ListItemIcon>
-                            <ListItemText
+                        {`${item.designation}`}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          fontWeight: "500",
+                          fontSize: "0.9rem",
+                          color: isDarkMode ? "#a1a1a1" : "#353839aa",
+                        }}
+                      >
+                        {item.institute} ({item?.startDate} - {item?.endDate})
+                      </Typography>
+                    </Box>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <List
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                      }}
+                    >
+                      {item.worksDone.map((item, index) => (
+                        <Box
+                          key={`expMobListTab-${index}`}
+                          sx={{ display: "flex", flexDirection: "row" }}
+                        >
+                          <ListItemIcon>
+                            <CircleIcon
                               sx={{
+                                width: "0.8rem",
                                 color: isDarkMode ? "#a1a1a1" : "",
-                                marginLeft: "-1.5rem",
+                                marginTop: "0.5rem",
                               }}
-                              primary={item}
                             />
-                          </Box>
-                        ))}
-                      </List>
-                    </AccordionDetails>
-                  </Accordion>
-                </Box>
-              ))}
-            </Box>
+                          </ListItemIcon>
+                          <ListItemText
+                            sx={{
+                              color: isDarkMode ? "#a1a1a1" : "",
+                              marginLeft: "-1.5rem",
+                            }}
+                            primary={item}
+                          />
+                        </Box>
+                      ))}
+                    </List>
+                  </AccordionDetails>
+                </Accordion>
+              </Box>
+            ))}
           </Box>
         </Box>
         <Box
@@ -683,6 +548,58 @@ export const About = () => {
               </Box>
             ))}
           </Box>
+        </Box>
+        <Box
+          sx={{ display: "flex", marginTop: "1rem", justifyContent: "center" }}
+        >
+          <Link
+            sx={{ margin: "0.5rem", color: isDarkMode ? "white" : "black" }}
+            href="https://twitter.com/ANANDKRISHNAN6"
+            target="_blank"
+          >
+            <TwitterIcon sx={{ fontSize: "2rem" }} />
+          </Link>
+          <Link
+            sx={{ margin: "0.5rem", color: isDarkMode ? "white" : "black" }}
+            href="https://www.linkedin.com/in/anand-krishnan-mj-a6332b154/"
+            target="_blank"
+          >
+            <LinkedInIcon sx={{ fontSize: "2rem" }} />
+          </Link>
+          <Link
+            sx={{ margin: "0.5rem", color: isDarkMode ? "white" : "black" }}
+            href="https://www.facebook.com/anandkrishnan.anandkrishnan"
+            target="_blank"
+          >
+            <FacebookIcon sx={{ fontSize: "2rem" }} />
+          </Link>
+          <Link
+            sx={{ margin: "0.5rem", color: isDarkMode ? "white" : "black" }}
+            href="https://github.com/Anand-Krishnan-M-J"
+            target="_blank"
+          >
+            <GitHubIcon sx={{ fontSize: "2rem" }} />
+          </Link>
+        </Box>
+        <Box
+          sx={{ display: "flex", marginTop: "1rem", justifyContent: "center" }}
+        >
+          <Link
+            sx={{
+              color: isDarkMode ? "white" : "black",
+              textDecoration: "none",
+            }}
+            href={resume}
+            target="_blank"
+          >
+            <Button
+              variant="contained"
+              sx={{ color: "white", marginBottom: "1rem" }}
+            >
+              Download Resume
+              <DownloadIcon sx={{ marginLeft: "0.5rem" }} />
+            </Button>
+          </Link>
         </Box>
       </Box>
     </Box>

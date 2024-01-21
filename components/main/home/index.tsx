@@ -12,16 +12,7 @@ import classes from "./home.module.scss";
 export const Home = () => {
   const { isDarkMode, darkModeIsloading } = useContext(DarKModeContext);
   return (
-    <Box
-      className={classes.intro__container}
-      sx={
-        isDarkMode
-          ? {
-              boxShadow: "0 0 1rem #00000078",
-            }
-          : {}
-      }
-    >
+    <Box className={classes.intro__container}>
       <div className={classes.intro__image__container}>
         <Image
           src={require("../../../assets/images/4.png")}

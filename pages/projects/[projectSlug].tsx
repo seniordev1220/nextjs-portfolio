@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 
@@ -15,6 +15,7 @@ interface ProjectDetailsType {
   image: string;
   content: string;
   techStack: string[];
+  visitWebsite?: string;
 }
 
 const Project = ({
@@ -24,6 +25,7 @@ const Project = ({
   content,
   description,
   techStack,
+  visitWebsite,
 }: ProjectDetailsType) => {
   const descriptionRef = useRef<HTMLInputElement | null>(null);
   const contentRef = useRef<HTMLInputElement | null>(null);
@@ -33,35 +35,52 @@ const Project = ({
       contentRef.current.innerHTML = content;
     }
   }, [content, description]);
+  const handleRedirectToWebSite = (redirectTo: string) => {
+    if (window) {
+      window.open(redirectTo, "_blank");
+    }
+  };
   return (
     <Layout variant="l3" title="Projects">
       <Box
         sx={{
           width: "1200px",
-          maxWidth: "95%",
+          maxWidth: "100%",
           margin: "auto",
           marinTop: "2rem",
           marginBottom: "2rem",
-          boxShadow: "0 0 0.3rem grey",
-          padding: "2rem",
+          boxShadow: "0 0 0.4rem #8181811c",
+          border: "solid 1px rgba(126, 126, 126, 0.091)",
+          padding: "3rem 1.5rem",
           lineHeight: "1.5",
         }}
       >
-        <h1>{title}</h1>
+        <Typography
+          variant="h1"
+          sx={{
+            fontSize: "x-large",
+            marginBottom: "2.5rem",
+            fontWeight: "600",
+          }}
+        >
+          {title}
+        </Typography>
         <span>{date}</span>
         <Grid container sx={{ display: "flex" }}>
-          <Grid xs={12} md={5} item={true}>
-            <Image
-              src={image}
-              alt={title}
-              width={400}
-              height={300}
-              layout="responsive"
-              loading="eager"
-              priority
-            />
+          <Grid xs={12} md={3} item={true}>
+            <Box sx={{ borderRadius: "1rem", overflow: "hidden" }}>
+              <Image
+                src={image}
+                alt={title}
+                width={200}
+                height={150}
+                layout="responsive"
+                loading="eager"
+                priority
+              />
+            </Box>
           </Grid>
-          <Grid xs={12} md={7} item sx={{ padding: "1rem", lineHeight: "1.5" }}>
+          <Grid xs={12} md={9} item sx={{ padding: "1rem", lineHeight: "1.5" }}>
             <Typography
               sx={{ marginBottom: "1rem" }}
               fontWeight={600}
@@ -70,12 +89,30 @@ const Project = ({
               Introduction
             </Typography>
             <div ref={descriptionRef}></div>
+            {visitWebsite && (
+              <Button
+                variant="outlined"
+                onClick={() => handleRedirectToWebSite(visitWebsite)}
+                sx={{
+                  width: "300px",
+                  margin: "2rem auto 0rem auto",
+                  fontWeight: "600",
+                  border: `solid 1px`,
+                  borderColor: "#767676",
+                  ":hover": {
+                    borderColor: "#2753d7",
+                  },
+                }}
+              >
+                See Live Demo
+              </Button>
+            )}
           </Grid>
           <Grid item xs={12} md={10}>
             <TechUsed techStack={techStack} />
           </Grid>
         </Grid>
-        <Box sx={{ marginTop: "2rem" }}>
+        <Box sx={{ marginTop: "2rem", lineHeight: 1.8 }}>
           <div ref={contentRef}></div>
         </Box>
       </Box>

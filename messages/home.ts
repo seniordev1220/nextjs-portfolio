@@ -4,8 +4,9 @@ export const homeMessages = {
   intro:
     "With a knack for transforming ideas into captivating digital experiences, I harness the power of code to craft extraordinary web applications.",
   contactMe: "Reach out to me now and let's make it happen!",
-  aboutPara1: `Greetings! I'm Anand Krishnan M J, a coding virtuoso and master of web wizardry.`,
-  aboutPara2: `With a passion for pushing boundaries and crafting extraordinary digital experiences, I'm on a mission to create awe-inspiring web applications that will make your heart skip a beat. Join me in shaping the future of the digital realm, where innovation knows no bounds.`,
+  aboutPara1: `Greetings! I'm Anand`,
+  aboutPara2: `A passionate software engineer with a strong focus on frontend development,
+  complemented by a solid understanding of backend technologies.`,
   Passionate_Mentor: "Passionate Mentor",
   fullStackWebDeveloper: "Full Stack Web Developer",
   introDescription:

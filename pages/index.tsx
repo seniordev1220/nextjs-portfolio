@@ -73,7 +73,7 @@ const Main = () => {
                 >
                   <CardList
                     type="projects"
-                    description="Showcasing Some Of My Best Work"
+                    description="Showcasing Some Of My Best Works"
                     title="My Portfolio"
                     data={projects}
                     sectionMapping={sectionMapping.portfolio}

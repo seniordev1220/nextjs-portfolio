@@ -90,7 +90,7 @@ function Layout({ children, variant, title }: LayoutPropType) {
               </Typography>
             </Box>
 
-            <Box sx={{ width: "1400px", maxWidth: "90%" }}>
+            <Box sx={{ width: "1400px", maxWidth: "100%" }}>
               <main className={classes.main}>{children}</main>
             </Box>
           </Box>

@@ -2,8 +2,8 @@ body {
     background-image: linear-gradient(to right, #e7f6ff, #c3dfff, #b6d8ff, #a1cdff, #a1cdff);
     color: rgb(49, 49, 49);
     transition-timing-function: ease-in;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    transition: background-image 0.3s ease, color 0.3s ease;
+    transition: background-color 0.1s ease, color 0.1s ease;
+    transition: background-image 0.1s ease, color 0.1s ease;
 
     background-color:none;
 }

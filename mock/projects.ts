@@ -62,11 +62,100 @@ export const blogs = [
 
 export const projects = [
   {
+    id: 0,
+    title: "Wizard's Chess - 3D Online Multiplayer Game",
+    date: "", // Project initiation date
+    visitWebsite: "https://wizards-chess.vercel.app/",
+    isPersonalProject: true,
+    description:
+      "Wizard's Chess is an online multiplayer game featuring real-time video chat options. Participants can create game sessions, invite opponents, and immerse themselves in both real-time gameplay and video conversations for a unique and engaging experience.",
+    image: "/images/chess.png", // Image path
+    slug: "wizards_chess",
+    content: `
+    <h1>Case Study: Wizard's Chess Development</h1>
+
+    <h2>1. Overview</h2>
+    <p>
+        I wanted to learn about WebRTC, Three.js, and Firebase. After completing relevant courses, I decided to put my skills to the test with a practical project. That's when the idea of building a 3D multiplayer chess game with real-time video chat came to mind—it was the perfect way to use the tech stacks I had just learned. To make it more interesting, I chose the theme of Wizard's Chess from the Harry Potter movies.
+    </p>
+
+    <h2>2. Case Study</h2>
+    <p>
+        The development unfolded in several captivating stages, each contributing to the immersive gaming experience:
+        <ol>
+            <li><strong>Asset Preparation:</strong> The journey began with gathering essential assets, including intricately designed Harry Potter-themed chess pieces. Free sources provided the foundation, and subtle tweaks in Blender ensured these pieces harmonized seamlessly with the enchanting game environment.</li>
+            <li><strong>3D Integration with Three.js and React Three Fiber:</strong> In the second stage, Three.js and React Three Fiber took center stage. Placing 3D pieces on the chessboard, fine-tuning lighting, adjusting the camera, and implementing fluid motion brought a visually stunning and interactive dimension to the game. The decision to separate movement logic from the UI layer added a layer of flexibility to the overall application architecture.</li>
+            <li><strong>State Management with Redux Toolkit:</strong> Managing the intricate dance of game states marked the third stage. The symbiotic relationship between the movement and state management layers found harmony with Redux Toolkit—a choice made for its flexibility and streamlined setup, ensuring a smooth and organized development process.</li>
+            <li><strong>WebRTC for Real-Time Video Chat:</strong> The fourth stage introduced WebRTC to enable real-time video chat between participants. Before integration, a Proof of Concept (POC) for a simple video chat app was meticulously crafted. Firebase played a dual role as the signaling server, laying the foundation for both video chat and the full-duplex exchange of chess piece movements between opponents.</li>
+            <li><strong>Syncing State with Firebase:</strong> The final stage brought everything together by seamlessly syncing the local Redux state with Firebase. Active listening for Firebase updates and a meticulous synchronization process ensured a responsive and cohesive multiplayer experience, preserving the integrity of the game state across all participants.</li>
+        </ol>
+    </p>
+    <h2>3. Challenges Faced</h2>
+    <p>
+        The journey to create Wizard's Chess was not without its hurdles:
+        <ol>
+            <li><strong>Building 3D Piece Models:</strong> Constructing 3D chess piece models posed a significant challenge initially. However, the solution emerged when reliable and free piece models were discovered from online sources.</li>
+            <li><strong>Learning Blender:</strong> Being new to Blender presented a learning curve, causing a temporary delay in development. Acquiring proficiency in Blender was essential for the successful creation of captivating 3D models.</li>
+            <li><strong>Choosing a Signaling Server:</strong> Initially considering Socket.io for the signaling server, the challenge arose due to the cost implications of maintaining a dedicated socket server. The pivot to Firebase, with its free tier, proved to be a fitting and cost-effective solution.</li>
+            <li><strong>Integrating WebRTC:</strong> Integrating WebRTC brought both excitement and difficulty. Despite the challenges, this decision set Wizard's Chess apart from other online multiplayer chess games, providing a unique and valuable feature.</li>
+            <li><strong>Syncing with Firebase:</strong> While syncing redux state with Firebase became relatively straightforward after integrating WebRTC, it highlighted the importance of leveraging existing boilerplate code already implemented for integrating WebRTC in the game. This streamlined the process, making it significantly easier than building from scratch.</li>
+        </ol>
+    </p>
+    <h2>4. Future Growth</h2>
+    <p>
+        Looking ahead, Wizard's Chess is set for exciting developments:
+        <ul>
+            <li><strong>2D View for Mobile Users:</strong> The plan includes developing a 2D view to enhance the gaming experience for mobile users, making it more accessible and enjoyable on smaller screens.</li>
+            <li><strong>Automatic Game Matching:</strong> A distant yet ambitious plan involves implementing automatic game matching between online players. This feature aims to streamline the process of finding opponents and enhancing the overall multiplayer experience.</li>
+            <li><strong>AI-Enabled Gameplay:</strong> With a newfound interest in AI and machine learning, the future holds the possibility of introducing AI-enabled gameplay. This feature would allow participants to engage in a game against computer opponents, providing both a learning opportunity and an exciting challenge.</li>
+        </ul>
+        These future endeavors not only aim to enhance the user experience but also offer valuable learning opportunities in emerging technologies.
+    </p>
+
+    <h2>5. Tech Stack</h2>
+    <p>
+        The magical world of Wizard's Chess was brought to life using an enchanting tech stack:
+        <ul>
+            <li><strong>Next.js:</strong> For a seamless and optimized web development experience.</li>
+            <li><strong>Three.js:</strong> Powering the mesmerizing 3D graphics in the game.</li>
+            <li><strong>React Three Fiber:</strong> Enhancing the capabilities of Three.js within the React framework.</li>
+            <li><strong>WebRTC:</strong> Enabling real-time video chat features, adding a unique dimension to the gameplay.</li>
+            <li><strong>TypeScript:</strong> Providing a robust and statically-typed foundation for the codebase.</li>
+            <li><strong>Sass:</strong> Styling the application with a touch of magic.</li>
+            <li><strong>Firebase (Firestore):</strong> Works a signalling server for WebRTC and manages real-time data and communication between players seamlessly.</li>
+            <li><strong>Redux Toolkit:</strong> Ensuring efficient state management for a smooth gaming experience.</li>
+            <li><strong>Vercel Analytics:</strong> Leveraging analytics to gain insights and optimize performance on the Vercel platform.</li>
+        </ul>
+        This powerful combination of technologies was carefully chosen to create a delightful and immersive gaming experience.
+    </p>
+    <h2>6. Deployment</h2>
+    <p>
+        Bringing the magic to the online realm involved a strategic deployment plan:
+        <ul>
+            <li><strong>Vercel for Next.js App:</strong> The Next.js application, being the heart of Wizard's Chess, found its home on Vercel. This platform ensured seamless deployment and optimization for an enchanting user experience.</li>
+            <li><strong>Firebase Firestore:</strong> Firebase played a multi-faceted role—serving as the database, signaling server, and managing socket connections. This versatile integration allowed for efficient communication and data storage, contributing to the overall magic of the game.</li>
+        </ul>
+    </p>
+    <br/>
+    <br/>
+    `,
+    techStack: [
+      "Next.js",
+      "Three.js",
+      "WebRTC",
+      "Redux Toolkit",
+      "Firebase",
+      "TypeScript",
+      "SCSS",
+    ],
+    showinportfolio: true,
+  },
+  {
     id: 1,
-    title: "Fashion Retail E-Commerce Application ",
+    title: "Fashion Retail E-Commerce SPA ",
     date: "",
     description:
-      "I collaborated with a diverse multinational team, developing and managing a high-traffic SPA with 40+ million monthly visits. Gained expertise in optimizing scalability, flexibility, and maintainability using mono repository and microservice architecture.",
+      "Collaborated with a diverse multinational team, developing and managing a high-traffic SPA with 40+ million monthly visits. Gained expertise in optimizing scalability, flexibility, and maintainability using mono repository and microservice architecture.",
     image: "/images/E-commerce-spa.png",
     slug: "e-commerce_spa",
     content: ` 
@@ -88,14 +177,19 @@ export const projects = [
     <h3><strong>Roles and responsibilities:</strong></h3>
   
     <ul>
-    <li>Successfully managed a significant number of Jira tickets, demonstrating strong organizational skills and attention to detail.</li>
-      <li>Facilitated the creation of comprehensive technical documentation for future reference.</li>
-      <li>Conducted in-depth root cause analysis for Jira tickets, showcasing exceptional problem-solving abilities.</li>
-      <li>Applied effective debugging techniques and implemented timely bug fixes.</li>
-      <li>Collaborated with cross-functional teams, leveraging collective knowledge to deliver optimal solutions.</li>
-      <li>Proactively took ownership of technical debt test-case tickets, significantly improving test coverage by 27% (from 68% to 95%).</li>
-      <li>Generated user-friendly documentation for the deployment process, enhancing team understanding.</li>
-      <li>Actively participated in meetings, providing valuable insights and ensuring alignment between stakeholders through effective communication.</li>
+    <li>Applied expertise in <strong>React, Redux, Saga, and TypeScript</strong> at a global fashion retail brand, enhancing the SPA for <strong>40+ million users with minimal downtime.</strong></li>
+
+    <li>Managed efficient <strong>CI/CD releases</strong>, ensuring seamless deployment and prompt issue resolution for the e-commerce app.</li>
+  
+    <li>Used <strong>Google Analytics</strong> to cut a page's bounce rate from 56% to 10%, boosting user engagement and conversions by 7%.</li>
+  
+    <li>Actively engaged in <strong>GitHub</strong> peer reviews, upholding high code quality for continuous improvement.</li>
+  
+    <li>Improved code quality with automated tests, increasing coverage from 62% to 85% and reducing bugs in subsequent releases.</li>
+  
+    <li>Refactored outdated code into a <strong> scalable React architecture</strong>, enabling seamless expansion across sub-brands and countries.</li>
+  
+    <li>Developed <strong>Proof of Concepts</strong> with React, TypeScript, Redux, and more to swiftly address customer-reported issues.</li>
     </ul>
     <p></p>
     <h3>Commitment to Confidentiality:&nbsp;Upholding Loyalty and Discretion</h3>
@@ -137,7 +231,7 @@ export const projects = [
   {
     id: 2,
     title:
-      "Innovating Error Handling, Endpoint Visualization, and E-commerce for a Retail Giant (POCs)",
+      "Innovating Error Handling, Endpoint Visualization, and E-commerce for a fashion retail client (POCs)",
     date: "",
     description:
       "Developed two impactful proof-of-concept (POC) projects for a top Japanese fashion retailer. The first project streamlined error handling documentation for numerous microservices, replacing Google Sheets for easier issue identification and tracking. The second project created an endpoint diagramming tool, enhancing visualization of API calls between SPA, BFF, and microservices components.",
@@ -232,7 +326,7 @@ Recognizing the importance of effective documentation and testing, I spearheaded
     title: "Email Template Builder Application",
     date: "",
     description:
-      "As the Project In-Charge (PIC), I played a pivotal role in developing an internal email template builder application for my company. This project aimed to enhance internal communication within the organization by providing a user-friendly interface for creating and managing email templates.",
+      "As the Project In-Charge (PIC), I played a pivotal role in developing an internal email template builder application for QBurst. This project aimed to enhance internal communication within the organization by providing a user-friendly interface for creating and managing email templates.",
     image: "/images/email_template_builder.png",
     slug: "email_template_builder",
     content: ` <h3>Overview</h3>
@@ -293,6 +387,8 @@ Recognizing the importance of effective documentation and testing, I spearheaded
     id: 5,
     title: "Portfolio Frontend Application (Personal Project)",
     date: "10 Dec, 2021 - 19 July, 2022",
+    visitGithub: "https://github.com/Anand-Krishnan-M-J/Personal-Portfolio-SPA",
+    isPersonalProject: true,
     description:
       "From meticulous design to seamless deployment and domain acquisition, every facet of this website was crafted with precision. This immersive project served as a valuable learning experience, offering insights and skill refinement. Join me in exploring this passion-driven website, where innovation converges with personal growth.",
     image: "/images/portfolio_spa.png",
@@ -340,6 +436,8 @@ Recognizing the importance of effective documentation and testing, I spearheaded
     id: 6,
     title: "Portfolio Backend Application (Personal Project)",
     date: "10 Dec, 2021 - 19 July, 2022",
+    visitGithub: "https://github.com/Anand-Krishnan-M-J/portfolio-api",
+    isPersonalProject: true,
     description:
       "My portfolio website's backend application was built using Node.js and Express.js for server-side functionality, and PostgreSQL as the database management system to store and retrieve data. I also used Docker for containerization, which helped to simplify the deployment process. The application is deployed on Amazon Web Services (AWS), which ensures reliability, scalability, and high availability. Overall, the backend application provides a robust and scalable architecture for handling the data and functionality of my portfolio website.",
     image: "/images/portfolio_BE.png",
