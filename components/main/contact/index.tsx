@@ -406,7 +406,8 @@ export const Contact = () => {
                 </Box>
               </Box>
               <Box
-                sx={{ display: "flex", marginTop: "1rem", justifyContent: "flex-start" }}
+                className={classes.contact__socials}
+                sx={{ display: "flex", justifyContent: "space-evenly", maxWidth:"280px", marginTop: "2rem"}}
               >
                 <MuiLink
                   sx={{ margin: "0.8rem", color: "#2753d7" }}

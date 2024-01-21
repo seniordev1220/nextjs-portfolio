@@ -72,14 +72,14 @@ export const projects = [
     image: "/images/chess.png", // Image path
     slug: "wizards_chess",
     content: `
-    <h1>Case Study: Wizard's Chess Development</h1>
+    <h2>Case Study:</h2>
 
-    <h2>1. Overview</h2>
+    <h3>1. Overview</h3>
     <p>
         I wanted to learn about WebRTC, Three.js, and Firebase. After completing relevant courses, I decided to put my skills to the test with a practical project. That's when the idea of building a 3D multiplayer chess game with real-time video chat came to mind—it was the perfect way to use the tech stacks I had just learned. To make it more interesting, I chose the theme of Wizard's Chess from the Harry Potter movies.
     </p>
 
-    <h2>2. Case Study</h2>
+    <h3>2. Case Study</h3>
     <p>
         The development unfolded in several captivating stages, each contributing to the immersive gaming experience:
         <ol>
@@ -90,7 +90,7 @@ export const projects = [
             <li><strong>Syncing State with Firebase:</strong> The final stage brought everything together by seamlessly syncing the local Redux state with Firebase. Active listening for Firebase updates and a meticulous synchronization process ensured a responsive and cohesive multiplayer experience, preserving the integrity of the game state across all participants.</li>
         </ol>
     </p>
-    <h2>3. Challenges Faced</h2>
+    <h3>3. Challenges Faced</h3>
     <p>
         The journey to create Wizard's Chess was not without its hurdles:
         <ol>
@@ -101,7 +101,7 @@ export const projects = [
             <li><strong>Syncing with Firebase:</strong> While syncing redux state with Firebase became relatively straightforward after integrating WebRTC, it highlighted the importance of leveraging existing boilerplate code already implemented for integrating WebRTC in the game. This streamlined the process, making it significantly easier than building from scratch.</li>
         </ol>
     </p>
-    <h2>4. Future Growth</h2>
+    <h3>4. Future Growth</h3>
     <p>
         Looking ahead, Wizard's Chess is set for exciting developments:
         <ul>
@@ -112,7 +112,7 @@ export const projects = [
         These future endeavors not only aim to enhance the user experience but also offer valuable learning opportunities in emerging technologies.
     </p>
 
-    <h2>5. Tech Stack</h2>
+    <h3>5. Tech Stack</h3>
     <p>
         The magical world of Wizard's Chess was brought to life using an enchanting tech stack:
         <ul>
@@ -128,7 +128,7 @@ export const projects = [
         </ul>
         This powerful combination of technologies was carefully chosen to create a delightful and immersive gaming experience.
     </p>
-    <h2>6. Deployment</h2>
+    <h3>6. Deployment</h3>
     <p>
         Bringing the magic to the online realm involved a strategic deployment plan:
         <ul>
@@ -385,7 +385,7 @@ Recognizing the importance of effective documentation and testing, I spearheaded
   },
   {
     id: 5,
-    title: "Portfolio Frontend Application (Personal Project)",
+    title: "Portfolio Frontend Application",
     date: "10 Dec, 2021 - 19 July, 2022",
     visitGithub: "https://github.com/Anand-Krishnan-M-J/Personal-Portfolio-SPA",
     isPersonalProject: true,
@@ -434,7 +434,7 @@ Recognizing the importance of effective documentation and testing, I spearheaded
   },
   {
     id: 6,
-    title: "Portfolio Backend Application (Personal Project)",
+    title: "Portfolio Backend Application",
     date: "10 Dec, 2021 - 19 July, 2022",
     visitGithub: "https://github.com/Anand-Krishnan-M-J/portfolio-api",
     isPersonalProject: true,

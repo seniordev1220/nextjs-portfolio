@@ -511,6 +511,7 @@ export const About = () => {
                   boxShadow: "0rem 0rem 0.1rem grey",
                   padding: "0.5rem",
                   margin: "1rem 0rem",
+                  paddingBottom:"2rem"
                 }}
               >
                 <Typography
@@ -550,7 +551,7 @@ export const About = () => {
           </Box>
         </Box>
         <Box
-          sx={{ display: "flex", marginTop: "1rem", justifyContent: "center" }}
+          sx={{ display: "flex", marginTop: "3rem", justifyContent: "center" }}
         >
           <Link
             sx={{ margin: "0.5rem", color: isDarkMode ? "white" : "black" }}
@@ -594,7 +595,7 @@ export const About = () => {
           >
             <Button
               variant="contained"
-              sx={{ color: "white", marginBottom: "1rem" }}
+              sx={{ color: "white", marginBottom: "3rem" }}
             >
               Download Resume
               <DownloadIcon sx={{ marginLeft: "0.5rem" }} />

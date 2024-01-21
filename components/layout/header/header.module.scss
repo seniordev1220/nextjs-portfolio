@@ -110,6 +110,7 @@ $nav-items: "home" 5,
 @media only screen and (max-width: 767px) {
   .ham {
     &__wrapper {
+      pointer-events: none;
       display: block;
       position: relative;
       z-index: 500;

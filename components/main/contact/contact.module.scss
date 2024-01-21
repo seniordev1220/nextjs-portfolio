@@ -22,4 +22,12 @@
             width: 100%;
         }
     }
+
+    &__socials {
+        @media screen and (max-width:768px) {
+            margin: auto !important;
+            margin-top: 2rem!important;
+        }
+
+    }
 }
