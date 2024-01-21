@@ -528,12 +528,12 @@ export const About = () => {
                   <Typography
                     sx={{
                       fontWeight: "600",
-                      fontSize: "1.1rem",
+                      fontSize: "1rem",
                     }}
                   >
                     {item.designation}
                   </Typography>
-                  <Typography sx={{ marginTop: "0.2rem 0.1rem 1rem 0.5rem" }}>
+                  <Typography sx={{ margin: "0.2rem 0.1rem 1rem 0.5rem" }}>
                     {`${item.startDate} - ${item.endDate}`}
                   </Typography>
                 </Box>
