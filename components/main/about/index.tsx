@@ -533,9 +533,7 @@ export const About = () => {
                   >
                     {item.designation}
                   </Typography>
-                  <Typography
-                    sx={{ marginTop: "0.2rem", marginBottom: "1rem" }}
-                  >
+                  <Typography sx={{ marginTop: "0.2rem 0.1rem 1rem 0.5rem" }}>
                     {`${item.startDate} - ${item.endDate}`}
                   </Typography>
                 </Box>
