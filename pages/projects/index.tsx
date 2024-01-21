@@ -66,15 +66,15 @@ function Projects() {
                   }}
                 >
                   <Grid item xs={12} md={2}>
-                    <Box sx={{margin:"auto", width:"fit-content"}}>
-                    <Image
-                      loading="eager"
-                      priority
-                      width={200}
-                      height={150}
-                      src={data.image}
-                      alt={data.title}
-                    />
+                    <Box sx={{ margin: "auto", width: "fit-content" }}>
+                      <Image
+                        loading="eager"
+                        priority
+                        width={200}
+                        height={150}
+                        src={data.image}
+                        alt={data.title}
+                      />
                     </Box>
                   </Grid>
                   <Grid xs={12} item md={10} sx={{ padding: "0rem 1rem" }}>

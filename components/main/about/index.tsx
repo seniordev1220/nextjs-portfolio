@@ -511,7 +511,7 @@ export const About = () => {
                   boxShadow: "0rem 0rem 0.1rem grey",
                   padding: "0.5rem",
                   margin: "1rem 0rem",
-                  paddingBottom:"2rem"
+                  paddingBottom: "2rem",
                 }}
               >
                 <Typography
