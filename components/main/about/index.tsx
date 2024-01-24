@@ -38,14 +38,11 @@ const experience = [
     endDate: "Present",
     designation: "Software Engineer",
     worksDone: [
-      "Contribute to collaborative development, ensuring seamless user experiences for a multinational fashion retail giant's SPA, serving more than 40 million users.",
-      "Manage CI/CD for e-commerce SPA releases, ensuring smooth deployment, and promptly resolving issues.",
-      "Uphold high code quality, increasing test coverage from 62% to 85%, resulting in fewer bugs in subsequent releases.",
+      "Contribute to collaborative development, ensuring seamless user experiences for a multinational fashion retail giant's SPA, serving more than 40 million users and manage CI/CD for production releases, ensuring smooth deployment, and promptly resolving issues.",
+      "Uphold high code quality, increasing test coverage from 62% to 85%, resulting in fewer bugs in subsequent releases and refactor code for scalable React architecture, enabling global expansion and adaptability.",
       "Utilize Google Analytics to strategically reduce bounce rates by 46%, thereby enhancing user engagement.",
-      "Refactor code for scalable React architecture, enabling global expansion and adaptability.",
-      "Actively participate in planning and executing internal tools projects, optimizing build sizes, and ensuring efficient code sharing.",
+      "Develop proof of concepts for API visualization, addressing customer-reported issues and actively participate in planning and executing internal tools projects, optimizing build sizes, and ensuring efficient code sharing.",
       "Proactively mentor junior developers in India and Japan, fostering collaboration and facilitating skill development.",
-      "Develop proof of concepts for API visualization, addressing customer-reported issues.",
     ],
   },
   {
