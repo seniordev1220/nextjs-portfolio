@@ -282,7 +282,7 @@ export const projects = [
     title: "Building a React Component Library for a Japanese client",
     date: "",
     description:
-      "Engineered a monorepo React component library using npm and Storybook to enhance UI development. This initiative centralized and standardized components for reusability. Explore this article for insights into the project, covering npm for package management and Storybook for comprehensive component documentation and testing.",
+      "Engineered a monorepo React component library utilizing npm and Storybook, enhancing UI development. Centralized and standardized components for optimal reusability, emphasizing the integration of npm for package management and Storybook for comprehensive component documentation and testing.",
     image: "/images/ui_lib.png",
     slug: "ui_component_library",
     content: ` 
