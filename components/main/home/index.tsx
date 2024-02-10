@@ -17,7 +17,6 @@ export const Home = () => {
         <Image
           src={require("../../../assets/images/4.png")}
           alt="Photo of Anand, a full-stack web developer"
-          loading="eager"
           priority
         />
       </div>
