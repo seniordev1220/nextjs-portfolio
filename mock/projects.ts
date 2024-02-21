@@ -418,7 +418,7 @@ Recognizing the importance of effective documentation and testing, I spearheaded
         <h4>Deployment on Vercel</h4>
         <p>I deployed my site on Vercel, a cloud platform for static sites and serverless functions. This allowed me to easily deploy and manage my site without worrying about server management, scaling, or performance. With Vercel, my site is fast, reliable, and always up-to-date.</p>
         <h4>My Domain Name</h4>
-        <p>I've also purchased a custom domain name for my site: akmj.social. I registered this domain with GoDaddy, which allowed me to easily manage my domain registration, DNS settings, and other important details. This makes it easy for visitors to remember my site and find me online!</p>
+        <p>I've also purchased a custom domain name for my site: https://www.anandkris.com. I registered this domain with GoDaddy, which allowed me to easily manage my domain registration, DNS settings, and other important details. This makes it easy for visitors to remember my site and find me online!</p>
 
         <p>Thank you for visiting My Portfolio SPA. I hope you enjoy exploring my work, and if you have any questions or comments, please feel free to use the contact form to get in touch with me!</p>
       `,

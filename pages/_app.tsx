@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="Anand Krishnan M J is a Full Stack Developer with expertise in React.js, Node.js, and Next.js."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.akmj.social" />
+        <meta property="og:url" content="https://www.anandkris.com" />
         <meta
           property="og:image"
           content="https://drive.google.com/uc?export=view&id=1jmAPu8YWqt5mSQFZLqDjeCThv-G0XG1z"
@@ -56,7 +56,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="twitter:image"
           content="https://drive.google.com/uc?export=view&id=1jmAPu8YWqt5mSQFZLqDjeCThv-G0XG1z"
         />
-        <link rel="canonical" href="https://www.akmj.social" />
+        <link rel="canonical" href="https://www.anandkris.com" />
         <link
           rel="apple-touch-icon"
           sizes="57x57"

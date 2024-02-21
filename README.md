@@ -64,7 +64,7 @@ Access the website in your browser at http://localhost:4000.
 
 ### Deployment
 
-The portfolio website has been deployed to https://akmj.social using Vercel. It is automatically built and deployed when changes are pushed to the main branch. The deployment process is handled by Vercel and requires no additional steps.
+The portfolio website has been deployed to https://www.anandkris.com using Vercel. It is automatically built and deployed when changes are pushed to the main branch. The deployment process is handled by Vercel and requires no additional steps.
 
 ## Feedback
-I value your feedback! If you have any suggestions, improvements, or questions, please feel free to contact me through the contact section on https://akmj.social  or by emailing to anandkrishmj@gmail.com.
+I value your feedback! If you have any suggestions, improvements, or questions, please feel free to contact me through the contact section on https://www.anandkris.com  or by emailing to anandkrishmj@gmail.com.
