@@ -73,7 +73,6 @@ export const Card = ({
             <Image
               className={classes.card__image}
               layout="responsive"
-              priority
               width={400}
               height={300}
               src={image}

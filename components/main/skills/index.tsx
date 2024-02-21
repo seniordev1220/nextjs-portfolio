@@ -118,7 +118,6 @@ export const Skills = () => {
               src={item.src} alt={item.skillLabel}
               layout="responsive"
               loading="eager"
-              priority
             />
 
           </Box>)}

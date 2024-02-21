@@ -128,8 +128,6 @@ export const CardList = ({ type, description, title, data }: CardListProps) => {
               }}
             >
               <Image
-                // layout="fill"
-                priority
                 width={320}
                 height={300}
                 src={more}

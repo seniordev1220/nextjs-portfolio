@@ -69,7 +69,6 @@ function Projects() {
                     <Box sx={{ margin: "auto", width: "fit-content" }}>
                       <Image
                         loading="eager"
-                        priority
                         width={200}
                         height={150}
                         src={data.image}

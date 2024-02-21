@@ -76,7 +76,6 @@ const Project = ({
                 height={150}
                 layout="responsive"
                 loading="eager"
-                priority
               />
             </Box>
           </Grid>
