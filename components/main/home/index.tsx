@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import Image from "next/image";
 import { Box, Button, Link, Typography } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
-import intro from "../../../assets/images/4.png"
+
+import intro from "../../../assets/images/4.png";
 import { homeMessages } from "../../../messages/home";
 import { DarKModeContext } from "../../layout/layout";
 import { resume } from "../../../constants";
