@@ -93,6 +93,7 @@ $animation-time: 1.3s;
 .intro {
     &__content {
         margin-top: 1.5rem;
+        padding: 1rem;
     }
 
     &__container {
@@ -241,6 +242,8 @@ $animation-time: 1.3s;
 
     @media screen and (max-width:1200px) {
         height: 2rem;
+    font-size: 1.5rem;
+
     }
 }
 

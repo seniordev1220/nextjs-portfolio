@@ -63,7 +63,7 @@ export const Card = ({
         <Grid
           item
           xs={12}
-          md={3}
+          lg={3}
           className={classes["card__image--desk"]}
           sx={{
             margin: "1rem",
@@ -87,13 +87,13 @@ export const Card = ({
         <Grid
           item
           xs={12}
-          md={8}
+          lg={8}
           justifyContent="flex-start"
           sx={{
             textAlign: "left",
             margin: "1rem",
             display: "flex",
-            justifyContent: "center",
+            marginTop: "1rem",
             flexDirection: "column",
           }}
         >
