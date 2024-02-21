@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Image from "next/image";
 import { Box, Button, Link, Typography } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
-
+import intro from "../../../assets/images/4.png"
 import { homeMessages } from "../../../messages/home";
 import { DarKModeContext } from "../../layout/layout";
 import { resume } from "../../../constants";
@@ -15,7 +15,7 @@ export const Home = () => {
     <Box className={classes.intro__container}>
       <div className={classes.intro__image__container}>
         <Image
-          src={require("../../../assets/images/4.png")}
+          src={intro}
           alt="Photo of Anand, a full-stack web developer"
           priority
         />
