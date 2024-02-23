@@ -23,8 +23,13 @@ function Layout({ children, variant, title }: LayoutPropType) {
   const [isDarkMode, setIsDarkMode] = useState("");
   useEffect(() => {
     if (!window?.sessionStorage?.getItem("isDarkMode") && window.matchMedia) {
-      const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      window?.sessionStorage?.setItem("isDarkMode", prefersDarkMode ? "true" : "false");
+      const prefersDarkMode = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      window?.sessionStorage?.setItem(
+        "isDarkMode",
+        prefersDarkMode ? "true" : "false",
+      );
       setIsDarkMode(prefersDarkMode ? "true" : "false");
     }
     const isDark: string = window?.sessionStorage?.getItem("isDarkMode") as any;
