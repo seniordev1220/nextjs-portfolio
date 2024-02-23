@@ -65,7 +65,7 @@ export const projects = [
     id: 0,
     title: "Wizard's Chess - 3D Online Multiplayer Game",
     date: "", // Project initiation date
-    visitWebsite: "https://wizards-chess.vercel.app/",
+    visitWebsite: "https://www.chess.anandkris.com/",
     isPersonalProject: true,
     description:
       "Wizard's Chess is an online multiplayer game featuring real-time video chat options. Participants can create game sessions, invite opponents, and immerse themselves in both real-time gameplay and video conversations for a unique and engaging experience.",
