@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && next build",
     "start": "next start"
   },
   "dependencies": {
@@ -30,6 +30,7 @@
     "**/styled-components": "5.1.0"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.10.7"
+    "babel-plugin-styled-components": "^1.10.7",
+    "webpack": "^5.98.0"
   }
 }
